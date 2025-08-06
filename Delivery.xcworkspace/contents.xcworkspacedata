@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:DeliveryApp/DeliveryApp.xcodeproj">
+   </FileRef>
+   <Group
+      location = "group:Services"
+      name = "Services">
+      <FileRef
+         location = "group:AuthService/AuthService.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:BannerService/BannerService.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:CartService/CartService.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:CatalogService/CatalogService.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:Utilities"
+      name = "Utilities">
+      <FileRef
+         location = "group:DLCore/DLCore.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:DLNetwork/DLNetwork.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:DesignSystem/DesignSystem.xcodeproj">
+      </FileRef>
+   </Group>
+</Workspace>

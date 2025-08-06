@@ -1,0 +1,35 @@
+//
+// Created by Dmitriy Permyakov on 05.08.2025
+// Copyright © 2025 Dostavka24. All rights reserved.
+//
+
+import Foundation
+
+public enum NetworkClientError: Error {
+
+    case clientError(NetworkError)
+    case unownedError(Error)
+}
+
+extension NetworkClientError: LocalizedError {
+
+    public var errorDescription: String? {
+        switch self {
+        case let .clientError(networkError):
+            switch networkError {
+            case .invalidURL:
+                "Некорректный URL"
+            case let .bodyEncodingFailed(error):
+                "Не удалось закодировать параметры запроса, \(error.localizedDescription)"
+            case .explicitlyCancelled:
+                "Запрос был отменён"
+            case .invalidResponse:
+                "Ответ сервера не соответствует ожидаемому формату"
+            case let .decodingFailed(error):
+                "Ошибка декодирования JSON: \(error.localizedDescription)"
+            }
+        case let .unownedError(error):
+            "Неизвестная ошибка: \(error.localizedDescription)"
+        }
+    }
+}
