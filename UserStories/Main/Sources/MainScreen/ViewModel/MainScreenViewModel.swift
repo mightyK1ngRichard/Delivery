@@ -14,7 +14,7 @@ final class MainScreenViewModel {
     private let state: MainScreenViewState
     private let networkClient: AnyMainScreenNetworkClient
     private let factory: AnyMainScreenFactory
-    weak var output: MainScreenOutput?
+    private weak var output: MainScreenOutput?
 
     private let logger = DLLogger("Main Screen ViewModel")
     private var store: Set<AnyCancellable> = []
@@ -76,7 +76,8 @@ extension MainScreenViewModel: MainScreenViewOutput {
 
     func onTapSectionLookMore(section: ProductSection) {
         logger.logEvent()
-        guard let object = state.sections.first(where: { $0.section == section }) else {
+
+        guard let object = state.sections.first(where: { $0.section.id == section.id }) else {
             logger.error("Секция не найдена")
             return
         }
@@ -147,8 +148,8 @@ extension MainScreenViewModel {
                     // Получаем продукты всех категорий
                     group.addTask {
                         let sections = try await self.networkClient.fetchProducts()
-                        return ("sections", sections.map {
-                            return ($0, $1.compactMap(self.factory.convertToProduct))
+                        return ("sections", sections.map { section, products in
+                            return (section, products.compactMap(self.factory.convertToProduct))
                         })
                     }
 
@@ -179,7 +180,8 @@ extension MainScreenViewModel {
                         return
                     }
 
-                    state.sections = sections
+                    let sortedSections = sections.sorted { $0.0 > $1.0 }
+                    state.sections = sortedSections
                     state.banners = banners
                     state.popcats = popcats
                     state.screenState = .content

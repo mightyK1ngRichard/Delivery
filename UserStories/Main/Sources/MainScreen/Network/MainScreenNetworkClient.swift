@@ -12,7 +12,7 @@ import UserServiceInterface
 import CartServiceInterface
 
 protocol AnyMainScreenNetworkClient {
-    func fetchProducts() async throws -> [ProductSection: [ProductEntity]]
+    func fetchProducts() async throws -> [(ProductSection, [ProductEntity])]
     func fetchBanners() async throws -> [BannerEntity]
     func fetchPopCards() async throws -> [PopcatsEntity]
     func fetchProfile() async throws -> UserEntity
@@ -33,7 +33,7 @@ struct MainScreenNetworkClient {
 
 extension MainScreenNetworkClient: AnyMainScreenNetworkClient {
 
-    func fetchProducts() async throws -> [ProductSection: [ProductEntity]] {
+    func fetchProducts() async throws -> [(ProductSection, [ProductEntity])] {
         async let stocks = productService.stocks
         async let exclusives = productService.exclusives
         async let hits = productService.hits
@@ -47,10 +47,10 @@ extension MainScreenNetworkClient: AnyMainScreenNetworkClient {
         ) = try await (stocks, exclusives, hits, news)
 
         return [
-            .actions: stocksResult,
-            .exclusives: exclusivesResult,
-            .hits: hitsResult,
-            .news: newsResult,
+            (.actions, stocksResult),
+            (.exclusives, exclusivesResult),
+            (.hits, hitsResult),
+            (.news, newsResult),
         ]
     }
 

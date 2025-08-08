@@ -15,7 +15,15 @@ import CartServiceInterface
 enum MainScreenAssembly {
 
     static func assemble(output: MainScreenOutput) -> some View {
-        let factory = MainScreenFactory()
+        let priceFactory = PriceFactory()
+        let dateFactory = DateFactory()
+        let mediaFactory = MediaFactory()
+        let productFactory = ProductFactory(
+            priceFactory: priceFactory,
+            dateFactory: dateFactory,
+            mediaFactory: mediaFactory
+        )
+        let factory = MainScreenFactory(mediaFactory: mediaFactory, productFactory: productFactory)
         let state = MainScreenViewState(factory: factory)
         let networkClient = MainScreenNetworkClient(
             productService: Resolver.resolve(AnyProductService.self),

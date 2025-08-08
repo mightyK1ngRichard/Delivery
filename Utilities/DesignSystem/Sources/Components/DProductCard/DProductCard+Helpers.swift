@@ -8,8 +8,6 @@
 
 import SwiftUI
 
-// MARK: - Helpers
-
 // Закругление для верхний углов
 struct CustomShape: Shape {
 
@@ -19,26 +17,7 @@ struct CustomShape: Shape {
             byRoundingCorners: [.topLeft, .topRight],
             cornerRadii: CGSize(width: .CRx5, height: .CRx5)
         )
+
         return Path(path.cgPath)
-    }
-}
-
-public enum Tags: String {
-
-    case promotion = "Акция"
-    case hit = "Хит"
-    case exclusive = "Экслюзив"
-    case news = "Новинка"
-}
-
-extension Tags {
-
-    var backgroundColor: Color {
-        switch self {
-        case .promotion: return .purple
-        case .hit: return .orange
-        case .exclusive: return .green
-        case .news: return .blue
-        }
     }
 }

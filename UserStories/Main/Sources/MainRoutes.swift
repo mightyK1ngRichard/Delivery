@@ -3,10 +3,10 @@
 //  Copyright © 2025 Delivery24. All rights reserved.
 //
 
-enum MainRoutes: Hashable, Identifiable, Sendable {
+enum MainRoutes: Hashable, Identifiable {
     case main
     case product(Product)
-//    case lookAll(sectionTitle: String, products: [ProductEntity])
+    case lookAll(navigationTitle: String, products: [Product])
 //    case pickAddress(token: String)
 //    case addAddress(token: String)
 

@@ -10,7 +10,7 @@ final class ProductDetailsScreenViewModel {
 
     private let state: ProductDetailsScreenViewState
     private let factory: AnyProductDetailsScreenFactory
-    private let output: ProductDetailsScreenOutput
+    private weak var output: ProductDetailsScreenOutput?
 
     private let logger = DLLogger("Product Details Screen View Model")
 

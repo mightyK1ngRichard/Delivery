@@ -6,11 +6,15 @@
 import Foundation
 import SwiftUI
 
-enum ProductSection: Identifiable, Hashable, CaseIterable {
+enum ProductSection: Identifiable, Hashable, CaseIterable, Comparable {
 
+    /// Акции
     case actions
+    /// Эксклюзив
     case exclusives
+    /// Новое
     case news
+    /// Хиты
     case hits
 }
 
@@ -21,13 +25,13 @@ extension ProductSection {
     var id: Int {
         switch self {
         case .actions:
-            return 0
-        case .exclusives:
-            return 1
-        case .news:
-            return 2
-        case .hits:
             return 3
+        case .exclusives:
+            return 2
+        case .news:
+            return 1
+        case .hits:
+            return 0
         }
     }
 
@@ -60,5 +64,9 @@ extension ProductSection {
         case .news:
             return .blue
         }
+    }
+
+    static func < (lhs: ProductSection, rhs: ProductSection) -> Bool {
+        lhs.id < rhs.id
     }
 }

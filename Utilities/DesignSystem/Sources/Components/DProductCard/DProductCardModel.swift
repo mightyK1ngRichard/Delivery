@@ -12,7 +12,7 @@ public struct DProductCardModel: Identifiable {
 
     public let id: Int
     var imageURL: URL?
-    var isLike = false
+    var isLike: Bool
     let title: String
     let price: String
     let description: String

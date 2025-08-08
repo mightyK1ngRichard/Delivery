@@ -4,4 +4,4 @@
 //
 
 @MainActor
-protocol ProductDetailsScreenOutput {}
+protocol ProductDetailsScreenOutput: AnyObject {}

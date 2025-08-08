@@ -4,14 +4,11 @@
 //
 
 import Coordinator
-import SwiftUI
 
-public enum MainAssembly {
+enum MainAssembly {
 
     @MainActor
-    public static func assemble() -> AnyView {
-        AnyView(
-            NavigatableView(coordinator: MainCoordinator(router: .init()))
-        )
+    static func assemble() -> MainCoordinator {
+        MainCoordinator(router: .init())
     }
 }

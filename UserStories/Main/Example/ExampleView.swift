@@ -6,7 +6,8 @@
 import SwiftUI
 import Resolver
 import DependencyRegistry
-import Main
+import Coordinator
+@testable import Main
 
 @main
 struct ExampleView: App {
@@ -17,7 +18,7 @@ struct ExampleView: App {
 
     var body: some Scene {
         WindowGroup {
-            MainAssembly.assemble()
+            NavigatableView(coordinator: MainAssembly.assemble())
         }
     }
 }

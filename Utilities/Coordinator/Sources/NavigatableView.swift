@@ -18,20 +18,41 @@ public struct NavigatableView<C: Navigatable>: View {
 
     public var body: some View {
         NavigationStack(path: $router.navPath) {
-            coordinator.run()
-                .sheet(
-                    item: $router.sheetItem,
-                    onDismiss: router.onDismissSheet,
-                    content: coordinator.destination
-                )
-                .fullScreenCover(
-                    item: $router.fullScreenCoverItem,
-                    onDismiss: router.onDismissFullScreenCover,
-                    content: coordinator.destination
-                )
-                .navigationDestination(for: C.Route.self) {
-                    coordinator.destination($0)
-                }
+            CoordinatorContentWrapper(coordinator)
+                .equatable()
         }
+        .sheet(
+            item: $router.sheetItem,
+            onDismiss: router.onDismissSheet,
+            content: coordinator.destination
+        )
+        .fullScreenCover(
+            item: $router.fullScreenCoverItem,
+            onDismiss: router.onDismissFullScreenCover,
+            content: coordinator.destination
+        )
+    }
+}
+
+// MARK: - CoordinatorContentWrapper
+
+struct CoordinatorContentWrapper<C: Navigatable>: View, Equatable {
+
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        true
+    }
+
+    private var coordinator: C
+
+    init(_ coordinator: C) {
+        self.coordinator = coordinator
+    }
+
+    var body: some View {
+        coordinator.run()
+            .navigationDestination(
+                for: C.Route.self,
+                destination: coordinator.destination
+            )
     }
 }

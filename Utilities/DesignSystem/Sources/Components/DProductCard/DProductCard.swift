@@ -48,7 +48,9 @@ public struct DProductCard: View {
     }
 
     public var body: some View {
-        MainContainer.padding(.vertical, 1)
+        MainContainer
+            .padding(.vertical, 1)
+            .contentShape(.rect)
     }
 }
 
@@ -64,7 +66,6 @@ private extension DProductCard {
                 RoundedRectangle(cornerRadius: .CRx5)
                     .stroke(Constants.borderColor, lineWidth: 1)
             )
-            .contentShape(.rect)
     }
 
     var ProductCardContent: some View {
@@ -197,6 +198,8 @@ private extension DProductCard {
         .padding(.horizontal, .SPx3)
     }
 }
+
+// MARK: - Preview
 
 #Preview {
     DProductCard(product: .init(

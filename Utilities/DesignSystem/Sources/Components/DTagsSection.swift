@@ -27,7 +27,7 @@ public struct DTagsSection: View {
                 HStack(spacing: .SPx2) {
                     ForEach(sections) { section in
                         DTag(
-                            iconKind: section.kind.iconKind,
+                            tags: section.tags,
                             title: section.title.capitalizingFirstLetter
                         )
                         .id("scroll_h_id_\(section.id)")
@@ -60,35 +60,12 @@ extension DTagsSection {
 
         public let id: Int
         let title: String
-        let kind: Kind
+        let tags: Tags
 
-        public init(id: Int, title: String, kind: Kind) {
+        public init(id: Int, title: String, tags: Tags) {
             self.id = id
             self.title = title
-            self.kind = kind
-        }
-
-        public enum Kind: Hashable {
-            case actions
-            case exclusives
-            case news
-            case hits
-        }
-    }
-}
-
-extension DTagsSection.Section.Kind {
-
-    var iconKind: DTag.IconKind {
-        switch self {
-        case .actions:
-            return .discount
-        case .exclusives:
-            return .clear
-        case .news:
-            return .new
-        case .hits:
-            return .hits
+            self.tags = tags
         }
     }
 }

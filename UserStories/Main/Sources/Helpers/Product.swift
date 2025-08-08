@@ -9,7 +9,7 @@ import DesignSystem
 struct Product: Identifiable, Hashable, Sendable {
 
     let id: Int
-    let imageURL: String
+    let imageURL: URL?
     let title: String
     /// Цена в формате: 1029.60 руб
     let formattedPrice: String

@@ -75,25 +75,22 @@ private extension ProductDetailsView {
 
 private extension ProductDetailsView {
 
-    @ViewBuilder
     var imageContainer: some View {
-        if let imageURL = URL(string: state.product.imageURL) {
-            DLImageView(
-                configuration: .init(
-                    imageKind: .url(imageURL),
-                    contentMode: .fit
-                )
+        DLImageView(
+            configuration: .init(
+                imageKind: .url(state.product.imageURL),
+                contentMode: .fit
             )
-            .frame(maxWidth: .infinity)
-            .frame(height: 457)
-            .background(.ultraThinMaterial)
-            .clipShape(.rect(cornerRadius: 24))
-            .overlay(alignment: .topLeading) {
-                tagsStack
-            }
-            .overlay(alignment: .topTrailing) {
-                buttonsContainer
-            }
+        )
+        .frame(maxWidth: .infinity)
+        .frame(height: 457)
+        .background(.ultraThinMaterial)
+        .clipShape(.rect(cornerRadius: 24))
+        .overlay(alignment: .topLeading) {
+            tagsStack
+        }
+        .overlay(alignment: .topTrailing) {
+            buttonsContainer
         }
     }
 
