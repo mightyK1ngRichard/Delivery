@@ -1,19 +1,21 @@
 //
-// DLImageView.swift
-// iOS-Delivery24
-//
-// Created by Dmitriy Permyakov on 09.07.2024
-// Copyright © 2024 Dostavka24. All rights reserved.
+//  Created by Dmitriy Permyakov on 09.07.2024
+//  Copyright © 2024 Dostavka24. All rights reserved.
 //
 
 import Kingfisher
 import SwiftUI
 
-struct DLImageView: View {
+public struct DLImageView: View {
+
     let configuration: Configuration
     @State private var isFailed = false
 
-    var body: some View {
+    public init(configuration: Configuration) {
+        self.configuration = configuration
+    }
+
+    public var body: some View {
         GeometryReader { geo in
             ImageView(size: geo.size)
         }
@@ -95,8 +97,16 @@ private extension DLImageView {
 
 extension DLImageView {
 
-    struct Configuration {
+    public struct Configuration {
         var imageKind: ImageKind
         var contentMode: SwiftUI.ContentMode = .fill
+
+        public init(
+            imageKind: ImageKind,
+            contentMode: SwiftUI.ContentMode = .fill
+        ) {
+            self.imageKind = imageKind
+            self.contentMode = contentMode
+        }
     }
 }

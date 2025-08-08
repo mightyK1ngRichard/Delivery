@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import SwiftUI
 
 extension DTag {
 
-    enum IconKind: Hashable {
+    public enum IconKind: Hashable {
         case clear
         case discount
         case hits
@@ -20,16 +21,16 @@ extension DTag {
 
 extension DTag.IconKind {
 
-    var icon: String? {
+    var icon: Image? {
         switch self {
         case .clear:
             return nil
         case .discount:
-            return "discount"
+            return DLIcon.discount.image
         case .hits:
-            return "hits"
+            return DLIcon.hits.image
         case .new:
-            return "new"
+            return DLIcon.new.image
         }
     }
 }

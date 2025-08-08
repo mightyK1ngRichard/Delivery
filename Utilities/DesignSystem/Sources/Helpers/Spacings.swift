@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension CGFloat {
+public extension CGFloat {
 
     /// Spacing of 2
     static let SPx0_5: CGFloat = 2

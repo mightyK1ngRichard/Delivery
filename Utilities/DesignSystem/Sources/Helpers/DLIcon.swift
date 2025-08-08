@@ -28,7 +28,7 @@ public enum DLIcon: String, CaseIterable {
     case feedback
     case radiobuttonOn
     case radiobuttonOff
-    case gradientBG
+    case gradientBG = "GradientBG"
     case info
     case map
     case profile
@@ -36,6 +36,7 @@ public enum DLIcon: String, CaseIterable {
     case telegramBot
     case reload
     case share
+    case heart
     case slider
     case sort
     case time

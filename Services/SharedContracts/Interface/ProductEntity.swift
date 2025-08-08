@@ -13,7 +13,8 @@ public struct ProductEntity: Decodable, Sendable {
     public let description: String?
     public let image: String?
     let categoryID: Int?
-    let priceSale, cashback: String?
+    let priceSale: String?
+    public let cashback: String?
     let brandID, manufacturerID: Int?
     let createdAt, updatedAt, slug: String?
     public let actionFlag: Int?
@@ -24,12 +25,13 @@ public struct ProductEntity: Decodable, Sendable {
     public let priceItem: String?
     public let tags: String?
     let maxInOrder: Int?
-    let expirationDate: String?
-    let kolvoUpak, newYearFlag, quantity2, countryID: Int?
+    public let expirationDate: String?
+    public let kolvoUpak: Int?
+    let newYearFlag, quantity2, countryID: Int?
     let brandTitle: String?
     let whishlistFlag: Bool?
     let realCount: Int?
-    let brand: Brand?
+    public let brand: Brand?
 
     public init(
         id: Int?,
@@ -145,8 +147,8 @@ extension ProductEntity {
 
     public struct Brand: Decodable, Sendable {
 
-        let id: Int?
-        let title: String?
+        public let id: Int?
+        public let title: String?
         let createdAt, updatedAt: String?
         let mainFlag: Int?
 

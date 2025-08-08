@@ -9,23 +9,23 @@
 import SwiftUI
 import DLCore
 
-enum ButtonState {
+public enum ButtonState {
     case `default`
     case loading
 }
 
-struct DLButton<
+public struct DLButton<
     TitleContent: View,
     SubtitleContent: View
 >: View {
-    struct Configuration {
+    public struct Configuration {
         var state: ButtonState
         var titleView: TitleContent
         var subtileView: SubtitleContent?
         var hasDisabled: Bool
         private(set) var vPadding: CGFloat
 
-        init(
+        public init(
             state: ButtonState = .default,
             hasDisabled: Bool,
             titleView: () -> TitleContent,
@@ -42,7 +42,15 @@ struct DLButton<
     var configuration: Configuration
     var action: DLVoidBlock?
 
-    var body: some View {
+    public init(
+        configuration: Configuration,
+        action: DLVoidBlock? = nil
+    ) {
+        self.configuration = configuration
+        self.action = action
+    }
+
+    public var body: some View {
         Button {
             guard !isHidden else { return }
             action?()

@@ -17,9 +17,8 @@ public final class DLLogger: Sendable {
 
     public func info(_ message: Any, line: Int = #line) {
         #if DEBUG
-            let msg = "[\(title)] #\(line) - \(String(describing: message))"
+            let msg = "[\(title)] #\(line) \(String(describing: message))"
             logger.info("\(msg, privacy: .public)")
-            print(msg)
         #endif
     }
 

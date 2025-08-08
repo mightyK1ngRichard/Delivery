@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum ProductSection: Identifiable, Hashable, CaseIterable {
 
@@ -44,6 +45,20 @@ extension ProductSection {
             return String(localized: "news")
         case .hits:
             return String(localized: "hits")
+        }
+    }
+
+    // FIXME: Вынести в ДС + Убрать дублирование кода
+    var backgroundColor: Color {
+        switch self {
+        case .actions:
+            return .purple
+        case .hits:
+            return .orange
+        case .exclusives:
+            return .green
+        case .news:
+            return .blue
         }
     }
 }

@@ -46,6 +46,9 @@
       location = "group:Utilities"
       name = "Utilities">
       <FileRef
+         location = "group:Coordinator/Coordinator.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:DLCore/DLCore.xcodeproj">
       </FileRef>
       <FileRef

@@ -8,18 +8,23 @@
 
 import SwiftUI
 
-struct DTag: View {
+public struct DTag: View {
 
     var iconKind: IconKind = .clear
     var title: String
 
-    var body: some View {
+    public init(iconKind: IconKind, title: String) {
+        self.iconKind = iconKind
+        self.title = title
+    }
+
+    public var body: some View {
         HStack(spacing: .SPx2) {
             if let icon = iconKind.icon {
-                Image(icon, bundle: .module)
+                icon
                     .renderingMode(.template)
                     .foregroundStyle(
-                        iconKind == .hits ? Color("tagHitsIcon", bundle: .module) : Color("contraste", bundle: .module)
+                        iconKind == .hits ? Color("TagHitsIcon", bundle: .module) : Color("Contraste", bundle: .module)
                     )
             }
 
@@ -27,7 +32,11 @@ struct DTag: View {
         }
         .padding(.horizontal, .SPx3)
         .padding(.vertical, .SPx2)
-        .background(Color("tagBG", bundle: .module))
+        .background(Color("TagBG", bundle: .module))
         .clipShape(RoundedRectangle(cornerRadius: .CRx3))
     }
+}
+
+#Preview {
+    DTag(iconKind: .discount, title: "Discount")
 }

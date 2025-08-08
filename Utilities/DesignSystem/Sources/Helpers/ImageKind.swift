@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-enum ImageKind {
+public enum ImageKind {
     case string(String)
     case url(URL?)
     case image(Image)

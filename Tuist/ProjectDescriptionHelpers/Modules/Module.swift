@@ -25,6 +25,7 @@ public enum Module: String, CaseIterable {
 
     // L6
     case DependencyRegistry
+    case Coordinator
 
     // L7
     case Main
@@ -49,7 +50,8 @@ extension Module {
 
     var kind: Kind {
         switch self {
-        case .DLCore, .DLNetwork, .DesignSystem, .Resolver, .DependencyRegistry:
+        case .DLCore, .DLNetwork, .DesignSystem, .Resolver,
+                .DependencyRegistry, .Coordinator:
             return .utility
         case .AuthService, .BannerService, .CartService,
                 .CatalogService, .OrderService, .PopcatsService,
