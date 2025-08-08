@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		02227E742A3F5C11C460C988 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA2A3A6151FA3F82548363F /* AuthService.swift */; };
+		30967083B42138C7497CCD87 /* DLCore.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 93AE86488E451DB86316EEC5 /* DLCore.framework */; };
 		30F446F750AAE06D72EAC29D /* DLNetwork.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = D426BAD3F2F6AB67F8B1F406 /* DLNetwork.framework */; };
 		5530201823899ECBBC051441 /* DLCore.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 93AE86488E451DB86316EEC5 /* DLCore.framework */; };
 		5B001D573E8AA3C9A8F24904 /* AuthServiceInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 1A6E17EE907F66CF00B07FEA /* AuthServiceInterface.framework */; };
@@ -57,6 +58,16 @@
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FABD0EC1A1E5F927957EC936 /* Dependencies */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstSubfolderSpec = 16;
+			files = (
+				30967083B42138C7497CCD87 /* DLCore.framework in Dependencies */,
+			);
+			name = Dependencies;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -186,6 +197,7 @@
 				EB42E2A87B5BC12294948757 /* Resources */,
 				C0B19765F91413B500C26F5E /* Frameworks */,
 				F5A71D1A6B590EF6CA114144 /* Embed Frameworks */,
+				FABD0EC1A1E5F927957EC936 /* Dependencies */,
 			);
 			buildRules = (
 			);

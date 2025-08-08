@@ -28,14 +28,32 @@ struct DLProductsCarousel: View {
 
 extension DLProductsCarousel {
 
+    struct Product: Identifiable, Hashable {
+        var id: Int
+        /// Фото
+        var imageURL: String
+        /// Цена продукта
+        var price: Double
+        /// Цена за штуку
+        var unitPrice: Double
+        /// Название товара
+        var name: String
+        /// Кэшбек продукта
+        var cashback: String
+        /// Начальная счёт продукта
+        var startCount: Int
+        /// Magnifier
+        var coeff: Int
+    }
+
     struct Configuration {
         var title = ""
-        var products: [BasketViewState.Product] = []
+        var products: [Product] = []
     }
 
     struct HandlerConfiguration {
         var didTapTitle: DLVoidBlock?
-        var didTapProduct: DLGenericBlock<BasketViewState.Product>?
+        var didTapProduct: DLGenericBlock<Product>?
     }
 }
 
@@ -48,7 +66,7 @@ private extension DLProductsCarousel {
             Text(configuration.title)
                 .style(size: 17, weight: .semibold, color: DLColor<TextPalette>.primary.color)
             Spacer()
-            Image(.chivronRight)
+            DLIcon.chivronRight.image
                 .renderingMode(.template)
                 .resizable()
                 .scaledToFit()
@@ -75,7 +93,7 @@ private extension DLProductsCarousel {
         }
     }
 
-    func productCardView(for product: BasketViewState.Product) -> some View {
+    func productCardView(for product: Product) -> some View {
         DLImageView(
             configuration: .init(
                 imageKind: .string(product.imageURL),

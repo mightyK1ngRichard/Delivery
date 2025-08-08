@@ -28,20 +28,16 @@ public struct AuthServiceImpl {
 extension AuthServiceImpl: AnyAuthService {
 
     public func signIn(email: String, password: String) async throws {
-        let data = try await networkClient.request(
+        let response = try await networkClient.request(
             "auth",
             method: .post,
-            body: .basic([
+            options: .init(body: [
                 "email": email,
                 "password": password
-            ], includeToken: false)
-        ).data
+            ]),
+            decodeTo: AuthEntity.self
+        ).model
 
-        do {
-            let reponse = try JSONDecoder().decode(AuthEntity.self, from: data)
-            await networkStore.setToken(reponse.token)
-        } catch {
-            throw NetworkError.decodingFailed(error)
-        }
+        await networkStore.setToken(response.token)
     }
 }

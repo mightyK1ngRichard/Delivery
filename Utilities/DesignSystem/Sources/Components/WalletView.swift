@@ -8,16 +8,21 @@
 
 import SwiftUI
 
-struct WalletView: View {
+public struct WalletView: View {
     var moneyCount: String
     var size: TitleSize = .size11
 
-    enum TitleSize: CGFloat {
+    public enum TitleSize: CGFloat {
         case size11 = 11
         case size17 = 17
     }
 
-    var body: some View {
+    public init(moneyCount: String, size: TitleSize = .size11) {
+        self.moneyCount = moneyCount
+        self.size = size
+    }
+
+    public var body: some View {
         IconTextView
             .padding(.vertical, 5)
             .padding(.horizontal, 8)
@@ -26,7 +31,7 @@ struct WalletView: View {
 
     private var IconTextView: some View {
         HStack {
-            Image(.money)
+            DLIcon.money.image
                 .frame(width: 12, height: 12)
 
             Text(moneyCount)

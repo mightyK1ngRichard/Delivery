@@ -1,0 +1,581 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1AB380A3904835991D2AA83C /* PopcatsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C6DF5E538E292B6C208907 /* PopcatsEntity.swift */; };
+		4E59B01ACFE6E3F75DF9CFCC /* PopcatsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7BFD27962A8EFFBBBB0571 /* PopcatsService.swift */; };
+		58AEE0D8AFF17920D405989B /* DLCore.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 3E170DC6F4C2AFBB42213194 /* DLCore.framework */; };
+		9C2AA81186F23FCB7FFEBD65 /* DLCore.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 3E170DC6F4C2AFBB42213194 /* DLCore.framework */; };
+		AC8B510525975E29C4212AD5 /* AnyPopcatsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353BD74C00B89E8900B72ADE /* AnyPopcatsService.swift */; };
+		C0F6418A240D8305F31E060B /* DLNetwork.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = E56350350DEEF3257057EF94 /* DLNetwork.framework */; };
+		EF28C8C88E0F69F1E9D993D6 /* PopcatsServiceInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 9792D96A72BB8E0141E58D6A /* PopcatsServiceInterface.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F2717945CD544A736423C089 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E984724C8F23AA7EAF12024 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4D2651EB44A20F77B63398ED;
+			remoteInfo = PopcatsServiceInterface;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		028C267F7820F101E6A32BD4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A36DD9D0A87F86B928CC394F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4EBC0FC8B44E7D0C13149FF /* Dependencies */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstSubfolderSpec = 16;
+			files = (
+				9C2AA81186F23FCB7FFEBD65 /* DLCore.framework in Dependencies */,
+			);
+			name = Dependencies;
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		F5A3669AE0FF66F10FF04A73 /* Dependencies */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstSubfolderSpec = 16;
+			files = (
+				58AEE0D8AFF17920D405989B /* DLCore.framework in Dependencies */,
+				C0F6418A240D8305F31E060B /* DLNetwork.framework in Dependencies */,
+				EF28C8C88E0F69F1E9D993D6 /* PopcatsServiceInterface.framework in Dependencies */,
+			);
+			name = Dependencies;
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		353BD74C00B89E8900B72ADE /* AnyPopcatsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyPopcatsService.swift; sourceTree = "<group>"; };
+		3E170DC6F4C2AFBB42213194 /* DLCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DLCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43C6DF5E538E292B6C208907 /* PopcatsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopcatsEntity.swift; sourceTree = "<group>"; };
+		44E89CDBE7722A9B78EDA9AE /* PopcatsService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopcatsService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		532C8F82A68B4EE61C82AE19 /* PopcatsService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "PopcatsService-Info.plist"; sourceTree = "<group>"; };
+		6C7BFD27962A8EFFBBBB0571 /* PopcatsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopcatsService.swift; sourceTree = "<group>"; };
+		9792D96A72BB8E0141E58D6A /* PopcatsServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopcatsServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A01DD2D7D5FD3FE267CE182E /* PopcatsServiceInterface-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "PopcatsServiceInterface-Info.plist"; sourceTree = "<group>"; };
+		E56350350DEEF3257057EF94 /* DLNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DLNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04DC9B9090461A54AFE0589F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B4A3D65F7A24CCC9DF74E21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A97BF447994B69965E706EC /* Derived */ = {
+			isa = PBXGroup;
+			children = (
+				BE82AAE8A20C0F75E4677A0B /* InfoPlists */,
+			);
+			path = Derived;
+			sourceTree = "<group>";
+		};
+		272B65F5012EBE3DD524BF9D /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				353BD74C00B89E8900B72ADE /* AnyPopcatsService.swift */,
+				43C6DF5E538E292B6C208907 /* PopcatsEntity.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		87B4323B28858A9C1320C1C5 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				1A97BF447994B69965E706EC /* Derived */,
+				272B65F5012EBE3DD524BF9D /* Interface */,
+				D75FDB6490E4209FE045717A /* Sources */,
+			);
+			name = Project;
+			sourceTree = "<group>";
+		};
+		8888F8D99D80A4A3F984E40A = {
+			isa = PBXGroup;
+			children = (
+				87B4323B28858A9C1320C1C5 /* Project */,
+				CCE26C2419136065B65DA2B8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BE82AAE8A20C0F75E4677A0B /* InfoPlists */ = {
+			isa = PBXGroup;
+			children = (
+				532C8F82A68B4EE61C82AE19 /* PopcatsService-Info.plist */,
+				A01DD2D7D5FD3FE267CE182E /* PopcatsServiceInterface-Info.plist */,
+			);
+			path = InfoPlists;
+			sourceTree = "<group>";
+		};
+		CCE26C2419136065B65DA2B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3E170DC6F4C2AFBB42213194 /* DLCore.framework */,
+				E56350350DEEF3257057EF94 /* DLNetwork.framework */,
+				44E89CDBE7722A9B78EDA9AE /* PopcatsService.framework */,
+				9792D96A72BB8E0141E58D6A /* PopcatsServiceInterface.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D75FDB6490E4209FE045717A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6C7BFD27962A8EFFBBBB0571 /* PopcatsService.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4D2651EB44A20F77B63398ED /* PopcatsServiceInterface */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1CCED0ACA07574FF041B8E22 /* Build configuration list for PBXNativeTarget "PopcatsServiceInterface" */;
+			buildPhases = (
+				E0A131F9944DB4FC8EB22EDD /* Sources */,
+				9F3E0AA8D3F9CD0563016D0A /* Resources */,
+				04DC9B9090461A54AFE0589F /* Frameworks */,
+				A36DD9D0A87F86B928CC394F /* Embed Frameworks */,
+				C4EBC0FC8B44E7D0C13149FF /* Dependencies */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PopcatsServiceInterface;
+			packageProductDependencies = (
+			);
+			productName = PopcatsServiceInterface;
+			productReference = 9792D96A72BB8E0141E58D6A /* PopcatsServiceInterface.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E2EF2C7608C45B931CDC71C6 /* PopcatsService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6BEBC2FC8214DF1FCCF7B389 /* Build configuration list for PBXNativeTarget "PopcatsService" */;
+			buildPhases = (
+				A96B4AC5683DE8110A00809C /* Sources */,
+				723AA461561907FFE5097A9A /* Resources */,
+				9B4A3D65F7A24CCC9DF74E21 /* Frameworks */,
+				028C267F7820F101E6A32BD4 /* Embed Frameworks */,
+				F5A3669AE0FF66F10FF04A73 /* Dependencies */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1E4BF73FBFDEEA8739206AEA /* PBXTargetDependency */,
+			);
+			name = PopcatsService;
+			packageProductDependencies = (
+			);
+			productName = PopcatsService;
+			productReference = 44E89CDBE7722A9B78EDA9AE /* PopcatsService.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4E984724C8F23AA7EAF12024 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				CLASSPREFIX = DL;
+				LastUpgradeCheck = 1630;
+				ORGANIZATIONNAME = Delivery24;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = B450DB28D87D38291B959357 /* Build configuration list for PBXProject "PopcatsService" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 8888F8D99D80A4A3F984E40A;
+			productRefGroup = CCE26C2419136065B65DA2B8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E2EF2C7608C45B931CDC71C6 /* PopcatsService */,
+				4D2651EB44A20F77B63398ED /* PopcatsServiceInterface */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		723AA461561907FFE5097A9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F3E0AA8D3F9CD0563016D0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A96B4AC5683DE8110A00809C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E59B01ACFE6E3F75DF9CFCC /* PopcatsService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0A131F9944DB4FC8EB22EDD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC8B510525975E29C4212AD5 /* AnyPopcatsService.swift in Sources */,
+				1AB380A3904835991D2AA83C /* PopcatsEntity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1E4BF73FBFDEEA8739206AEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PopcatsServiceInterface;
+			target = 4D2651EB44A20F77B63398ED /* PopcatsServiceInterface */;
+			targetProxy = F2717945CD544A736423C089 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0DC4C9DC549A9ED87F22D60B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Derived/InfoPlists/PopcatsServiceInterface-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mightykingrichard.DeliveryApp.popcatsservice.interface;
+				PRODUCT_NAME = PopcatsServiceInterface;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4F6D55FEC9A966DACDF14659 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Derived/InfoPlists/PopcatsService-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mightykingrichard.DeliveryApp.popcatsservice;
+				PRODUCT_NAME = PopcatsService;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		607224445C1F2247ED304EA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7EE1AB19DF2DC5B113B611CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B9C012FB884B5AF075406319 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Derived/InfoPlists/PopcatsServiceInterface-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mightykingrichard.DeliveryApp.popcatsservice.interface;
+				PRODUCT_NAME = PopcatsServiceInterface;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C7359C71F5979A0750D2C894 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Derived/InfoPlists/PopcatsService-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mightykingrichard.DeliveryApp.popcatsservice;
+				PRODUCT_NAME = PopcatsService;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1CCED0ACA07574FF041B8E22 /* Build configuration list for PBXNativeTarget "PopcatsServiceInterface" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9C012FB884B5AF075406319 /* Debug */,
+				0DC4C9DC549A9ED87F22D60B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6BEBC2FC8214DF1FCCF7B389 /* Build configuration list for PBXNativeTarget "PopcatsService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7359C71F5979A0750D2C894 /* Debug */,
+				4F6D55FEC9A966DACDF14659 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B450DB28D87D38291B959357 /* Build configuration list for PBXProject "PopcatsService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				607224445C1F2247ED304EA9 /* Debug */,
+				7EE1AB19DF2DC5B113B611CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4E984724C8F23AA7EAF12024 /* Project object */;
+}

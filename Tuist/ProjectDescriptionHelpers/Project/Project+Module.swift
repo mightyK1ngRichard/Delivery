@@ -5,6 +5,7 @@ extension Project {
 
     public static func module(
         _ module: Module,
+        packages: [Package] = [],
         additionalTargets: [AdditionalTarget],
         product: Product = .module,
         resources: ResourceFileElements? = nil,
@@ -29,6 +30,7 @@ extension Project {
             name: module.name,
             organizationName: WorkspaceSettings.organizationName,
             classPrefix: WorkspaceSettings.classPrefix,
+            packages: packages,
             settings: nil,
             targets: targets,
             resourceSynthesizers: resourceSynthesizers

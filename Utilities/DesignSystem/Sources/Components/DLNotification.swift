@@ -13,7 +13,7 @@ struct DLNotification: View {
 
     var body: some View {
         HStack(spacing: 10) {
-            Image(.warning)
+            DLIcon.warning.image
 
             Text(message)
                 .style(size: 13, weight: .regular, color: DLColor<TextPalette>.primary.color)

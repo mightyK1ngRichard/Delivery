@@ -63,13 +63,13 @@ private extension DLMinimumOrderSumView {
                             isOpened = false
                         }
                     } label: {
-                        Image(.xmark)
+                        DLIcon.xmark.image
                             .renderingMode(.template)
                             .foregroundStyle(Constants.iconColor)
                             .frame(width: 16, height: 16)
                     }
                 } else {
-                    Image(.chivronRight)
+                    DLIcon.chivronRight.image
                         .renderingMode(.template)
                         .foregroundStyle(Constants.iconColor)
                         .frame(width: 16, height: 16)

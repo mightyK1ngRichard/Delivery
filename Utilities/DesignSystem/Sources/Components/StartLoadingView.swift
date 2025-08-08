@@ -1,16 +1,15 @@
 //
-// StartLoadingView.swift
-// iOS-Delivery24
-//
-// Created by Dmitriy Permyakov on 26.08.2024
-// Copyright © 2024 Dostavka24. All rights reserved.
+//  Created by Dmitriy Permyakov on 26.08.2024
+//  Copyright © 2024 Dostavka24. All rights reserved.
 //
 
 import SwiftUI
 
-struct StartLoadingView: View {
+public struct StartLoadingView: View {
 
-    var body: some View {
+    public init() {}
+
+    public var body: some View {
         LoadingView
     }
 
@@ -19,7 +18,7 @@ struct StartLoadingView: View {
             let width = geo.size.width
             let height = geo.size.height
 
-            Image(.logo)
+            DLIcon.logo.image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 207, height: 24)
@@ -30,7 +29,7 @@ struct StartLoadingView: View {
                 .offset(x: width / 2, y: height - height / 4)
         }
         .background {
-            Image(.gradientBG)
+            DLIcon.gradientBG.image
                 .resizable()
         }
         .preferredColorScheme(.light)

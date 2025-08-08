@@ -9,8 +9,10 @@
 import SwiftUI
 
 struct DontResultView: View {
-    struct Configuration {
-        var resource: ImageResource
+
+    struct Configuration: Hashable {
+
+        var resourceName: String
         var title: String
         var subtitle: String
     }
@@ -19,7 +21,7 @@ struct DontResultView: View {
 
     var body: some View {
         VStack(spacing: 16) {
-            Image(configuration.resource)
+            Image(configuration.resourceName)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 40, height: 40)

@@ -14,3 +14,12 @@ public struct DataResponse: Sendable {
         httpResponse.statusCode
     }
 }
+
+public struct ModelResponse<Model: Decodable & Sendable>: Sendable {
+
+    /// Декодированная модель.
+    public let model: Model
+
+    /// Оригинальный ответ с данными и HTTP-статусом.
+    public let dataResponse: DataResponse
+}

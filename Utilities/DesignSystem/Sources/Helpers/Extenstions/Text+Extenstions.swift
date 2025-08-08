@@ -1,13 +1,13 @@
 //
-// Created by Dmitriy Permyakov on 13.06.2024
-// Copyright © 2024 Dostavka24. All rights reserved.
+//  Created by Dmitriy Permyakov on 13.06.2024
+//  Copyright © 2024 Dostavka24. All rights reserved.
 //
 
 import SwiftUI
 
 extension Text {
 
-    enum TypographyWeight: Int {
+    public enum TypographyWeight: Int {
         /// 100pt
         case thin = 100
         /// 200pt
@@ -51,7 +51,7 @@ extension Text {
         }
     }
 
-    func style(size: CGFloat, weight: TypographyWeight, color: Color) -> some View {
+    public func style(size: CGFloat, weight: TypographyWeight, color: Color) -> some View {
         font(.system(size: size, weight: weight.weight))
             .foregroundStyle(color)
     }

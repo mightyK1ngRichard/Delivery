@@ -16,25 +16,18 @@ struct DTag: View {
     var body: some View {
         HStack(spacing: .SPx2) {
             if let icon = iconKind.icon {
-                Image(icon)
+                Image(icon, bundle: .module)
                     .renderingMode(.template)
-                    .foregroundStyle(iconKind == .hits ? .tagHitsIcon : .contraste)
+                    .foregroundStyle(
+                        iconKind == .hits ? Color("tagHitsIcon", bundle: .module) : Color("contraste", bundle: .module)
+                    )
             }
 
             Text(title)
         }
         .padding(.horizontal, .SPx3)
         .padding(.vertical, .SPx2)
-        .background(.tagBG)
+        .background(Color("tagBG", bundle: .module))
         .clipShape(RoundedRectangle(cornerRadius: .CRx3))
-    }
-}
-
-#Preview {
-    VStack {
-        DTag(title: "Акции")
-        DTag(iconKind: .discount, title: "Акции")
-        DTag(iconKind: .hits, title: "Хиты продаж")
-        DTag(iconKind: .new, title: "Новинки")
     }
 }

@@ -19,6 +19,28 @@
       <FileRef
          location = "group:CatalogService/CatalogService.xcodeproj">
       </FileRef>
+      <FileRef
+         location = "group:OrderService/OrderService.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:PopcatsService/PopcatsService.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:ProductService/ProductService.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:SharedContracts/SharedContracts.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:UserService/UserService.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:UserStories"
+      name = "UserStories">
+      <FileRef
+         location = "group:Main/Main.xcodeproj">
+      </FileRef>
    </Group>
    <Group
       location = "group:Utilities"
@@ -30,7 +52,13 @@
          location = "group:DLNetwork/DLNetwork.xcodeproj">
       </FileRef>
       <FileRef
+         location = "group:DependencyRegistry/DependencyRegistry.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:DesignSystem/DesignSystem.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:Resolver/Resolver.xcodeproj">
       </FileRef>
    </Group>
 </Workspace>

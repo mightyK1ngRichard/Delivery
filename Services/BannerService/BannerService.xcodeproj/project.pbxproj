@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0484D7DDCBDAD0BACDE67165 /* DLCore.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 85C86D21289C9972E5FF9686 /* DLCore.framework */; };
 		2AB4A5A3B7F8209B8A66CD17 /* AnyBannersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC633F62E008C36AABAE379 /* AnyBannersService.swift */; };
+		34FF958FC4E9F80144BC62D9 /* DLCore.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 85C86D21289C9972E5FF9686 /* DLCore.framework */; };
 		3E28C5507E841BB2C12D5721 /* BannersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A447C8B28048F4C3EA54198 /* BannersService.swift */; };
 		55F3A970416981EC1A5F61BA /* DLNetwork.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = F41D3970BD4BE1975F394678 /* DLNetwork.framework */; };
 		5D1B658B4E03D623139E2292 /* BannerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE7EDBA14D84DE860737206 /* BannerEntity.swift */; };
@@ -35,6 +36,16 @@
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
+		};
+		17E117F9703CB6BC0EAC4E5A /* Dependencies */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstSubfolderSpec = 16;
+			files = (
+				34FF958FC4E9F80144BC62D9 /* DLCore.framework in Dependencies */,
+			);
+			name = Dependencies;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 		9969D44113628851EBC043E8 /* Dependencies */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -164,6 +175,7 @@
 				50581100627E26D3190DA2A7 /* Resources */,
 				C909EBDC128263B17023C2DB /* Frameworks */,
 				F347FD0FC64744DBA7156192 /* Embed Frameworks */,
+				17E117F9703CB6BC0EAC4E5A /* Dependencies */,
 			);
 			buildRules = (
 			);

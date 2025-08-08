@@ -29,16 +29,11 @@ extension BannersServiceImpl: AnyBannersService {
     }
 
     public func forceFetchBanners() async throws -> [BannerEntity] {
-        let data = try await networkClient.request(
+        try await networkClient.request(
             "main/banners",
             method: .post,
-            body: .basic()
-        ).data
-
-        do {
-            return try JSONDecoder().decode([BannerEntity].self, from: data)
-        } catch {
-            throw NetworkError.decodingFailed(error)
-        }
+            options: .init(),
+            decodeTo: [BannerEntity].self
+        ).model
     }
 }

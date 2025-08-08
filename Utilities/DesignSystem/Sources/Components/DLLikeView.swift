@@ -27,12 +27,14 @@ struct DLLikeView: View {
             isLiked.toggle()
             didTapLike?(isLiked)
         } label: {
-            Image(isLiked ? .filledLike : .like)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 16, height: 16)
-                .padding(10)
-                .frame(width: 36, height: 36)
+            Image(isLiked
+                  ? DLIcon.filledLike.rawValue
+                  : DLIcon.like.rawValue, bundle: .module)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 16, height: 16)
+            .padding(10)
+            .frame(width: 36, height: 36)
         }
         .background(DLColor<BackgroundPalette>.white.color, in: .circle)
     }

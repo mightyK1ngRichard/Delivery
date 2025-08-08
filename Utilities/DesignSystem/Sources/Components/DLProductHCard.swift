@@ -50,7 +50,7 @@ struct DLProductHCard: View {
         }
         .overlay(alignment: .topTrailing) {
             HStack(spacing: .SPx1) {
-                Image(.money)
+                DLIcon.money.image
                 Text(configuration.cornerPrice)
                     .style(
                         size: 13,
@@ -171,7 +171,7 @@ private extension DLProductHCard {
         switch configuration.buttonKind {
         case .delete:
             Button(action: didTapDelete, label: {
-                Image(.trash)
+                DLIcon.trash.image
                     .renderingMode(.template)
                     .foregroundStyle(DLColor<IconPalette>.primary.color)
                     .frame(width: 32, height: 32)
@@ -181,7 +181,7 @@ private extension DLProductHCard {
             Button {
                 handlerConfiguration.didTapInfo?()
             } label: {
-                Image(.info)
+                DLIcon.info.image
                     .renderingMode(.template)
                     .foregroundStyle(DLColor<IconPalette>.primary.color)
                     .frame(width: 32, height: 32)

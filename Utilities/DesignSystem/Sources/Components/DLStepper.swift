@@ -48,7 +48,7 @@ struct DLStepper: View {
                 counter = counter - configuration.magnifier
                 handlerConfiguration.didTapMinus?(counter)
             } label: {
-                Image(.minus)
+                DLIcon.minus.image
                     .renderingMode(.template)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -70,7 +70,7 @@ struct DLStepper: View {
                 counter += configuration.magnifier
                 handlerConfiguration.didTapPlus?(counter)
             } label: {
-                Image(.plus)
+                DLIcon.plus.image
                     .renderingMode(.template)
                     .resizable()
                     .aspectRatio(contentMode: .fit)

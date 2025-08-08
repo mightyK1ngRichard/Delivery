@@ -10,20 +10,44 @@ import Kingfisher
 import SwiftUI
 import DLCore
 
-struct DProductCard: View {
+public struct DProductCard: View {
 
-    struct HandlerConfiguration {
+    public struct HandlerConfiguration {
         var didTapLike: DLBoolBlock?
         var didTapPlus: DLIntBlock?
         var didTapMinus: DLIntBlock?
         var didTapBasket: DLIntBlock?
+
+        public init(
+            didTapLike: DLBoolBlock? = nil,
+            didTapPlus: DLIntBlock? = nil,
+            didTapMinus: DLIntBlock? = nil,
+            didTapBasket: DLIntBlock? = nil
+        ) {
+            self.didTapLike = didTapLike
+            self.didTapPlus = didTapPlus
+            self.didTapMinus = didTapMinus
+            self.didTapBasket = didTapBasket
+        }
     }
 
     let product: DProductCardModel
-    var handler: HandlerConfiguration = .init()
-    @State private var showStepper = false
+    let handler: HandlerConfiguration
 
-    var body: some View {
+    @State
+    private var showStepper: Bool
+
+    public init(
+        product: DProductCardModel,
+        handler: HandlerConfiguration = .init(),
+        showStepper: Bool = false
+    ) {
+        self.product = product
+        self.handler = handler
+        self._showStepper = State(initialValue: showStepper)
+    }
+
+    public var body: some View {
         MainContainer.padding(.vertical, 1)
     }
 }

@@ -8,8 +8,9 @@
 
 import Foundation
 
-struct DProductCardModel: Identifiable {
-    let id: Int
+public struct DProductCardModel: Identifiable {
+
+    public let id: Int
     var imageURL: URL?
     var isLike = false
     let title: String
@@ -18,4 +19,26 @@ struct DProductCardModel: Identifiable {
     let startCounter: Int
     let magnifier: Int
     let tags: [Tags]
+
+    public init(
+        id: Int,
+        imageURL: URL? = nil,
+        isLike: Bool = false,
+        title: String,
+        price: String,
+        description: String,
+        startCounter: Int,
+        magnifier: Int,
+        tags: [Tags]
+    ) {
+        self.id = id
+        self.imageURL = imageURL
+        self.isLike = isLike
+        self.title = title
+        self.price = price
+        self.description = description
+        self.startCounter = startCounter
+        self.magnifier = magnifier
+        self.tags = tags
+    }
 }

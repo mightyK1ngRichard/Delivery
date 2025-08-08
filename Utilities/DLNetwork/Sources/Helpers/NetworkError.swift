@@ -6,6 +6,7 @@
 public enum NetworkError: Error {
 
     case invalidURL
+    case requiredFieldMissing(AddionPayload)
     case explicitlyCancelled
     case invalidResponse
     case bodyEncodingFailed(any Error)

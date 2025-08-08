@@ -6,14 +6,18 @@
 // Copyright © 2024 Dostavka24. All rights reserved.
 //
 
-import Kingfisher
 import SwiftUI
+import Kingfisher
 
-struct DCategory: View {
+public struct DCategory: View {
 
     var category: DCategoryModel
 
-    var body: some View {
+    public init(category: DCategoryModel) {
+        self.category = category
+    }
+
+    public var body: some View {
         MainBlock
             .contentShape(RoundedRectangle(cornerRadius: .CRx5))
             .background(
@@ -58,11 +62,6 @@ extension DCategory {
         .clipShape(RoundedRectangle(cornerRadius: .CRx5))
     }
 }
-
-//#Preview {
-//    DCategory(category: MainViewState.Category.mockData.mapper)
-//        .frame(width: 250, height: 200)
-//}
 
 // MARK: - Constants
 

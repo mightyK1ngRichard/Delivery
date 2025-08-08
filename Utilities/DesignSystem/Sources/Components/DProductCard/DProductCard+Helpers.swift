@@ -12,6 +12,7 @@ import SwiftUI
 
 // Закругление для верхний углов
 struct CustomShape: Shape {
+
     func path(in rect: CGRect) -> Path {
         let path = UIBezierPath(
             roundedRect: rect,
@@ -22,7 +23,8 @@ struct CustomShape: Shape {
     }
 }
 
-enum Tags: String {
+public enum Tags: String {
+
     case promotion = "Акция"
     case hit = "Хит"
     case exclusive = "Экслюзив"

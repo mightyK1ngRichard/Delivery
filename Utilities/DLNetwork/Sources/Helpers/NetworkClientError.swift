@@ -27,6 +27,8 @@ extension NetworkClientError: LocalizedError {
                 "Ответ сервера не соответствует ожидаемому формату"
             case let .decodingFailed(error):
                 "Ошибка декодирования JSON: \(error.localizedDescription)"
+            case let .requiredFieldMissing(payload):
+                "Отсутствуют обязательные поля в JSON: \(payload.rawValue)"
             }
         case let .unownedError(error):
             "Неизвестная ошибка: \(error.localizedDescription)"

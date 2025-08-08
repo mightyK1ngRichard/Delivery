@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4E0A9F4875DC6EF3A430A3AB /* DLNetwork.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 959C8A795006C22CD75A7D07 /* DLNetwork.framework */; };
 		5D4126C8C0E8F8DA22612F5F /* AddBasketProductPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCC931DC5FDEE9EE207A5B9 /* AddBasketProductPayload.swift */; };
+		85CF559F9C966AAF11B3D05C /* DLCore.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 9AFC3BC8E1EF126FF7D4D728 /* DLCore.framework */; };
 		93B61DD8390879B3A6CF981C /* AnyCartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672574872573422F9FB79BDF /* AnyCartService.swift */; };
 		ABC4D3F96FE814373D33641B /* DLCore.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 9AFC3BC8E1EF126FF7D4D728 /* DLCore.framework */; };
 		C39238AA2CB59F7D480163AE /* CartServiceInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 6EA7A734E7DDA5257C0CF890 /* CartServiceInterface.framework */; };
@@ -57,6 +58,16 @@
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF56990130339A3F9B0B1289 /* Dependencies */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstSubfolderSpec = 16;
+			files = (
+				85CF559F9C966AAF11B3D05C /* DLCore.framework in Dependencies */,
+			);
+			name = Dependencies;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -186,6 +197,7 @@
 				36DED3C84AAA91F74B9546CC /* Resources */,
 				3F7752013B5A55CBB638515D /* Frameworks */,
 				AA468BC613103093D461EA94 /* Embed Frameworks */,
+				EF56990130339A3F9B0B1289 /* Dependencies */,
 			);
 			buildRules = (
 			);

@@ -8,13 +8,21 @@
 
 import SwiftUI
 
-struct MainHeaderView: View {
-    @Binding var textInput: String
-    @FocusState private var isFocused: Bool
+public struct MainHeaderView: View {
 
-    var body: some View {
+    @Binding
+    var textInput: String
+
+    @FocusState
+    private var isFocused: Bool
+
+    public init(textInput: Binding<String>) {
+        self._textInput = textInput
+    }
+
+    public var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Image(.logo)
+            DLIcon.logo.image
                 .padding(.top, 15)
 
             DLSearchField(text: $textInput)

@@ -7,11 +7,10 @@
 //
 
 import Foundation
-import DeveloperToolsSupport
 
 extension DTag {
 
-    enum IconKind {
+    enum IconKind: Hashable {
         case clear
         case discount
         case hits
@@ -21,16 +20,16 @@ extension DTag {
 
 extension DTag.IconKind {
 
-    var icon: ImageResource? {
+    var icon: String? {
         switch self {
         case .clear:
             return nil
         case .discount:
-            return .discount
+            return "discount"
         case .hits:
-            return .hits
+            return "hits"
         case .new:
-            return .new
+            return "new"
         }
     }
 }

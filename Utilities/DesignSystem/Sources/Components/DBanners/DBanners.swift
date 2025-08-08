@@ -11,10 +11,12 @@ import SwiftUI
 public struct BannerPage: Identifiable, Equatable {
 
     public var id: UUID
+    let backID: Int
     var url: URL?
 
-    public init(id: UUID = UUID(), url: URL? = nil) {
+    public init(id: UUID = UUID(), backID: Int, url: URL? = nil) {
         self.id = id
+        self.backID = backID
         self.url = url
     }
 }
@@ -24,6 +26,10 @@ public struct DBanners: View {
     @State var pages: [BannerPage] = []
     @State private var fakePages: [BannerPage] = []
     @State private var currentPage = ""
+
+    public init(pages: [BannerPage]) {
+        self._pages = State(initialValue: pages)
+    }
 
     public var body: some View {
         GeometryReader {

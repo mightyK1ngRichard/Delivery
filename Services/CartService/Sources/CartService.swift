@@ -11,7 +11,7 @@ import CartServiceInterface
 public struct CartServiceImpl {
 
     private let networkClient: AnyNetworkClient
-    private let logger = DLLogger("CartService")
+    private let logger = DLLogger("Cart Service")
 
     public init(networkClient: AnyNetworkClient) {
         self.networkClient = networkClient
@@ -26,38 +26,38 @@ extension CartServiceImpl: AnyCartService {
         let _ = try await networkClient.request(
             "cart/add",
             method: .post,
-            body: .basic([
-                "address_id": body.addressID,
-                "product_id": body.productID,
-                "count": body.count
-            ])
+            options: .init(
+                body: [
+                    "product_id": body.productID,
+                    "count": body.count
+                ],
+                required: [.tokenID, .addressID]
+            )
         )
     }
 
-    public func deleteProductFromBasket(productID: Int, addressID: Int) async throws {
+    public func deleteProductFromBasket(productID: Int) async throws {
         let _ = try await networkClient.request(
             "cart/delete",
             method: .post,
-            body: .basic([
-                "address_id": addressID,
-                "product_id": productID
-            ])
+            options: .init(
+                body: ["product_id": productID],
+                required: [.tokenID, .addressID]
+            )
         )
     }
 
-    public func updateProductCountInBasket(
-        productID: Int,
-        count: Int,
-        addressID: Int
-    ) async throws {
+    public func updateProductCountInBasket(productID: Int, count: Int) async throws {
         let _ = try await networkClient.request(
             "cart/update",
             method: .post,
-            body: .basic([
-                "address_id": addressID,
-                "product_id": productID,
-                "count": count
-            ])
+            options: .init(
+                body: [
+                    "product_id": productID,
+                    "count": count
+                ],
+                required: [.tokenID, .addressID]
+            )
         )
     }
 }

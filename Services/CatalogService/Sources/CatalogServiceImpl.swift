@@ -43,31 +43,24 @@ extension CatalogServiceImpl: AnyCategoryService {
     }
 
     public func forceFetchCategoryProducts(categoryID: Int) async throws -> [CategoryProductEntity] {
-        let data = try await networkClient.request(
+        try await networkClient.request(
             "catalog/products",
             method: .post,
-            body: .basic(["category_id": categoryID])
-        ).data
-
-        do {
-            return try JSONDecoder().decode(CategoryProductsResponse.self, from: data).products
-        } catch {
-            throw NetworkError.decodingFailed(error)
-        }
+            options: .init(
+                body: ["category_id": categoryID],
+                optional: [.tokenID]
+            ),
+            decodeTo: CategoryProductsResponse.self
+        ).model.products
     }
 
     public func forceFetchCategories() async throws -> [CategoryEntity] {
-        let data = try await networkClient.request(
+        try await networkClient.request(
             "catalog/categories",
             method: .post,
-            body: .basic()
-        ).data
-
-        do {
-            return try JSONDecoder().decode([CategoryEntity].self, from: data)
-        } catch {
-            throw NetworkError.decodingFailed(error)
-        }
+            options: .init(optional: [.tokenID]),
+            decodeTo: [CategoryEntity].self
+        ).model
     }
 }
 

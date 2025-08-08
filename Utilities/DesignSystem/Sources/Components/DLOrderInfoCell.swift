@@ -172,7 +172,8 @@ private extension DLOrderInfoCell {
             handlerConfigurations.didTapInfo?()
         } label: {
             HStack {
-                Image(.info).renderingMode(.template)
+                DLIcon.info.image
+                    .renderingMode(.template)
                 Text("Подробнее")
             }
         }
@@ -184,7 +185,7 @@ private extension DLOrderInfoCell {
             handlerConfigurations.didTapReload?()
         } label: {
             HStack(spacing: .SPx2) {
-                Image(.reload)
+                DLIcon.reload.image
                     .frame(width: 16, height: 16)
                 Text("Повторить")
                     .style(size: 16, weight: .semibold, color: Constants.textWhite)

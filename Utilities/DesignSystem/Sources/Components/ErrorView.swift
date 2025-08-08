@@ -7,22 +7,25 @@
 //
 
 import SwiftUI
+import DLCore
 
-struct ErrorView: View {
-    var error: APIError
-    var fetchData: DLVoidBlock?
+public struct ErrorView: View {
 
-    init(error: APIError, fetchData: DLVoidBlock? = nil) {
-        self.error = error
-        self.fetchData = fetchData
+    let title: String
+    let subtitle: String?
+    var handler: DLVoidBlock?
+
+    public init(
+        title: String,
+        subtitle: String? = nil,
+        handler: DLVoidBlock? = nil
+    ) {
+        self.title = title
+        self.subtitle = subtitle
+        self.handler = handler
     }
 
-    init(message: String, fetchData: DLVoidBlock? = nil) {
-        error = .customErrorText(message)
-        self.fetchData = fetchData
-    }
-
-    var body: some View {
+    public var body: some View {
         ErrorView
     }
 }
@@ -33,24 +36,9 @@ private extension ErrorView {
 
     var ErrorView: some View {
         VStack(alignment: .leading, spacing: .SPx4) {
-            switch error {
-            case .invalidURL:
-                ErrorTitle("Неверный URL")
-            case .encodeError:
-                ErrorTitle("Ошибка кодирования")
-            case .invalidResponse:
-                ErrorTitle("Ошибка ответа сервера")
-            case .invalidData:
-                ErrorTitle("Невалидные данные")
-            case let .decodingError(error):
-                ErrorTitle("Ошибка декодирования данных")
-                ErrorText("\(error)")
-            case let .error(error):
-                ErrorTitle("Неизвестная ошибка")
-                ErrorText("\(error)")
-            case let .customErrorText(errorMessage):
-                ErrorTitle("Неверный формат данных")
-                ErrorText(errorMessage)
+            ErrorTitle(title)
+            if let subtitle {
+                ErrorText(subtitle)
             }
 
             Spacer()
@@ -64,7 +52,7 @@ private extension ErrorView {
                         isDisable: false
                     )
                 )
-                if let fetchData {
+                if let handler {
                     DLBasketMakeOrderButton(
                         configuration: .init(
                             state: .default,
@@ -72,14 +60,14 @@ private extension ErrorView {
                             subtitle: "Повторите запрос",
                             isDisable: false
                         ),
-                        didTapButton: fetchData
+                        didTapButton: handler
                     )
                 }
             }
         }
         .padding(.horizontal)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Image(.gradientBG))
+        .background(DLIcon.gradientBG.image)
     }
 
     func ErrorText(_ string: String) -> some View {
@@ -90,13 +78,5 @@ private extension ErrorView {
     func ErrorTitle(_ title: String) -> some View {
         Text(title)
             .style(size: 17, weight: .heavy, color: DLColor<TextPalette>.primary.color)
-    }
-}
-
-// MARK: - Preview
-
-#Preview {
-    ScrollView {
-        ErrorView(message: "Просто какая-то ошибка")
     }
 }

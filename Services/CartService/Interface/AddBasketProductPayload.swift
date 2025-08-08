@@ -5,19 +5,10 @@
 
 public struct AddBasketProductPayload: Sendable {
 
-    public let token: String
-    public let addressID: Int
     public let productID: Int
     public let count: Int
 
-    public init(
-        token: String,
-        addressID: Int,
-        productID: Int,
-        count: Int
-    ) {
-        self.token = token
-        self.addressID = addressID
+    public init(productID: Int, count: Int) {
         self.productID = productID
         self.count = count
     }

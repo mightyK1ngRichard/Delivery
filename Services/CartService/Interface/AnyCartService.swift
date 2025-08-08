@@ -5,6 +5,6 @@
 
 public protocol AnyCartService: Sendable {
     func addProductInBasket(body: AddBasketProductPayload) async throws
-    func updateProductCountInBasket(productID: Int, count: Int, addressID: Int) async throws
-    func deleteProductFromBasket(productID: Int, addressID: Int) async throws
+    func updateProductCountInBasket(productID: Int, count: Int) async throws
+    func deleteProductFromBasket(productID: Int) async throws
 }

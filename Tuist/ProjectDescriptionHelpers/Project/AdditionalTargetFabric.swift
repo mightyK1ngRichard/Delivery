@@ -46,7 +46,41 @@ enum AdditionalTargetFabric {
                 deploymentTargets: TargetSettings.deploymentTestingTargets,
                 dependencies: dependencies
             )
+
+        case let .example(displayName, resources):
+            return makeExampleTarget(
+                target,
+                for: projectName,
+                displayName: displayName,
+                resources: resources
+            )
         }
+    }
+
+    /// Создание таргета для приложения-примера модуля
+    private static func makeExampleTarget(
+        _ target: AdditionalTarget,
+        for moduleName: String,
+        displayName: String?,
+        resources: [String]? = nil
+    ) -> Target {
+        var infoPlist: [String: Plist.Value] = [
+            "UILaunchStoryboardName": "LaunchScreen",
+            "CFBundleDisplayName": .string(moduleName)
+        ]
+
+        if let displayName {
+            infoPlist["CFBundleDisplayName"] = .string(displayName)
+        }
+
+        return makeAdditionalTarget(
+            target,
+            for: moduleName,
+            product: .app,
+            resources: resources,
+            dependencies: [.target(name: moduleName)],
+            infoPlist: infoPlist
+        )
     }
 
     /// Создает дополнительный таргет к модулю.

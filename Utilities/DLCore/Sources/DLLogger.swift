@@ -3,32 +3,37 @@
 // Copyright © 2024 Dostavka24. All rights reserved.
 //
 
-import Foundation
+import OSLog
 
 public final class DLLogger: Sendable {
 
-    let title: String
+    private let title: String
+    private let logger: Logger
 
     public init(_ title: String) {
         self.title = title
+        self.logger = Logger(subsystem: title, category: "info")
     }
 
-    public func info(_ message: Any, function: String = #function, line: Int = #line) {
+    public func info(_ message: Any, line: Int = #line) {
         #if DEBUG
-            print("ℹ️ [ \(title) ]: \(String(describing: function.split(separator: "(").first ?? "")): #\(line): \(message)")
+            let msg = "[\(title)] #\(line) - \(String(describing: message))"
+            logger.info("\(msg, privacy: .public)")
+            print(msg)
         #endif
     }
 
-    public func logEvent(function: String = #function, line: Int = #line) {
+    public func logEvent(line: Int = #line, function: String = #function) {
         #if DEBUG
-            print("[ \(title) ]: \(String(describing: function.split(separator: "(").first ?? ""))")
+            let msg = "[\(title)] Event at \(function) #\(line)"
+            logger.debug("\(msg, privacy: .public)")
         #endif
     }
 
-    public func error(_ message: Any, function: String = #function, line: Int = #line) {
+    public func error(_ message: Any, line: Int = #line, function: String = #function) {
         #if DEBUG
-            print("⛔️ [ \(title) ]: \(String(describing: function.split(separator: "(").first ?? "")): #\(line)")
-            print(message)
+            let msg = "[\(title)] ERROR at \(function):#\(line) - \(String(describing: message))"
+            logger.error("\(msg, privacy: .public)")
         #endif
     }
 }

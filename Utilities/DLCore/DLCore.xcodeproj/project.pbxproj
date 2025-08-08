@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		18EF657BE750E4C28A7B81E5 /* UDKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A00593A6BFA9ED0A6CE10F /* UDKey.swift */; };
 		1F045B0A6423FD991102C6CE /* Cachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220DF39096C7218080DD751D /* Cachable.swift */; };
+		32A68125EF56B6E7335D733E /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73EBB38FD4C72B88E66A4D /* String+Extensions.swift */; };
 		8A44CC16997D46A65E04AF51 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCBE35E220253A3AAD9A193 /* Typealias.swift */; };
 		B8C4F7A60BB1497EB4A951A2 /* CacheStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54528BFCABB78BEA7DD14C22 /* CacheStore.swift */; };
 		BC1BEA0AED5BDAEFF30CF61C /* DLLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F032BEA1B23B95BE14229F0 /* DLLogger.swift */; };
 		DD6FD32FB4CBBA2117597358 /* ObserverTrampoline.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C18F74A651D01F3B391C2F /* ObserverTrampoline.swift */; };
+		DDF98BCD91EBC69FBF51CCBA /* ScreenState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA02B213A1A66794ACF5A39 /* ScreenState.swift */; };
 		F091887D39939B578689C4C7 /* UDStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEF750F94AA4F9B6F874AE1 /* UDStorage.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,8 @@
 		254D25E5728320E369AF7B39 /* DLCore-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DLCore-Info.plist"; sourceTree = "<group>"; };
 		2DF158F7A3379FFC2C0709F1 /* DLCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DLCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54528BFCABB78BEA7DD14C22 /* CacheStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheStore.swift; sourceTree = "<group>"; };
+		7A73EBB38FD4C72B88E66A4D /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		8BA02B213A1A66794ACF5A39 /* ScreenState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenState.swift; sourceTree = "<group>"; };
 		9CCBE35E220253A3AAD9A193 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 		A5C18F74A651D01F3B391C2F /* ObserverTrampoline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObserverTrampoline.swift; sourceTree = "<group>"; };
 		BFEF750F94AA4F9B6F874AE1 /* UDStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDStorage.swift; sourceTree = "<group>"; };
@@ -103,12 +107,22 @@
 			path = Derived;
 			sourceTree = "<group>";
 		};
+		B44C37AF946D1FC039161EFB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7A73EBB38FD4C72B88E66A4D /* String+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D57D429CE1B8AE75277C3BAF /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				8E04DF7D283E5A3055FF5DEA /* Cache */,
+				B44C37AF946D1FC039161EFB /* Extensions */,
 				8645048F742C7C09B6C892B4 /* Storage */,
 				1F032BEA1B23B95BE14229F0 /* DLLogger.swift */,
+				8BA02B213A1A66794ACF5A39 /* ScreenState.swift */,
 				9CCBE35E220253A3AAD9A193 /* Typealias.swift */,
 			);
 			path = Sources;
@@ -195,6 +209,8 @@
 				1F045B0A6423FD991102C6CE /* Cachable.swift in Sources */,
 				B8C4F7A60BB1497EB4A951A2 /* CacheStore.swift in Sources */,
 				BC1BEA0AED5BDAEFF30CF61C /* DLLogger.swift in Sources */,
+				32A68125EF56B6E7335D733E /* String+Extensions.swift in Sources */,
+				DDF98BCD91EBC69FBF51CCBA /* ScreenState.swift in Sources */,
 				DD6FD32FB4CBBA2117597358 /* ObserverTrampoline.swift in Sources */,
 				18EF657BE750E4C28A7B81E5 /* UDKey.swift in Sources */,
 				F091887D39939B578689C4C7 /* UDStorage.swift in Sources */,

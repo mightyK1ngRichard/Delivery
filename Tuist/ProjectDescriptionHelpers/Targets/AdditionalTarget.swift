@@ -14,6 +14,10 @@ extension AdditionalTarget {
         case interface
         case unitTests
         case testing
+        case example(
+            displayName: String? = nil,
+            resources: [String]? = nil
+        )
     }
 }
 
@@ -27,6 +31,8 @@ extension AdditionalTarget.Kind {
             "Testing"
         case .unitTests:
             "UnitTests"
+        case .example:
+            "Example"
         }
     }
 
@@ -41,6 +47,10 @@ extension AdditionalTarget.Kind {
     func makeBundleId(for projectName: String) -> String {
         "\(TargetSettings.mainBundleId).\(projectName.lowercased()).\(name.lowercased())"
     }
+
+    public static var allCases: [Self] {
+        [.interface, .example(), .unitTests, .testing]
+    }
 }
 
 extension AdditionalTarget {
@@ -51,5 +61,16 @@ extension AdditionalTarget {
 
     public static func interface(dependencies: [TargetDependency] = []) -> Self {
         .init(kind: .interface, dependencies: dependencies)
+    }
+
+    public static func example(
+        displayName: String? = nil,
+        resources: [String]? = nil,
+        dependencies: [TargetDependency] = []
+    ) -> AdditionalTarget {
+        AdditionalTarget(
+            kind: .example(displayName: displayName, resources: resources),
+            dependencies: dependencies
+        )
     }
 }

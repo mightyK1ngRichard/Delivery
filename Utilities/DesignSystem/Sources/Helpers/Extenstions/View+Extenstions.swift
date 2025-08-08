@@ -5,6 +5,31 @@
 
 import SwiftUI
 
+struct OnFirstAppearModifier: ViewModifier {
+
+    @State
+    private var firstTime = true
+
+    let perform: () -> Void
+
+    func body(content: Content) -> some View {
+        content
+            .onAppear {
+                guard firstTime else { return }
+                firstTime = false
+                perform()
+            }
+    }
+}
+
+public extension View {
+
+    func onFirstAppear(perform: @escaping () -> Void) -> some View {
+        modifier(OnFirstAppearModifier(perform: perform))
+    }
+}
+
+
 private struct RoundedCorner: Shape {
 
     var radius: CGFloat = .infinity
@@ -41,7 +66,7 @@ extension View {
 extension View {
 
     @ViewBuilder
-    func bindSize(_ size: Binding<CGSize>) -> some View {
+    public func bindSize(_ size: Binding<CGSize>) -> some View {
         if #available(iOS 16.0, *) {
             onGeometryChange(for: CGSize.self) { proxy in
                 proxy.size

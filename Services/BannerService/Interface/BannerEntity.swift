@@ -5,7 +5,7 @@
 
 public struct BannerEntity: Decodable, Sendable {
 
-    let id: Int?
+    public let id: Int?
     let title: String?
     public let image: String?
     let link: String?
