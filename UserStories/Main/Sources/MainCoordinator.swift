@@ -6,6 +6,7 @@
 import SwiftUI
 import DLCore
 import Coordinator
+import SharedUserStories
 
 final class MainCoordinator: Navigatable {
 

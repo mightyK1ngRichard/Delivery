@@ -10,6 +10,7 @@ import BannerServiceInterface
 import PopcatsServiceInterface
 import UserServiceInterface
 import CartServiceInterface
+import SharedUserStories
 
 @MainActor
 enum MainScreenAssembly {

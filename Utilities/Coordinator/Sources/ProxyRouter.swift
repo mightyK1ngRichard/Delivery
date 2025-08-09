@@ -7,7 +7,7 @@ public protocol RouteConvertible: Hashable {
     static func convert<ChildRoute: Hashable>(from route: ChildRoute) -> Self?
 }
 
-public final class ProxyRouter<ParentRoute: Hashable & RouteConvertible, ChildRoute: Hashable>: Router<ChildRoute> {
+public final class ProxyRouter<ParentRoute: Hashable & RouteConvertible & Sendable, ChildRoute: Hashable & Sendable>: Router<ChildRoute>, @unchecked Sendable {
     private let parentRouter: Router<ParentRoute>
 
     public init(parentRouter: Router<ParentRoute>) {

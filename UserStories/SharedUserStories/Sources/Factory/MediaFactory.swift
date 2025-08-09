@@ -5,13 +5,15 @@
 
 import Foundation
 
-protocol AnyMediaFactory {
+public protocol AnyMediaFactory: Sendable {
     func convertImageURL(from urlString: String) -> URL?
 }
 
-struct MediaFactory: AnyMediaFactory {
+public struct MediaFactory: AnyMediaFactory {
 
-    func convertImageURL(from urlString: String) -> URL? {
+    public init() {}
+
+    public func convertImageURL(from urlString: String) -> URL? {
         URL(string: "https://www.dostavka24.net/upload/\(urlString)")
     }
 }

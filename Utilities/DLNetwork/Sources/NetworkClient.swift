@@ -62,7 +62,6 @@ extension NetworkClient: AnyNetworkClient {
                 let data = try await makeRequestBody(options: options)
                 request.httpBody = data
             } catch {
-                logger.error("✗ HTTP \(url) - ошибка кодирования body")
                 throw error
             }
         }

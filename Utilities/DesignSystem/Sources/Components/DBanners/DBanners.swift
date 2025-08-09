@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-public struct BannerPage: Identifiable, Equatable {
+public struct BannerPage: Identifiable, Equatable, Sendable {
 
     public var id: UUID
     let backID: Int

@@ -6,7 +6,7 @@
 import Foundation
 import SwiftUI
 
-enum ProductSection: Identifiable, Hashable, CaseIterable, Comparable {
+public enum ProductSection: Identifiable, Hashable, CaseIterable, Comparable, Sendable {
 
     /// Акции
     case actions
@@ -22,7 +22,7 @@ enum ProductSection: Identifiable, Hashable, CaseIterable, Comparable {
 
 extension ProductSection {
 
-    var id: Int {
+    public var id: Int {
         switch self {
         case .actions:
             return 3
@@ -35,11 +35,11 @@ extension ProductSection {
         }
     }
 
-    static var allCases: [ProductSection] = [
+    public static let allCases: [ProductSection] = [
         .actions, .exclusives, .news, .hits
     ]
 
-    var title: String {
+    public var title: String {
         switch self {
         case .actions:
             return String(localized: "stocks")
@@ -53,7 +53,7 @@ extension ProductSection {
     }
 
     // FIXME: Вынести в ДС + Убрать дублирование кода
-    var backgroundColor: Color {
+    public var backgroundColor: Color {
         switch self {
         case .actions:
             return .purple
@@ -66,7 +66,7 @@ extension ProductSection {
         }
     }
 
-    static func < (lhs: ProductSection, rhs: ProductSection) -> Bool {
+    public static func < (lhs: ProductSection, rhs: ProductSection) -> Bool {
         lhs.id < rhs.id
     }
 }

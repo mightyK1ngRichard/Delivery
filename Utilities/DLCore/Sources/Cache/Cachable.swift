@@ -8,7 +8,10 @@ public protocol Cachable: Sendable {
 
 extension Cachable {
 
-    public func fetchFromStoreOrNetwork<T>(storage: CacheStore<T>, request: () async throws -> T) async throws -> T {
+    public func fetchFromStoreOrNetwork<T>(
+        storage: CacheStore<T>,
+        request: () async throws -> T
+    ) async throws -> T {
         // Извлекаем кэш и флаг необходимости обновления
         let (cache, shouldUpdate) = await storage.value
 

@@ -3,6 +3,8 @@
 //  Copyright © 2025 Dostavka24. All rights reserved.
 //
 
+import SharedUserStories
+
 @MainActor
 protocol MainScreenViewOutput: AnyObject {
     func onFirstAppear()

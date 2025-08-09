@@ -8,10 +8,15 @@
 
 import SwiftUI
 
-struct DLNotification: View {
-    var text: String
+public struct DLNotification: View {
 
-    var body: some View {
+    private let text: String
+
+    public init(text: String) {
+        self.text = text
+    }
+
+    public var body: some View {
         HStack(spacing: 10) {
             DLIcon.warning.image
 
@@ -24,7 +29,7 @@ struct DLNotification: View {
         .background(DLColor<BackgroundPalette>.orange.color, in: .rect(cornerRadius: 16))
     }
 
-    var message: AttributedString {
+    private var message: AttributedString {
         var attributedString = AttributedString(text)
         if let range = attributedString.range(of: "добавить") {
             attributedString[range].foregroundColor = DLColor<TextPalette>.blue.color
@@ -34,8 +39,4 @@ struct DLNotification: View {
         }
         return attributedString
     }
-}
-
-#Preview {
-    DLNotification(text: "Вы должны добавить хотя бы один адрес доставки для оформления заказа.")
 }

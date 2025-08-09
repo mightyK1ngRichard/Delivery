@@ -5,11 +5,11 @@
 
 import Foundation
 
-protocol AnyPriceFactory {
+public protocol AnyPriceFactory: Sendable {
     func convertToPrice(from priceItemString: String?) -> String?
 }
 
-struct PriceFactory: AnyPriceFactory {
+public struct PriceFactory: AnyPriceFactory {
 
     private let priceFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -22,9 +22,11 @@ struct PriceFactory: AnyPriceFactory {
         formatter.locale = Locale(identifier: "ru_RU")
         return formatter
     }()
-    
+
+    public init() {}
+
     /// Конвертируем из DTO в форматированную строку цены.
-    func convertToPrice(from priceItemString: String?) -> String? {
+    public func convertToPrice(from priceItemString: String?) -> String? {
         guard let priceItemString,
               let priceItem = Double(priceItemString),
               let formattedString = priceFormatter.string(from: NSNumber(value: priceItem))

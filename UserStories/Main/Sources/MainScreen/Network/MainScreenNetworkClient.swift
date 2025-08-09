@@ -10,8 +10,9 @@ import BannerServiceInterface
 import PopcatsServiceInterface
 import UserServiceInterface
 import CartServiceInterface
+import SharedUserStories
 
-protocol AnyMainScreenNetworkClient {
+protocol AnyMainScreenNetworkClient: Sendable {
     func fetchProducts() async throws -> [(ProductSection, [ProductEntity])]
     func fetchBanners() async throws -> [BannerEntity]
     func fetchPopCards() async throws -> [PopcatsEntity]

@@ -7,7 +7,7 @@ import SwiftUI
 
 @MainActor
 public protocol Navigatable: Sendable {
-    associatedtype Route: Hashable & Identifiable
+    associatedtype Route: Hashable & Identifiable & Sendable
     associatedtype Content: View
     associatedtype ContentDestination: View
 

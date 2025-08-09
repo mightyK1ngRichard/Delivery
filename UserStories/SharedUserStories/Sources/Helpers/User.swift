@@ -3,6 +3,4 @@
 //  Copyright © 2025 Delivery24. All rights reserved.
 //
 
-struct User {
-    
-}
+public struct User {}

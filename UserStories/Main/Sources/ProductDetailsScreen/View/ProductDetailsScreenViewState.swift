@@ -4,6 +4,7 @@
 //
 
 import SwiftUI
+import SharedUserStories
 
 final class ProductDetailsScreenViewState: ObservableObject {
 

@@ -36,7 +36,7 @@ extension Project {
             name: name,
             organizationName: WorkspaceSettings.organizationName,
             classPrefix: WorkspaceSettings.classPrefix,
-            targets: [target] + additionalTargets.map(\.target),
+            targets: [target] + additionalTargets.map(\.target)
         )
     }
 
@@ -62,6 +62,7 @@ extension Project {
             scripts: scripts,
             dependencies: dependencies,
             settings: Settings.settings(
+                base: .baseTargetSettings,
                 defaultSettings: .recommended(excluding: defaultSettingsExcluding)
             )
         )

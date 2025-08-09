@@ -5,6 +5,7 @@
 
 import Coordinator
 import DLCore
+import SharedUserStories
 
 extension MainCoordinator: MainScreenOutput {
 

@@ -41,6 +41,12 @@
       <FileRef
          location = "group:Main/Main.xcodeproj">
       </FileRef>
+      <FileRef
+         location = "group:Profile/Profile.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:SharedUserStories/SharedUserStories.xcodeproj">
+      </FileRef>
    </Group>
    <Group
       location = "group:Utilities"

@@ -5,6 +5,7 @@
 
 import Foundation
 import DLCore
+import SharedUserStories
 
 final class AllProductsScreenViewModel {
 

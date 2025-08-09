@@ -9,6 +9,7 @@ import DesignSystem
 import SharedContractsInterface
 import BannerServiceInterface
 import PopcatsServiceInterface
+import SharedUserStories
 
 struct MainScreenFactory: AnyMainScreenFactory {
 

@@ -5,9 +5,9 @@
 
 import Foundation
 
-public final class Resolver {
+public final class Resolver: Sendable {
 
-    private static var services: [String: Any] = [:]
+    nonisolated(unsafe) private static var services: [String: Any] = [:]
 
     public static func register<T>(_ type: T.Type, _ service: @escaping () -> T) {
         let key = "\(type)"

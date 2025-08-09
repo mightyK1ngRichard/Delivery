@@ -104,7 +104,8 @@ enum AdditionalTargetFabric {
             infoPlist: infoPlist.flatMap { .extendingDefault(with: $0) } ?? .default,
             sources: "\(folderName)/**",
             resources: .resources(resources, folderName: folderName),
-            dependencies: target.dependencies + dependencies
+            dependencies: target.dependencies + dependencies,
+            settings: .baseSettings()
         )
     }
 }

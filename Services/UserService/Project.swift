@@ -6,7 +6,8 @@ let project = Project.module(
     additionalTargets: [
         .interface(dependencies: [
             .interface(.SharedContracts),
-            .module(.DLCore)
+            .module(.DLCore),
+            .module(.DLNetwork),
         ])
     ],
     dependencies: [

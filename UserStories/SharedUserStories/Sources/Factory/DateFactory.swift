@@ -5,11 +5,11 @@
 
 import Foundation
 
-protocol AnyDateFactory {
+public protocol AnyDateFactory: Sendable {
     func calculateExpirationDate(from expirationDate: String?) -> String?
 }
 
-struct DateFactory: AnyDateFactory {
+public struct DateFactory: AnyDateFactory {
 
     private static let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
@@ -19,7 +19,9 @@ struct DateFactory: AnyDateFactory {
         return dateFormatter
     }()
 
-    func calculateExpirationDate(from expirationDate: String?) -> String? {
+    public init() {}
+
+    public func calculateExpirationDate(from expirationDate: String?) -> String? {
         guard let daysInt = Int(expirationDate ?? String()) else {
             return nil
         }

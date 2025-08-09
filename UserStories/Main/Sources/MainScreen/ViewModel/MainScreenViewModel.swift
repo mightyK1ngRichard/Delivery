@@ -8,6 +8,7 @@ import SwiftUI
 import DLCore
 import SharedContractsInterface
 import DesignSystem
+import SharedUserStories
 
 final class MainScreenViewModel {
 
@@ -112,11 +113,13 @@ extension MainScreenViewModel: MainScreenViewOutput {
     func onTapPlusInBasket(productID: Int, counter: Int, coeff: Int, section: ProductSection) {
         logger.logEvent()
 
-        Task.detached(priority: .high) { [weak self] in
+        let networkClient = self.networkClient
+        let logger = self.logger
+        Task.detached(priority: .high) {
             do {
-                try await self?.networkClient.updateProductCountInBasket(productID: productID, count: counter)
+                try await networkClient.updateProductCountInBasket(productID: productID, count: counter)
             } catch {
-                self?.logger.error(error)
+                logger.error(error)
             }
         }
     }
@@ -124,11 +127,13 @@ extension MainScreenViewModel: MainScreenViewOutput {
     func onTapMinusInBasket(productID: Int, counter: Int, coeff: Int, section: ProductSection) {
         logger.logEvent()
 
-        Task.detached(priority: .high) { [weak self] in
+        let networkClient = self.networkClient
+        let logger = self.logger
+        Task.detached(priority: .high) {
             do {
-                try await self?.networkClient.updateProductCountInBasket(productID: productID, count: counter)
+                try await networkClient.updateProductCountInBasket(productID: productID, count: counter)
             } catch {
-                self?.logger.error(error)
+                logger.error(error)
             }
         }
     }
@@ -144,44 +149,40 @@ extension MainScreenViewModel {
 
         Task {
             do {
-                try await withThrowingTaskGroup(of: (String, Any).self) { group in
-                    // Получаем продукты всех категорий
+                try await withThrowingTaskGroup(of: FetchResult.self) { group in
+                    let networkClient = self.networkClient
+                    let factory = self.factory
+
                     group.addTask {
-                        let sections = try await self.networkClient.fetchProducts()
-                        return ("sections", sections.map { section, products in
-                            return (section, products.compactMap(self.factory.convertToProduct))
+                        let sections = try await networkClient.fetchProducts()
+                        return .sections(sections.map { section, products in
+                            (section, products.compactMap(factory.convertToProduct))
                         })
                     }
 
-                    // Получаем баннеры
                     group.addTask {
-                        let banners = try await self.networkClient.fetchBanners()
-                        return ("banners", banners.compactMap(self.factory.convertToBannerPage))
+                        let banners = try await networkClient.fetchBanners()
+                        return .banners(banners.compactMap(factory.convertToBannerPage))
                     }
 
-                    // Получаем популярные категории
                     group.addTask {
-                        let cards = try await self.networkClient.fetchPopCards()
-                        return ("popcats", cards.compactMap(self.factory.convertToPopcat))
+                        let cards = try await networkClient.fetchPopCards()
+                        return .popcats(cards.compactMap(factory.convertToPopcat))
                     }
 
-                    // Собираем результаты
-                    var results = [String: Any]()
-                    for try await (key, value) in group {
-                        results[key] = value
+                    var sections: [(ProductSection, [Product])] = []
+                    var banners: [BannerPage] = []
+                    var popcats: [Popcat] = []
+
+                    for try await result in group {
+                        switch result {
+                        case .sections(let value): sections = value
+                        case .banners(let value): banners = value
+                        case .popcats(let value): popcats = value
+                        }
                     }
 
-                    // Извлекаем результаты из словаря
-                    guard let sections = results["sections"] as? [(ProductSection, [Product])],
-                          let banners = results["banners"] as? [BannerPage],
-                          let popcats = results["popcats"] as? [Popcat]
-                    else {
-                        assertionFailure("Неожиданный формат результатов")
-                        return
-                    }
-
-                    let sortedSections = sections.sorted { $0.0 > $1.0 }
-                    state.sections = sortedSections
+                    state.sections = sections.sorted { $0.0 > $1.0 }
                     state.banners = banners
                     state.popcats = popcats
                     state.screenState = .content
@@ -192,4 +193,10 @@ extension MainScreenViewModel {
             }
         }
     }
+}
+
+enum FetchResult: Sendable {
+    case sections([(ProductSection, [Product])])
+    case banners([BannerPage])
+    case popcats([Popcat])
 }

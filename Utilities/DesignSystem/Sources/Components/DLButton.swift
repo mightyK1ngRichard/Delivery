@@ -39,8 +39,8 @@ public struct DLButton<
         }
     }
 
-    var configuration: Configuration
-    var action: DLVoidBlock?
+    let configuration: Configuration
+    let action: DLVoidBlock?
 
     public init(
         configuration: Configuration,

@@ -60,4 +60,8 @@ extension DLIcon {
     public var image: Image {
         Image(rawValue, bundle: .module)
     }
+
+    public static func image(resource: String) -> Image {
+        Image(resource, bundle: .module)
+    }
 }

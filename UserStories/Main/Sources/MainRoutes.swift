@@ -3,6 +3,8 @@
 //  Copyright © 2025 Delivery24. All rights reserved.
 //
 
+import SharedUserStories
+
 enum MainRoutes: Hashable, Identifiable {
     case main
     case product(Product)

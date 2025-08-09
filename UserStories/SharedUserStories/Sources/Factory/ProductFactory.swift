@@ -7,7 +7,7 @@ import Foundation
 import SharedContractsInterface
 import DesignSystem
 
-protocol AnyProductFactory {
+public protocol AnyProductFactory: Sendable {
     // MARK: DTO -> Model
     func convertToProduct(from entity: ProductEntity) -> Product?
     // MARK: Model -> DSModel
@@ -15,13 +15,23 @@ protocol AnyProductFactory {
     func covertToTagSection(from model: ProductSection) -> DTagsSection.Section
 }
 
-struct ProductFactory: AnyProductFactory {
+public struct ProductFactory: AnyProductFactory {
 
     let priceFactory: AnyPriceFactory
     let dateFactory: AnyDateFactory
     let mediaFactory: AnyMediaFactory
 
-    func convertToProduct(from entity: ProductEntity) -> Product? {
+    public init(
+        priceFactory: AnyPriceFactory,
+        dateFactory: AnyDateFactory,
+        mediaFactory: AnyMediaFactory
+    ) {
+        self.priceFactory = priceFactory
+        self.dateFactory = dateFactory
+        self.mediaFactory = mediaFactory
+    }
+
+    public func convertToProduct(from entity: ProductEntity) -> Product? {
         guard let id = entity.id,
               let image = entity.image,
               let priceItem = entity.priceItem,
@@ -50,7 +60,7 @@ struct ProductFactory: AnyProductFactory {
         )
     }
 
-    func convertToDProductCard(from model: Product) -> DProductCardModel {
+    public func convertToDProductCard(from model: Product) -> DProductCardModel {
         .init(
             id: model.id,
             imageURL: model.imageURL,
@@ -63,7 +73,7 @@ struct ProductFactory: AnyProductFactory {
         )
     }
 
-    func covertToTagSection(from model: ProductSection) -> DTagsSection.Section {
+    public func covertToTagSection(from model: ProductSection) -> DTagsSection.Section {
         .init(id: model.id, title: model.title, tags: convertToTags(from: model))
     }
 }

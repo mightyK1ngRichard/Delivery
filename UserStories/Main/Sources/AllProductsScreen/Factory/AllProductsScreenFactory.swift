@@ -5,6 +5,7 @@
 
 import DesignSystem
 import Foundation
+import SharedUserStories
 
 protocol AnyAllProductsScreenFactory {
     func convertToDProductCard(from model: Product) -> DProductCardModel

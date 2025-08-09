@@ -33,65 +33,45 @@ extension UserServiceImpl: AnyUserService {
         }
     }
 
-    public func forceFetchProfile() async throws -> UserEntity {
-        let data = try await networkClient.request(
-            "profile/user",
+    public func forceFetchProfile() async throws(NetworkClientError) -> UserEntity {
+        try await networkClient.request(
+            "profile",
             method: .post,
-            options: .init(optional: [.tokenID])
-        ).data
-
-        do {
-            return try JSONDecoder().decode(UserEntity.self, from: data)
-        } catch {
-            throw NetworkError.decodingFailed(error)
-        }
+            options: .init(required: [.tokenID]),
+            decodeTo: UserEntity.self
+        ).model
     }
 
-    public func forceFetchOrders() async throws -> [OrderEntity] {
-        let data = try await networkClient.request(
+    public func forceFetchOrders() async throws(NetworkClientError) -> [OrderEntity] {
+        try await networkClient.request(
             "profile/orders",
             method: .post,
-            options: .init(optional: [.tokenID])
-        ).data
-
-        do {
-            return try JSONDecoder().decode([OrderEntity].self, from: data)
-        } catch {
-            throw NetworkError.decodingFailed(error)
-        }
+            options: .init(optional: [.tokenID]),
+            decodeTo: [OrderEntity].self
+        ).model
     }
 
-    public func forceFetchOrderDetails(orderID: Int) async throws -> OrderDetailEntity {
-        let data = try await networkClient.request(
+    public func forceFetchOrderDetails(orderID: Int) async throws(NetworkClientError) -> OrderDetailEntity {
+        try await networkClient.request(
             "profile/order",
             method: .post,
             options: .init(
                 body: ["order_id": orderID],
                 required: [.tokenID]
-            )
-        ).data
-
-        do {
-            return try JSONDecoder().decode(OrderDetailEntity.self, from: data)
-        } catch {
-            throw NetworkError.decodingFailed(error)
-        }
+            ),
+            decodeTo: OrderDetailEntity.self
+        ).model
     }
 
-    public func forceFetchBasketProducts(addressID: Int) async throws -> [ProductEntity] {
-        let data = try await networkClient.request(
+    public func forceFetchBasketProducts(addressID: Int) async throws(NetworkClientError) -> [ProductEntity] {
+        try await networkClient.request(
             "profile/cart",
             method: .post,
             options: .init(
                 body: ["address_id": addressID],
                 required: [.tokenID]
-            )
-        ).data
-
-        do {
-            return try JSONDecoder().decode([ProductEntity].self, from: data)
-        } catch {
-            throw NetworkError.decodingFailed(error)
-        }
+            ),
+            decodeTo: [ProductEntity].self
+        ).model
     }
 }

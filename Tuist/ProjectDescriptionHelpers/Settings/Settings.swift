@@ -25,5 +25,11 @@ extension SettingsDictionary {
     static var baseTargetSettings: SettingsDictionary {
         SettingsDictionary()
             .swiftVersion(TargetSettings.swiftVersion)
+            .merging([
+                "ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOL_EXTENSIONS": "YES",
+                "ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS": "YES",
+                "DEFINES_MODULE": "NO",
+                "ENABLE_USER_SCRIPT_SANDBOXING": "YES"
+            ])
     }
 }

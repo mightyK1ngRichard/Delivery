@@ -4,6 +4,7 @@
 //
 
 import SwiftUI
+import SharedUserStories
 
 enum AllProductsScreenAssembly {
 

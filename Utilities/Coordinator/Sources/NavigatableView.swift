@@ -36,7 +36,7 @@ public struct NavigatableView<C: Navigatable>: View {
 
 // MARK: - CoordinatorContentWrapper
 
-struct CoordinatorContentWrapper<C: Navigatable>: View, Equatable {
+struct CoordinatorContentWrapper<C: Navigatable>: View, @preconcurrency Equatable {
 
     static func == (lhs: Self, rhs: Self) -> Bool {
         true

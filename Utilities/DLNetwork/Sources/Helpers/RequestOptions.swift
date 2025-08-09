@@ -3,9 +3,9 @@
 //  Copyright © 2025 Dostavka24. All rights reserved.
 //
 
-public struct RequestOptions {
+public struct RequestOptions: Sendable {
 
-    let body: [String: Any]?
+    nonisolated(unsafe) let body: [String: Any]?
     let required: Set<AddionPayload>
     let optional: Set<AddionPayload>
 
@@ -22,7 +22,8 @@ public struct RequestOptions {
 
 // MARK: - AddionPayload
 
-public enum AddionPayload: String {
+public enum AddionPayload: String, Sendable {
+
     case tokenID = "token"
     case addressID = "address_id"
 }

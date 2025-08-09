@@ -31,7 +31,7 @@ extension Project {
             organizationName: WorkspaceSettings.organizationName,
             classPrefix: WorkspaceSettings.classPrefix,
             packages: packages,
-            settings: nil,
+            settings: .baseSettings(),
             targets: targets,
             resourceSynthesizers: resourceSynthesizers
         )
@@ -95,7 +95,7 @@ extension Project {
             dependencies: dependencies + (
                 additionalTargets.contains { $0.kind == .interface } ? [.interface(module)] : []
             ),
-            settings: nil
+            settings: .baseSettings()
         )
     }
 }

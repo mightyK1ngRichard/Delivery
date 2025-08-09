@@ -8,20 +8,30 @@
 
 import SwiftUI
 
-struct DontResultView: View {
+public struct DontResultView: View {
 
-    struct Configuration: Hashable {
+    public struct Configuration: Hashable {
 
-        var resourceName: String
-        var title: String
-        var subtitle: String
+        let resourceName: String
+        let title: String
+        let subtitle: String
+
+        public init(resourceName: String, title: String, subtitle: String) {
+            self.resourceName = resourceName
+            self.title = title
+            self.subtitle = subtitle
+        }
     }
 
-    var configuration: Configuration
+    private let configuration: Configuration
 
-    var body: some View {
+    public init(configuration: Configuration) {
+        self.configuration = configuration
+    }
+
+    public var body: some View {
         VStack(spacing: 16) {
-            Image(configuration.resourceName)
+            Image(configuration.resourceName, bundle: .module)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 40, height: 40)

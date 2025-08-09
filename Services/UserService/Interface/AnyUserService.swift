@@ -5,11 +5,12 @@
 
 import DLCore
 import SharedContractsInterface
+import DLNetwork
 
 public protocol AnyUserService: Cachable {
     func userData() async throws -> UserEntity
-    func forceFetchProfile() async throws -> UserEntity
-    func forceFetchOrders() async throws -> [OrderEntity]
-    func forceFetchOrderDetails(orderID: Int) async throws -> OrderDetailEntity
-    func forceFetchBasketProducts(addressID: Int) async throws -> [ProductEntity]
+    func forceFetchProfile() async throws(NetworkClientError) -> UserEntity
+    func forceFetchOrders() async throws(NetworkClientError) -> [OrderEntity]
+    func forceFetchOrderDetails(orderID: Int) async throws(NetworkClientError) -> OrderDetailEntity
+    func forceFetchBasketProducts(addressID: Int) async throws(NetworkClientError) -> [ProductEntity]
 }

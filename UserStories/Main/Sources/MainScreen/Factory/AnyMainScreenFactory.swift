@@ -7,8 +7,9 @@ import DesignSystem
 import SharedContractsInterface
 import BannerServiceInterface
 import PopcatsServiceInterface
+import SharedUserStories
 
-protocol AnyMainScreenFactory {
+protocol AnyMainScreenFactory: Sendable {
     func convertToProduct(from entity: ProductEntity) -> Product?
     func convertToDProductCard(from model: Product) -> DProductCardModel
     func convertToDCategoryModel(from model: Popcat) -> DCategoryModel

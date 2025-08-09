@@ -5,7 +5,7 @@
 
 import Foundation
 
-public enum NetworkClientError: Error {
+public enum NetworkClientError: Error, Equatable {
 
     case clientError(NetworkError)
     case unownedError(Error)
@@ -32,6 +32,17 @@ extension NetworkClientError: LocalizedError {
             }
         case let .unownedError(error):
             "Неизвестная ошибка: \(error.localizedDescription)"
+        }
+    }
+
+    public static func == (lhs: NetworkClientError, rhs: NetworkClientError) -> Bool {
+        switch (lhs, rhs) {
+        case let (.clientError(lhs), .clientError(rhs)):
+            return lhs == rhs
+        case (.unownedError, .unownedError):
+            return true
+        default:
+            return false
         }
     }
 }

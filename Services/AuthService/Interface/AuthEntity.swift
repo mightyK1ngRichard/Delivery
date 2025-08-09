@@ -3,7 +3,7 @@
 //  Copyright © 2025 Dostavka24. All rights reserved.
 //
 
-public struct AuthEntity: Decodable {
+public struct AuthEntity: Decodable, Sendable {
 
     public let token: String
 }

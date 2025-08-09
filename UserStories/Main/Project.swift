@@ -15,7 +15,8 @@ let project = Project.module(
         .module(.DLNetwork),
         .module(.DesignSystem),
         .module(.Coordinator),
-
+        .module(.SharedUserStories),
+        
         .interface(.ProductService),
         .interface(.BannerService),
         .interface(.UserService),

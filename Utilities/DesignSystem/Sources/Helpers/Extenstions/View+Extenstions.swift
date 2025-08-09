@@ -89,14 +89,14 @@ extension View {
 
 private struct SizePreferenceKey: PreferenceKey {
 
-    static var defaultValue: CGSize = .zero
+    static let defaultValue: CGSize = .zero
     static func reduce(value: inout CGSize, nextValue: () -> CGSize) {}
 }
 
 // MARK: - OffsetKey
 
 struct OffsetKey: PreferenceKey {
-    static var defaultValue: CGRect = .zero
+    static let defaultValue: CGRect = .zero
 
     static func reduce(value: inout CGRect, nextValue: () -> CGRect) {
         value = nextValue()

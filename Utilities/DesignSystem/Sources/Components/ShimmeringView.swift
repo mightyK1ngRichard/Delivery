@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ShimmeringView: View {
+public struct ShimmeringView: View {
     private let colors = [
         Constants.shimmeringColor,
         Color(uiColor: UIColor.systemGray5),
@@ -19,7 +19,9 @@ struct ShimmeringView: View {
     @State private var startPoint = UnitPoint(x: -1.8, y: -1.2)
     @State private var endPoint = UnitPoint(x: 0, y: -0.2)
 
-    var body: some View {
+    public init() {}
+
+    public var body: some View {
         LinearGradient(
             colors: colors,
             startPoint: startPoint,

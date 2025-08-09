@@ -6,18 +6,18 @@
 import SwiftUI
 
 @MainActor
-public class Router<Route: Hashable & Sendable>: ObservableObject, Sendable {
+public class Router<Route: Hashable & Sendable>: ObservableObject, @unchecked Sendable {
 
     @Published
     var navPath: NavigationPath
 
     @Published
     var sheetItem: Route?
-    var onDismissSheet: (@MainActor () -> Void)?
+    var onDismissSheet: (() -> Void)?
 
     @Published
     var fullScreenCoverItem: Route?
-    var onDismissFullScreenCover: (@MainActor () -> Void)?
+    var onDismissFullScreenCover: (() -> Void)?
 
     public init(navPath: NavigationPath = .init()) {
         self.navPath = navPath
