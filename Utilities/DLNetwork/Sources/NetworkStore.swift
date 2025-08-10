@@ -8,9 +8,9 @@ import DLCore
 
 public protocol AnyNetworkStore: Sendable, Actor {
     var token: String? { get }
-    var addressID: String? { get }
+    var addressID: Int? { get }
     func setToken(_ newToken: String)
-    func setAddressID(_ newAdderessID: String)
+    func setAddressID(_ newAdderessID: Int)
 }
 
 public actor NetworkStore: AnyNetworkStore {
@@ -19,9 +19,9 @@ public actor NetworkStore: AnyNetworkStore {
     @UDStorage(.userToken)
     private var _stotedToken: String?
 
-    private var _addressID: String?
+    private var _addressID: Int?
     @UDStorage(.addressID)
-    private var _stotedAddressID: String?
+    private var _stotedAddressID: Int?
 
     public init() {}
 
@@ -34,11 +34,11 @@ public actor NetworkStore: AnyNetworkStore {
         _token = newToken
     }
 
-    public var addressID: String? {
+    public var addressID: Int? {
         _addressID ?? _stotedAddressID
     }
 
-    public func setAddressID(_ newAdderessID: String) {
+    public func setAddressID(_ newAdderessID: Int) {
         _addressID = newAdderessID
         _stotedAddressID = newAdderessID
     }

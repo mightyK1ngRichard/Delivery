@@ -6,13 +6,13 @@
 import Foundation
 import DesignSystem
 
-public struct Category: Identifiable, Sendable {
+public struct CategoryModel: Identifiable, Sendable {
 
     public let id: Int
-    public let imageURL: String
+    public let imageURL: URL?
     public let title: String
 
-    public init(id: Int, imageURL: String, title: String) {
+    public init(id: Int, imageURL: URL?, title: String) {
         self.id = id
         self.imageURL = imageURL
         self.title = title

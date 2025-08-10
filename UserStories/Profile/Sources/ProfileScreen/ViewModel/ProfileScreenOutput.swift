@@ -10,7 +10,7 @@ protocol ProfileScreenOutput: AnyObject {
     func openUserDataScreen()
     func openOrdersScreen()
     func openAddressesScreen()
-    func openProductDetails(product: Product)
+    func openProductDetails(product: ProductModel)
     func openSignInFlow()
     func openSignUpFlow()
     func showAlert(title: String, message: String)

@@ -14,8 +14,13 @@ final class ProfileCoordinator: Navigatable {
     let router: Router<ProfileRoute>
     let logger = DLLogger("Profile Coordinator")
 
+    private var addressCoordinator: AddressCoordinator
+
     init(router: Router<ProfileRoute>) {
         self.router = router
+
+        let proxyRouter = ProxyRouter<ProfileRoute, AddressRoute>(parentRouter: router)
+        addressCoordinator = AddressAssembly.assemble(router: proxyRouter)
     }
 
     func run() -> some View {
@@ -29,6 +34,10 @@ final class ProfileCoordinator: Navigatable {
             ProfileScreenAssembly.assemble(output: self)
         case .orders:
             OrdersScreenAssembly.assemble(output: self)
+        case .userData:
+            UserDataAssembly.assemble(output: self)
+        case let .addressFlow(route):
+            addressCoordinator.destination(route)
         }
     }
 }
@@ -39,6 +48,7 @@ extension ProfileCoordinator: ProfileScreenOutput {
 
     func openUserDataScreen() {
         logger.logEvent()
+        router.push(.userData)
     }
 
     func openOrdersScreen() {
@@ -48,9 +58,10 @@ extension ProfileCoordinator: ProfileScreenOutput {
 
     func openAddressesScreen() {
         logger.logEvent()
+        router.push(.addressFlow(.addressesList))
     }
 
-    func openProductDetails(product: Product) {
+    func openProductDetails(product: ProductModel) {
         logger.logEvent()
     }
 
@@ -78,4 +89,9 @@ extension ProfileCoordinator: OrdersScreenOutput {
     func openOrderDetails(orderID: Int) {
         logger.logEvent()
     }
+}
+
+// MARK: - UserDataScreenOutput
+
+extension ProfileCoordinator: UserDataScreenOutput {
 }

@@ -6,7 +6,7 @@
 import Foundation
 import DesignSystem
 
-public struct Product: Identifiable, Hashable, Sendable {
+public struct ProductModel: Identifiable, Hashable, Sendable {
 
     public let id: Int
     public let imageURL: URL?
@@ -54,7 +54,7 @@ public struct Product: Identifiable, Hashable, Sendable {
 
 // MARK: - Brand
 
-extension Product {
+extension ProductModel {
 
     public struct Brand: Identifiable, Hashable, Sendable {
 

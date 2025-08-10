@@ -80,7 +80,7 @@ extension ProfileViewModel: ProfileScreenViewOuput {
         output?.openSignInFlow()
     }
 
-    func onTapProduct(product: Product) {
+    func onTapProduct(product: ProductModel) {
         logger.logEvent()
         output?.openProductDetails(product: product)
     }

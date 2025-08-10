@@ -9,9 +9,9 @@ import DesignSystem
 
 public protocol AnyProductFactory: Sendable {
     // MARK: DTO -> Model
-    func convertToProduct(from entity: ProductEntity) -> Product?
+    func convertToProduct(from entity: ProductEntity) -> ProductModel?
     // MARK: Model -> DSModel
-    func convertToDProductCard(from model: Product) -> DProductCardModel
+    func convertToDProductCard(from model: ProductModel) -> DProductCardModel
     func covertToTagSection(from model: ProductSection) -> DTagsSection.Section
 }
 
@@ -31,7 +31,7 @@ public struct ProductFactory: AnyProductFactory {
         self.mediaFactory = mediaFactory
     }
 
-    public func convertToProduct(from entity: ProductEntity) -> Product? {
+    public func convertToProduct(from entity: ProductEntity) -> ProductModel? {
         guard let id = entity.id,
               let image = entity.image,
               let priceItem = entity.priceItem,
@@ -60,7 +60,7 @@ public struct ProductFactory: AnyProductFactory {
         )
     }
 
-    public func convertToDProductCard(from model: Product) -> DProductCardModel {
+    public func convertToDProductCard(from model: ProductModel) -> DProductCardModel {
         .init(
             id: model.id,
             imageURL: model.imageURL,
@@ -84,7 +84,7 @@ extension ProductFactory {
 
     // MARK: DTO -> Model
 
-    private func convertToBrand(from entity: ProductEntity.Brand) -> Product.Brand? {
+    private func convertToBrand(from entity: ProductEntity.Brand) -> ProductModel.Brand? {
         guard let id = entity.id, let title = entity.title else {
             return nil
         }

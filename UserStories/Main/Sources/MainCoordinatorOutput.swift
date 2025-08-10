@@ -10,7 +10,7 @@ protocol MainCoordinatorOutput: AnyObject {
     func incrementCartCount()
     func decrementCartCount()
 
-    func addProductToBasket(product: Product, count: Int)
+    func addProductToBasket(product: ProductModel, count: Int)
     func incrementProductCountInBasket(productID: Int, count: Int)
     func decrementProductCountInBasket(productID: Int, count: Int)
 

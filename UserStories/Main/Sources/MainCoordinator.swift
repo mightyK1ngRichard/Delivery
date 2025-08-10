@@ -45,7 +45,7 @@ extension MainCoordinator: ProductDetailsScreenOutput {}
 
 extension MainCoordinator: AllProductsScreenOutput {
 
-    func didTapOpenProuctDetails(with product: Product) {
+    func didTapOpenProuctDetails(with product: ProductModel) {
         logger.logEvent()
         router.push(.product(product))
     }

@@ -34,7 +34,7 @@ final class Delegate: ProfileScreenOutput {
 
     func openAddressesScreen() {}
 
-    func openProductDetails(product: Product) {}
+    func openProductDetails(product: ProductModel) {}
 
     func openSignInFlow() {}
 

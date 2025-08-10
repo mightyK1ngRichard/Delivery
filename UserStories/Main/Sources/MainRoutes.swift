@@ -7,8 +7,8 @@ import SharedUserStories
 
 enum MainRoutes: Hashable, Identifiable {
     case main
-    case product(Product)
-    case lookAll(navigationTitle: String, products: [Product])
+    case product(ProductModel)
+    case lookAll(navigationTitle: String, products: [ProductModel])
 //    case pickAddress(token: String)
 //    case addAddress(token: String)
 

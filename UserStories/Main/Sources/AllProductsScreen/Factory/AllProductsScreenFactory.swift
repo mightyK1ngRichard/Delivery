@@ -8,14 +8,14 @@ import Foundation
 import SharedUserStories
 
 protocol AnyAllProductsScreenFactory {
-    func convertToDProductCard(from model: Product) -> DProductCardModel
+    func convertToDProductCard(from model: ProductModel) -> DProductCardModel
 }
 
 struct AllProductsScreenFactory: AnyAllProductsScreenFactory {
 
     let productFactory: AnyProductFactory
 
-    func convertToDProductCard(from model: Product) -> DProductCardModel {
+    func convertToDProductCard(from model: ProductModel) -> DProductCardModel {
         productFactory.convertToDProductCard(from: model)
     }
 }

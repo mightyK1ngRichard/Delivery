@@ -10,7 +10,7 @@ protocol MainScreenViewOutput: AnyObject {
     func onFirstAppear()
     func onTapReload()
     func onTapSelectAddress()
-    func onTapProductCard(product: Product)
+    func onTapProductCard(product: ProductModel)
     func onTapSectionLookMore(section: ProductSection)
     func onTapPopcatsCell(id: Int, title: String)
     func onTapLike(id: Int, isLike: Bool)

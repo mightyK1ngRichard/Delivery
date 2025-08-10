@@ -8,7 +8,7 @@ import SharedUserStories
 @MainActor
 protocol AllProductsScreenViewOutput {
     func onFirstAppear()
-    func onTapProductCard(for: Product)
+    func onTapProductCard(for: ProductModel)
     func onTapProductLike(productID: Int, isLike: Bool)
     func onTapProductPlus(productID: Int, counter: Int)
     func onTapProductMinus(productID: Int, counter: Int)

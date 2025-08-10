@@ -7,9 +7,9 @@ import Foundation
 
 public struct AddressEntity: Decodable, Sendable {
 
-    let id: Int?
+    public let id: Int?
     let userID: Int?
-    let title: String?
+    public let title: String?
     let city: String?
     let street: String?
     let house: String?
@@ -17,7 +17,7 @@ public struct AddressEntity: Decodable, Sendable {
     let createdAt: String?
     let updatedAt: String?
     let stockID: Int?
-    let isMain: Int?
+    public let isMain: Int?
     let minOrder: Int?
     let minDate: String?
     let minSum: Int?

@@ -70,7 +70,7 @@ extension MainScreenViewModel: MainScreenViewOutput {
 //        output.openPickAddressScreen(token: userToken)
     }
 
-    func onTapProductCard(product: Product) {
+    func onTapProductCard(product: ProductModel) {
         logger.logEvent()
         output?.openProductDetatails(product: product)
     }
@@ -170,9 +170,9 @@ extension MainScreenViewModel {
                         return .popcats(cards.compactMap(factory.convertToPopcat))
                     }
 
-                    var sections: [(ProductSection, [Product])] = []
+                    var sections: [(ProductSection, [ProductModel])] = []
                     var banners: [BannerPage] = []
-                    var popcats: [Popcat] = []
+                    var popcats: [PopcatModel] = []
 
                     for try await result in group {
                         switch result {
@@ -196,7 +196,7 @@ extension MainScreenViewModel {
 }
 
 enum FetchResult: Sendable {
-    case sections([(ProductSection, [Product])])
+    case sections([(ProductSection, [ProductModel])])
     case banners([BannerPage])
-    case popcats([Popcat])
+    case popcats([PopcatModel])
 }

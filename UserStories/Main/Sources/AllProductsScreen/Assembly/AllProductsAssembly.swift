@@ -10,7 +10,7 @@ enum AllProductsScreenAssembly {
 
     @MainActor
     static func assemble(
-        products: [Product],
+        products: [ProductModel],
         navigationTitle: String,
         output: AllProductsScreenOutput
     ) -> some View {

@@ -39,6 +39,9 @@
       location = "group:UserStories"
       name = "UserStories">
       <FileRef
+         location = "group:Category/Category.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:Main/Main.xcodeproj">
       </FileRef>
       <FileRef

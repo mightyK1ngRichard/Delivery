@@ -9,12 +9,12 @@ import SharedUserStories
 final class ProductDetailsScreenViewState: ObservableObject {
 
     @Published
-    var product: Product
+    var product: ProductModel
 
     @Published
     var makeBasketButtonTitle: String?
 
-    init(product: Product) {
+    init(product: ProductModel) {
         self.product = product
     }
 }

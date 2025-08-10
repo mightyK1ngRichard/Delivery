@@ -9,7 +9,7 @@ import SharedUserStories
 enum ProductDetailsAssembly {
 
     @MainActor
-    static func assemble(product: Product, output: ProductDetailsScreenOutput) -> some View {
+    static func assemble(product: ProductModel, output: ProductDetailsScreenOutput) -> some View {
         let state = ProductDetailsScreenViewState(product: product)
         let factory = ProductDetailsScreenFactory()
         let viewModel = ProductDetailsScreenViewModel(

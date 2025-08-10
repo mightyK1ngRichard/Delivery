@@ -9,12 +9,12 @@ import SharedUserStories
 
 extension MainCoordinator: MainScreenOutput {
 
-    func openProductDetatails(product: Product) {
+    func openProductDetatails(product: ProductModel) {
         logger.logEvent()
         router.push(.product(product))
     }
 
-    func openAllProducts(sectionTitle: String, products: [Product]) {
+    func openAllProducts(sectionTitle: String, products: [ProductModel]) {
         logger.logEvent()
         router.push(.lookAll(navigationTitle: sectionTitle, products: products))
     }
@@ -51,7 +51,7 @@ extension MainCoordinator: MainScreenOutput {
         logger.logEvent()
     }
 
-    func addProductToBasket(product: Product, count: Int) {
+    func addProductToBasket(product: ProductModel, count: Int) {
         logger.logEvent()
     }
 

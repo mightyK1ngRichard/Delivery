@@ -31,7 +31,7 @@ extension AllProductsScreenViewModel: AllProductsScreenViewOutput {
         logger.logEvent()
     }
 
-    func onTapProductCard(for product: Product) {
+    func onTapProductCard(for product: ProductModel) {
         logger.logEvent()
         output?.didTapOpenProuctDetails(with: product)
     }

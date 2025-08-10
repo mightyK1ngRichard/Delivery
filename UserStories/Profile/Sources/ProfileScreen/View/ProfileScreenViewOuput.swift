@@ -12,5 +12,5 @@ protocol ProfileScreenViewOuput {
     func onTapMenuCell(_ cell: ProfileScreenViewState.MenuCell)
     func onTapRegistrationButton()
     func onTapSignInButton()
-    func onTapProduct(product: Product)
+    func onTapProduct(product: ProductModel)
 }

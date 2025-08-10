@@ -8,12 +8,12 @@ import SharedUserStories
 
 final class AllProductsScreenViewState: ObservableObject {
 
-    let products: [Product]
+    let products: [ProductModel]
     let navigationTitle: String
     let factory: AnyAllProductsScreenFactory
 
     init(
-        products: [Product],
+        products: [ProductModel],
         navigationTitle: String,
         factory: AnyAllProductsScreenFactory
     ) {

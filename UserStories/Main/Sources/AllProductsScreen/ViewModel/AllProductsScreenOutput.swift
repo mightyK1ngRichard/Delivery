@@ -7,5 +7,5 @@ import SharedUserStories
 
 @MainActor
 protocol AllProductsScreenOutput: AnyObject {
-    func didTapOpenProuctDetails(with product: Product)
+    func didTapOpenProuctDetails(with product: ProductModel)
 }

@@ -11,10 +11,15 @@ import OrderServiceInterface
 public struct OrderServiceImpl {
 
     private let logger = DLLogger("Order Service")
+    private let networkStore: AnyNetworkStore
     private let networkClient: AnyNetworkClient
 
-    public init(networkClient: AnyNetworkClient) {
+    public init(
+        networkClient: AnyNetworkClient,
+        networkStore: AnyNetworkStore
+    ) {
         self.networkClient = networkClient
+        self.networkStore = networkStore
     }
 }
 
@@ -23,17 +28,18 @@ public struct OrderServiceImpl {
 extension OrderServiceImpl: AnyOrderService {
 
     public func forceFetchUserAddresses() async throws -> [AddressEntity] {
-        let data = try await networkClient.request(
+        let model = try await networkClient.request(
             "order/addresses",
             method: .post,
-            options: .init(required: [.tokenID])
-        ).data
+            options: .init(required: [.tokenID]),
+            decodeTo: [AddressEntity].self
+        ).model
 
-        do {
-            return try JSONDecoder().decode([AddressEntity].self, from: data)
-        } catch {
-            throw NetworkError.decodingFailed(error)
+        if let mainAddressID = model.first(where: { $0.isMain == 1 })?.id {
+            await networkStore.setAddressID(mainAddressID)
         }
+
+        return model
     }
 
     public func makeOrder(body: OrderPayload) async throws {
@@ -53,16 +59,11 @@ extension OrderServiceImpl: AnyOrderService {
     }
 
     public func forceFetchUserBonuses() async throws -> Int {
-        let data = try await networkClient.request(
+        try await networkClient.request(
             "order/bonuses",
             method: .post,
-            options: .init(required: [.tokenID])
-        ).data
-
-        do {
-            return try JSONDecoder().decode(Int.self, from: data)
-        } catch {
-            throw NetworkError.decodingFailed(error)
-        }
+            options: .init(required: [.tokenID]),
+            decodeTo: Int.self
+        ).model
     }
 }

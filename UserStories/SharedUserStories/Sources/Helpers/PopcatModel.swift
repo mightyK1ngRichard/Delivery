@@ -5,7 +5,7 @@
 
 import Foundation
 
-public struct Popcat: Identifiable, Hashable, Sendable {
+public struct PopcatModel: Identifiable, Hashable, Sendable {
 
     public let id: Int
     public let title: String

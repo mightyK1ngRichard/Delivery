@@ -6,5 +6,5 @@
 import SharedUserStories
 
 protocol AnyProductDetailsScreenFactory {
-    func makeBasketButtonTitle(from model: Product) -> String
+    func makeBasketButtonTitle(from model: ProductModel) -> String
 }

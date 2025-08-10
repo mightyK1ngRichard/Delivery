@@ -9,15 +9,26 @@
 import SwiftUI
 import DLCore
 
-struct DLCheckbox: View {
-    struct Configuration {
-        var isSelected: Bool
+public struct DLCheckbox: View {
+
+    public struct Configuration {
+
+        let isSelected: Bool
+
+        public init(isSelected: Bool) {
+            self.isSelected = isSelected
+        }
     }
 
-    var configuration: Configuration
-    var action: DLBoolBlock?
+    private let configuration: Configuration
+    private let action: DLBoolBlock?
 
-    var body: some View {
+    public init(configuration: Configuration, action: DLBoolBlock? = nil) {
+        self.configuration = configuration
+        self.action = action
+    }
+
+    public var body: some View {
         Button {
             action?(!configuration.isSelected)
         } label: {

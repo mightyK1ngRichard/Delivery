@@ -18,13 +18,13 @@ final class MainScreenViewState: ObservableObject {
     // MARK: Data
     let tags: [DTagsSection.Section]
     @Published
-    var sections: [(section: ProductSection, products: [Product])] = []
+    var sections: [(section: ProductSection, products: [ProductModel])] = []
     @Published
     var banners: [BannerPage] = []
     @Published
-    var popcats: [Popcat] = []
+    var popcats: [PopcatModel] = []
     @Published
-    var user: User?
+    var user: UserModel?
     @Published
     var lastSelectedSection: String?
 

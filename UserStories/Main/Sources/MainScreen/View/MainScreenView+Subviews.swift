@@ -144,7 +144,7 @@ extension MainScreenView {
 
     func productSectionBlock(
         section: ProductSection,
-        products: [Product],
+        products: [ProductModel],
         action: @escaping DLVoidBlock
     ) -> some View {
         VStack(spacing: 8) {
@@ -167,7 +167,7 @@ extension MainScreenView {
     }
 
     @ViewBuilder
-    func sectionProducts(section: ProductSection, products: [Product]) -> some View {
+    func sectionProducts(section: ProductSection, products: [ProductModel]) -> some View {
         let size = state.size
         let cardWidth = size.width < size.height ? size.width / 2.23 : size.height / 2.23
         let cardHeight = size.width < size.height ? cardWidth * 2.01 : size.height / 1.5
@@ -214,7 +214,7 @@ extension MainScreenView {
 
 extension MainScreenView {
 
-    func productCard(for product: Product, section: ProductSection) -> some View {
+    func productCard(for product: ProductModel, section: ProductSection) -> some View {
         DProductCard(
             product: state.factory.convertToDProductCard(from: product),
             handler: .init(

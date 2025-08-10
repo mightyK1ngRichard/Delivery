@@ -7,8 +7,8 @@ import SharedUserStories
 
 @MainActor
 protocol MainScreenOutput: AnyObject {
-    func openProductDetatails(product: Product)
-    func openAllProducts(sectionTitle: String, products: [Product])
+    func openProductDetatails(product: ProductModel)
+    func openAllProducts(sectionTitle: String, products: [ProductModel])
     func openPopcats(id: Int, title: String)
     func openPickAddressScreen()
     func openAuthScreen()
@@ -19,7 +19,7 @@ protocol MainScreenOutput: AnyObject {
     func incrementCartCount()
     func decrementCartCount()
 
-    func addProductToBasket(product: Product, count: Int)
+    func addProductToBasket(product: ProductModel, count: Int)
     func incrementProductCountInBasket(productID: Int, count: Int)
     func decrementProductCountInBasket(productID: Int, count: Int)
 }

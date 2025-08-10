@@ -43,13 +43,18 @@ extension DLCategoryBlock.Configuration {
 
 public struct DLCategoryBlock: View {
 
-    let configuration: Configuration
-    var didSelectIcon: DLIntBlock
+    private let configuration: Configuration
+    private let didSelectIcon: DLIntBlock
 
     @State
     private var size: CGSize = .zero
     private var height: CGFloat {
         max((size.width - .SPx2 * 2 - .SPx4 * 2) / 3, 0)
+    }
+
+    public init(configuration: Configuration, didSelectIcon: @escaping DLIntBlock) {
+        self.configuration = configuration
+        self.didSelectIcon = didSelectIcon
     }
 
     public var body: some View {

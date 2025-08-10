@@ -13,7 +13,7 @@ final class ProfileScreenViewState: ObservableObject {
     var screenKind: ProfileScreenKind = .screenState(.loading)
 
     @Published
-    var favoriteProducts: [Product] = []
+    var favoriteProducts: [ProductModel] = []
 
     @Published
     var notifications: [OrderValidationNotifications] = []

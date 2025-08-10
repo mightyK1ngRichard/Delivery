@@ -16,11 +16,11 @@ struct MainScreenFactory: AnyMainScreenFactory {
     let mediaFactory: AnyMediaFactory
     let productFactory: AnyProductFactory
 
-    func convertToProduct(from entity: ProductEntity) -> Product? {
+    func convertToProduct(from entity: ProductEntity) -> ProductModel? {
         productFactory.convertToProduct(from: entity)
     }
 
-    func convertToPopcat(from entity: PopcatsEntity) -> Popcat? {
+    func convertToPopcat(from entity: PopcatsEntity) -> PopcatModel? {
         guard let id = entity.id,
               let title = entity.title,
               let urlString = entity.image,
@@ -39,11 +39,11 @@ struct MainScreenFactory: AnyMainScreenFactory {
         return BannerPage(backID: id, url: url)
     }
 
-    func convertToDCategoryModel(from model: Popcat) -> DCategoryModel {
+    func convertToDCategoryModel(from model: PopcatModel) -> DCategoryModel {
         DCategoryModel(id: model.id, imageURL: model.imageURL, title: model.title)
     }
 
-    func convertToDProductCard(from model: Product) -> DProductCardModel {
+    func convertToDProductCard(from model: ProductModel) -> DProductCardModel {
         productFactory.convertToDProductCard(from: model)
     }
 

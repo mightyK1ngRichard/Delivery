@@ -195,7 +195,7 @@ private extension ProfileScreenView {
         title: String,
         iconResource: String,
         didTapTitle: @escaping DLVoidBlock,
-        didTapProduct: @escaping DLGenericBlock<Product>
+        didTapProduct: @escaping DLGenericBlock<ProductModel>
     ) -> some View {
         VStack(spacing: 0) {
             rowTitleView(
@@ -222,7 +222,7 @@ private extension ProfileScreenView {
         }
     }
 
-    func productImage(product: Product) -> some View {
+    func productImage(product: ProductModel) -> some View {
         DLImageView(configuration: .init(
             imageKind: .url(product.imageURL),
             contentMode: .fit

@@ -20,6 +20,8 @@ import ProductServiceInterface
 import ProductService
 import UserServiceInterface
 import UserService
+import CatalogServiceInterface
+import CatalogService
 
 extension Resolver {
 
@@ -45,7 +47,7 @@ extension Resolver {
         }
 
         Resolver.register(AnyOrderService.self) {
-            OrderServiceImpl(networkClient: networkClient)
+            OrderServiceImpl(networkClient: networkClient, networkStore: networkStore)
         }
 
         Resolver.register(AnyPopcatsService.self) {
@@ -58,6 +60,10 @@ extension Resolver {
 
         Resolver.register(AnyUserService.self) {
             UserServiceImpl(networkClient: networkClient)
+        }
+
+        Resolver.register(AnyCategoryService.self) {
+            CatalogServiceImpl(networkClient: networkClient)
         }
     }
 
