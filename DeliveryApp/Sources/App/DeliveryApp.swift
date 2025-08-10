@@ -6,6 +6,7 @@
 import SwiftUI
 import DependencyRegistry
 import MainInterface
+import CatalogInterface
 import Resolver
 
 @main
@@ -42,7 +43,12 @@ enum RootAssembly {
     static func assemble(output: MainCoordinatorOutput) -> some View {
         let state = RootScreenViewState()
         let mainCoordinator = Resolver.resolve(AnyMainAssembly.self).assemble(output: output)
+        let catalogCoordinator = Resolver.resolve(AnyCatalogAssembly.self).assemble()
 
-        return RootScreenView(state: state, mainCoordinator: mainCoordinator)
+        return RootScreenView(
+            state: state,
+            mainCoordinator: mainCoordinator,
+            catalogCoordinator: catalogCoordinator
+        )
     }
 }

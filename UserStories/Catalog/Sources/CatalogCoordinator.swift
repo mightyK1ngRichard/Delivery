@@ -8,8 +8,9 @@ import DLCore
 import Coordinator
 import SharedUserStories
 import MainInterface
+import CatalogInterface
 
-final class CatalogCoordinator: Navigatable {
+final class CatalogCoordinator: Navigatable, AnyCatalogCoordinator {
 
     let router: Router<CatalogRoute>
     let logger = DLLogger("Catalog Coordinator")

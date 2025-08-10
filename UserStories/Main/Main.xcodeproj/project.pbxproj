@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,6 +29,7 @@
 		4563FEB193ABE50EAFE25D9F /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7540C6BB138A94C93AB177 /* MainScreenView.swift */; };
 		488567EBA915988E016DC28E /* MainScreenNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF0AF95D7E09B5AB2636B8C /* MainScreenNetworkClient.swift */; };
 		4A18632D1C2F2BDE098AFD9A /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19067097D5BA2AD281D6637E /* MainCoordinator.swift */; };
+		5197244D5A29B7128B6BDCEC /* CatalogInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C0F6025DE20A5216EE82BA /* CatalogInterface.framework */; };
 		51A9BA7AD1444252C252966A /* DLNetwork.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 048F7A670BA732EEA2973D33 /* DLNetwork.framework */; };
 		5CC5876CF2CA2B9BECBED686 /* Resolver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CBAEF13B16E8F81A10A2D08 /* Resolver.framework */; };
 		5D1B10818B64A6DFC1F1FF44 /* AnyMainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249BBF3292033D92DBCA172D /* AnyMainAssembly.swift */; };
@@ -223,6 +224,7 @@
 		98E4E4EB1B5F707CA6B8413E /* MainAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAssembly.swift; sourceTree = "<group>"; };
 		9D648A14447C887088D198EF /* CatalogService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatalogService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E11738420117498E7B6EBB3 /* Main.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Main.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0C0F6025DE20A5216EE82BA /* CatalogInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatalogInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2A989D1BF7FEA319A8090F3 /* MainScreenViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewState.swift; sourceTree = "<group>"; };
 		A99764D17B59D3DE46D279F5 /* CartServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CartServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB9327A2F5A13129820633F8 /* BannerService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BannerService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -255,6 +257,7 @@
 				368CCB58B109BE4C06481854 /* CartService.framework in Frameworks */,
 				317403EBB80B99AE10C919AF /* CartServiceInterface.framework in Frameworks */,
 				FE698E5CB65989EA3000300A /* Catalog.framework in Frameworks */,
+				5197244D5A29B7128B6BDCEC /* CatalogInterface.framework in Frameworks */,
 				7D1802C7D1D6757DD28FE16E /* CatalogService.framework in Frameworks */,
 				D66D6D7984C918F83D6F7779 /* CatalogServiceInterface.framework in Frameworks */,
 				64474D18A13282F2EFF83104 /* Coordinator.framework in Frameworks */,
@@ -426,6 +429,7 @@
 				8856EA25066F3A9F1AD981FA /* CartService.framework */,
 				A99764D17B59D3DE46D279F5 /* CartServiceInterface.framework */,
 				E768660CEF3D80165691FDB7 /* Catalog.framework */,
+				A0C0F6025DE20A5216EE82BA /* CatalogInterface.framework */,
 				9D648A14447C887088D198EF /* CatalogService.framework */,
 				3CB63D9C69ADF9E2E310390D /* CatalogServiceInterface.framework */,
 				D63884C2B7D3BB702D321698 /* Coordinator.framework */,
@@ -586,6 +590,8 @@
 				CLASSPREFIX = DL;
 				LastUpgradeCheck = 1630;
 				ORGANIZATIONNAME = Delivery24;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = 15A0F45942E7F85D3BB3A1BB /* Build configuration list for PBXProject "Main" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -726,7 +732,10 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
@@ -801,7 +810,10 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
@@ -943,7 +955,10 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;

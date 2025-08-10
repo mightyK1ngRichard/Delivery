@@ -5,12 +5,13 @@
 
 import SharedUserStories
 
-enum CatalogRoute: Identifiable, Hashable {
+public enum CatalogRoute: Identifiable, Hashable {
+
     case main
     case categorySublist(category: CategoryModel)
     case categoryProducts(category: CategoryModel, categories: [CategoryModel])
     case productDetails(product: ProductModel)
     case allProducts(products: [ProductModel], navigationTitle: String)
 
-    var id: Self { self }
+    public var id: Self { self }
 }

@@ -3,10 +3,13 @@
 //  Copyright © 2025 Delivery24. All rights reserved.
 //
 
-enum CatalogCoordinatorAssembly {
+import CatalogInterface
 
-    @MainActor
-    static func assemble() -> CatalogCoordinator {
+public struct CatalogCoordinatorAssembly: AnyCatalogAssembly {
+
+    public init() {}
+
+    public func assemble() -> any AnyCatalogCoordinator {
         CatalogCoordinator(router: .init())
     }
 }

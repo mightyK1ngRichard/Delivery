@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		00CBE03EA7445F57598B36B1 /* DependencyRegistry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA125E68DEA15285346F55BB /* DependencyRegistry.framework */; };
 		09E5EFA9A391FAF2B9F56345 /* CartService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9AC716B376DD602EA3C057 /* CartService.framework */; };
 		0AFD59405E5BDD5B51138325 /* UserServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4FE01012CEFBFA9DE5A5DC /* UserServiceInterface.framework */; };
-		13A8DDF57A70B1E1BD021F2C /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D62231DF34B824567618B /* RootCoordinator.swift */; };
 		146820980F57122819562971 /* DLCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE913FD6A2BE40B667A9418 /* DLCore.framework */; };
 		2651AF58226DC1067DDC6BBD /* RootScreenViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0636C96ACDFE8079294B097 /* RootScreenViewState.swift */; };
 		270EA5CF7245E45E26E955DC /* Main.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8211C0BAE806D52F6C64CBAC /* Main.framework */; };
@@ -28,6 +27,7 @@
 		7C2C00618A7AD263610589D0 /* Profile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E9726A727C069CF77546C1 /* Profile.framework */; };
 		7C9E6B8E483103441203DBD4 /* DLNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCFE7BC76DA49739751F5A1F /* DLNetwork.framework */; };
 		7DE69FBC2C7C5A6C3D4DEA48 /* BannerServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E00C9BB1DFFB04D6694B58AA /* BannerServiceInterface.framework */; };
+		86825E5B8FECB1CB7135E33A /* CatalogInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20F7BF61DB604DEFC4D28D70 /* CatalogInterface.framework */; };
 		871355D1213E011F86AA5E3E /* CartServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC5EE84E21C06BBFCCFAA22 /* CartServiceInterface.framework */; };
 		94ADFA4662AECBD2D946390E /* DeliveryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04274E3E32F05DDADA544176 /* DeliveryApp.swift */; };
 		9A1604955E740B1A933A39A9 /* OrderServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C3D1B94E1BE0B3F6370B34D /* OrderServiceInterface.framework */; };
@@ -78,6 +78,7 @@
 		0D79BE429838D042E9C53454 /* Resolver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Resolver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E9AC716B376DD602EA3C057 /* CartService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CartService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE913FD6A2BE40B667A9418 /* DLCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DLCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		20F7BF61DB604DEFC4D28D70 /* CatalogInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatalogInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27CFD8130A0FCDD7E4738BE9 /* ProductService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProductService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B5705841ACDBD39BD2066FC /* BannerService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BannerService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ECF17242A1EDA80E91F545C /* Coordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Coordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,7 +94,6 @@
 		6B220E65AE5B90D49C2E8D98 /* CatalogService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatalogService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		812A89BC62F616FE2D87821C /* Basket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Basket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8211C0BAE806D52F6C64CBAC /* Main.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Main.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		876D62231DF34B824567618B /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 		8841ADCC868558628B987891 /* DeliveryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeliveryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A4FE01012CEFBFA9DE5A5DC /* UserServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA3BF1707C1B1133E8EFFE5 /* AuthServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +123,7 @@
 				09E5EFA9A391FAF2B9F56345 /* CartService.framework in Frameworks */,
 				871355D1213E011F86AA5E3E /* CartServiceInterface.framework in Frameworks */,
 				4729C94EB47E5557A1A59CB3 /* Catalog.framework in Frameworks */,
+				86825E5B8FECB1CB7135E33A /* CatalogInterface.framework in Frameworks */,
 				66002E023ED31CA79302FF5B /* CatalogService.framework in Frameworks */,
 				B8E1AD438C8CF544FFACCD2E /* CatalogServiceInterface.framework in Frameworks */,
 				A029C919EA29292A203FBB9E /* Coordinator.framework in Frameworks */,
@@ -198,6 +199,7 @@
 				0E9AC716B376DD602EA3C057 /* CartService.framework */,
 				0BC5EE84E21C06BBFCCFAA22 /* CartServiceInterface.framework */,
 				FD1ABB86082B1FAF8926014E /* Catalog.framework */,
+				20F7BF61DB604DEFC4D28D70 /* CatalogInterface.framework */,
 				6B220E65AE5B90D49C2E8D98 /* CatalogService.framework */,
 				B80F5E5D5D0BFC1DDDE2000B /* CatalogServiceInterface.framework */,
 				2ECF17242A1EDA80E91F545C /* Coordinator.framework */,
@@ -238,7 +240,6 @@
 			isa = PBXGroup;
 			children = (
 				4512E0885CC0327B78C1B942 /* View */,
-				876D62231DF34B824567618B /* RootCoordinator.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -301,8 +302,6 @@
 				CLASSPREFIX = DL;
 				LastUpgradeCheck = 1630;
 				ORGANIZATIONNAME = Delivery24;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 914F574E117DF9B00F203F9B /* Build configuration list for PBXProject "DeliveryApp" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -340,7 +339,6 @@
 			files = (
 				94ADFA4662AECBD2D946390E /* DeliveryApp.swift in Sources */,
 				365192259D81CA1D6AD299B7 /* TabBarItem.swift in Sources */,
-				13A8DDF57A70B1E1BD021F2C /* RootCoordinator.swift in Sources */,
 				2651AF58226DC1067DDC6BBD /* RootScreenViewState.swift in Sources */,
 				4B6B12E57C5350C19A789FD0 /* RootView.swift in Sources */,
 			);
@@ -496,10 +494,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-					"$(inherited)",
-					DEBUG,
-				);
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;

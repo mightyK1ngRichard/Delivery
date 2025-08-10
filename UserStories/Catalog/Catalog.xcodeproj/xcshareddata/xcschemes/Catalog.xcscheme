@@ -28,6 +28,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8ECC1D3D960D987222100669"
+               BuildableName = "CatalogInterface.framework"
+               BlueprintName = "CatalogInterface"
+               ReferencedContainer = "container:Catalog.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "148ADFC62526F7E0003FD375"
                BuildableName = "CatalogExample.app"
                BlueprintName = "CatalogExample"

@@ -24,10 +24,12 @@ import CatalogServiceInterface
 import CatalogService
 import MainInterface
 import Main
+import CatalogInterface
+import Catalog
 
 extension Resolver {
 
-    @MainActor
+    @MainActor 
     public static func registerAll() {
         registerUtilities()
         registerServices()
@@ -37,6 +39,7 @@ extension Resolver {
     @MainActor
     private static func registerCoordinators() {
         Resolver.register(AnyMainAssembly.self) { MainAssembly() }
+        Resolver.register(AnyCatalogAssembly.self) { CatalogCoordinatorAssembly() }
     }
 
     private static func registerServices() {

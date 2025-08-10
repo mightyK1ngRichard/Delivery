@@ -7,6 +7,7 @@ import SwiftUI
 import DesignSystem
 import Coordinator
 import MainInterface
+import CatalogInterface
 
 struct RootScreenView: View {
 
@@ -14,14 +15,15 @@ struct RootScreenView: View {
     var state: RootScreenViewState
 
     let mainCoordinator: any AnyMainCoordinator
+    let catalogCoordinator: any AnyCatalogCoordinator
 
     var body: some View {
         TabView(selection: $state.tabItem) {
             NavigatableView(mainCoordinator)
                 .contrasteTintTabItem(type: .house)
 
-//            CoordinatorNavigationView(catalogCoordinator)
-//                .contrasteTintTabItem(type: .catalog)
+            NavigatableView(catalogCoordinator)
+                .contrasteTintTabItem(type: .catalog)
 
 //            if let basketCoordinator {
 //                CoordinatorNavigationView(basketCoordinator)

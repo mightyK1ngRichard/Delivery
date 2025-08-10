@@ -34,6 +34,7 @@ public struct ProductFactory: AnyProductFactory {
     }
 
     public func convertToProduct(from entity: CategoryProductEntity) -> ProductModel? {
+        let realCount = entity.realCount ?? 0
         guard let id = entity.id,
               let image = entity.image,
               let priceItemString = entity.priceItem,
@@ -46,7 +47,6 @@ public struct ProductFactory: AnyProductFactory {
               let packageCount = entity.kolvoUpak,
               let formattedPrice = priceFactory.convertToPrice(from: priceItem),
               let magnifier = entity.coeff,
-              let realCount = entity.realCount,
               let fullPrice = calculateProductFullPrice(itemPrice: priceItem, count: magnifier * realCount)
         else { return nil }
 

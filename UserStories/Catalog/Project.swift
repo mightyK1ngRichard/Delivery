@@ -4,6 +4,10 @@ import ProjectDescriptionHelpers
 let project = Project.module(
     .Catalog,
     additionalTargets: [
+        .interface(dependencies: [
+            .module(.SharedUserStories),
+            .module(.Coordinator)
+        ]),
         .example(dependencies: [
             .module(.Catalog),
             .module(.Coordinator),
