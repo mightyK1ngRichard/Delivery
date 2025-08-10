@@ -13,7 +13,9 @@ extension BasketScreenView {
     @ViewBuilder
     var mainContainer: some View {
         switch state.screenState {
-        case .loading, .content:
+        case .loading:
+            loaderView
+        case .content:
             emptyOrContentView
         case .error:
             ErrorView(title: "Ошибка получения данных", handler: output.onTapReloadButton)
@@ -33,7 +35,6 @@ private extension BasketScreenView {
                 .background {
                     basketIsEmptyView
                 }
-
         } else {
             mainBlockContainer
         }
@@ -41,12 +42,14 @@ private extension BasketScreenView {
 
     var loaderView: some View {
         VStack(spacing: .SPx3) {
-            ForEach(0...10, id: \.self) { _ in
+            ForEach(0..<3, id: \.self) { _ in
                 ShimmeringView()
                     .frame(height: 174)
                     .clipShape(.rect(cornerRadius: 20))
             }
         }
+        .frame(maxHeight: .infinity, alignment: .top)
+        .padding(.horizontal, .SPx4)
     }
 
     var mainBlockContainer: some View {
@@ -92,7 +95,7 @@ private extension BasketScreenView {
                 .frame(height: 174)
                 .contentShape(.rect)
                 .onTapGesture {
-                    output.onTapProduct(productID: product.id)
+                    output.onTapProduct(product: product)
                 }
             }
         }

@@ -4,3 +4,10 @@
 //
 
 import Foundation
+
+@MainActor
+final class RootScreenViewState: ObservableObject {
+
+    @Published
+    var tabItem: TabBarItem = .house
+}

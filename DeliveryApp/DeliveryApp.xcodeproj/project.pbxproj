@@ -7,20 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00CBE03EA7445F57598B36B1 /* DependencyRegistry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA125E68DEA15285346F55BB /* DependencyRegistry.framework */; };
 		09E5EFA9A391FAF2B9F56345 /* CartService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E9AC716B376DD602EA3C057 /* CartService.framework */; };
+		0AFD59405E5BDD5B51138325 /* UserServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4FE01012CEFBFA9DE5A5DC /* UserServiceInterface.framework */; };
+		13A8DDF57A70B1E1BD021F2C /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876D62231DF34B824567618B /* RootCoordinator.swift */; };
 		146820980F57122819562971 /* DLCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AE913FD6A2BE40B667A9418 /* DLCore.framework */; };
+		2651AF58226DC1067DDC6BBD /* RootScreenViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0636C96ACDFE8079294B097 /* RootScreenViewState.swift */; };
+		270EA5CF7245E45E26E955DC /* Main.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8211C0BAE806D52F6C64CBAC /* Main.framework */; };
+		28A9417867C44D4D525238A3 /* DesignSystem_DesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 689D15EA4602DBC5ABC2F6D7 /* DesignSystem_DesignSystem.bundle */; };
 		2ADF0022DDBBD019F747A3B0 /* AuthService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9AB3DE3AC185E8B700CA8BC /* AuthService.framework */; };
-		2DDFF77E7F5C39C267FC3B44 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922E12D6DB73B78800C19838 /* RootView.swift */; };
+		3627CEEAA7575994F9CA2A97 /* PopcatsService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B06BE231DE2B4DC371E1708 /* PopcatsService.framework */; };
+		365192259D81CA1D6AD299B7 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45275C42D8AF8A148081EB7E /* TabBarItem.swift */; };
+		4729C94EB47E5557A1A59CB3 /* Catalog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD1ABB86082B1FAF8926014E /* Catalog.framework */; };
+		4B6B12E57C5350C19A789FD0 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AE61C53E514B3F1CCF84DC /* RootView.swift */; };
+		5530C0EF11EFFDFBFEAF08D1 /* Basket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 812A89BC62F616FE2D87821C /* Basket.framework */; };
+		555994FE6FBF3920CCEE8C7B /* ProductServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1F544548A48947D0EB2A20 /* ProductServiceInterface.framework */; };
+		5CA8BB895E9700696E79F57D /* SharedUserStories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCAB6D94128C54B3113EB5D9 /* SharedUserStories.framework */; };
 		66002E023ED31CA79302FF5B /* CatalogService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B220E65AE5B90D49C2E8D98 /* CatalogService.framework */; };
 		7B53EDA2D1E79993D9530F74 /* AuthServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA3BF1707C1B1133E8EFFE5 /* AuthServiceInterface.framework */; };
+		7C2C00618A7AD263610589D0 /* Profile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E9726A727C069CF77546C1 /* Profile.framework */; };
 		7C9E6B8E483103441203DBD4 /* DLNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCFE7BC76DA49739751F5A1F /* DLNetwork.framework */; };
 		7DE69FBC2C7C5A6C3D4DEA48 /* BannerServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E00C9BB1DFFB04D6694B58AA /* BannerServiceInterface.framework */; };
 		871355D1213E011F86AA5E3E /* CartServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC5EE84E21C06BBFCCFAA22 /* CartServiceInterface.framework */; };
+		94ADFA4662AECBD2D946390E /* DeliveryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04274E3E32F05DDADA544176 /* DeliveryApp.swift */; };
+		9A1604955E740B1A933A39A9 /* OrderServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C3D1B94E1BE0B3F6370B34D /* OrderServiceInterface.framework */; };
+		9D8672307CDF8C7DCBBFFF4A /* MainInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38A33671EE43DDAE044E0360 /* MainInterface.framework */; };
+		A029C919EA29292A203FBB9E /* Coordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ECF17242A1EDA80E91F545C /* Coordinator.framework */; };
+		A3BED945101F366517672D9A /* OrderService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 567A5F30BABF9327AF8A36E4 /* OrderService.framework */; };
+		A77E4BAB342760DFA662E8C0 /* PopcatsServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6276CCEAAB5FCEFE5D08156C /* PopcatsServiceInterface.framework */; };
 		A80AE6C52E5FA05D84F5355B /* BannerService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B5705841ACDBD39BD2066FC /* BannerService.framework */; };
 		B8E1AD438C8CF544FFACCD2E /* CatalogServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80F5E5D5D0BFC1DDDE2000B /* CatalogServiceInterface.framework */; };
+		B8F9B02C953C293E9273CA86 /* UserService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4939BA859218C7B949C6A1E6 /* UserService.framework */; };
+		CC2EAA0DF3B924EE574B58B8 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0692C44F7DFE664C2ABDBB0B /* DesignSystem.framework */; };
+		D1A328B15A4A595A35CE4FB0 /* DesignSystem_DesignSystem.bundle in Dependencies */ = {isa = PBXBuildFile; fileRef = 689D15EA4602DBC5ABC2F6D7 /* DesignSystem_DesignSystem.bundle */; };
+		E751465FAFEE19717D8773D8 /* Resolver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D79BE429838D042E9C53454 /* Resolver.framework */; };
+		FB209037C235CE02B5D3E18B /* ProductService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CFD8130A0FCDD7E4738BE9 /* ProductService.framework */; };
+		FCF027053FB26625F01F48F7 /* ProfileInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0388D5175350B247804CC5AE /* ProfileInterface.framework */; };
+		FCFB65594A2CABFCF2986F87 /* SharedContractsInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25678C722CAAF710E8DF967 /* SharedContractsInterface.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		39D0BC130BE75E61A14F897C /* Dependencies */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstSubfolderSpec = 16;
+			files = (
+				D1A328B15A4A595A35CE4FB0 /* DesignSystem_DesignSystem.bundle in Dependencies */,
+			);
+			name = Dependencies;
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		D6CDDC8C4EF4668B923D98E9 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -34,19 +70,44 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0388D5175350B247804CC5AE /* ProfileInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProfileInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		04274E3E32F05DDADA544176 /* DeliveryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryApp.swift; sourceTree = "<group>"; };
+		05AE61C53E514B3F1CCF84DC /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		0692C44F7DFE664C2ABDBB0B /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BC5EE84E21C06BBFCCFAA22 /* CartServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CartServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D79BE429838D042E9C53454 /* Resolver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Resolver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E9AC716B376DD602EA3C057 /* CartService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CartService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE913FD6A2BE40B667A9418 /* DLCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DLCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		27CFD8130A0FCDD7E4738BE9 /* ProductService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProductService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B5705841ACDBD39BD2066FC /* BannerService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BannerService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2ECF17242A1EDA80E91F545C /* Coordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Coordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30E9726A727C069CF77546C1 /* Profile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Profile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38A33671EE43DDAE044E0360 /* MainInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MainInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45275C42D8AF8A148081EB7E /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		4939BA859218C7B949C6A1E6 /* UserService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C3D1B94E1BE0B3F6370B34D /* OrderServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OrderServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		567A5F30BABF9327AF8A36E4 /* OrderService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OrderService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6276CCEAAB5FCEFE5D08156C /* PopcatsServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopcatsServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		689D15EA4602DBC5ABC2F6D7 /* DesignSystem_DesignSystem.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignSystem_DesignSystem.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B06BE231DE2B4DC371E1708 /* PopcatsService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopcatsService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B220E65AE5B90D49C2E8D98 /* CatalogService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatalogService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		812A89BC62F616FE2D87821C /* Basket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Basket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8211C0BAE806D52F6C64CBAC /* Main.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Main.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		876D62231DF34B824567618B /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 		8841ADCC868558628B987891 /* DeliveryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeliveryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A4FE01012CEFBFA9DE5A5DC /* UserServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA3BF1707C1B1133E8EFFE5 /* AuthServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		922E12D6DB73B78800C19838 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		AAD8C8756799BB2DC63697DF /* DeliveryApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DeliveryApp-Info.plist"; sourceTree = "<group>"; };
 		B80F5E5D5D0BFC1DDDE2000B /* CatalogServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatalogServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCAB6D94128C54B3113EB5D9 /* SharedUserStories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedUserStories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF1F544548A48947D0EB2A20 /* ProductServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProductServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0636C96ACDFE8079294B097 /* RootScreenViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootScreenViewState.swift; sourceTree = "<group>"; };
 		E00C9BB1DFFB04D6694B58AA /* BannerServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BannerServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E25678C722CAAF710E8DF967 /* SharedContractsInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedContractsInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9AB3DE3AC185E8B700CA8BC /* AuthService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA125E68DEA15285346F55BB /* DependencyRegistry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DependencyRegistry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCFE7BC76DA49739751F5A1F /* DLNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DLNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD1ABB86082B1FAF8926014E /* Catalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Catalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,18 +119,46 @@
 				7B53EDA2D1E79993D9530F74 /* AuthServiceInterface.framework in Frameworks */,
 				A80AE6C52E5FA05D84F5355B /* BannerService.framework in Frameworks */,
 				7DE69FBC2C7C5A6C3D4DEA48 /* BannerServiceInterface.framework in Frameworks */,
+				5530C0EF11EFFDFBFEAF08D1 /* Basket.framework in Frameworks */,
 				09E5EFA9A391FAF2B9F56345 /* CartService.framework in Frameworks */,
 				871355D1213E011F86AA5E3E /* CartServiceInterface.framework in Frameworks */,
+				4729C94EB47E5557A1A59CB3 /* Catalog.framework in Frameworks */,
 				66002E023ED31CA79302FF5B /* CatalogService.framework in Frameworks */,
 				B8E1AD438C8CF544FFACCD2E /* CatalogServiceInterface.framework in Frameworks */,
+				A029C919EA29292A203FBB9E /* Coordinator.framework in Frameworks */,
 				146820980F57122819562971 /* DLCore.framework in Frameworks */,
 				7C9E6B8E483103441203DBD4 /* DLNetwork.framework in Frameworks */,
+				00CBE03EA7445F57598B36B1 /* DependencyRegistry.framework in Frameworks */,
+				CC2EAA0DF3B924EE574B58B8 /* DesignSystem.framework in Frameworks */,
+				270EA5CF7245E45E26E955DC /* Main.framework in Frameworks */,
+				9D8672307CDF8C7DCBBFFF4A /* MainInterface.framework in Frameworks */,
+				A3BED945101F366517672D9A /* OrderService.framework in Frameworks */,
+				9A1604955E740B1A933A39A9 /* OrderServiceInterface.framework in Frameworks */,
+				3627CEEAA7575994F9CA2A97 /* PopcatsService.framework in Frameworks */,
+				A77E4BAB342760DFA662E8C0 /* PopcatsServiceInterface.framework in Frameworks */,
+				FB209037C235CE02B5D3E18B /* ProductService.framework in Frameworks */,
+				555994FE6FBF3920CCEE8C7B /* ProductServiceInterface.framework in Frameworks */,
+				7C2C00618A7AD263610589D0 /* Profile.framework in Frameworks */,
+				FCF027053FB26625F01F48F7 /* ProfileInterface.framework in Frameworks */,
+				E751465FAFEE19717D8773D8 /* Resolver.framework in Frameworks */,
+				FCFB65594A2CABFCF2986F87 /* SharedContractsInterface.framework in Frameworks */,
+				5CA8BB895E9700696E79F57D /* SharedUserStories.framework in Frameworks */,
+				B8F9B02C953C293E9273CA86 /* UserService.framework in Frameworks */,
+				0AFD59405E5BDD5B51138325 /* UserServiceInterface.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06439D41DDD6229AE6690E65 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				45275C42D8AF8A148081EB7E /* TabBarItem.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		1823EB0E53D73255E8AC9E8E /* Project */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,9 +171,20 @@
 		43A5776E8DEA3FD5144AB505 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				922E12D6DB73B78800C19838 /* RootView.swift */,
+				D1E21FEFD65B3FEB1A8AAC7B /* App */,
+				06439D41DDD6229AE6690E65 /* Helpers */,
+				C5B1BB6A711053E290E7DF60 /* Root */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		4512E0885CC0327B78C1B942 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D0636C96ACDFE8079294B097 /* RootScreenViewState.swift */,
+				05AE61C53E514B3F1CCF84DC /* RootView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		6409B3C72DFC24CD40DF4DBA /* Products */ = {
@@ -94,13 +194,34 @@
 				8AA3BF1707C1B1133E8EFFE5 /* AuthServiceInterface.framework */,
 				2B5705841ACDBD39BD2066FC /* BannerService.framework */,
 				E00C9BB1DFFB04D6694B58AA /* BannerServiceInterface.framework */,
+				812A89BC62F616FE2D87821C /* Basket.framework */,
 				0E9AC716B376DD602EA3C057 /* CartService.framework */,
 				0BC5EE84E21C06BBFCCFAA22 /* CartServiceInterface.framework */,
+				FD1ABB86082B1FAF8926014E /* Catalog.framework */,
 				6B220E65AE5B90D49C2E8D98 /* CatalogService.framework */,
 				B80F5E5D5D0BFC1DDDE2000B /* CatalogServiceInterface.framework */,
+				2ECF17242A1EDA80E91F545C /* Coordinator.framework */,
 				8841ADCC868558628B987891 /* DeliveryApp.app */,
+				FA125E68DEA15285346F55BB /* DependencyRegistry.framework */,
+				689D15EA4602DBC5ABC2F6D7 /* DesignSystem_DesignSystem.bundle */,
+				0692C44F7DFE664C2ABDBB0B /* DesignSystem.framework */,
 				1AE913FD6A2BE40B667A9418 /* DLCore.framework */,
 				FCFE7BC76DA49739751F5A1F /* DLNetwork.framework */,
+				8211C0BAE806D52F6C64CBAC /* Main.framework */,
+				38A33671EE43DDAE044E0360 /* MainInterface.framework */,
+				567A5F30BABF9327AF8A36E4 /* OrderService.framework */,
+				4C3D1B94E1BE0B3F6370B34D /* OrderServiceInterface.framework */,
+				6B06BE231DE2B4DC371E1708 /* PopcatsService.framework */,
+				6276CCEAAB5FCEFE5D08156C /* PopcatsServiceInterface.framework */,
+				27CFD8130A0FCDD7E4738BE9 /* ProductService.framework */,
+				BF1F544548A48947D0EB2A20 /* ProductServiceInterface.framework */,
+				30E9726A727C069CF77546C1 /* Profile.framework */,
+				0388D5175350B247804CC5AE /* ProfileInterface.framework */,
+				0D79BE429838D042E9C53454 /* Resolver.framework */,
+				E25678C722CAAF710E8DF967 /* SharedContractsInterface.framework */,
+				BCAB6D94128C54B3113EB5D9 /* SharedUserStories.framework */,
+				4939BA859218C7B949C6A1E6 /* UserService.framework */,
+				8A4FE01012CEFBFA9DE5A5DC /* UserServiceInterface.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,12 +234,29 @@
 			path = Derived;
 			sourceTree = "<group>";
 		};
+		C5B1BB6A711053E290E7DF60 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				4512E0885CC0327B78C1B942 /* View */,
+				876D62231DF34B824567618B /* RootCoordinator.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		CCBB818E708415990C89C257 /* InfoPlists */ = {
 			isa = PBXGroup;
 			children = (
 				AAD8C8756799BB2DC63697DF /* DeliveryApp-Info.plist */,
 			);
 			path = InfoPlists;
+			sourceTree = "<group>";
+		};
+		D1E21FEFD65B3FEB1A8AAC7B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				04274E3E32F05DDADA544176 /* DeliveryApp.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 		EB17B16E2A3DE6AC5370FB21 = {
@@ -140,6 +278,7 @@
 				D16BB870A1843A5350020B14 /* Resources */,
 				175B2763D00044D456FB1169 /* Frameworks */,
 				D6CDDC8C4EF4668B923D98E9 /* Embed Frameworks */,
+				39D0BC130BE75E61A14F897C /* Dependencies */,
 			);
 			buildRules = (
 			);
@@ -188,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28A9417867C44D4D525238A3 /* DesignSystem_DesignSystem.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +338,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DDFF77E7F5C39C267FC3B44 /* RootView.swift in Sources */,
+				94ADFA4662AECBD2D946390E /* DeliveryApp.swift in Sources */,
+				365192259D81CA1D6AD299B7 /* TabBarItem.swift in Sources */,
+				13A8DDF57A70B1E1BD021F2C /* RootCoordinator.swift in Sources */,
+				2651AF58226DC1067DDC6BBD /* RootScreenViewState.swift in Sources */,
+				4B6B12E57C5350C19A789FD0 /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

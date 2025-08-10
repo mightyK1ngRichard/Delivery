@@ -3,18 +3,26 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		00501C7F4E8142357A2E7653 /* BasketView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C1B7F2E66382E169EBA764 /* BasketView+Subviews.swift */; };
 		057E3E933ED463515B331BF3 /* CartServiceInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 9C85C8C39A5F5723B9D5BB23 /* CartServiceInterface.framework */; };
+		0652F568E723F7DD20F83640 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3996C8DD93C3270E1C2E3CBE /* OrderModel.swift */; };
 		0A5A01D45C89C734807AA9D8 /* CatalogService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD5C8CB72E53E8C6D44BE2AA /* CatalogService.framework */; };
 		0BA40BE9B1198DF56D584E3C /* PopcatsServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBC2FDECFE2D52D7DFEBA527 /* PopcatsServiceInterface.framework */; };
+		0C0F62BB44CAB1D380A75B80 /* BasketScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AFF6519B8D66225B2C65DE /* BasketScreenFactory.swift */; };
 		0CF6E49CCE7B00C7F9E59698 /* Coordinator.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 10314EA2D50BFC46C5FB904F /* Coordinator.framework */; };
+		0F8B3CF04D2B2199ECD53586 /* FormOrderScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661CD15093FA451B07D687DC /* FormOrderScreenFactory.swift */; };
+		0F9CE9515256ED94AAB3AA6F /* FormOrderScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313E4D84DA6B0F82CEC785E0 /* FormOrderScreenAssembly.swift */; };
+		10D02E51318A0DCD5B8EB3D1 /* FormOrderScreenOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3506EC3E0AF9C496B705307D /* FormOrderScreenOutput.swift */; };
 		1397B22399A2878F4FE9C6C4 /* BasketNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7EE30541EE9B7A5643573B /* BasketNetworkClient.swift */; };
 		2063F5BF598B50E01AF3EBF7 /* UserServiceInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 1BA20E2E814B0F00273FA3E1 /* UserServiceInterface.framework */; };
 		234852132687401DEED8AA42 /* Coordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10314EA2D50BFC46C5FB904F /* Coordinator.framework */; };
+		273D879D3B04108359537592 /* Main.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966405226B3B3B50670C5BD8 /* Main.framework */; };
+		30B71B02001C7EC0DAD3A073 /* BasketViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E4D0FCD941D40661619D3A /* BasketViewState.swift */; };
+		388C71A193704E5BAA6D93AB /* BasketCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999243054F561F859B2373A9 /* BasketCoordinator.swift */; };
 		3A52E09247DDD5C2BE2FB620 /* Basket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6170B0D7BD6D5248B0E51D9C /* Basket.framework */; };
 		3ECD4AB22CA8C245CB372FD3 /* DesignSystem_DesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E0E56CB0211437D9B65D58A2 /* DesignSystem_DesignSystem.bundle */; };
 		3FFE249664C88FAF472B27AF /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60950D2A5A69D92F81D7036B /* DesignSystem.framework */; };
@@ -22,36 +30,44 @@
 		503A89262D2BFCB9D25D09AA /* OrderServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCBF72E217BBDB9A46AB0A58 /* OrderServiceInterface.framework */; };
 		5B7C544357E6BB83001CA577 /* BasketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F77477E7C81F1BCF4B42B6 /* BasketViewModel.swift */; };
 		5B8E74AFF4305CEAA8D2F67A /* BannerService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D2955A949D9E644D12148F /* BannerService.framework */; };
+		5F31FDDFE680B2E33BC6BEFB /* FormOrderScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177EC2817EE0823A7505B00F /* FormOrderScreenViewModel.swift */; };
+		6785DB556BDE0A91F93460C9 /* FormOrderScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F7FD7D45D034E1BE020FBD /* FormOrderScreenViewOutput.swift */; };
 		6AFDF79674D5C3C42C04A0DD /* DLCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A3B255976B2560A41791E6 /* DLCore.framework */; };
 		6FFD6C9F093BF027D6CB526E /* Resolver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78DDD3A0E22DFF6EE8F14577 /* Resolver.framework */; };
 		79D6209E132A140E0F5B9072 /* ProductService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D4F0CCE838B66AE98B933E8 /* ProductService.framework */; };
-		7A135E32E43212A1B885C116 /* BasketViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0673D3DC3BE76A184D80410 /* BasketViewState.swift */; };
+		7A343CCBD3C4FBBED1037F3F /* AnyBasketNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0355B368CCB21E6DC1B11F /* AnyBasketNetworkClient.swift */; };
+		7ABCBD8EEB01F20985BDB5F3 /* FormOrderScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3296BAE7CB04D6E574AEB80A /* FormOrderScreenView.swift */; };
 		7B8AD70CB182003FC4BC835C /* BasketExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F560FF4490160BB9A7357D6E /* BasketExample.swift */; };
 		81F3CD63B63AFEC9F8FE1985 /* OrderService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9067B8A47A9A10CF46C59986 /* OrderService.framework */; };
+		869F8B49F243033B6D0EA5B2 /* BasketScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B07F22A1027373FED2D89AB /* BasketScreenViewOutput.swift */; };
 		8AEC3B7E49767FBBA8765407 /* AuthServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEF22A19712E8D45C19572FE /* AuthServiceInterface.framework */; };
 		8D97A736433229D6F03CBDC2 /* DLNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2627F8B7970ED1D76BE51A92 /* DLNetwork.framework */; };
 		8E288F5DAAF45B7B8BEF9A20 /* ProductServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321CDCE7EA5D5788054DF6E6 /* ProductServiceInterface.framework */; };
+		9AF97014C32F5EF07486AE19 /* ProfileInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 244B1444B0622EAF9B9349B1 /* ProfileInterface.framework */; };
 		9BCE90BDE4F6A306A38D612B /* CartServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C85C8C39A5F5723B9D5BB23 /* CartServiceInterface.framework */; };
+		9C3FD7EDE40AA75B0345DE3C /* MainInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 342989D2F5C252E124719970 /* MainInterface.framework */; };
 		9F0BEE8E3EE337C7A32EB8C3 /* DesignSystem.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 60950D2A5A69D92F81D7036B /* DesignSystem.framework */; };
 		9F8E6175282172AF048E9F20 /* Resolver.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 78DDD3A0E22DFF6EE8F14577 /* Resolver.framework */; };
-		A4ECDD758C3EE359697547C4 /* BasketScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E1CCEAAC11A5F77458F432 /* BasketScreenView.swift */; };
+		A7A9DA38B8FD79C116CDA324 /* AnyBasketScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BA59CA6970BB4F107B030D /* AnyBasketScreenFactory.swift */; };
+		A95A51B819E89C66E0828B5E /* BasketScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4977B84F5EB867668984E246 /* BasketScreenView.swift */; };
 		ADB8EFCACAB4561F6EB458A9 /* CartService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 858C39ACDFE726E1E774A8D7 /* CartService.framework */; };
 		AF4EB6A1F858FAC4DC21C3BD /* AuthService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988C41B81E865AE2199D6B9C /* AuthService.framework */; };
 		B255F6A6C28567F68A20F064 /* SharedContractsInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD63C147FD5662E7ED7E19E /* SharedContractsInterface.framework */; };
-		CE9DFE091018D29BFAD21DE9 /* BasketScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC4A3F78D3B9822944A51EF /* BasketScreenViewOutput.swift */; };
 		D18C878E8856DB2C57645986 /* SharedContractsInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 0DD63C147FD5662E7ED7E19E /* SharedContractsInterface.framework */; };
+		D529EC2ED5532FF298FF9BA8 /* FormOrderScreenViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 369DB76A0A1501D863373DE2 /* FormOrderScreenViewState.swift */; };
 		D5B7E927DCB884F5E2DA2F3F /* SharedUserStories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB820D87EF2EB783D30ED53 /* SharedUserStories.framework */; };
+		D974B22A8FC298978D32C0EE /* BasketScreenOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9493023C05C7DC17CF0DF856 /* BasketScreenOutput.swift */; };
 		D999AAE2ADC009EC25BF64EA /* DLCore.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 77A3B255976B2560A41791E6 /* DLCore.framework */; };
 		DE108F2F4FA6DE14350E6DEF /* SharedUserStories.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 7CB820D87EF2EB783D30ED53 /* SharedUserStories.framework */; };
 		DF12C8913FAA18E4DB01D25F /* PopcatsService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA5F6B55FCF80F1DB35CF9E /* PopcatsService.framework */; };
 		DFDD75395E7B030123432F0E /* BannerServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DDA112DBE296D7173E3827 /* BannerServiceInterface.framework */; };
 		E19731D9AC1145B56E8EF855 /* CatalogServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E293E92F73FFC830A910A977 /* CatalogServiceInterface.framework */; };
 		E2E63B4CB4D2C04C043D4A34 /* DependencyRegistry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DFCC88A3B1377C2FBAE8C47 /* DependencyRegistry.framework */; };
-		E5C4AF1C2E48598400805C19 /* AnyBasketNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C4AF1B2E48598400805C19 /* AnyBasketNetworkClient.swift */; };
+		E42E42BFE91E13C7C952149F /* Profile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC105958EDFDBE0D94D1B33F /* Profile.framework */; };
 		EA21B0E9CFFD7489F543D657 /* UserService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2470A8F21536D47CE3D10D4 /* UserService.framework */; };
 		EA91860A02FDA3712A8DC9F1 /* BasketAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72AB36FFDD52426D2675978 /* BasketAssembly.swift */; };
 		F957CFCF2D809F8DE470031D /* UserServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA20E2E814B0F00273FA3E1 /* UserServiceInterface.framework */; };
-		FD78842D5442CB2E6360BE99 /* BasketScreenOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875C7538D673EC1FDB0050F /* BasketScreenOutput.swift */; };
+		FBBDEE3FD877BA88CEE6EE8E /* Catalog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C0C5C67E7F93D0D60B689E6 /* Catalog.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,46 +135,58 @@
 		0DFCC88A3B1377C2FBAE8C47 /* DependencyRegistry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DependencyRegistry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		10314EA2D50BFC46C5FB904F /* Coordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Coordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		10C1B7F2E66382E169EBA764 /* BasketView+Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BasketView+Subviews.swift"; sourceTree = "<group>"; };
+		177EC2817EE0823A7505B00F /* FormOrderScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormOrderScreenViewModel.swift; sourceTree = "<group>"; };
 		1BA20E2E814B0F00273FA3E1 /* UserServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C0C5C67E7F93D0D60B689E6 /* Catalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Catalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D4F0CCE838B66AE98B933E8 /* ProductService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProductService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		20E1CCEAAC11A5F77458F432 /* BasketScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenView.swift; sourceTree = "<group>"; };
 		22DDA112DBE296D7173E3827 /* BannerServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BannerServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		244B1444B0622EAF9B9349B1 /* ProfileInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProfileInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2627F8B7970ED1D76BE51A92 /* DLNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DLNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		313E4D84DA6B0F82CEC785E0 /* FormOrderScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormOrderScreenAssembly.swift; sourceTree = "<group>"; };
 		321CDCE7EA5D5788054DF6E6 /* ProductServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProductServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4875C7538D673EC1FDB0050F /* BasketScreenOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenOutput.swift; sourceTree = "<group>"; };
+		3296BAE7CB04D6E574AEB80A /* FormOrderScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormOrderScreenView.swift; sourceTree = "<group>"; };
+		342989D2F5C252E124719970 /* MainInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MainInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3506EC3E0AF9C496B705307D /* FormOrderScreenOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormOrderScreenOutput.swift; sourceTree = "<group>"; };
+		369DB76A0A1501D863373DE2 /* FormOrderScreenViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormOrderScreenViewState.swift; sourceTree = "<group>"; };
+		3996C8DD93C3270E1C2E3CBE /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
+		4977B84F5EB867668984E246 /* BasketScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenView.swift; sourceTree = "<group>"; };
+		5A0355B368CCB21E6DC1B11F /* AnyBasketNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyBasketNetworkClient.swift; sourceTree = "<group>"; };
 		5EA5F6B55FCF80F1DB35CF9E /* PopcatsService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopcatsService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60950D2A5A69D92F81D7036B /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6170B0D7BD6D5248B0E51D9C /* Basket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Basket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		661CD15093FA451B07D687DC /* FormOrderScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormOrderScreenFactory.swift; sourceTree = "<group>"; };
 		77A3B255976B2560A41791E6 /* DLCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DLCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78DDD3A0E22DFF6EE8F14577 /* Resolver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Resolver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CB820D87EF2EB783D30ED53 /* SharedUserStories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedUserStories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		858C39ACDFE726E1E774A8D7 /* CartService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CartService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9067B8A47A9A10CF46C59986 /* OrderService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OrderService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9493023C05C7DC17CF0DF856 /* BasketScreenOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenOutput.swift; sourceTree = "<group>"; };
+		966405226B3B3B50670C5BD8 /* Main.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Main.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		988C41B81E865AE2199D6B9C /* AuthService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		999243054F561F859B2373A9 /* BasketCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketCoordinator.swift; sourceTree = "<group>"; };
+		9B07F22A1027373FED2D89AB /* BasketScreenViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenViewOutput.swift; sourceTree = "<group>"; };
 		9C85C8C39A5F5723B9D5BB23 /* CartServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CartServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1D2955A949D9E644D12148F /* BannerService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BannerService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2470A8F21536D47CE3D10D4 /* UserService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AAC4A3F78D3B9822944A51EF /* BasketScreenViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenViewOutput.swift; sourceTree = "<group>"; };
 		AD5C8CB72E53E8C6D44BE2AA /* CatalogService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatalogService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F77477E7C81F1BCF4B42B6 /* BasketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewModel.swift; sourceTree = "<group>"; };
-		D0673D3DC3BE76A184D80410 /* BasketViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewState.swift; sourceTree = "<group>"; };
+		B5BA59CA6970BB4F107B030D /* AnyBasketScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyBasketScreenFactory.swift; sourceTree = "<group>"; };
+		BC105958EDFDBE0D94D1B33F /* Profile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Profile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4AFF6519B8D66225B2C65DE /* BasketScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenFactory.swift; sourceTree = "<group>"; };
 		DCBF72E217BBDB9A46AB0A58 /* OrderServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OrderServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDDD5A1AAFF2993060345632 /* BasketExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasketExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7EE30541EE9B7A5643573B /* BasketNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketNetworkClient.swift; sourceTree = "<group>"; };
 		DEF22A19712E8D45C19572FE /* AuthServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E56CB0211437D9B65D58A2 /* DesignSystem_DesignSystem.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignSystem_DesignSystem.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		E293E92F73FFC830A910A977 /* CatalogServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatalogServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5C4AF1B2E48598400805C19 /* AnyBasketNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyBasketNetworkClient.swift; sourceTree = "<group>"; };
 		E72AB36FFDD52426D2675978 /* BasketAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketAssembly.swift; sourceTree = "<group>"; };
 		ED16E6F9CA4FB7E4DA4829A6 /* Basket-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Basket-Info.plist"; sourceTree = "<group>"; };
 		F3BD1F72442A07E7DEA345A1 /* BasketExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "BasketExample-Info.plist"; sourceTree = "<group>"; };
 		F560FF4490160BB9A7357D6E /* BasketExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketExample.swift; sourceTree = "<group>"; };
+		F9E4D0FCD941D40661619D3A /* BasketViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewState.swift; sourceTree = "<group>"; };
+		F9F7FD7D45D034E1BE020FBD /* FormOrderScreenViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormOrderScreenViewOutput.swift; sourceTree = "<group>"; };
 		FBC2FDECFE2D52D7DFEBA527 /* PopcatsServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopcatsServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		E5C4AF162E484C6300805C19 /* Factory */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Factory; sourceTree = "<group>"; };
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8A4BA3C659D46FCF6D9FA0D5 /* Frameworks */ = {
@@ -179,6 +207,7 @@
 				3A52E09247DDD5C2BE2FB620 /* Basket.framework in Frameworks */,
 				ADB8EFCACAB4561F6EB458A9 /* CartService.framework in Frameworks */,
 				9BCE90BDE4F6A306A38D612B /* CartServiceInterface.framework in Frameworks */,
+				FBBDEE3FD877BA88CEE6EE8E /* Catalog.framework in Frameworks */,
 				0A5A01D45C89C734807AA9D8 /* CatalogService.framework in Frameworks */,
 				E19731D9AC1145B56E8EF855 /* CatalogServiceInterface.framework in Frameworks */,
 				234852132687401DEED8AA42 /* Coordinator.framework in Frameworks */,
@@ -186,12 +215,16 @@
 				8D97A736433229D6F03CBDC2 /* DLNetwork.framework in Frameworks */,
 				E2E63B4CB4D2C04C043D4A34 /* DependencyRegistry.framework in Frameworks */,
 				3FFE249664C88FAF472B27AF /* DesignSystem.framework in Frameworks */,
+				273D879D3B04108359537592 /* Main.framework in Frameworks */,
+				9C3FD7EDE40AA75B0345DE3C /* MainInterface.framework in Frameworks */,
 				81F3CD63B63AFEC9F8FE1985 /* OrderService.framework in Frameworks */,
 				503A89262D2BFCB9D25D09AA /* OrderServiceInterface.framework in Frameworks */,
 				DF12C8913FAA18E4DB01D25F /* PopcatsService.framework in Frameworks */,
 				0BA40BE9B1198DF56D584E3C /* PopcatsServiceInterface.framework in Frameworks */,
 				79D6209E132A140E0F5B9072 /* ProductService.framework in Frameworks */,
 				8E288F5DAAF45B7B8BEF9A20 /* ProductServiceInterface.framework in Frameworks */,
+				E42E42BFE91E13C7C952149F /* Profile.framework in Frameworks */,
+				9AF97014C32F5EF07486AE19 /* ProfileInterface.framework in Frameworks */,
 				6FFD6C9F093BF027D6CB526E /* Resolver.framework in Frameworks */,
 				B255F6A6C28567F68A20F064 /* SharedContractsInterface.framework in Frameworks */,
 				D5B7E927DCB884F5E2DA2F3F /* SharedUserStories.framework in Frameworks */,
@@ -206,10 +239,29 @@
 		0460C15A616150B112C82584 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				E5C4AF1B2E48598400805C19 /* AnyBasketNetworkClient.swift */,
+				5A0355B368CCB21E6DC1B11F /* AnyBasketNetworkClient.swift */,
 				DE7EE30541EE9B7A5643573B /* BasketNetworkClient.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		0911295B29ED4BFF2B808AF6 /* FormOrder */ = {
+			isa = PBXGroup;
+			children = (
+				9B5BDAB795CCAC218F77194E /* Assembly */,
+				65C56C19C1A272BFEB7583FE /* Factory */,
+				BF9309B8A3927566A6A68F51 /* View */,
+				BC5DCE4D403069FBC675F219 /* ViewModel */,
+			);
+			path = FormOrder;
+			sourceTree = "<group>";
+		};
+		183DB6EC9B108EBD330B3CA5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3996C8DD93C3270E1C2E3CBE /* OrderModel.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		29CDA4B8EECEB1591E421670 /* Example */ = {
@@ -224,8 +276,19 @@
 			isa = PBXGroup;
 			children = (
 				A4009B51716D7CD5D9D76902 /* Basket */,
+				0911295B29ED4BFF2B808AF6 /* FormOrder */,
+				183DB6EC9B108EBD330B3CA5 /* Helpers */,
+				999243054F561F859B2373A9 /* BasketCoordinator.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		65C56C19C1A272BFEB7583FE /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				661CD15093FA451B07D687DC /* FormOrderScreenFactory.swift */,
+			);
+			path = Factory;
 			sourceTree = "<group>";
 		};
 		68C62CF403E72F17A798737F /* Project */ = {
@@ -257,10 +320,10 @@
 		81D7FA35D251811250545340 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				20E1CCEAAC11A5F77458F432 /* BasketScreenView.swift */,
+				4977B84F5EB867668984E246 /* BasketScreenView.swift */,
+				9B07F22A1027373FED2D89AB /* BasketScreenViewOutput.swift */,
 				10C1B7F2E66382E169EBA764 /* BasketView+Subviews.swift */,
-				AAC4A3F78D3B9822944A51EF /* BasketScreenViewOutput.swift */,
-				D0673D3DC3BE76A184D80410 /* BasketViewState.swift */,
+				F9E4D0FCD941D40661619D3A /* BasketViewState.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -276,6 +339,7 @@
 				DDDD5A1AAFF2993060345632 /* BasketExample.app */,
 				858C39ACDFE726E1E774A8D7 /* CartService.framework */,
 				9C85C8C39A5F5723B9D5BB23 /* CartServiceInterface.framework */,
+				1C0C5C67E7F93D0D60B689E6 /* Catalog.framework */,
 				AD5C8CB72E53E8C6D44BE2AA /* CatalogService.framework */,
 				E293E92F73FFC830A910A977 /* CatalogServiceInterface.framework */,
 				10314EA2D50BFC46C5FB904F /* Coordinator.framework */,
@@ -284,12 +348,16 @@
 				60950D2A5A69D92F81D7036B /* DesignSystem.framework */,
 				77A3B255976B2560A41791E6 /* DLCore.framework */,
 				2627F8B7970ED1D76BE51A92 /* DLNetwork.framework */,
+				966405226B3B3B50670C5BD8 /* Main.framework */,
+				342989D2F5C252E124719970 /* MainInterface.framework */,
 				9067B8A47A9A10CF46C59986 /* OrderService.framework */,
 				DCBF72E217BBDB9A46AB0A58 /* OrderServiceInterface.framework */,
 				5EA5F6B55FCF80F1DB35CF9E /* PopcatsService.framework */,
 				FBC2FDECFE2D52D7DFEBA527 /* PopcatsServiceInterface.framework */,
 				1D4F0CCE838B66AE98B933E8 /* ProductService.framework */,
 				321CDCE7EA5D5788054DF6E6 /* ProductServiceInterface.framework */,
+				BC105958EDFDBE0D94D1B33F /* Profile.framework */,
+				244B1444B0622EAF9B9349B1 /* ProfileInterface.framework */,
 				78DDD3A0E22DFF6EE8F14577 /* Resolver.framework */,
 				0DD63C147FD5662E7ED7E19E /* SharedContractsInterface.framework */,
 				7CB820D87EF2EB783D30ED53 /* SharedUserStories.framework */,
@@ -302,10 +370,18 @@
 		889E4D0E9ABF7AE3C4F623BD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				4875C7538D673EC1FDB0050F /* BasketScreenOutput.swift */,
+				9493023C05C7DC17CF0DF856 /* BasketScreenOutput.swift */,
 				B3F77477E7C81F1BCF4B42B6 /* BasketViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9B5BDAB795CCAC218F77194E /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				313E4D84DA6B0F82CEC785E0 /* FormOrderScreenAssembly.swift */,
+			);
+			path = Assembly;
 			sourceTree = "<group>";
 		};
 		A14CE6FEFF866A4887C54FB7 = {
@@ -319,13 +395,32 @@
 		A4009B51716D7CD5D9D76902 /* Basket */ = {
 			isa = PBXGroup;
 			children = (
-				E5C4AF162E484C6300805C19 /* Factory */,
 				7BB5FE8FCB482DDC5732D84B /* Assembly */,
+				D9E9BA6F305441C197BC0CE7 /* Factory */,
 				0460C15A616150B112C82584 /* Network */,
 				81D7FA35D251811250545340 /* View */,
 				889E4D0E9ABF7AE3C4F623BD /* ViewModel */,
 			);
 			path = Basket;
+			sourceTree = "<group>";
+		};
+		BC5DCE4D403069FBC675F219 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3506EC3E0AF9C496B705307D /* FormOrderScreenOutput.swift */,
+				177EC2817EE0823A7505B00F /* FormOrderScreenViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BF9309B8A3927566A6A68F51 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3296BAE7CB04D6E574AEB80A /* FormOrderScreenView.swift */,
+				F9F7FD7D45D034E1BE020FBD /* FormOrderScreenViewOutput.swift */,
+				369DB76A0A1501D863373DE2 /* FormOrderScreenViewState.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		C1AEB577D06293A8925FA4BF /* InfoPlists */ = {
@@ -335,6 +430,15 @@
 				F3BD1F72442A07E7DEA345A1 /* BasketExample-Info.plist */,
 			);
 			path = InfoPlists;
+			sourceTree = "<group>";
+		};
+		D9E9BA6F305441C197BC0CE7 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				B5BA59CA6970BB4F107B030D /* AnyBasketScreenFactory.swift */,
+				C4AFF6519B8D66225B2C65DE /* BasketScreenFactory.swift */,
+			);
+			path = Factory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,9 +480,6 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				E5C4AF162E484C6300805C19 /* Factory */,
-			);
 			name = Basket;
 			packageProductDependencies = (
 			);
@@ -396,6 +497,8 @@
 				CLASSPREFIX = DL;
 				LastUpgradeCheck = 1630;
 				ORGANIZATIONNAME = Delivery24;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = 08394724006F414453F48862 /* Build configuration list for PBXProject "Basket" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -440,14 +543,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA91860A02FDA3712A8DC9F1 /* BasketAssembly.swift in Sources */,
-				E5C4AF1C2E48598400805C19 /* AnyBasketNetworkClient.swift in Sources */,
+				A7A9DA38B8FD79C116CDA324 /* AnyBasketScreenFactory.swift in Sources */,
+				0C0F62BB44CAB1D380A75B80 /* BasketScreenFactory.swift in Sources */,
+				7A343CCBD3C4FBBED1037F3F /* AnyBasketNetworkClient.swift in Sources */,
 				1397B22399A2878F4FE9C6C4 /* BasketNetworkClient.swift in Sources */,
+				A95A51B819E89C66E0828B5E /* BasketScreenView.swift in Sources */,
+				869F8B49F243033B6D0EA5B2 /* BasketScreenViewOutput.swift in Sources */,
 				00501C7F4E8142357A2E7653 /* BasketView+Subviews.swift in Sources */,
-				A4ECDD758C3EE359697547C4 /* BasketScreenView.swift in Sources */,
-				CE9DFE091018D29BFAD21DE9 /* BasketScreenViewOutput.swift in Sources */,
-				7A135E32E43212A1B885C116 /* BasketViewState.swift in Sources */,
-				FD78842D5442CB2E6360BE99 /* BasketScreenOutput.swift in Sources */,
+				30B71B02001C7EC0DAD3A073 /* BasketViewState.swift in Sources */,
+				D974B22A8FC298978D32C0EE /* BasketScreenOutput.swift in Sources */,
 				5B7C544357E6BB83001CA577 /* BasketViewModel.swift in Sources */,
+				388C71A193704E5BAA6D93AB /* BasketCoordinator.swift in Sources */,
+				0F9CE9515256ED94AAB3AA6F /* FormOrderScreenAssembly.swift in Sources */,
+				0F8B3CF04D2B2199ECD53586 /* FormOrderScreenFactory.swift in Sources */,
+				7ABCBD8EEB01F20985BDB5F3 /* FormOrderScreenView.swift in Sources */,
+				6785DB556BDE0A91F93460C9 /* FormOrderScreenViewOutput.swift in Sources */,
+				D529EC2ED5532FF298FF9BA8 /* FormOrderScreenViewState.swift in Sources */,
+				10D02E51318A0DCD5B8EB3D1 /* FormOrderScreenOutput.swift in Sources */,
+				5F31FDDFE680B2E33BC6BEFB /* FormOrderScreenViewModel.swift in Sources */,
+				0652F568E723F7DD20F83640 /* OrderModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,7 +652,10 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
@@ -630,7 +747,10 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;

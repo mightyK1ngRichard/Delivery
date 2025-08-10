@@ -17,6 +17,7 @@ final class BasketViewModel {
     private weak var output: BasketScreenOutput?
 
     private let logger = DLLogger("Basket Screen View Model")
+
     @MainActor
     private var totalPrice = 0.0
     private let minOrderPrice: MinOrderPrice
@@ -59,9 +60,9 @@ extension BasketViewModel: BasketScreenViewOutput {
         fetchData()
     }
 
-    func onTapProduct(productID: Int) {
+    func onTapProduct(product: ProductModel) {
         logger.logEvent()
-        output?.basketScreenDidOpenProductDetails(productID: productID)
+        output?.basketScreenDidOpenProductDetails(product: product)
     }
 
     func onTapOpenCatalog() {
@@ -71,7 +72,16 @@ extension BasketViewModel: BasketScreenViewOutput {
 
     func onTapMakeOrderButton() {
         logger.logEvent()
-        output?.basketScreenDidOpenMakeOrderScreen(products: state.products)
+        
+        let orderModel = OrderModel(
+            totalAmount: .init(price: totalPrice, formatedPrice: state.amountInfo.resultSumTitle),
+            products: state.products,
+            includedBonuses: 0,
+            paymentKind: .cash,
+            deliveryDate: factory.deliveryDateTitle(),
+            deliveryPrice: 0
+        )
+        output?.basketScreenDidOpenMakeOrderScreen(orderModel: orderModel)
     }
 
     func onTapPlus(product: ProductModel, counter: Int) {
@@ -85,16 +95,18 @@ extension BasketViewModel: BasketScreenViewOutput {
         }
 
         // Обновляем карточку продукта
-        let product = state.products[index]
+        var updatedProduct = product
         let newFullPrice = calculateNewProductFullPrice(for: product.itemPrice.price, counter: counter)
-        state.products[index].fullPrice = newFullPrice
+        updatedProduct.fullPrice = newFullPrice
+        updatedProduct.count += 1
+        state.products[index] = updatedProduct
 
         // Обновляем общий счёт
         totalPrice += newFullPrice.price - product.fullPrice.price
         updateResultSum()
 
         // Запрос на обновление счётчика
-        updateProductCount(productID: product.id, newCount: counter)
+        updateProductCount(productID: updatedProduct.id, newCount: updatedProduct.count)
     }
 
     func onTapMinus(product: ProductModel, counter: Int) {
@@ -108,16 +120,18 @@ extension BasketViewModel: BasketScreenViewOutput {
         }
 
         // Обновляем карточку продукта
-        let product = state.products[index]
+        var updatedProduct = product
         let newFullPrice = calculateNewProductFullPrice(for: product.itemPrice.price, counter: counter)
-        state.products[index].fullPrice = newFullPrice
+        updatedProduct.fullPrice = newFullPrice
+        updatedProduct.count -= 1
+        state.products[index] = updatedProduct
 
         // Обновляем общий счёт
         totalPrice += newFullPrice.price - product.fullPrice.price
         updateResultSum()
 
         // Запрос на обновление счётчика
-        updateProductCount(productID: product.id, newCount: counter)
+        updateProductCount(productID: updatedProduct.id, newCount: updatedProduct.count)
     }
 
     func onTapLike(productID: Int, isSelected: Bool) {
@@ -194,15 +208,6 @@ extension BasketViewModel {
     @MainActor
     private func updateNotificationsIfNeeded() {
         // Логика проверки телефона, email и адреса
-
-//        if addressID == nil {
-//            guard !state.notifications.contains(.needAddress) else {
-//                return
-//            }
-//            state.notifications.append(.needAddress)
-//        } else if let index = state.notifications.firstIndex(where: { $0 == .needAddress }) {
-//            state.notifications.remove(at: index)
-//        }
     }
 
     private func calculateNewProductFullPrice(for itemPrice: Double, counter: Int) -> ProductModel.Price {

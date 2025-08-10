@@ -30,7 +30,7 @@ public struct ProductEntity: Decodable, Sendable {
     let newYearFlag, quantity2, countryID: Int?
     let brandTitle: String?
     let whishlistFlag: Bool?
-    let realCount: Int?
+    public let realCount: Int?
     public let brand: Brand?
 
     public init(

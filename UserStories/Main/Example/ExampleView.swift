@@ -7,7 +7,7 @@ import SwiftUI
 import Resolver
 import DependencyRegistry
 import Coordinator
-@testable import Main
+import MainInterface
 
 @main
 struct ExampleView: App {
@@ -16,13 +16,29 @@ struct ExampleView: App {
         Resolver.registerAll()
     }
 
+    let delegte = Delegate()
+
     var body: some Scene {
         WindowGroup {
-            NavigatableView(coordinator: MainAssembly.assemble())
+            let coordinator = Resolver.resolve(AnyMainAssembly.self).assemble(output: delegte)
+            NavigatableView(coordinator: coordinator)
         }
     }
 }
 
 extension ExampleView {
 
+    final class Delegate: MainCoordinatorOutput {
+        func incrementCartCount() {
+
+        }
+
+        func decrementCartCount() {
+
+        }
+
+        func openAuthScreen() {
+
+        }
+    }
 }

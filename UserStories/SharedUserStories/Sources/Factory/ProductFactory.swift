@@ -46,7 +46,8 @@ public struct ProductFactory: AnyProductFactory {
               let packageCount = entity.kolvoUpak,
               let formattedPrice = priceFactory.convertToPrice(from: priceItem),
               let magnifier = entity.coeff,
-              let fullPrice = calculateProductFullPrice(itemPrice: priceItem, count: magnifier)
+              let realCount = entity.realCount,
+              let fullPrice = calculateProductFullPrice(itemPrice: priceItem, count: magnifier * realCount)
         else { return nil }
 
         return .init(
@@ -57,15 +58,17 @@ public struct ProductFactory: AnyProductFactory {
             description: description,
             tags: productTags(from: entity),
             brand: brand,
-            cashback: String(cashback),
+            cashback: cashback,
             packageCount: .init(count: packageCount, formattedCountTile: "\(packageCount) шт."),
             formattedExpirationDate: formattedExpirationDate,
+            count: realCount,
             magnifier: magnifier,
             fullPrice: fullPrice
         )
     }
 
     public func convertToProduct(from entity: ProductEntity) -> ProductModel? {
+        let realCount = entity.realCount ?? 0
         guard let id = entity.id,
               let image = entity.image,
               let priceItemString = entity.priceItem,
@@ -75,7 +78,7 @@ public struct ProductFactory: AnyProductFactory {
               let packageCount = entity.kolvoUpak,
               let formattedPrice = priceFactory.convertToPrice(from: priceItem),
               let magnifier = entity.coeff,
-              let fullPrice = calculateProductFullPrice(itemPrice: priceItem, count: magnifier)
+              let fullPrice = calculateProductFullPrice(itemPrice: priceItem, count: magnifier * realCount)
         else { return nil }
 
         var brand: ProductModel.Brand?
@@ -91,9 +94,10 @@ public struct ProductFactory: AnyProductFactory {
             description: description,
             tags: productTags(from: entity),
             brand: brand,
-            cashback: entity.cashback ?? "0",
+            cashback: Double(entity.cashback ?? "") ?? 0,
             packageCount: .init(count: packageCount, formattedCountTile: "\(packageCount) шт."),
             formattedExpirationDate: formattedExpirationDate,
+            count: realCount,
             magnifier: magnifier,
             fullPrice: fullPrice
         )

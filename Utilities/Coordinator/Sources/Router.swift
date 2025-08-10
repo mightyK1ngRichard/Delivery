@@ -6,7 +6,7 @@
 import SwiftUI
 
 @MainActor
-public class Router<Route: Hashable & Sendable>: ObservableObject, @unchecked Sendable {
+public class Router<Route: Hashable>: ObservableObject, @unchecked Sendable {
 
     @Published
     var navPath: NavigationPath

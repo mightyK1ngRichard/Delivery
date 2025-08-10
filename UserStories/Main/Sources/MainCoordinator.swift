@@ -7,14 +7,18 @@ import SwiftUI
 import DLCore
 import Coordinator
 import SharedUserStories
+import MainInterface
 
-final class MainCoordinator: Navigatable {
+final class MainCoordinator: Navigatable, AnyMainCoordinator {
 
-    let router: Router<MainRoutes>
+    let router: Router<MainRoute>
     let logger = DLLogger("Main Coordinator")
+    private weak var output: MainCoordinatorOutput?
 
-    init(router: Router<MainRoutes>) {
+    @MainActor
+    init(router: Router<MainRoute>, output: MainCoordinatorOutput?) {
         self.router = router
+        self.output = output
     }
 
     func run() -> some View {
@@ -22,7 +26,7 @@ final class MainCoordinator: Navigatable {
     }
 
     @ViewBuilder
-    func destination(_ route: MainRoutes) -> some View {
+    func destination(_ route: MainRoute) -> some View {
         switch route {
         case .main:
             MainScreenAssembly

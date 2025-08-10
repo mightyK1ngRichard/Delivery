@@ -7,8 +7,8 @@ import SharedUserStories
 
 @MainActor
 protocol BasketScreenOutput: AnyObject {
-    func basketScreenDidOpenProductDetails(productID: Int)
+    func basketScreenDidOpenProductDetails(product: ProductModel)
     func basketScreenDidOpenCatalog()
-    func basketScreenDidOpenMakeOrderScreen(products: [ProductModel])
+    func basketScreenDidOpenMakeOrderScreen(orderModel: OrderModel)
     func basketScreenDidShowAlert(with alert: AlertModel)
 }

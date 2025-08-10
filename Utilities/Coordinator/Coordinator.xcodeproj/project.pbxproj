@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		068B1EAA1B60CC41F723F70B /* NavigatableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66652785075C4F0BDE0EB463 /* NavigatableView.swift */; };
 		835C89262C801332D17DFC9C /* DLCore.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = F34351C0DA72E3694548B229 /* DLCore.framework */; };
+		A0E8FC27115EA84C30068C30 /* CoordinatorContentWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8061123A815499515F4893E3 /* CoordinatorContentWrapper.swift */; };
 		B03C83753E7A73FFA7625A0F /* ProxyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E753875BADDA720CC8499B63 /* ProxyRouter.swift */; };
 		BC7BB050E14E78B3DF054351 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB6120D469AD2676401C761 /* Router.swift */; };
 		ECA48A5185C453E8630DE6DE /* Navigatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3547033DDD63B07E4003BA7 /* Navigatable.swift */; };
@@ -41,6 +42,7 @@
 		3CB6120D469AD2676401C761 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		544E010E5FFFA977A8D84306 /* Coordinator-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Coordinator-Info.plist"; sourceTree = "<group>"; };
 		66652785075C4F0BDE0EB463 /* NavigatableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatableView.swift; sourceTree = "<group>"; };
+		8061123A815499515F4893E3 /* CoordinatorContentWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorContentWrapper.swift; sourceTree = "<group>"; };
 		A551ED1CA3D8471F17027904 /* Coordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Coordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3547033DDD63B07E4003BA7 /* Navigatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigatable.swift; sourceTree = "<group>"; };
 		E753875BADDA720CC8499B63 /* ProxyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyRouter.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 		1B9C82073E09ADF42CF84111 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				8061123A815499515F4893E3 /* CoordinatorContentWrapper.swift */,
 				C3547033DDD63B07E4003BA7 /* Navigatable.swift */,
 				66652785075C4F0BDE0EB463 /* NavigatableView.swift */,
 				E753875BADDA720CC8499B63 /* ProxyRouter.swift */,
@@ -181,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0E8FC27115EA84C30068C30 /* CoordinatorContentWrapper.swift in Sources */,
 				ECA48A5185C453E8630DE6DE /* Navigatable.swift in Sources */,
 				068B1EAA1B60CC41F723F70B /* NavigatableView.swift in Sources */,
 				B03C83753E7A73FFA7625A0F /* ProxyRouter.swift in Sources */,

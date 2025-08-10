@@ -6,34 +6,24 @@
 import SwiftUI
 import SharedUserStories
 import DependencyRegistry
+import Coordinator
 import Resolver
 @testable import Basket
 
 @main
 struct BasketExample: App {
 
-    let delegate = Delegate()
+    let coordinator = BasketCoordinator(router: .init())
 
     init() {
-        UserDefaults.standard.set("bo0Qpjcsjq5r94qI", forKey: "userToken")
-        UserDefaults.standard.set(1995, forKey: "addressID")
+//        UserDefaults.standard.set("bo0Qpjcsjq5r94qI", forKey: "userToken")
+//        UserDefaults.standard.set(1995, forKey: "addressID")
         Resolver.registerAll()
     }
 
     var body: some Scene {
         WindowGroup {
-            BasketAssembly.assemble(output: delegate)
+            NavigatableView(coordinator: coordinator)
         }
     }
-}
-
-final class Delegate: BasketScreenOutput {
-
-    func basketScreenDidOpenProductDetails(productID: Int) {}
-
-    func basketScreenDidOpenCatalog() {}
-
-    func basketScreenDidOpenMakeOrderScreen(products: [ProductModel]) {}
-
-    func basketScreenDidShowAlert(with alert: AlertModel) {}
 }

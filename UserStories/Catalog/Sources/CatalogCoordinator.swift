@@ -12,7 +12,7 @@ import MainInterface
 final class CatalogCoordinator: Navigatable {
 
     let router: Router<CatalogRoute>
-    let logger = DLLogger("Profile Coordinator")
+    let logger = DLLogger("Catalog Coordinator")
 
     init(router: Router<CatalogRoute>) {
         self.router = router

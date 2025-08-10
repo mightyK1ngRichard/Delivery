@@ -18,10 +18,11 @@ let project = Project.basic(
         "CFBundleVersion": "$(CURRENT_PROJECT_VERSION)",
     ]),
     dependencies: [
+        .module(.Resolver),
         .module(.DLCore),
-        .module(.AuthService),
-        .module(.BannerService),
-        .module(.CartService),
-        .module(.CatalogService),
+        .module(.Coordinator),
+        .module(.DesignSystem),
+        .module(.DependencyRegistry),
+        .interface(.Main),
     ]
 )

@@ -14,5 +14,9 @@ let project = Project.module(
         .module(.PopcatsService),
         .module(.ProductService),
         .module(.UserService),
+        .module(.Main),
+        .module(.Catalog),
+        .module(.Profile),
+        .module(.Basket),
     ]
 )

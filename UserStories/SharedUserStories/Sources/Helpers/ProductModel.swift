@@ -23,12 +23,13 @@ public struct ProductModel: Identifiable, Hashable, Sendable {
     /// Брэнд продукта
     public let brand: Brand?
     /// Кэшбек за продукт
-    public let cashback: String
+    public let cashback: Double
     /// Количество продукта  в упаковке с форматированным текстом: `10 шт.`
     public let packageCount: PackageCount
     /// Строка формата: 730 дней (до 14.08.28)
     public let formattedExpirationDate: String
 
+    public var count: Int
     /// Коэфициент увеличивания продукта
     public let magnifier: Int
     /// Полная цену продукта: `Цена/шт × количество`

@@ -17,8 +17,9 @@ extension ProductDetailsView {
             .padding(.horizontal)
             .padding(.bottom, 70)
         }
-        .overlay(alignment: .bottom) {
+        .safeAreaInset(edge: .bottom) {
             addIntoBasketButton
+                .padding()
         }
     }
 }
@@ -42,7 +43,6 @@ private extension ProductDetailsView {
                 ),
                 action: output.onTapAddIntoBasketButton
             )
-            .padding(.horizontal)
         } else {
             DLButton(
                 configuration: .init(
@@ -55,7 +55,6 @@ private extension ProductDetailsView {
                 ),
                 action: output.onTapAddIntoBasketButton
             )
-            .padding(.horizontal)
         }
     }
 
@@ -171,7 +170,6 @@ extension ProductDetailsView {
         }
     }
 
-    @ViewBuilder
     var priceContainer: some View {
         HStack(spacing: .SPx1) {
             Text(state.product.itemPrice.formattedPrice)
@@ -179,7 +177,7 @@ extension ProductDetailsView {
             Text("/шт")
                 .style(size: 17, weight: .regular, color: DLColor<TextPalette>.gray800.color)
             Spacer()
-            WalletView(moneyCount: state.product.cashback, size: .size17)
+            WalletView(moneyCount: String(state.product.cashback), size: .size17)
         }
         .padding()
         .background(DLColor<BackgroundPalette>.gray100.color, in: .rect(cornerRadius: 16))

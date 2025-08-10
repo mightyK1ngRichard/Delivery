@@ -3,12 +3,16 @@
 //  Copyright © 2025 Delivery24. All rights reserved.
 //
 
+import MainInterface
+import SwiftUI
 import Coordinator
 
-enum MainAssembly {
+@MainActor
+public struct MainAssembly: AnyMainAssembly {
 
-    @MainActor
-    static func assemble() -> MainCoordinator {
-        MainCoordinator(router: .init())
+    public init() {}
+
+    public func assemble(output: MainCoordinatorOutput) -> any AnyMainCoordinator {
+        MainCoordinator(router: .init(), output: output)
     }
 }

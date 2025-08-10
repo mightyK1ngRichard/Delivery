@@ -6,12 +6,16 @@
 import SwiftUI
 
 @MainActor
-public protocol Navigatable: Sendable {
-    associatedtype Route: Hashable & Identifiable & Sendable
+public protocol Navigatable: AnyObject {
+
     associatedtype Content: View
     associatedtype ContentDestination: View
+    associatedtype Route: Hashable, Identifiable
+
+    @ViewBuilder
+    func run() -> Self.Content
+    @ViewBuilder
+    func destination(_ route: Route) -> Self.ContentDestination
 
     var router: Router<Route> { get }
-    func run() -> Content
-    func destination(_ route: Route) -> ContentDestination
 }

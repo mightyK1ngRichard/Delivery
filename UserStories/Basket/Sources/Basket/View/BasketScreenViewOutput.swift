@@ -10,7 +10,7 @@ protocol BasketScreenViewOutput {
     func onFirstAppear()
     func onAppear()
     func onTapReloadButton()
-    func onTapProduct(productID: Int)
+    func onTapProduct(product: ProductModel)
     func onTapOpenCatalog()
     func onTapMakeOrderButton()
     func onTapPlus(product: ProductModel, counter: Int)

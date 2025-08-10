@@ -4,9 +4,12 @@ import ProjectDescriptionHelpers
 let project = Project.module(
     .Main,
     additionalTargets: [
-        .interface(),
+        .interface(dependencies: [
+            .module(.Coordinator),
+            .module(.SharedUserStories)
+        ]),
         .example(dependencies: [
-            .module(.Main),
+            .interface(.Main),
             .module(.DependencyRegistry)
         ])
     ],

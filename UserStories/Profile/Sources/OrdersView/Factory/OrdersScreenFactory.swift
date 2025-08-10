@@ -13,7 +13,9 @@ struct OrdersScreenFactory: AnyOrdersScreenFactory {
 
     func convertToOrder(from entity: OrderEntity) -> Order? {
         guard let id = entity.id,
-              let price = priceFactory.convertToPrice(from: entity.totalPrice),
+              let totalPriceString = entity.totalPrice,
+              let totalPrice = Double(totalPriceString),
+              let price = priceFactory.convertToPrice(from: totalPrice),
               let createdAt = entity.createdAt,
               let totalCashback = entity.totalCashback
         else { return nil }

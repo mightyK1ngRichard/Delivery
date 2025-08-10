@@ -8,6 +8,7 @@ import SharedContractsInterface
 import DesignSystem
 
 protocol AnyBasketScreenFactory {
+    func deliveryDateTitle() -> String
     func convertToProduct(from entity: ProductEntity) -> ProductModel?
     func convertToProductHCard(from model: ProductModel) -> DLProductHCard.Configuration
     func makePriceFormatting(for price: Double) -> String

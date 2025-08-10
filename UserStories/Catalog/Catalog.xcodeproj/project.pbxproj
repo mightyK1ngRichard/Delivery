@@ -10,12 +10,14 @@
 		03DDFF409B968D4A1BFAEF07 /* Resolver.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 8622110583C22504CA07B8AC /* Resolver.framework */; };
 		0AE9653C88498C52B24A8B72 /* ProductServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 115C471CA96D70C775A808FA /* ProductServiceInterface.framework */; };
 		0FA4B055D083D160EC3CAF13 /* CatalogServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B556B1B3E7D0C30354F18A9 /* CatalogServiceInterface.framework */; };
+		10233ECF57E97AC50086AA38 /* ProfileInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 343BC069C71D136BC44EE165 /* ProfileInterface.framework */; };
 		146DA7B18C75C42A71A2D5CC /* DLNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E568BB375588C0713A7B1524 /* DLNetwork.framework */; };
 		14D7D1E119B02CB11695684B /* OrderService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76585799E3AEE3B9849FDBB8 /* OrderService.framework */; };
 		193D1E34F7F7A4DEAED2CED0 /* DLCore.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 89558579F561017EABD3FB8F /* DLCore.framework */; };
 		1DB5A738DEC0E928DBCEA47B /* Coordinator.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 1AAEDC4269643F0644D4479A /* Coordinator.framework */; };
 		277081980CBCDD397AA71A2C /* CatalogCoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3005425602C04EB5DBC5C /* CatalogCoordinatorAssembly.swift */; };
 		2FBD4E570E91F9FCB8EFC399 /* ProductService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DB2EC9D37AFAE60044FCAF /* ProductService.framework */; };
+		34F6EABB470E7EBE23D88287 /* MainInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 488CBDA38F9DCBD661D6BCB8 /* MainInterface.framework */; };
 		3A6A8F359BB09AA377B5BB9E /* CatalogScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DADFCF48EA296C2774E56E6 /* CatalogScreenViewOutput.swift */; };
 		3C49108E29125C3ACFD8A0E2 /* CatalogServiceInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 9B556B1B3E7D0C30354F18A9 /* CatalogServiceInterface.framework */; };
 		424356FEF820F246D1A3BCAA /* OrderServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0836ABFFB9124AEAFDE33BD /* OrderServiceInterface.framework */; };
@@ -29,6 +31,7 @@
 		548E6120C9C3A6371D0652C0 /* CategoryListScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A2320B362133EDA6357DC8 /* CategoryListScreenViewModel.swift */; };
 		54983740B5B3F32EFFCCED4B /* SharedContractsInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = D7FEA40EFDB38F15E4CF545E /* SharedContractsInterface.framework */; };
 		54F24C5A98256C90D8EA1A4A /* CategoryListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586D8DC05E8651CA0AFE430F /* CategoryListFactory.swift */; };
+		5639B4B0DA763EB526CCF68B /* Basket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CC1288D6A5F1BE2188A293 /* Basket.framework */; };
 		5929B5EB415F4394BF9F60C1 /* CatalogProductsOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAF589B3BD5BBAF6A08CE78 /* CatalogProductsOutput.swift */; };
 		5AE358820BE6A877D50C9718 /* ProductServiceInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 115C471CA96D70C775A808FA /* ProductServiceInterface.framework */; };
 		5E28C0060BDF7F89C371AED6 /* CatalogScreenViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7DEBFB2EE05A431D50F241 /* CatalogScreenViewState.swift */; };
@@ -37,6 +40,7 @@
 		625E71B6C2372B934EA6B273 /* UserServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE1C2CFC5474EB92616709B /* UserServiceInterface.framework */; };
 		66B3339B6C602076E3F78AD4 /* CatalogAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F2435DF975F94E697A3371 /* CatalogAssembly.swift */; };
 		67F7C0B285A159DBE7CCF7B0 /* CatalogService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4232ED1159AF008793B82CCB /* CatalogService.framework */; };
+		6849171768E20660343BBF41 /* Main.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55BA6CD16FDE42AF66CCD3B5 /* Main.framework */; };
 		6C662E1C0C4E4A07734B2941 /* BannerServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B5EDE7A319D305E9837662 /* BannerServiceInterface.framework */; };
 		7026F01BD4B5006871F6D4D6 /* DesignSystem_DesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5BBA371E8E8C1661788823FE /* DesignSystem_DesignSystem.bundle */; };
 		77784F10B98253C69C72F23E /* CatalogProductsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DF290F4165578E469DBE32 /* CatalogProductsAssembly.swift */; };
@@ -51,6 +55,7 @@
 		8FCA537F4F0275EB9A0CB4AB /* CatalogProductsScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138735EEF011376AB63FA8B4 /* CatalogProductsScreenFactory.swift */; };
 		911F22B5973ECEBDB2C56C7D /* CategoryListScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FA3BC37ECF1F65984C218F /* CategoryListScreenView.swift */; };
 		A2E11A3B43AAC1922A9A137D /* CartServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4B9E931CCD5004EBC765F1 /* CartServiceInterface.framework */; };
+		A4ED9CF0A60C00A4C769AAB9 /* Profile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C81D97820D552ED87F83D0DC /* Profile.framework */; };
 		A966639993F64225D6B73156 /* CatalogScreenOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E184496C64FD9FEA1C8D36F /* CatalogScreenOutput.swift */; };
 		A9856CE639D126797645AB65 /* CatalogProductsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D629DCE18C808417B35C709A /* CatalogProductsViewOutput.swift */; };
 		A9C2C0B63084AC3F73DAE7AB /* AnyCategoryListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F43F38125D5DD5A16FDFE5C /* AnyCategoryListFactory.swift */; };
@@ -146,13 +151,17 @@
 		0C7DEBFB2EE05A431D50F241 /* CatalogScreenViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogScreenViewState.swift; sourceTree = "<group>"; };
 		0EEA42FB0244E16B617C4A03 /* CatalogScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogScreenViewModel.swift; sourceTree = "<group>"; };
 		115C471CA96D70C775A808FA /* ProductServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProductServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		11CC1288D6A5F1BE2188A293 /* Basket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Basket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		138735EEF011376AB63FA8B4 /* CatalogProductsScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogProductsScreenFactory.swift; sourceTree = "<group>"; };
 		1AAEDC4269643F0644D4479A /* Coordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Coordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29DC373EEEBD5F542D9059EC /* CatalogExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "CatalogExample-Info.plist"; sourceTree = "<group>"; };
+		343BC069C71D136BC44EE165 /* ProfileInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProfileInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36312DB48851D03566888240 /* CategoryListScreenViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListScreenViewState.swift; sourceTree = "<group>"; };
 		4232ED1159AF008793B82CCB /* CatalogService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatalogService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		488CBDA38F9DCBD661D6BCB8 /* MainInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MainInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B01A2CAC06993757B76DA59 /* CatalogScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogScreenView.swift; sourceTree = "<group>"; };
 		4CA257DD17764902AFDB8363 /* Catalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Catalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55BA6CD16FDE42AF66CCD3B5 /* Main.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Main.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DB2EC9D37AFAE60044FCAF /* ProductService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProductService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		586D8DC05E8651CA0AFE430F /* CategoryListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListFactory.swift; sourceTree = "<group>"; };
 		5BBA371E8E8C1661788823FE /* DesignSystem_DesignSystem.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignSystem_DesignSystem.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +195,7 @@
 		BC4B9E931CCD5004EBC765F1 /* CartServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CartServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0836ABFFB9124AEAFDE33BD /* OrderServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OrderServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2250E9780E2C99CD687DCE2 /* AnyCatalogScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCatalogScreenFactory.swift; sourceTree = "<group>"; };
+		C81D97820D552ED87F83D0DC /* Profile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Profile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C98A1069FE60D9B4ADF48C38 /* CategoryListNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListNetworkClient.swift; sourceTree = "<group>"; };
 		D03DDCE0C45F6271A41FADC9 /* PopcatsService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopcatsService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D629DCE18C808417B35C709A /* CatalogProductsViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogProductsViewOutput.swift; sourceTree = "<group>"; };
@@ -215,6 +225,7 @@
 				B6582E38DB724B46D1BA1278 /* AuthServiceInterface.framework in Frameworks */,
 				DCC4A0C5C764077C8E9A2EDF /* BannerService.framework in Frameworks */,
 				6C662E1C0C4E4A07734B2941 /* BannerServiceInterface.framework in Frameworks */,
+				5639B4B0DA763EB526CCF68B /* Basket.framework in Frameworks */,
 				7A10076DAC4B080D9B64332C /* CartService.framework in Frameworks */,
 				A2E11A3B43AAC1922A9A137D /* CartServiceInterface.framework in Frameworks */,
 				C893CC665ADAC39C03D20023 /* Catalog.framework in Frameworks */,
@@ -225,12 +236,16 @@
 				146DA7B18C75C42A71A2D5CC /* DLNetwork.framework in Frameworks */,
 				6100DE0C9158FF6F84110213 /* DependencyRegistry.framework in Frameworks */,
 				E7E3CF6620565D747F2072B7 /* DesignSystem.framework in Frameworks */,
+				6849171768E20660343BBF41 /* Main.framework in Frameworks */,
+				34F6EABB470E7EBE23D88287 /* MainInterface.framework in Frameworks */,
 				14D7D1E119B02CB11695684B /* OrderService.framework in Frameworks */,
 				424356FEF820F246D1A3BCAA /* OrderServiceInterface.framework in Frameworks */,
 				E974B3CD087206D99FBC0BE3 /* PopcatsService.framework in Frameworks */,
 				B438D6B109FF5869BC8B8CCD /* PopcatsServiceInterface.framework in Frameworks */,
 				2FBD4E570E91F9FCB8EFC399 /* ProductService.framework in Frameworks */,
 				0AE9653C88498C52B24A8B72 /* ProductServiceInterface.framework in Frameworks */,
+				A4ED9CF0A60C00A4C769AAB9 /* Profile.framework in Frameworks */,
+				10233ECF57E97AC50086AA38 /* ProfileInterface.framework in Frameworks */,
 				443D859391E61B7E5D2C8ACF /* Resolver.framework in Frameworks */,
 				4B2CEEA5D96FB1AA13087DCB /* SharedContractsInterface.framework in Frameworks */,
 				510609120B4BDD143BE02728 /* SharedUserStories.framework in Frameworks */,
@@ -337,6 +352,7 @@
 				954A89829D24FF733CD447F7 /* AuthServiceInterface.framework */,
 				E987D46165F866FD538E123D /* BannerService.framework */,
 				67B5EDE7A319D305E9837662 /* BannerServiceInterface.framework */,
+				11CC1288D6A5F1BE2188A293 /* Basket.framework */,
 				A52D31A69BBBEFFB4ECFEF10 /* CartService.framework */,
 				BC4B9E931CCD5004EBC765F1 /* CartServiceInterface.framework */,
 				4CA257DD17764902AFDB8363 /* Catalog.framework */,
@@ -349,12 +365,16 @@
 				61B8AE4D836AE2C61590B2E3 /* DesignSystem.framework */,
 				89558579F561017EABD3FB8F /* DLCore.framework */,
 				E568BB375588C0713A7B1524 /* DLNetwork.framework */,
+				55BA6CD16FDE42AF66CCD3B5 /* Main.framework */,
+				488CBDA38F9DCBD661D6BCB8 /* MainInterface.framework */,
 				76585799E3AEE3B9849FDBB8 /* OrderService.framework */,
 				C0836ABFFB9124AEAFDE33BD /* OrderServiceInterface.framework */,
 				D03DDCE0C45F6271A41FADC9 /* PopcatsService.framework */,
 				88CE19A81597DF7B40791E26 /* PopcatsServiceInterface.framework */,
 				56DB2EC9D37AFAE60044FCAF /* ProductService.framework */,
 				115C471CA96D70C775A808FA /* ProductServiceInterface.framework */,
+				C81D97820D552ED87F83D0DC /* Profile.framework */,
+				343BC069C71D136BC44EE165 /* ProfileInterface.framework */,
 				8622110583C22504CA07B8AC /* Resolver.framework */,
 				D7FEA40EFDB38F15E4CF545E /* SharedContractsInterface.framework */,
 				E737208D63E1A59E107529F2 /* SharedUserStories.framework */,

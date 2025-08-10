@@ -22,12 +22,21 @@ import UserServiceInterface
 import UserService
 import CatalogServiceInterface
 import CatalogService
+import MainInterface
+import Main
 
 extension Resolver {
 
+    @MainActor
     public static func registerAll() {
         registerUtilities()
         registerServices()
+        registerCoordinators()
+    }
+
+    @MainActor
+    private static func registerCoordinators() {
+        Resolver.register(AnyMainAssembly.self) { MainAssembly() }
     }
 
     private static func registerServices() {

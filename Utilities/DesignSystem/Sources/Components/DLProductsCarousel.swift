@@ -9,11 +9,20 @@
 import SwiftUI
 import DLCore
 
-struct DLProductsCarousel: View {
-    var configuration: Configuration
-    var handlerConfiguration = HandlerConfiguration()
+public struct DLProductsCarousel: View {
 
-    var body: some View {
+    private let configuration: Configuration
+    private let handlerConfiguration: HandlerConfiguration
+
+    public init(
+        configuration: Configuration,
+        handlerConfiguration: HandlerConfiguration = .init()
+    ) {
+        self.configuration = configuration
+        self.handlerConfiguration = handlerConfiguration
+    }
+
+    public var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             titleContainer
             productsContainer
@@ -28,32 +37,40 @@ struct DLProductsCarousel: View {
 
 extension DLProductsCarousel {
 
-    struct Product: Identifiable, Hashable {
-        var id: Int
-        /// Фото
-        var imageURL: String
-        /// Цена продукта
-        var price: Double
-        /// Цена за штуку
-        var unitPrice: Double
-        /// Название товара
-        var name: String
-        /// Кэшбек продукта
-        var cashback: String
-        /// Начальная счёт продукта
-        var startCount: Int
-        /// Magnifier
-        var coeff: Int
+    public struct Item: Identifiable, Hashable {
+
+        public let id: Int
+        let url: URL
+
+        public init(id: Int, url: URL) {
+            self.id = id
+            self.url = url
+        }
     }
 
-    struct Configuration {
-        var title = ""
-        var products: [Product] = []
+    public struct Configuration: Hashable {
+
+        let title: String
+        let items: [Item]
+
+        public init(title: String = .init(), items: [Item] = []) {
+            self.title = title
+            self.items = items
+        }
     }
 
-    struct HandlerConfiguration {
-        var didTapTitle: DLVoidBlock?
-        var didTapProduct: DLGenericBlock<Product>?
+    public struct HandlerConfiguration {
+
+        let onTapTitle: DLVoidBlock?
+        let onTapImage: DLGenericBlock<Int>?
+
+        public init(
+            onTapTitle: DLVoidBlock? = nil,
+            onTapImage: DLGenericBlock<Int>? = nil
+        ) {
+            self.onTapTitle = onTapTitle
+            self.onTapImage = onTapImage
+        }
     }
 }
 
@@ -76,16 +93,16 @@ private extension DLProductsCarousel {
         }
         .padding(.horizontal)
         .onTapGesture {
-            handlerConfiguration.didTapTitle?()
+            handlerConfiguration.onTapTitle?()
         }
     }
 
     var productsContainer: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: .SPx2) {
-                ForEach(configuration.products) { product in
-                    productCardView(for: product).onTapGesture {
-                        handlerConfiguration.didTapProduct?(product)
+                ForEach(configuration.items) { item in
+                    productCardView(for: item.url).onTapGesture {
+                        handlerConfiguration.onTapImage?(item.id)
                     }
                 }
             }
@@ -93,10 +110,10 @@ private extension DLProductsCarousel {
         }
     }
 
-    func productCardView(for product: Product) -> some View {
+    func productCardView(for url: URL) -> some View {
         DLImageView(
             configuration: .init(
-                imageKind: .string(product.imageURL),
+                imageKind: .url(url),
                 contentMode: .fit
             )
         )

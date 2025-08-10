@@ -1,8 +1,3 @@
-//
-//  Created by Eugene Kiselev on 03.04.2025.
-//  Copyright © 2025 RWB LLC. All rights reserved.
-//
-
 import SwiftUI
 
 struct CoordinatorContentWrapper<Route: Identifiable>: View where Route: Hashable {
@@ -21,7 +16,7 @@ struct CoordinatorContentWrapper<Route: Identifiable>: View where Route: Hashabl
         self.coordinator = coordinator
         router = coordinator.router
         buildDestination = { route in
-            AnyView(coordinator.buildDestination(route))
+            AnyView(coordinator.destination(route))
         }
     }
 
@@ -47,29 +42,21 @@ extension CoordinatorContentWrapper {
     
     private var defaultContentWrapper: some View {
         storage.cachedRunDestination
-            .toolbar(.hidden)
             .navigationDestination(
                 for: Route.self
             ) { route in
                 buildDestination(route)
-                    .toolbar(.hidden)
-                    .background(EnablePopGestureEditor())
             }
     }
     
     // swiftlint:disable redundant_discardable_let
-    // iOS 16 имеет багнутую навигацию, костылим для него
     private var deprecatedContentWrapper: some View {
         storage.cachedRunDestination
-            .toolbar(.hidden)
-            .navigationDestination(
-                for: Route.self
-            ) { route in
+            .navigationDestination(for: Route.self) { route in
                 if let destination = storage.destinations.first(where: { $0.route.hashValue == route.hashValue }) {
                     destination.cachedDestination
                 } else {
                     let destination = buildDestination(route)
-                        .toolbar(.hidden)
                     
                     let _ = storage.destinations.append(.init(
                         route: route,
@@ -79,11 +66,10 @@ extension CoordinatorContentWrapper {
                     destination
                 }
             }
-            .onReceive(router.$path) {
+            .onReceive(router.$navPath) {
                 storage.destinations = Array(storage.destinations.prefix($0.count))
             }
     }
-    // swiftlint:enable redundant_discardable_let
 }
 
 // MARK: - WrappedStorage (for ios 16)
@@ -91,6 +77,7 @@ extension CoordinatorContentWrapper {
 extension CoordinatorContentWrapper {
     
     private final class WrappedStorage: ObservableObject {
+
         @Published
         var cachedRunDestination: AnyView?
         
@@ -106,6 +93,7 @@ extension CoordinatorContentWrapper {
 // MARK: - CoordinatorContentWrapper + Equatable
 
 extension CoordinatorContentWrapper: @preconcurrency Equatable {
+
     static func == (_: Self, _: Self) -> Bool {
         true
     }
