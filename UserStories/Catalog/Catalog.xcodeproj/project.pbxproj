@@ -33,6 +33,7 @@
 		54F24C5A98256C90D8EA1A4A /* CategoryListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586D8DC05E8651CA0AFE430F /* CategoryListFactory.swift */; };
 		5639B4B0DA763EB526CCF68B /* Basket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CC1288D6A5F1BE2188A293 /* Basket.framework */; };
 		56E34F693A887292EE4A2A43 /* CatalogInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F4198F422051AFDA2D4717 /* CatalogInterface.framework */; };
+		56EB686193C53F8CFD1C1ADD /* BasketInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAE6958E0D63A6E7A9ED088 /* BasketInterface.framework */; };
 		5929B5EB415F4394BF9F60C1 /* CatalogProductsOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAF589B3BD5BBAF6A08CE78 /* CatalogProductsOutput.swift */; };
 		5AE358820BE6A877D50C9718 /* ProductServiceInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 115C471CA96D70C775A808FA /* ProductServiceInterface.framework */; };
 		5E28C0060BDF7F89C371AED6 /* CatalogScreenViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7DEBFB2EE05A431D50F241 /* CatalogScreenViewState.swift */; };
@@ -188,6 +189,7 @@
 		115C471CA96D70C775A808FA /* ProductServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProductServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11CC1288D6A5F1BE2188A293 /* Basket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Basket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		138735EEF011376AB63FA8B4 /* CatalogProductsScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogProductsScreenFactory.swift; sourceTree = "<group>"; };
+		1AAE6958E0D63A6E7A9ED088 /* BasketInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BasketInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AAEDC4269643F0644D4479A /* Coordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Coordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29DC373EEEBD5F542D9059EC /* CatalogExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "CatalogExample-Info.plist"; sourceTree = "<group>"; };
 		343BC069C71D136BC44EE165 /* ProfileInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProfileInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -265,6 +267,7 @@
 				DCC4A0C5C764077C8E9A2EDF /* BannerService.framework in Frameworks */,
 				6C662E1C0C4E4A07734B2941 /* BannerServiceInterface.framework in Frameworks */,
 				5639B4B0DA763EB526CCF68B /* Basket.framework in Frameworks */,
+				56EB686193C53F8CFD1C1ADD /* BasketInterface.framework in Frameworks */,
 				7A10076DAC4B080D9B64332C /* CartService.framework in Frameworks */,
 				A2E11A3B43AAC1922A9A137D /* CartServiceInterface.framework in Frameworks */,
 				C893CC665ADAC39C03D20023 /* Catalog.framework in Frameworks */,
@@ -399,6 +402,7 @@
 				E987D46165F866FD538E123D /* BannerService.framework */,
 				67B5EDE7A319D305E9837662 /* BannerServiceInterface.framework */,
 				11CC1288D6A5F1BE2188A293 /* Basket.framework */,
+				1AAE6958E0D63A6E7A9ED088 /* BasketInterface.framework */,
 				A52D31A69BBBEFFB4ECFEF10 /* CartService.framework */,
 				BC4B9E931CCD5004EBC765F1 /* CartServiceInterface.framework */,
 				4CA257DD17764902AFDB8363 /* Catalog.framework */,

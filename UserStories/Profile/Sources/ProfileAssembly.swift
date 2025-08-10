@@ -3,10 +3,13 @@
 //  Copyright © 2025 Delivery24. All rights reserved.
 //
 
-enum ProfileAssembly {
+import ProfileInterface
 
-    @MainActor
-    static func assemble() -> ProfileCoordinator {
+public struct ProfileAssembly: AnyProfileAssembly {
+
+    public init() {}
+
+    public func assemble() -> any AnyProfileCoordinator {
         ProfileCoordinator(router: .init())
     }
 }

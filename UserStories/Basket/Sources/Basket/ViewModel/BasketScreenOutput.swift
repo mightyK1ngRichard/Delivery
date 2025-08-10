@@ -4,6 +4,7 @@
 //
 
 import SharedUserStories
+import BasketInterface
 
 @MainActor
 protocol BasketScreenOutput: AnyObject {

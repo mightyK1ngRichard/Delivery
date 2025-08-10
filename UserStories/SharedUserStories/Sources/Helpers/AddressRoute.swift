@@ -3,10 +3,10 @@
 //  Copyright © 2025 Delivery24. All rights reserved.
 //
 
-enum AddressRoute: Identifiable, Hashable {
+public enum AddressRoute: Identifiable, Hashable, Sendable {
 
     case addressesList
     case addAddress
 
-    var id: Self { self }
+    public var id: Self { self }
 }

@@ -4,6 +4,10 @@ import ProjectDescriptionHelpers
 let project = Project.module(
     .Basket,
     additionalTargets: [
+        .interface(dependencies: [
+            .module(.SharedUserStories),
+            .module(.Coordinator)
+        ]),
         .example(dependencies: [
             .module(.Basket),
             .module(.Coordinator),
@@ -18,6 +22,7 @@ let project = Project.module(
         .module(.SharedUserStories),
         .interface(.SharedContracts),
 
+        .interface(.Basket),
         .interface(.UserService),
         .interface(.CartService),
     ]

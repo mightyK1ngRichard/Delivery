@@ -10,4 +10,8 @@ final class RootScreenViewState: ObservableObject {
 
     @Published
     var tabItem: TabBarItem = .house
+    @Published
+    var showBasketFlow = false
+    @Published
+    var basketBadge = String()
 }

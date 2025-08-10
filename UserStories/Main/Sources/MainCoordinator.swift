@@ -14,11 +14,13 @@ final class MainCoordinator: Navigatable, AnyMainCoordinator {
     let router: Router<MainRoute>
     let logger = DLLogger("Main Coordinator")
     private weak var output: MainCoordinatorOutput?
+    private let addressCoordinator: AddressCoordinator
 
     @MainActor
     init(router: Router<MainRoute>, output: MainCoordinatorOutput?) {
         self.router = router
         self.output = output
+        addressCoordinator = AddressAssembly.assemble(router: .init())
     }
 
     func run() -> some View {
@@ -37,6 +39,8 @@ final class MainCoordinator: Navigatable, AnyMainCoordinator {
         case let .lookAll(navigationTitle, products):
             AllProductsScreenAssembly
                 .assemble(products: products, navigationTitle: navigationTitle, output: self)
+        case .addressFlow:
+            NavigatableView(addressCoordinator)
         }
     }
 }

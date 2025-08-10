@@ -10,7 +10,7 @@ import UserServiceInterface
 import CartServiceInterface
 
 @MainActor
-enum BasketAssembly {
+enum BasketScreenAssembly {
 
     static func assemble(output: BasketScreenOutput) -> some View {
         let priceFactory = PriceFactory()

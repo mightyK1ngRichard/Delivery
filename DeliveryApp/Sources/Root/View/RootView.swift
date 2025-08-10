@@ -8,6 +8,8 @@ import DesignSystem
 import Coordinator
 import MainInterface
 import CatalogInterface
+import ProfileInterface
+import BasketInterface
 
 struct RootScreenView: View {
 
@@ -16,6 +18,8 @@ struct RootScreenView: View {
 
     let mainCoordinator: any AnyMainCoordinator
     let catalogCoordinator: any AnyCatalogCoordinator
+    let profileCoordinator: any AnyProfileCoordinator
+    let basketCoordinator: any AnyBasketCoordinator
 
     var body: some View {
         TabView(selection: $state.tabItem) {
@@ -25,14 +29,14 @@ struct RootScreenView: View {
             NavigatableView(catalogCoordinator)
                 .contrasteTintTabItem(type: .catalog)
 
-//            if let basketCoordinator {
-//                CoordinatorNavigationView(basketCoordinator)
-//                    .contrasteTintTabItem(type: .cart)
-        //            .badge(mainViewModel.uiProperties.basketBadge)
-//            }
+            if state.showBasketFlow {
+                NavigatableView(basketCoordinator)
+                    .contrasteTintTabItem(type: .cart)
+                    .badge(state.basketBadge.isEmpty ? nil : state.basketBadge)
+            }
 
-//            CoordinatorNavigationView(profileCoordinator)
-//                .contrasteTintTabItem(type: .profile)
+            NavigatableView(profileCoordinator)
+                .contrasteTintTabItem(type: .profile)
         }
         .tint(DLColor<IconPalette>.primary.color)
     }

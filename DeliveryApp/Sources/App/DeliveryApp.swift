@@ -5,50 +5,20 @@
 
 import SwiftUI
 import DependencyRegistry
-import MainInterface
-import CatalogInterface
 import Resolver
 
 @main
 struct DeliveryApp: App {
 
-    let delegate = Delegate()
-
     init() {
         Resolver.registerAll()
+//        UserDefaults.standard.set("bo0Qpjcsjq5r94qI", forKey: "userToken")
+//        UserDefaults.standard.set(1995, forKey: "addressID")
     }
 
     var body: some Scene {
         WindowGroup {
-            RootAssembly.assemble(output: delegate)
+            RootAssembly.assemble()
         }
-    }
-}
-
-final class Delegate: MainCoordinatorOutput {
-
-    func incrementCartCount() {
-    }
-
-    func decrementCartCount() {
-    }
-
-    func openAuthScreen() {
-    }
-}
-
-enum RootAssembly {
-
-    @MainActor
-    static func assemble(output: MainCoordinatorOutput) -> some View {
-        let state = RootScreenViewState()
-        let mainCoordinator = Resolver.resolve(AnyMainAssembly.self).assemble(output: output)
-        let catalogCoordinator = Resolver.resolve(AnyCatalogAssembly.self).assemble()
-
-        return RootScreenView(
-            state: state,
-            mainCoordinator: mainCoordinator,
-            catalogCoordinator: catalogCoordinator
-        )
     }
 }

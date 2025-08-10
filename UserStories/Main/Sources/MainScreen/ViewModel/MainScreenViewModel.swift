@@ -63,11 +63,8 @@ extension MainScreenViewModel: MainScreenViewOutput {
     }
 
     func onTapSelectAddress() {
-//        guard let userToken else {
-//            output.openAuthScreen()
-//            return
-//        }
-//        output.openPickAddressScreen(token: userToken)
+        logger.logEvent()
+        output?.mainScreenOpenPickAddressScreen()
     }
 
     func onTapProductCard(product: ProductModel) {

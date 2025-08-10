@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,8 @@
 		270EA5CF7245E45E26E955DC /* Main.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8211C0BAE806D52F6C64CBAC /* Main.framework */; };
 		28A9417867C44D4D525238A3 /* DesignSystem_DesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 689D15EA4602DBC5ABC2F6D7 /* DesignSystem_DesignSystem.bundle */; };
 		2ADF0022DDBBD019F747A3B0 /* AuthService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9AB3DE3AC185E8B700CA8BC /* AuthService.framework */; };
+		2B8C1191C93E0AE20BCDDDCB /* RootScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E2625D74B5F30F7528D10E /* RootScreenViewModel.swift */; };
+		2D835C991ED867B3C40EAB86 /* BasketInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC85AFCB606A6B21416B8546 /* BasketInterface.framework */; };
 		3627CEEAA7575994F9CA2A97 /* PopcatsService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B06BE231DE2B4DC371E1708 /* PopcatsService.framework */; };
 		365192259D81CA1D6AD299B7 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45275C42D8AF8A148081EB7E /* TabBarItem.swift */; };
 		4729C94EB47E5557A1A59CB3 /* Catalog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD1ABB86082B1FAF8926014E /* Catalog.framework */; };
@@ -23,6 +25,7 @@
 		555994FE6FBF3920CCEE8C7B /* ProductServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1F544548A48947D0EB2A20 /* ProductServiceInterface.framework */; };
 		5CA8BB895E9700696E79F57D /* SharedUserStories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCAB6D94128C54B3113EB5D9 /* SharedUserStories.framework */; };
 		66002E023ED31CA79302FF5B /* CatalogService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B220E65AE5B90D49C2E8D98 /* CatalogService.framework */; };
+		73A2E6B718DF69766DA3FD6F /* RootAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDD4FDDA1C00FC6AC036712 /* RootAssembly.swift */; };
 		7B53EDA2D1E79993D9530F74 /* AuthServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA3BF1707C1B1133E8EFFE5 /* AuthServiceInterface.framework */; };
 		7C2C00618A7AD263610589D0 /* Profile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E9726A727C069CF77546C1 /* Profile.framework */; };
 		7C9E6B8E483103441203DBD4 /* DLNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCFE7BC76DA49739751F5A1F /* DLNetwork.framework */; };
@@ -97,13 +100,16 @@
 		8841ADCC868558628B987891 /* DeliveryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeliveryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A4FE01012CEFBFA9DE5A5DC /* UserServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AA3BF1707C1B1133E8EFFE5 /* AuthServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EDD4FDDA1C00FC6AC036712 /* RootAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootAssembly.swift; sourceTree = "<group>"; };
 		AAD8C8756799BB2DC63697DF /* DeliveryApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DeliveryApp-Info.plist"; sourceTree = "<group>"; };
+		AC85AFCB606A6B21416B8546 /* BasketInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BasketInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B80F5E5D5D0BFC1DDDE2000B /* CatalogServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatalogServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCAB6D94128C54B3113EB5D9 /* SharedUserStories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedUserStories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1F544548A48947D0EB2A20 /* ProductServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProductServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0636C96ACDFE8079294B097 /* RootScreenViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootScreenViewState.swift; sourceTree = "<group>"; };
 		E00C9BB1DFFB04D6694B58AA /* BannerServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BannerServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E25678C722CAAF710E8DF967 /* SharedContractsInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedContractsInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7E2625D74B5F30F7528D10E /* RootScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootScreenViewModel.swift; sourceTree = "<group>"; };
 		E9AB3DE3AC185E8B700CA8BC /* AuthService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA125E68DEA15285346F55BB /* DependencyRegistry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DependencyRegistry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCFE7BC76DA49739751F5A1F /* DLNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DLNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +126,7 @@
 				A80AE6C52E5FA05D84F5355B /* BannerService.framework in Frameworks */,
 				7DE69FBC2C7C5A6C3D4DEA48 /* BannerServiceInterface.framework in Frameworks */,
 				5530C0EF11EFFDFBFEAF08D1 /* Basket.framework in Frameworks */,
+				2D835C991ED867B3C40EAB86 /* BasketInterface.framework in Frameworks */,
 				09E5EFA9A391FAF2B9F56345 /* CartService.framework in Frameworks */,
 				871355D1213E011F86AA5E3E /* CartServiceInterface.framework in Frameworks */,
 				4729C94EB47E5557A1A59CB3 /* Catalog.framework in Frameworks */,
@@ -160,6 +167,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		0C597C47B0A6A42E3950F04F /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				8EDD4FDDA1C00FC6AC036712 /* RootAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
 		1823EB0E53D73255E8AC9E8E /* Project */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +211,7 @@
 				2B5705841ACDBD39BD2066FC /* BannerService.framework */,
 				E00C9BB1DFFB04D6694B58AA /* BannerServiceInterface.framework */,
 				812A89BC62F616FE2D87821C /* Basket.framework */,
+				AC85AFCB606A6B21416B8546 /* BasketInterface.framework */,
 				0E9AC716B376DD602EA3C057 /* CartService.framework */,
 				0BC5EE84E21C06BBFCCFAA22 /* CartServiceInterface.framework */,
 				FD1ABB86082B1FAF8926014E /* Catalog.framework */,
@@ -239,7 +255,9 @@
 		C5B1BB6A711053E290E7DF60 /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				0C597C47B0A6A42E3950F04F /* Assembly */,
 				4512E0885CC0327B78C1B942 /* View */,
+				D36E1D3B05137685A19BDF6B /* ViewModel */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -258,6 +276,14 @@
 				04274E3E32F05DDADA544176 /* DeliveryApp.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		D36E1D3B05137685A19BDF6B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E7E2625D74B5F30F7528D10E /* RootScreenViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		EB17B16E2A3DE6AC5370FB21 = {
@@ -302,6 +328,8 @@
 				CLASSPREFIX = DL;
 				LastUpgradeCheck = 1630;
 				ORGANIZATIONNAME = Delivery24;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = 914F574E117DF9B00F203F9B /* Build configuration list for PBXProject "DeliveryApp" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -339,8 +367,10 @@
 			files = (
 				94ADFA4662AECBD2D946390E /* DeliveryApp.swift in Sources */,
 				365192259D81CA1D6AD299B7 /* TabBarItem.swift in Sources */,
+				73A2E6B718DF69766DA3FD6F /* RootAssembly.swift in Sources */,
 				2651AF58226DC1067DDC6BBD /* RootScreenViewState.swift in Sources */,
 				4B6B12E57C5350C19A789FD0 /* RootView.swift in Sources */,
+				2B8C1191C93E0AE20BCDDDCB /* RootScreenViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,7 +524,10 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;

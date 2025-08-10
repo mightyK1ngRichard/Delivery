@@ -5,12 +5,11 @@
 
 import SharedUserStories
 
-public enum MainRoute: Hashable, Identifiable, Sendable {
+public enum BasketRoute: Identifiable, Hashable {
 
     case main
-    case product(ProductModel)
-    case lookAll(navigationTitle: String, products: [ProductModel])
-    case addressFlow
+    case makeOrder(orderModel: OrderModel)
+    case productDetails(product: ProductModel)
 
     public var id: Self { self }
 }

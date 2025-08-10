@@ -8,6 +8,7 @@ import SwiftUI
 import DLCore
 import SharedContractsInterface
 import SharedUserStories
+import BasketInterface
 
 final class BasketViewModel {
 

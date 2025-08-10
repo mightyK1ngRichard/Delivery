@@ -26,6 +26,10 @@ import MainInterface
 import Main
 import CatalogInterface
 import Catalog
+import ProfileInterface
+import Profile
+import BasketInterface
+import Basket
 
 extension Resolver {
 
@@ -40,6 +44,8 @@ extension Resolver {
     private static func registerCoordinators() {
         Resolver.register(AnyMainAssembly.self) { MainAssembly() }
         Resolver.register(AnyCatalogAssembly.self) { CatalogCoordinatorAssembly() }
+        Resolver.register(AnyProfileAssembly.self) { ProfileAssembly() }
+        Resolver.register(AnyBasketAssembly.self) { BasketAssembly() }
     }
 
     private static func registerServices() {

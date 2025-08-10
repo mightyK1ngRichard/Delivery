@@ -6,10 +6,10 @@
 import Foundation
 import Coordinator
 
-enum AddressAssembly {
+public enum AddressAssembly {
 
     @MainActor
-    static func assemble(router: Router<AddressRoute>) -> AddressCoordinator {
+    public static func assemble(router: Router<AddressRoute>) -> AddressCoordinator {
         AddressCoordinator(router: router)
     }
 }

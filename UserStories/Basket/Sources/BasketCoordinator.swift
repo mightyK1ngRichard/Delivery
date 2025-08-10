@@ -6,17 +6,10 @@
 import SwiftUI
 import DLCore
 import Coordinator
+import BasketInterface
 import SharedUserStories
 
-enum BasketRoute: Identifiable, Hashable {
-    case main
-    case makeOrder(orderModel: OrderModel)
-    case productDetails(product: ProductModel)
-
-    var id: Self { self }
-}
-
-final class BasketCoordinator: Navigatable {
+final class BasketCoordinator: Navigatable, AnyBasketCoordinator {
 
     let router: Router<BasketRoute>
     let logger = DLLogger("Basket Coordinator")
@@ -29,11 +22,10 @@ final class BasketCoordinator: Navigatable {
         destination(.main)
     }
 
-    @ViewBuilder
     func destination(_ route: BasketRoute) -> some View {
         switch route {
         case .main:
-            BasketAssembly.assemble(output: self)
+            BasketScreenAssembly.assemble(output: self)
         case let .productDetails(product):
             ProductDetailsAssembly
                 .assemble(product: product, output: self)
@@ -41,10 +33,6 @@ final class BasketCoordinator: Navigatable {
             FormOrderAssembly
                 .assemble(orderModel: orderModel, output: self)
         }
-    }
-
-    deinit {
-        print("[DEBUG]: \(#function)")
     }
 }
 

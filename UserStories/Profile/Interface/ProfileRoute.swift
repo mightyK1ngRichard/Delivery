@@ -1,11 +1,12 @@
 //
-//  Created by Dmitriy Permyakov on 30.06.2025
-//  Copyright © 2025 Dostavka24. All rights reserved.
+//  Created by Dmitriy Permyakov on 10.08.2025.
+//  Copyright © 2025 Delivery24. All rights reserved.
 //
 
 import Coordinator
+import SharedUserStories
 
-enum ProfileRoute: Hashable, Identifiable, RouteConvertible {
+public enum ProfileRoute: Hashable, Identifiable, Sendable, RouteConvertible {
 
     case main
 //    case signIn
@@ -16,12 +17,12 @@ enum ProfileRoute: Hashable, Identifiable, RouteConvertible {
 //    case orderDetails(orderID: Int)
     case orders
 
-    var id: Self { self }
+    public var id: Self { self }
 }
 
 extension ProfileRoute {
 
-    static func convert<ChildRoute>(from route: ChildRoute) -> ProfileRoute? where ChildRoute: Hashable {
+    public static func convert<ChildRoute>(from route: ChildRoute) -> ProfileRoute? where ChildRoute: Hashable {
         if let route = route as? AddressRoute {
             return .addressFlow(route)
         }

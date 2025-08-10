@@ -23,7 +23,7 @@ struct BasketExample: App {
 
     var body: some Scene {
         WindowGroup {
-            NavigatableView(coordinator: coordinator)
+            NavigatableView(coordinator)
         }
     }
 }

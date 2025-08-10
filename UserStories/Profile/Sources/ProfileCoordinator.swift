@@ -8,8 +8,9 @@ import SwiftUI
 import DLCore
 import Coordinator
 import SharedUserStories
+import ProfileInterface
 
-final class ProfileCoordinator: Navigatable {
+final class ProfileCoordinator: Navigatable, AnyProfileCoordinator {
 
     let router: Router<ProfileRoute>
     let logger = DLLogger("Profile Coordinator")

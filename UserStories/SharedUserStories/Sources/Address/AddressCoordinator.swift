@@ -7,21 +7,21 @@ import SwiftUI
 import DLCore
 import Coordinator
 
-final class AddressCoordinator: Navigatable {
+public final class AddressCoordinator: Navigatable {
 
-    let router: Router<AddressRoute>
+    public let router: Router<AddressRoute>
     let logger = DLLogger("Address Coordinator")
 
     init(router: Router<AddressRoute>) {
         self.router = router
     }
 
-    func run() -> some View {
+    public func run() -> some View {
         destination(.addressesList)
     }
 
     @ViewBuilder
-    func destination(_ route: AddressRoute) -> some View {
+    public func destination(_ route: AddressRoute) -> some View {
         switch route {
         case .addressesList:
             PickAddressAssembly.assemble(output: self)

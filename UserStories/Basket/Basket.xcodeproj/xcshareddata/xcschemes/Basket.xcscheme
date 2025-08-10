@@ -28,6 +28,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "77BF690F2764998078FD7CF5"
+               BuildableName = "BasketInterface.framework"
+               BlueprintName = "BasketInterface"
+               ReferencedContainer = "container:Basket.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "1DA7DC144B98B4A3973C972E"
                BuildableName = "BasketExample.app"
                BlueprintName = "BasketExample"

@@ -25,6 +25,7 @@ extension MainCoordinator: MainScreenOutput {
 
     func mainScreenOpenPickAddressScreen() {
         logger.logEvent()
+        router.present(.addressFlow)
     }
 
     func mainScreenOpenAuthScreen() {
