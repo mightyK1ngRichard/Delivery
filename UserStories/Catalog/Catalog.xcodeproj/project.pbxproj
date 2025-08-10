@@ -1,0 +1,987 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03DDFF409B968D4A1BFAEF07 /* Resolver.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 8622110583C22504CA07B8AC /* Resolver.framework */; };
+		0AE9653C88498C52B24A8B72 /* ProductServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 115C471CA96D70C775A808FA /* ProductServiceInterface.framework */; };
+		0FA4B055D083D160EC3CAF13 /* CatalogServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B556B1B3E7D0C30354F18A9 /* CatalogServiceInterface.framework */; };
+		146DA7B18C75C42A71A2D5CC /* DLNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E568BB375588C0713A7B1524 /* DLNetwork.framework */; };
+		14D7D1E119B02CB11695684B /* OrderService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76585799E3AEE3B9849FDBB8 /* OrderService.framework */; };
+		193D1E34F7F7A4DEAED2CED0 /* DLCore.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 89558579F561017EABD3FB8F /* DLCore.framework */; };
+		1DB5A738DEC0E928DBCEA47B /* Coordinator.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 1AAEDC4269643F0644D4479A /* Coordinator.framework */; };
+		277081980CBCDD397AA71A2C /* CatalogCoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3005425602C04EB5DBC5C /* CatalogCoordinatorAssembly.swift */; };
+		2FBD4E570E91F9FCB8EFC399 /* ProductService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DB2EC9D37AFAE60044FCAF /* ProductService.framework */; };
+		34F6EABB470E7EBE23D88287 /* MainInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 488CBDA38F9DCBD661D6BCB8 /* MainInterface.framework */; };
+		3C49108E29125C3ACFD8A0E2 /* CatalogServiceInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 9B556B1B3E7D0C30354F18A9 /* CatalogServiceInterface.framework */; };
+		404D2D1370C9BCA59994B83A /* CatalogScreenOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F192B192C0DBFDB85E2C3ED8 /* CatalogScreenOutput.swift */; };
+		408E7C8B8F1544BF919D9708 /* CatalogScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F045A5D4D24025A165837 /* CatalogScreenViewModel.swift */; };
+		424356FEF820F246D1A3BCAA /* OrderServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0836ABFFB9124AEAFDE33BD /* OrderServiceInterface.framework */; };
+		430A72F5D5575262FDFDE8B7 /* CatalogProducts+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B60A776BEC099EA33D8DDC /* CatalogProducts+Subviews.swift */; };
+		4359E0EDD3382ADB7C9F1320 /* Coordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AAEDC4269643F0644D4479A /* Coordinator.framework */; };
+		441340423B0B6832D882AAD5 /* DesignSystem_DesignSystem.bundle in Dependencies */ = {isa = PBXBuildFile; fileRef = 5BBA371E8E8C1661788823FE /* DesignSystem_DesignSystem.bundle */; };
+		443D859391E61B7E5D2C8ACF /* Resolver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8622110583C22504CA07B8AC /* Resolver.framework */; };
+		4B2CEEA5D96FB1AA13087DCB /* SharedContractsInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7FEA40EFDB38F15E4CF545E /* SharedContractsInterface.framework */; };
+		4B369CC79DB7F25751F7A22B /* CatalogScreenNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF6CB91F34D1D526462CEF /* CatalogScreenNetworkClient.swift */; };
+		510609120B4BDD143BE02728 /* SharedUserStories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E737208D63E1A59E107529F2 /* SharedUserStories.framework */; };
+		52FAC936A5E4A19FDE856115 /* MainInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 488CBDA38F9DCBD661D6BCB8 /* MainInterface.framework */; };
+		548E6120C9C3A6371D0652C0 /* CategoryListScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A2320B362133EDA6357DC8 /* CategoryListScreenViewModel.swift */; };
+		54983740B5B3F32EFFCCED4B /* SharedContractsInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = D7FEA40EFDB38F15E4CF545E /* SharedContractsInterface.framework */; };
+		54F24C5A98256C90D8EA1A4A /* CategoryListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586D8DC05E8651CA0AFE430F /* CategoryListFactory.swift */; };
+		5929B5EB415F4394BF9F60C1 /* CatalogProductsOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DAF589B3BD5BBAF6A08CE78 /* CatalogProductsOutput.swift */; };
+		5AE358820BE6A877D50C9718 /* ProductServiceInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 115C471CA96D70C775A808FA /* ProductServiceInterface.framework */; };
+		6100DE0C9158FF6F84110213 /* DependencyRegistry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B34F51F5C3B816B042C5CB7F /* DependencyRegistry.framework */; };
+		625E71B6C2372B934EA6B273 /* UserServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE1C2CFC5474EB92616709B /* UserServiceInterface.framework */; };
+		66B3339B6C602076E3F78AD4 /* CatalogAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F2435DF975F94E697A3371 /* CatalogAssembly.swift */; };
+		67F7C0B285A159DBE7CCF7B0 /* CatalogService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4232ED1159AF008793B82CCB /* CatalogService.framework */; };
+		6C662E1C0C4E4A07734B2941 /* BannerServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B5EDE7A319D305E9837662 /* BannerServiceInterface.framework */; };
+		7026F01BD4B5006871F6D4D6 /* DesignSystem_DesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5BBA371E8E8C1661788823FE /* DesignSystem_DesignSystem.bundle */; };
+		7199E25E4292887D8EEF0B56 /* CatalogScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F9CA38767B4EE722C3A313 /* CatalogScreenView.swift */; };
+		77784F10B98253C69C72F23E /* CatalogProductsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DF290F4165578E469DBE32 /* CatalogProductsAssembly.swift */; };
+		7A10076DAC4B080D9B64332C /* CartService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52D31A69BBBEFFB4ECFEF10 /* CartService.framework */; };
+		7B55AEBC160D37EFDFDC1661 /* UserService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF69AF11735094763940864A /* UserService.framework */; };
+		7DF1DFC01CA36FE6F61CFF35 /* CatalogCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3CB027F3A882F5EA1647F9 /* CatalogCoordinator.swift */; };
+		824AE5DFAAA3F6DC0C82A11F /* CatalogProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F5B1B35BF5A6AC909BC3B4 /* CatalogProductsView.swift */; };
+		847A22823BC8A39BB8B431C5 /* CatalogScreenViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B6E3CD6EFB3AABBC3A2D9F /* CatalogScreenViewState.swift */; };
+		85BAB57470DD1158A9ACC2C7 /* CatalogScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2650708409B98CB50618B24 /* CatalogScreenFactory.swift */; };
+		86343828BE58DD3F458FECE3 /* CatalogProductsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4F12296D64D5252810750E /* CatalogProductsScreenViewModel.swift */; };
+		869789106D7AF9BC9B625907 /* SharedUserStories.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = E737208D63E1A59E107529F2 /* SharedUserStories.framework */; };
+		893A8B719945DE844EA20D21 /* CategoryListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4CBB740BEBC0DD2892D043 /* CategoryListAssembly.swift */; };
+		8FCA537F4F0275EB9A0CB4AB /* CatalogProductsScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138735EEF011376AB63FA8B4 /* CatalogProductsScreenFactory.swift */; };
+		911F22B5973ECEBDB2C56C7D /* CategoryListScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FA3BC37ECF1F65984C218F /* CategoryListScreenView.swift */; };
+		A2E11A3B43AAC1922A9A137D /* CartServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4B9E931CCD5004EBC765F1 /* CartServiceInterface.framework */; };
+		A9856CE639D126797645AB65 /* CatalogProductsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D629DCE18C808417B35C709A /* CatalogProductsViewOutput.swift */; };
+		A9C2C0B63084AC3F73DAE7AB /* AnyCategoryListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F43F38125D5DD5A16FDFE5C /* AnyCategoryListFactory.swift */; };
+		AEF6B17961D9BBF888A660D7 /* CatalogScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806574EEB134A6A3CC8458EB /* CatalogScreenViewOutput.swift */; };
+		B438D6B109FF5869BC8B8CCD /* PopcatsServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88CE19A81597DF7B40791E26 /* PopcatsServiceInterface.framework */; };
+		B6582E38DB724B46D1BA1278 /* AuthServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954A89829D24FF733CD447F7 /* AuthServiceInterface.framework */; };
+		BCA61B416EC248F959927404 /* CategoryListScreenOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3AB2D942AF20C889BC261 /* CategoryListScreenOutput.swift */; };
+		BCD6F168356BC3126A031128 /* CatalogProductsScreenNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F583F5C6729D30AED7C8C376 /* CatalogProductsScreenNetworkClient.swift */; };
+		BFDE077F5EB95226C5EDAE41 /* AnyCategoryListNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B815CB5B711F4E3BBA44E77E /* AnyCategoryListNetworkClient.swift */; };
+		C893CC665ADAC39C03D20023 /* Catalog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA257DD17764902AFDB8363 /* Catalog.framework */; };
+		C8E0ACAFF2BA3E55AB30781D /* AnyCatalogScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2250E9780E2C99CD687DCE2 /* AnyCatalogScreenFactory.swift */; };
+		CDB0E2565A3CBA0AA78D2A5E /* CatalogProductsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC66BFC51A38DF46B2714B6 /* CatalogProductsState.swift */; };
+		D5E47FB60ACA71302F41F68A /* CategoryListNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98A1069FE60D9B4ADF48C38 /* CategoryListNetworkClient.swift */; };
+		D7827581938F603B16AEF12E /* DLCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89558579F561017EABD3FB8F /* DLCore.framework */; };
+		DCC4A0C5C764077C8E9A2EDF /* BannerService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E987D46165F866FD538E123D /* BannerService.framework */; };
+		E02935B3E1BE26579C3BEAD3 /* CatalogRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = F146B841BB52FB6C5B05C2AD /* CatalogRoute.swift */; };
+		E24617DEBC2BD33BF3CA025D /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95314F52B76971DFE73C6F5 /* ExampleView.swift */; };
+		E2D1AE2C85E9DB32381844A0 /* AnyCatalogProductsScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7228D00BA93B971039DF11AB /* AnyCatalogProductsScreenFactory.swift */; };
+		E3EBF191A02BD52EADB237A9 /* DesignSystem.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 61B8AE4D836AE2C61590B2E3 /* DesignSystem.framework */; };
+		E41F6E96DE4C7F1080C66A2C /* CategoryListScreenViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36312DB48851D03566888240 /* CategoryListScreenViewState.swift */; };
+		E7E3CF6620565D747F2072B7 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B8AE4D836AE2C61590B2E3 /* DesignSystem.framework */; };
+		E974B3CD087206D99FBC0BE3 /* PopcatsService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03DDCE0C45F6271A41FADC9 /* PopcatsService.framework */; };
+		ECE0A5A7B78E527BEF9DD27E /* CategoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11A19140D3853DEBD75B5EE /* CategoryFactory.swift */; };
+		F5F3952DFEE632FD772EE913 /* AuthService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC8B71FB4F690C9845464A1 /* AuthService.framework */; };
+		F8367BAD175BE0F9A4F95EC6 /* CategoryListScreenViewOuput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D13E1E48667AC8E75BF541 /* CategoryListScreenViewOuput.swift */; };
+		FFE502897078E22796E8AD3B /* AnyCatalogScreenNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01A99CC83F30C6BFA614876 /* AnyCatalogScreenNetworkClient.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		48403C68F95F444F5C0CF1DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8DE3645C3ECC0C6BDFE44A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 61C3CF9C8DB756B83498C576;
+			remoteInfo = Catalog;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		02970D714EE1700DC29055FE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F0915E3657A55C224B374F3 /* Dependencies */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstSubfolderSpec = 16;
+			files = (
+				441340423B0B6832D882AAD5 /* DesignSystem_DesignSystem.bundle in Dependencies */,
+			);
+			name = Dependencies;
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		952F40468E9C1829A533C7E2 /* Dependencies */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstSubfolderSpec = 16;
+			files = (
+				3C49108E29125C3ACFD8A0E2 /* CatalogServiceInterface.framework in Dependencies */,
+				1DB5A738DEC0E928DBCEA47B /* Coordinator.framework in Dependencies */,
+				193D1E34F7F7A4DEAED2CED0 /* DLCore.framework in Dependencies */,
+				E3EBF191A02BD52EADB237A9 /* DesignSystem.framework in Dependencies */,
+				52FAC936A5E4A19FDE856115 /* MainInterface.framework in Dependencies */,
+				5AE358820BE6A877D50C9718 /* ProductServiceInterface.framework in Dependencies */,
+				03DDFF409B968D4A1BFAEF07 /* Resolver.framework in Dependencies */,
+				54983740B5B3F32EFFCCED4B /* SharedContractsInterface.framework in Dependencies */,
+				869789106D7AF9BC9B625907 /* SharedUserStories.framework in Dependencies */,
+			);
+			name = Dependencies;
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		DAAFC0035D1D13C498BC4EFB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		01DF290F4165578E469DBE32 /* CatalogProductsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogProductsAssembly.swift; sourceTree = "<group>"; };
+		02B60A776BEC099EA33D8DDC /* CatalogProducts+Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CatalogProducts+Subviews.swift"; sourceTree = "<group>"; };
+		03FA3BC37ECF1F65984C218F /* CategoryListScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListScreenView.swift; sourceTree = "<group>"; };
+		115C471CA96D70C775A808FA /* ProductServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProductServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		138735EEF011376AB63FA8B4 /* CatalogProductsScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogProductsScreenFactory.swift; sourceTree = "<group>"; };
+		1AAEDC4269643F0644D4479A /* Coordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Coordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25F9CA38767B4EE722C3A313 /* CatalogScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogScreenView.swift; sourceTree = "<group>"; };
+		29DC373EEEBD5F542D9059EC /* CatalogExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "CatalogExample-Info.plist"; sourceTree = "<group>"; };
+		36312DB48851D03566888240 /* CategoryListScreenViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListScreenViewState.swift; sourceTree = "<group>"; };
+		4232ED1159AF008793B82CCB /* CatalogService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatalogService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		488CBDA38F9DCBD661D6BCB8 /* MainInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MainInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CA257DD17764902AFDB8363 /* Catalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Catalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56DB2EC9D37AFAE60044FCAF /* ProductService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProductService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		586D8DC05E8651CA0AFE430F /* CategoryListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListFactory.swift; sourceTree = "<group>"; };
+		5BBA371E8E8C1661788823FE /* DesignSystem_DesignSystem.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignSystem_DesignSystem.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		61B8AE4D836AE2C61590B2E3 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67B5EDE7A319D305E9837662 /* BannerServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BannerServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67F2435DF975F94E697A3371 /* CatalogAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogAssembly.swift; sourceTree = "<group>"; };
+		6D3CB027F3A882F5EA1647F9 /* CatalogCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCoordinator.swift; sourceTree = "<group>"; };
+		6D4F12296D64D5252810750E /* CatalogProductsScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogProductsScreenViewModel.swift; sourceTree = "<group>"; };
+		7228D00BA93B971039DF11AB /* AnyCatalogProductsScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCatalogProductsScreenFactory.swift; sourceTree = "<group>"; };
+		76585799E3AEE3B9849FDBB8 /* OrderService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OrderService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76D13E1E48667AC8E75BF541 /* CategoryListScreenViewOuput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListScreenViewOuput.swift; sourceTree = "<group>"; };
+		7FC66BFC51A38DF46B2714B6 /* CatalogProductsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogProductsState.swift; sourceTree = "<group>"; };
+		7FE1C2CFC5474EB92616709B /* UserServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		806574EEB134A6A3CC8458EB /* CatalogScreenViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogScreenViewOutput.swift; sourceTree = "<group>"; };
+		8622110583C22504CA07B8AC /* Resolver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Resolver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88A3AB2D942AF20C889BC261 /* CategoryListScreenOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListScreenOutput.swift; sourceTree = "<group>"; };
+		88B6E3CD6EFB3AABBC3A2D9F /* CatalogScreenViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogScreenViewState.swift; sourceTree = "<group>"; };
+		88CE19A81597DF7B40791E26 /* PopcatsServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopcatsServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89558579F561017EABD3FB8F /* DLCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DLCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		954A89829D24FF733CD447F7 /* AuthServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B556B1B3E7D0C30354F18A9 /* CatalogServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatalogServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DAF589B3BD5BBAF6A08CE78 /* CatalogProductsOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogProductsOutput.swift; sourceTree = "<group>"; };
+		9DBF6CB91F34D1D526462CEF /* CatalogScreenNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogScreenNetworkClient.swift; sourceTree = "<group>"; };
+		9F43F38125D5DD5A16FDFE5C /* AnyCategoryListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCategoryListFactory.swift; sourceTree = "<group>"; };
+		A01A99CC83F30C6BFA614876 /* AnyCatalogScreenNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCatalogScreenNetworkClient.swift; sourceTree = "<group>"; };
+		A0A3005425602C04EB5DBC5C /* CatalogCoordinatorAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCoordinatorAssembly.swift; sourceTree = "<group>"; };
+		A11A19140D3853DEBD75B5EE /* CategoryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFactory.swift; sourceTree = "<group>"; };
+		A52D31A69BBBEFFB4ECFEF10 /* CartService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CartService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B34F51F5C3B816B042C5CB7F /* DependencyRegistry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DependencyRegistry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B51F045A5D4D24025A165837 /* CatalogScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogScreenViewModel.swift; sourceTree = "<group>"; };
+		B815CB5B711F4E3BBA44E77E /* AnyCategoryListNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCategoryListNetworkClient.swift; sourceTree = "<group>"; };
+		BC4B9E931CCD5004EBC765F1 /* CartServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CartServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0836ABFFB9124AEAFDE33BD /* OrderServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OrderServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2250E9780E2C99CD687DCE2 /* AnyCatalogScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCatalogScreenFactory.swift; sourceTree = "<group>"; };
+		C98A1069FE60D9B4ADF48C38 /* CategoryListNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListNetworkClient.swift; sourceTree = "<group>"; };
+		D03DDCE0C45F6271A41FADC9 /* PopcatsService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopcatsService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D629DCE18C808417B35C709A /* CatalogProductsViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogProductsViewOutput.swift; sourceTree = "<group>"; };
+		D7FEA40EFDB38F15E4CF545E /* SharedContractsInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedContractsInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D95314F52B76971DFE73C6F5 /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
+		E1A2320B362133EDA6357DC8 /* CategoryListScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListScreenViewModel.swift; sourceTree = "<group>"; };
+		E2F5B1B35BF5A6AC909BC3B4 /* CatalogProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogProductsView.swift; sourceTree = "<group>"; };
+		E568BB375588C0713A7B1524 /* DLNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DLNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E737208D63E1A59E107529F2 /* SharedUserStories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedUserStories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E987D46165F866FD538E123D /* BannerService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BannerService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF69AF11735094763940864A /* UserService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F146B841BB52FB6C5B05C2AD /* CatalogRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogRoute.swift; sourceTree = "<group>"; };
+		F192B192C0DBFDB85E2C3ED8 /* CatalogScreenOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogScreenOutput.swift; sourceTree = "<group>"; };
+		F2650708409B98CB50618B24 /* CatalogScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogScreenFactory.swift; sourceTree = "<group>"; };
+		F583F5C6729D30AED7C8C376 /* CatalogProductsScreenNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogProductsScreenNetworkClient.swift; sourceTree = "<group>"; };
+		F7A75BC2070A6F41AB6C64D4 /* Catalog-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Catalog-Info.plist"; sourceTree = "<group>"; };
+		FC0C532A082BC5B6B75642FF /* CatalogExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatalogExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC4CBB740BEBC0DD2892D043 /* CategoryListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListAssembly.swift; sourceTree = "<group>"; };
+		FFC8B71FB4F690C9845464A1 /* AuthService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		009DDAAB0499BCB8A4DDB503 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5F3952DFEE632FD772EE913 /* AuthService.framework in Frameworks */,
+				B6582E38DB724B46D1BA1278 /* AuthServiceInterface.framework in Frameworks */,
+				DCC4A0C5C764077C8E9A2EDF /* BannerService.framework in Frameworks */,
+				6C662E1C0C4E4A07734B2941 /* BannerServiceInterface.framework in Frameworks */,
+				7A10076DAC4B080D9B64332C /* CartService.framework in Frameworks */,
+				A2E11A3B43AAC1922A9A137D /* CartServiceInterface.framework in Frameworks */,
+				C893CC665ADAC39C03D20023 /* Catalog.framework in Frameworks */,
+				67F7C0B285A159DBE7CCF7B0 /* CatalogService.framework in Frameworks */,
+				0FA4B055D083D160EC3CAF13 /* CatalogServiceInterface.framework in Frameworks */,
+				4359E0EDD3382ADB7C9F1320 /* Coordinator.framework in Frameworks */,
+				D7827581938F603B16AEF12E /* DLCore.framework in Frameworks */,
+				146DA7B18C75C42A71A2D5CC /* DLNetwork.framework in Frameworks */,
+				6100DE0C9158FF6F84110213 /* DependencyRegistry.framework in Frameworks */,
+				E7E3CF6620565D747F2072B7 /* DesignSystem.framework in Frameworks */,
+				34F6EABB470E7EBE23D88287 /* MainInterface.framework in Frameworks */,
+				14D7D1E119B02CB11695684B /* OrderService.framework in Frameworks */,
+				424356FEF820F246D1A3BCAA /* OrderServiceInterface.framework in Frameworks */,
+				E974B3CD087206D99FBC0BE3 /* PopcatsService.framework in Frameworks */,
+				B438D6B109FF5869BC8B8CCD /* PopcatsServiceInterface.framework in Frameworks */,
+				2FBD4E570E91F9FCB8EFC399 /* ProductService.framework in Frameworks */,
+				0AE9653C88498C52B24A8B72 /* ProductServiceInterface.framework in Frameworks */,
+				443D859391E61B7E5D2C8ACF /* Resolver.framework in Frameworks */,
+				4B2CEEA5D96FB1AA13087DCB /* SharedContractsInterface.framework in Frameworks */,
+				510609120B4BDD143BE02728 /* SharedUserStories.framework in Frameworks */,
+				7B55AEBC160D37EFDFDC1661 /* UserService.framework in Frameworks */,
+				625E71B6C2372B934EA6B273 /* UserServiceInterface.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F136E1EEB8207E7D1846A32B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04CE10796AA0EF6DB02FFB31 /* CatalogProductsView */ = {
+			isa = PBXGroup;
+			children = (
+				6A7B78A25A64CE807B834CE5 /* Assembly */,
+				F7703185CF4B38DF62A1C8A9 /* Factory */,
+				1D089BEF316608953C6FB10E /* Network */,
+				53DFBE3E5FBECE8EB898F1B3 /* View */,
+				B3EF09DA6DFD92C82DE1CE75 /* ViewModel */,
+			);
+			path = CatalogProductsView;
+			sourceTree = "<group>";
+		};
+		08A22843E1A1D4A42A0B0E53 = {
+			isa = PBXGroup;
+			children = (
+				F53CF0084DEBB87208EBEF71 /* Project */,
+				40264464D1833DBAD385A9C8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0BFB240B4761BD950F3EF6B9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B815CB5B711F4E3BBA44E77E /* AnyCategoryListNetworkClient.swift */,
+				C98A1069FE60D9B4ADF48C38 /* CategoryListNetworkClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		1C2DBC2DA6A834AC553A8D88 /* CategoryList */ = {
+			isa = PBXGroup;
+			children = (
+				BECC004C19EA7EC82AAA83DB /* Assembly */,
+				289744C51E24C7338791F4C6 /* Factory */,
+				0BFB240B4761BD950F3EF6B9 /* Network */,
+				F608E67E50B253FA05DCE8FE /* View */,
+				D6BA8B4F2CFEA7F335EEF06B /* ViewModel */,
+			);
+			path = CategoryList;
+			sourceTree = "<group>";
+		};
+		1D089BEF316608953C6FB10E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F583F5C6729D30AED7C8C376 /* CatalogProductsScreenNetworkClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		1D6FA8F9AB0477E82B4FE396 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				04CE10796AA0EF6DB02FFB31 /* CatalogProductsView */,
+				A277E60741138F209B415280 /* CatalogView */,
+				1C2DBC2DA6A834AC553A8D88 /* CategoryList */,
+				A145E542E6869E67836AD471 /* Helpers */,
+				6D3CB027F3A882F5EA1647F9 /* CatalogCoordinator.swift */,
+				A0A3005425602C04EB5DBC5C /* CatalogCoordinatorAssembly.swift */,
+				F146B841BB52FB6C5B05C2AD /* CatalogRoute.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		20355EB560A9F3D1D3FBF79D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F192B192C0DBFDB85E2C3ED8 /* CatalogScreenOutput.swift */,
+				B51F045A5D4D24025A165837 /* CatalogScreenViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		289744C51E24C7338791F4C6 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				9F43F38125D5DD5A16FDFE5C /* AnyCategoryListFactory.swift */,
+				586D8DC05E8651CA0AFE430F /* CategoryListFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		40264464D1833DBAD385A9C8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFC8B71FB4F690C9845464A1 /* AuthService.framework */,
+				954A89829D24FF733CD447F7 /* AuthServiceInterface.framework */,
+				E987D46165F866FD538E123D /* BannerService.framework */,
+				67B5EDE7A319D305E9837662 /* BannerServiceInterface.framework */,
+				A52D31A69BBBEFFB4ECFEF10 /* CartService.framework */,
+				BC4B9E931CCD5004EBC765F1 /* CartServiceInterface.framework */,
+				4CA257DD17764902AFDB8363 /* Catalog.framework */,
+				FC0C532A082BC5B6B75642FF /* CatalogExample.app */,
+				4232ED1159AF008793B82CCB /* CatalogService.framework */,
+				9B556B1B3E7D0C30354F18A9 /* CatalogServiceInterface.framework */,
+				1AAEDC4269643F0644D4479A /* Coordinator.framework */,
+				B34F51F5C3B816B042C5CB7F /* DependencyRegistry.framework */,
+				5BBA371E8E8C1661788823FE /* DesignSystem_DesignSystem.bundle */,
+				61B8AE4D836AE2C61590B2E3 /* DesignSystem.framework */,
+				89558579F561017EABD3FB8F /* DLCore.framework */,
+				E568BB375588C0713A7B1524 /* DLNetwork.framework */,
+				488CBDA38F9DCBD661D6BCB8 /* MainInterface.framework */,
+				76585799E3AEE3B9849FDBB8 /* OrderService.framework */,
+				C0836ABFFB9124AEAFDE33BD /* OrderServiceInterface.framework */,
+				D03DDCE0C45F6271A41FADC9 /* PopcatsService.framework */,
+				88CE19A81597DF7B40791E26 /* PopcatsServiceInterface.framework */,
+				56DB2EC9D37AFAE60044FCAF /* ProductService.framework */,
+				115C471CA96D70C775A808FA /* ProductServiceInterface.framework */,
+				8622110583C22504CA07B8AC /* Resolver.framework */,
+				D7FEA40EFDB38F15E4CF545E /* SharedContractsInterface.framework */,
+				E737208D63E1A59E107529F2 /* SharedUserStories.framework */,
+				EF69AF11735094763940864A /* UserService.framework */,
+				7FE1C2CFC5474EB92616709B /* UserServiceInterface.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		50BF67DF6F29D7A1D143C6E9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A01A99CC83F30C6BFA614876 /* AnyCatalogScreenNetworkClient.swift */,
+				9DBF6CB91F34D1D526462CEF /* CatalogScreenNetworkClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		53DFBE3E5FBECE8EB898F1B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				02B60A776BEC099EA33D8DDC /* CatalogProducts+Subviews.swift */,
+				7FC66BFC51A38DF46B2714B6 /* CatalogProductsState.swift */,
+				E2F5B1B35BF5A6AC909BC3B4 /* CatalogProductsView.swift */,
+				D629DCE18C808417B35C709A /* CatalogProductsViewOutput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5F39A5F6C20BC11D19F4B7C0 /* Derived */ = {
+			isa = PBXGroup;
+			children = (
+				CA16F22900AD0D6164FA93E8 /* InfoPlists */,
+			);
+			path = Derived;
+			sourceTree = "<group>";
+		};
+		6A7B78A25A64CE807B834CE5 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				01DF290F4165578E469DBE32 /* CatalogProductsAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		95CD09EF2644A94AD68BAA7F /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				C2250E9780E2C99CD687DCE2 /* AnyCatalogScreenFactory.swift */,
+				F2650708409B98CB50618B24 /* CatalogScreenFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		A145E542E6869E67836AD471 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E9B394532949749FA251221C /* Factory */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A277E60741138F209B415280 /* CatalogView */ = {
+			isa = PBXGroup;
+			children = (
+				BD392BE0799135F7715A8ABD /* Assembly */,
+				95CD09EF2644A94AD68BAA7F /* Factory */,
+				50BF67DF6F29D7A1D143C6E9 /* Network */,
+				C6C72675FB46974A687FFFF4 /* View */,
+				20355EB560A9F3D1D3FBF79D /* ViewModel */,
+			);
+			path = CatalogView;
+			sourceTree = "<group>";
+		};
+		B3EF09DA6DFD92C82DE1CE75 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9DAF589B3BD5BBAF6A08CE78 /* CatalogProductsOutput.swift */,
+				6D4F12296D64D5252810750E /* CatalogProductsScreenViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BD392BE0799135F7715A8ABD /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				67F2435DF975F94E697A3371 /* CatalogAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		BECC004C19EA7EC82AAA83DB /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				FC4CBB740BEBC0DD2892D043 /* CategoryListAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		C6C72675FB46974A687FFFF4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				25F9CA38767B4EE722C3A313 /* CatalogScreenView.swift */,
+				806574EEB134A6A3CC8458EB /* CatalogScreenViewOutput.swift */,
+				88B6E3CD6EFB3AABBC3A2D9F /* CatalogScreenViewState.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CA16F22900AD0D6164FA93E8 /* InfoPlists */ = {
+			isa = PBXGroup;
+			children = (
+				F7A75BC2070A6F41AB6C64D4 /* Catalog-Info.plist */,
+				29DC373EEEBD5F542D9059EC /* CatalogExample-Info.plist */,
+			);
+			path = InfoPlists;
+			sourceTree = "<group>";
+		};
+		D6BA8B4F2CFEA7F335EEF06B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				88A3AB2D942AF20C889BC261 /* CategoryListScreenOutput.swift */,
+				E1A2320B362133EDA6357DC8 /* CategoryListScreenViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E9B394532949749FA251221C /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				A11A19140D3853DEBD75B5EE /* CategoryFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		F53CF0084DEBB87208EBEF71 /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				5F39A5F6C20BC11D19F4B7C0 /* Derived */,
+				FF2B7752EEBE02E64814DB77 /* Example */,
+				1D6FA8F9AB0477E82B4FE396 /* Sources */,
+			);
+			name = Project;
+			sourceTree = "<group>";
+		};
+		F608E67E50B253FA05DCE8FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				03FA3BC37ECF1F65984C218F /* CategoryListScreenView.swift */,
+				76D13E1E48667AC8E75BF541 /* CategoryListScreenViewOuput.swift */,
+				36312DB48851D03566888240 /* CategoryListScreenViewState.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F7703185CF4B38DF62A1C8A9 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				7228D00BA93B971039DF11AB /* AnyCatalogProductsScreenFactory.swift */,
+				138735EEF011376AB63FA8B4 /* CatalogProductsScreenFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		FF2B7752EEBE02E64814DB77 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				D95314F52B76971DFE73C6F5 /* ExampleView.swift */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		148ADFC62526F7E0003FD375 /* CatalogExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 873124C4ABEF095BE8778C67 /* Build configuration list for PBXNativeTarget "CatalogExample" */;
+			buildPhases = (
+				209ED3FC02BCA7553D0BED5A /* Sources */,
+				FFCAFCBF704612DD2A41760E /* Resources */,
+				009DDAAB0499BCB8A4DDB503 /* Frameworks */,
+				02970D714EE1700DC29055FE /* Embed Frameworks */,
+				2F0915E3657A55C224B374F3 /* Dependencies */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				416876461D90808367F00786 /* PBXTargetDependency */,
+			);
+			name = CatalogExample;
+			packageProductDependencies = (
+			);
+			productName = CatalogExample;
+			productReference = FC0C532A082BC5B6B75642FF /* CatalogExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		61C3CF9C8DB756B83498C576 /* Catalog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B5169E54F7378A45332B446 /* Build configuration list for PBXNativeTarget "Catalog" */;
+			buildPhases = (
+				04A41F0960334FB00E6DE09E /* Sources */,
+				364F3704D168677277A3CDA0 /* Resources */,
+				F136E1EEB8207E7D1846A32B /* Frameworks */,
+				DAAFC0035D1D13C498BC4EFB /* Embed Frameworks */,
+				952F40468E9C1829A533C7E2 /* Dependencies */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Catalog;
+			packageProductDependencies = (
+			);
+			productName = Catalog;
+			productReference = 4CA257DD17764902AFDB8363 /* Catalog.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D8DE3645C3ECC0C6BDFE44A1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				CLASSPREFIX = DL;
+				LastUpgradeCheck = 1630;
+				ORGANIZATIONNAME = Delivery24;
+			};
+			buildConfigurationList = B12621D1EB50F86CECABE69D /* Build configuration list for PBXProject "Catalog" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 08A22843E1A1D4A42A0B0E53;
+			productRefGroup = 40264464D1833DBAD385A9C8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				61C3CF9C8DB756B83498C576 /* Catalog */,
+				148ADFC62526F7E0003FD375 /* CatalogExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		364F3704D168677277A3CDA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFCAFCBF704612DD2A41760E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7026F01BD4B5006871F6D4D6 /* DesignSystem_DesignSystem.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04A41F0960334FB00E6DE09E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DF1DFC01CA36FE6F61CFF35 /* CatalogCoordinator.swift in Sources */,
+				277081980CBCDD397AA71A2C /* CatalogCoordinatorAssembly.swift in Sources */,
+				77784F10B98253C69C72F23E /* CatalogProductsAssembly.swift in Sources */,
+				E2D1AE2C85E9DB32381844A0 /* AnyCatalogProductsScreenFactory.swift in Sources */,
+				8FCA537F4F0275EB9A0CB4AB /* CatalogProductsScreenFactory.swift in Sources */,
+				BCD6F168356BC3126A031128 /* CatalogProductsScreenNetworkClient.swift in Sources */,
+				430A72F5D5575262FDFDE8B7 /* CatalogProducts+Subviews.swift in Sources */,
+				CDB0E2565A3CBA0AA78D2A5E /* CatalogProductsState.swift in Sources */,
+				824AE5DFAAA3F6DC0C82A11F /* CatalogProductsView.swift in Sources */,
+				A9856CE639D126797645AB65 /* CatalogProductsViewOutput.swift in Sources */,
+				5929B5EB415F4394BF9F60C1 /* CatalogProductsOutput.swift in Sources */,
+				86343828BE58DD3F458FECE3 /* CatalogProductsScreenViewModel.swift in Sources */,
+				E02935B3E1BE26579C3BEAD3 /* CatalogRoute.swift in Sources */,
+				66B3339B6C602076E3F78AD4 /* CatalogAssembly.swift in Sources */,
+				C8E0ACAFF2BA3E55AB30781D /* AnyCatalogScreenFactory.swift in Sources */,
+				85BAB57470DD1158A9ACC2C7 /* CatalogScreenFactory.swift in Sources */,
+				FFE502897078E22796E8AD3B /* AnyCatalogScreenNetworkClient.swift in Sources */,
+				4B369CC79DB7F25751F7A22B /* CatalogScreenNetworkClient.swift in Sources */,
+				7199E25E4292887D8EEF0B56 /* CatalogScreenView.swift in Sources */,
+				AEF6B17961D9BBF888A660D7 /* CatalogScreenViewOutput.swift in Sources */,
+				847A22823BC8A39BB8B431C5 /* CatalogScreenViewState.swift in Sources */,
+				404D2D1370C9BCA59994B83A /* CatalogScreenOutput.swift in Sources */,
+				408E7C8B8F1544BF919D9708 /* CatalogScreenViewModel.swift in Sources */,
+				893A8B719945DE844EA20D21 /* CategoryListAssembly.swift in Sources */,
+				A9C2C0B63084AC3F73DAE7AB /* AnyCategoryListFactory.swift in Sources */,
+				54F24C5A98256C90D8EA1A4A /* CategoryListFactory.swift in Sources */,
+				BFDE077F5EB95226C5EDAE41 /* AnyCategoryListNetworkClient.swift in Sources */,
+				D5E47FB60ACA71302F41F68A /* CategoryListNetworkClient.swift in Sources */,
+				911F22B5973ECEBDB2C56C7D /* CategoryListScreenView.swift in Sources */,
+				F8367BAD175BE0F9A4F95EC6 /* CategoryListScreenViewOuput.swift in Sources */,
+				E41F6E96DE4C7F1080C66A2C /* CategoryListScreenViewState.swift in Sources */,
+				BCA61B416EC248F959927404 /* CategoryListScreenOutput.swift in Sources */,
+				548E6120C9C3A6371D0652C0 /* CategoryListScreenViewModel.swift in Sources */,
+				ECE0A5A7B78E527BEF9DD27E /* CategoryFactory.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		209ED3FC02BCA7553D0BED5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E24617DEBC2BD33BF3CA025D /* ExampleView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		416876461D90808367F00786 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Catalog;
+			target = 61C3CF9C8DB756B83498C576 /* Catalog */;
+			targetProxy = 48403C68F95F444F5C0CF1DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		102FFA1364762D4C9AE89EA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		4436BFA8BDB815095CE4E444 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 6.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		46B92761AF5B3DF4A990D3AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = NO;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				INFOPLIST_FILE = "Derived/InfoPlists/CatalogExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mightykingrichard.DeliveryApp.catalog.example;
+				PRODUCT_NAME = CatalogExample;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		507BC728B9F531E59537913C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = NO;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				INFOPLIST_FILE = "Derived/InfoPlists/CatalogExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mightykingrichard.DeliveryApp.catalog.example;
+				PRODUCT_NAME = CatalogExample;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		5661989CB8EC04AB2C4182DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				INFOPLIST_FILE = "Derived/InfoPlists/Catalog-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mightykingrichard.DeliveryApp.catalog;
+				PRODUCT_NAME = Catalog;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		743CF8B357DE2D0A31966588 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				INFOPLIST_FILE = "Derived/InfoPlists/Catalog-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mightykingrichard.DeliveryApp.catalog;
+				PRODUCT_NAME = Catalog;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		873124C4ABEF095BE8778C67 /* Build configuration list for PBXNativeTarget "CatalogExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46B92761AF5B3DF4A990D3AF /* Debug */,
+				507BC728B9F531E59537913C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B5169E54F7378A45332B446 /* Build configuration list for PBXNativeTarget "Catalog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				743CF8B357DE2D0A31966588 /* Debug */,
+				5661989CB8EC04AB2C4182DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B12621D1EB50F86CECABE69D /* Build configuration list for PBXProject "Catalog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				102FFA1364762D4C9AE89EA3 /* Debug */,
+				4436BFA8BDB815095CE4E444 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D8DE3645C3ECC0C6BDFE44A1 /* Project object */;
+}

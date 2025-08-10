@@ -6,7 +6,7 @@
 import Foundation
 import DesignSystem
 
-public struct CategoryModel: Identifiable, Sendable {
+public struct CategoryModel: Identifiable, Hashable, Sendable {
 
     public let id: Int
     public let imageURL: URL?

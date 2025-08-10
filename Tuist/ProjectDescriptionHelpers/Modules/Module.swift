@@ -30,7 +30,8 @@ public enum Module: String, CaseIterable {
     // L7
     case Main
     case Profile
-    case Category
+    case Catalog
+    
     // L8
     case SharedUserStories
 }
@@ -62,7 +63,7 @@ extension Module {
                 .ProductService, .UserService, .SharedContracts:
             return .service
         case .Main, .Profile, .SharedUserStories,
-                .Category:
+                .Catalog:
             return .userStory
         }
     }

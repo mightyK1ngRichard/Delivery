@@ -16,7 +16,7 @@ public struct CategoryProductsResponse: Decodable, Sendable {
 
 // MARK: - CategoryProductEntity
 
-public struct CategoryProductEntity: Decodable, Sendable, Identifiable, Hashable {
+public struct CategoryProductEntity: Decodable, Sendable {
 
     public let id: Int?
     public let sku: String?
@@ -50,7 +50,7 @@ public struct CategoryProductEntity: Decodable, Sendable, Identifiable, Hashable
     public let brandTitle: String?
     public let whishlistFlag: Bool?
     public let realCount: Int?
-    public let brand: Brand
+    public let brand: Brand?
 }
 
 extension CategoryProductEntity {

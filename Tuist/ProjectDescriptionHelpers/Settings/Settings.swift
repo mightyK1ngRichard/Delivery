@@ -29,7 +29,8 @@ extension SettingsDictionary {
                 "ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOL_EXTENSIONS": "YES",
                 "ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS": "YES",
                 "DEFINES_MODULE": "NO",
-                "ENABLE_USER_SCRIPT_SANDBOXING": "YES"
+                "ENABLE_USER_SCRIPT_SANDBOXING": "YES",
+                "ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS": "YES"
             ])
     }
 }

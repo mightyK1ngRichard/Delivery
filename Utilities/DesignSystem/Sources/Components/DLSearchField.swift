@@ -1,18 +1,23 @@
 //
-// DLSearchField.swift
-// iOS-Delivery24
-//
-// Created by Dmitriy Permyakov on 14.06.2024
-// Copyright © 2024 Dostavka24. All rights reserved.
+//  Created by Dmitriy Permyakov on 14.06.2024
+//  Copyright © 2024 Dostavka24. All rights reserved.
 //
 
 import SwiftUI
 
-struct DLSearchField: View {
-    @Binding var text: String
-    @FocusState var isFocused: Bool
+public struct DLSearchField: View {
 
-    var body: some View {
+    @Binding
+    var text: String
+
+    @FocusState
+    var isFocused: Bool
+
+    public init(text: Binding<String>) {
+        self._text = text
+    }
+
+    public var body: some View {
         HStack {
             Image(systemName: "magnifyingglass")
                 .foregroundStyle(Constants.iconColor)
@@ -26,7 +31,7 @@ struct DLSearchField: View {
 
             if !text.isEmpty {
                 Button {
-                    text = ""
+                    text = String()
                 } label: {
                     Image(systemName: "xmark.circle.fill")
                         .foregroundStyle(Constants.iconColor)
@@ -39,13 +44,6 @@ struct DLSearchField: View {
     }
 }
 
-// MARK: - Preview
-
-#Preview {
-    DLSearchField(text: .constant(""))
-        .padding(.horizontal)
-}
-
 // MARK: - Constants
 
 private extension DLSearchField {
@@ -56,6 +54,5 @@ private extension DLSearchField {
         static let iconColor = Color.secondary
         static let textFieldBgColor = Color.secondary.opacity(0.12)
         static let placeholderColor = Color.secondary.opacity(0.6)
-        // -
     }
 }

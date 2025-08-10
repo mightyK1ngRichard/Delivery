@@ -6,10 +6,10 @@
 import SwiftUI
 import SharedUserStories
 
-enum ProductDetailsAssembly {
+public enum ProductDetailsAssembly {
 
     @MainActor
-    static func assemble(product: ProductModel, output: ProductDetailsScreenOutput) -> some View {
+    public static func assemble(product: ProductModel, output: ProductDetailsScreenOutput) -> some View {
         let state = ProductDetailsScreenViewState(product: product)
         let factory = ProductDetailsScreenFactory()
         let viewModel = ProductDetailsScreenViewModel(
