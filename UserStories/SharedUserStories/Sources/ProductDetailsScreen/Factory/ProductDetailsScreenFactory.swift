@@ -6,6 +6,6 @@
 struct ProductDetailsScreenFactory: AnyProductDetailsScreenFactory {
 
     func makeBasketButtonTitle(from model: ProductModel) -> String {
-        "\(model.packageCount.count) шт · \(model.formattedPrice)"
+        "\(model.magnifier) шт · \(model.itemPrice.formattedPrice)"
     }
 }

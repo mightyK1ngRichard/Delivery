@@ -36,58 +36,66 @@ public struct ProductFactory: AnyProductFactory {
     public func convertToProduct(from entity: CategoryProductEntity) -> ProductModel? {
         guard let id = entity.id,
               let image = entity.image,
-              let priceItem = entity.priceItem,
+              let priceItemString = entity.priceItem,
+              let priceItem = Double(priceItemString),
               let description = entity.description,
               let formattedExpirationDate = dateFactory.calculateExpirationDate(from: entity.expirationDate),
               let brandEntity = entity.brand,
               let brand = convertToBrand(from: brandEntity),
               let cashback = entity.cashback,
               let packageCount = entity.kolvoUpak,
-              let formattedPrice = priceFactory.convertToPrice(from: priceItem)
+              let formattedPrice = priceFactory.convertToPrice(from: priceItem),
+              let magnifier = entity.coeff,
+              let fullPrice = calculateProductFullPrice(itemPrice: priceItem, count: magnifier)
         else { return nil }
 
         return .init(
             id: id,
             imageURL: mediaFactory.convertImageURL(from: image),
             title: entity.title ?? "Без заголовка",
-            formattedPrice: formattedPrice,
+            itemPrice: .init(formattedPrice: formattedPrice, price: priceItem),
             description: description,
-            startCounter: entity.coeff ?? 0,
-            magnifier: entity.coeff ?? 1,
             tags: productTags(from: entity),
             brand: brand,
             cashback: String(cashback),
             packageCount: .init(count: packageCount, formattedCountTile: "\(packageCount) шт."),
-            formattedExpirationDate: formattedExpirationDate
+            formattedExpirationDate: formattedExpirationDate,
+            magnifier: magnifier,
+            fullPrice: fullPrice
         )
     }
 
     public func convertToProduct(from entity: ProductEntity) -> ProductModel? {
         guard let id = entity.id,
               let image = entity.image,
-              let priceItem = entity.priceItem,
+              let priceItemString = entity.priceItem,
+              let priceItem = Double(priceItemString),
               let description = entity.description,
               let formattedExpirationDate = dateFactory.calculateExpirationDate(from: entity.expirationDate),
-              let brandEntity = entity.brand,
-              let brand = convertToBrand(from: brandEntity),
-              let cashback = entity.cashback,
               let packageCount = entity.kolvoUpak,
-              let formattedPrice = priceFactory.convertToPrice(from: priceItem)
+              let formattedPrice = priceFactory.convertToPrice(from: priceItem),
+              let magnifier = entity.coeff,
+              let fullPrice = calculateProductFullPrice(itemPrice: priceItem, count: magnifier)
         else { return nil }
+
+        var brand: ProductModel.Brand?
+        if let brandEntity = entity.brand {
+            brand = convertToBrand(from: brandEntity)
+        }
 
         return .init(
             id: id,
             imageURL: mediaFactory.convertImageURL(from: image),
             title: entity.title ?? "Без заголовка",
-            formattedPrice: formattedPrice,
+            itemPrice: .init(formattedPrice: formattedPrice, price: priceItem),
             description: description,
-            startCounter: entity.coeff ?? 0,
-            magnifier: entity.coeff ?? 1,
             tags: productTags(from: entity),
             brand: brand,
-            cashback: String(cashback),
+            cashback: entity.cashback ?? "0",
             packageCount: .init(count: packageCount, formattedCountTile: "\(packageCount) шт."),
-            formattedExpirationDate: formattedExpirationDate
+            formattedExpirationDate: formattedExpirationDate,
+            magnifier: magnifier,
+            fullPrice: fullPrice
         )
     }
 
@@ -96,9 +104,9 @@ public struct ProductFactory: AnyProductFactory {
             id: model.id,
             imageURL: model.imageURL,
             title: model.title,
-            price: model.formattedPrice,
+            price: model.itemPrice.formattedPrice,
             description: model.description,
-            startCounter: model.startCounter,
+            startCounter: model.magnifier,
             magnifier: model.magnifier,
             tags: model.tags.map(convertToTags)
         )
@@ -147,6 +155,16 @@ extension ProductFactory {
             entity.actionFlag2 == 1 ? ProductSection.actions : nil,
             entity.exclusFlag == 1 ? ProductSection.exclusives : nil,
         ]).compactMap { $0 }
+    }
+
+    private func calculateProductFullPrice(itemPrice: Double, count: Int) -> ProductModel.Price? {
+        // Цена за штуку x коэфициент: 100руб * 12 = 1200
+        let fullPrice = itemPrice * Double(count)
+        guard let convertFullPrice = priceFactory.convertToPrice(from: fullPrice) else {
+            return nil
+        }
+
+        return .init(formattedPrice: convertFullPrice, price: fullPrice)
     }
 
     // MARK: Model -> DSModel

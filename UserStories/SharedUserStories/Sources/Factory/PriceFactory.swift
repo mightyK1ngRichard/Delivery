@@ -6,7 +6,7 @@
 import Foundation
 
 public protocol AnyPriceFactory: Sendable {
-    func convertToPrice(from priceItemString: String?) -> String?
+    func convertToPrice(from priceItem: Double) -> String?
 }
 
 public struct PriceFactory: AnyPriceFactory {
@@ -26,11 +26,10 @@ public struct PriceFactory: AnyPriceFactory {
     public init() {}
 
     /// Конвертируем из DTO в форматированную строку цены.
-    public func convertToPrice(from priceItemString: String?) -> String? {
-        guard let priceItemString,
-              let priceItem = Double(priceItemString),
-              let formattedString = priceFormatter.string(from: NSNumber(value: priceItem))
-        else { return nil }
+    public func convertToPrice(from priceItem: Double) -> String? {
+        guard let formattedString = priceFormatter.string(from: NSNumber(value: priceItem)) else {
+            return nil
+        }
 
         return formattedString
     }

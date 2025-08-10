@@ -10,6 +10,7 @@ enum CatalogRoute: Identifiable, Hashable {
     case categorySublist(category: CategoryModel)
     case categoryProducts(category: CategoryModel, categories: [CategoryModel])
     case productDetails(product: ProductModel)
+    case allProducts(products: [ProductModel], navigationTitle: String)
 
     var id: Self { self }
 }

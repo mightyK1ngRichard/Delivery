@@ -72,7 +72,7 @@ extension MainScreenViewModel: MainScreenViewOutput {
 
     func onTapProductCard(product: ProductModel) {
         logger.logEvent()
-        output?.openProductDetatails(product: product)
+        output?.mainScreenOpenProductDetatails(product: product)
     }
 
     func onTapSectionLookMore(section: ProductSection) {
@@ -83,12 +83,12 @@ extension MainScreenViewModel: MainScreenViewOutput {
             return
         }
 
-        output?.openAllProducts(sectionTitle: object.section.title, products: object.products)
+        output?.mainScreenOpenAllProducts(sectionTitle: object.section.title, products: object.products)
     }
 
     func onTapPopcatsCell(id: Int, title: String) {
         logger.logEvent()
-        output?.openPopcats(id: id, title: title)
+        output?.mainScreenOpenPopcats(id: id, title: title)
     }
 
     func onTapLike(id: Int, isLike: Bool) {
@@ -102,10 +102,12 @@ extension MainScreenViewModel: MainScreenViewOutput {
 
             do {
                 try await networkClient.addProductInBasket(productID: productID, count: counter)
-                output?.incrementCartCount()
+                output?.mainScreenIncrementCartCount()
             } catch {
                 logger.error(error)
-                output?.showAlert(title: "Ошибка добавления в корзину", message: error.localizedDescription)
+                output?.mainScreenShowAlert(
+                    with: .init(title: "Ошибка добавления в корзину", subtitle: error.localizedDescription)
+                )
             }
         }
     }
@@ -195,7 +197,10 @@ extension MainScreenViewModel {
     }
 }
 
-enum FetchResult: Sendable {
+// MARK: - FetchResult
+
+private enum FetchResult: Sendable {
+
     case sections([(ProductSection, [ProductModel])])
     case banners([BannerPage])
     case popcats([PopcatModel])

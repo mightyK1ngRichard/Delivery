@@ -7,19 +7,17 @@ import SharedUserStories
 
 @MainActor
 protocol MainScreenOutput: AnyObject {
-    func openProductDetatails(product: ProductModel)
-    func openAllProducts(sectionTitle: String, products: [ProductModel])
-    func openPopcats(id: Int, title: String)
-    func openPickAddressScreen()
-    func openAuthScreen()
-    func showAlert(title: String, message: String)
-    func showAuthAlert(title: String, message: String)
-    func showAddAddressAlert(title: String, message: String, token: String)
+    func mainScreenOpenProductDetatails(product: ProductModel)
+    func mainScreenOpenAllProducts(sectionTitle: String, products: [ProductModel])
+    func mainScreenOpenPopcats(id: Int, title: String)
+    func mainScreenOpenPickAddressScreen()
+    func mainScreenOpenAuthScreen()
+    func mainScreenShowAlert(with model: AlertModel)
 
-    func incrementCartCount()
-    func decrementCartCount()
+    func mainScreenIncrementCartCount()
+    func mainScreenDecrementCartCount()
 
-    func addProductToBasket(product: ProductModel, count: Int)
-    func incrementProductCountInBasket(productID: Int, count: Int)
-    func decrementProductCountInBasket(productID: Int, count: Int)
+    func mainScreenAddProductToBasket(product: ProductModel, count: Int)
+    func mainScreenIncrementProductCountInBasket(productID: Int, count: Int)
+    func mainScreenDecrementProductCountInBasket(productID: Int, count: Int)
 }

@@ -9,57 +9,49 @@ import SharedUserStories
 
 extension MainCoordinator: MainScreenOutput {
 
-    func openProductDetatails(product: ProductModel) {
+    func mainScreenOpenProductDetatails(product: ProductModel) {
         logger.logEvent()
         router.push(.product(product))
     }
 
-    func openAllProducts(sectionTitle: String, products: [ProductModel]) {
+    func mainScreenOpenAllProducts(sectionTitle: String, products: [ProductModel]) {
         logger.logEvent()
         router.push(.lookAll(navigationTitle: sectionTitle, products: products))
     }
 
-    func openPopcats(id: Int, title: String) {
+    func mainScreenOpenPopcats(id: Int, title: String) {
         logger.logEvent()
     }
 
-    func openPickAddressScreen() {
+    func mainScreenOpenPickAddressScreen() {
         logger.logEvent()
     }
 
-    func openAuthScreen() {
+    func mainScreenOpenAuthScreen() {
         logger.logEvent()
     }
 
-    func showAlert(title: String, message: String) {
+    func mainScreenShowAlert(with model: AlertModel) {
         logger.logEvent()
     }
 
-    func showAuthAlert(title: String, message: String) {
+    func mainScreenIncrementCartCount() {
         logger.logEvent()
     }
 
-    func showAddAddressAlert(title: String, message: String, token: String) {
+    func mainScreenDecrementCartCount() {
         logger.logEvent()
     }
 
-    func incrementCartCount() {
+    func mainScreenAddProductToBasket(product: ProductModel, count: Int) {
         logger.logEvent()
     }
 
-    func decrementCartCount() {
+    func mainScreenIncrementProductCountInBasket(productID: Int, count: Int) {
         logger.logEvent()
     }
 
-    func addProductToBasket(product: ProductModel, count: Int) {
-        logger.logEvent()
-    }
-
-    func incrementProductCountInBasket(productID: Int, count: Int) {
-        logger.logEvent()
-    }
-
-    func decrementProductCountInBasket(productID: Int, count: Int) {
+    func mainScreenDecrementProductCountInBasket(productID: Int, count: Int) {
         logger.logEvent()
     }
 }

@@ -7,76 +7,67 @@ import Foundation
 import DesignSystem
 
 public struct ProductModel: Identifiable, Hashable, Sendable {
-
+    
+    /// Код продукта
     public let id: Int
+    /// Фото
     public let imageURL: URL?
+    /// Название продукта
     public let title: String
-    /// Цена в формате: 1029.60 руб
-    public let formattedPrice: String
+    /// Цена продукта за штуку
+    public let itemPrice: Price
+    /// Описание продукта
     public let description: String
-    public let startCounter: Int
-    public let magnifier: Int
+    /// Теги продукта (Акция, новые и пр.)
     public let tags: [ProductSection]
-    public let brand: Brand
+    /// Брэнд продукта
+    public let brand: Brand?
+    /// Кэшбек за продукт
     public let cashback: String
+    /// Количество продукта  в упаковке с форматированным текстом: `10 шт.`
     public let packageCount: PackageCount
     /// Строка формата: 730 дней (до 14.08.28)
     public let formattedExpirationDate: String
 
-    public init(
-        id: Int,
-        imageURL: URL?,
-        title: String,
-        formattedPrice: String,
-        description: String,
-        startCounter: Int,
-        magnifier: Int,
-        tags: [ProductSection],
-        brand: Brand,
-        cashback: String,
-        packageCount: PackageCount,
-        formattedExpirationDate: String
-    ) {
-        self.id = id
-        self.imageURL = imageURL
-        self.title = title
-        self.formattedPrice = formattedPrice
-        self.description = description
-        self.startCounter = startCounter
-        self.magnifier = magnifier
-        self.tags = tags
-        self.brand = brand
-        self.cashback = cashback
-        self.packageCount = packageCount
-        self.formattedExpirationDate = formattedExpirationDate
-    }
+    /// Коэфициент увеличивания продукта
+    public let magnifier: Int
+    /// Полная цену продукта: `Цена/шт × количество`
+    public var fullPrice: Price
 }
 
-// MARK: - Brand
+// MARK: - Brand, PackageCount, Price
 
 extension ProductModel {
-
+    
+    /// Брэнд продукта
     public struct Brand: Identifiable, Hashable, Sendable {
 
+        /// Код брэнда
         public let id: Int
+        /// Название брэнда
         public let title: String
-
-        public init(id: Int, title: String) {
-            self.id = id
-            self.title = title
-        }
     }
-
+    
+    /// Количество штук продукта в упаковке
     public struct PackageCount: Hashable, Sendable {
 
-        /// Число
+        /// Число в упаковке
         public let count: Int
-        /// Строка формата: 10 шт.
+        /// Строка формата: `10 шт.`
         public let formattedCountTile: String
+    }
 
-        public init(count: Int, formattedCountTile: String) {
-            self.count = count
-            self.formattedCountTile = formattedCountTile
+    /// Отформатированная цена и значение
+    public struct Price: Hashable, Sendable {
+
+        /// Отформатированная цена за штуку в формате: `1029.60 ₽`
+        public let formattedPrice: String
+        /// Цена за штуку
+        public let price: Double
+
+        public init(formattedPrice: String, price: Double) {
+            self.formattedPrice = formattedPrice
+            self.price = price
         }
     }
 }

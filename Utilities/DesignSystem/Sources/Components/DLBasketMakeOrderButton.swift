@@ -9,18 +9,39 @@
 import SwiftUI
 import DLCore
 
-struct DLBasketMakeOrderButton: View {
-    struct Configuration {
-        var state: ButtonState
-        var title: String
-        var subtitle: String
-        var isDisable: Bool
+extension DLBasketMakeOrderButton {
+
+    public struct Configuration {
+        let state: ButtonState
+        let title: String
+        let subtitle: String
+        let isDisable: Bool
+
+        public init(
+            state: ButtonState,
+            title: String,
+            subtitle: String,
+            isDisable: Bool
+        ) {
+            self.state = state
+            self.title = title
+            self.subtitle = subtitle
+            self.isDisable = isDisable
+        }
+    }
+}
+
+public struct DLBasketMakeOrderButton: View {
+
+    private let configuration: Configuration
+    private let didTapButton: DLVoidBlock?
+
+    public init(configuration: Configuration, didTapButton: DLVoidBlock? = nil) {
+        self.configuration = configuration
+        self.didTapButton = didTapButton
     }
 
-    var configuration: Configuration
-    var didTapButton: DLVoidBlock?
-
-    var body: some View {
+    public var body: some View {
         DLButton(
             configuration: .init(
                 state: configuration.state,

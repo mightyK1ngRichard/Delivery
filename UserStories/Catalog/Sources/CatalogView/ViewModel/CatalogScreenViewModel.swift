@@ -38,10 +38,12 @@ extension CatalogScreenViewModel: CatalogScreenViewOutput {
     }
 
     func onTapReloadButton() {
+        logger.logEvent()
         fetchCategoriesAndHitsProducts()
     }
 
     func onTapCategory(categoryID: Int) {
+        logger.logEvent()
         guard let category = state.categories.first(where: { $0.id == categoryID }) else {
             logger.error("Категория с id=\(categoryID) не найдена")
             return
@@ -51,16 +53,20 @@ extension CatalogScreenViewModel: CatalogScreenViewOutput {
     }
 
     func onTapLookAllProducts() {
+        logger.logEvent()
         output?.catalogScreenDidOpenLookAllProducts(navigationTitle: "Популярные товары", products: state.products)
     }
 
     func onTapLikeProduct(id: Int, isLike: Bool) {
+        logger.logEvent()
     }
 
     func onTapBasketProduct(id: Int, counter: Int) {
+        logger.logEvent()
     }
 
     func onTapProductCard(product: ProductModel) {
+        logger.logEvent()
         output?.catalogScreenDidOpenProductDetails(product: product)
     }
 }

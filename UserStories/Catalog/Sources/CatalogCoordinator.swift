@@ -36,6 +36,12 @@ final class CatalogCoordinator: Navigatable {
                 .assemble(category: category, categories: categories, output: self)
         case let .productDetails(product):
             ProductDetailsAssembly.assemble(product: product, output: self)
+        case let .allProducts(products, navigationTitle):
+            AllProductsScreenAssembly.assemble(
+                products: products,
+                navigationTitle: navigationTitle,
+                output: self
+            )
         }
     }
 }
@@ -51,6 +57,7 @@ extension CatalogCoordinator: CatalogScreenOutput {
 
     func catalogScreenDidOpenLookAllProducts(navigationTitle: String, products: [ProductModel]) {
         logger.logEvent()
+        router.push(.allProducts(products: products, navigationTitle: navigationTitle))
     }
 
     func catalogScreenDidOpenProductDetails(product: ProductModel) {
@@ -90,5 +97,14 @@ extension CatalogCoordinator: CatalogProductsOutput {
 // MARK: - ProductDetailsScreenOutput
 
 extension CatalogCoordinator: ProductDetailsScreenOutput {
+}
 
+// MARK: - AllProductsScreenOutput
+
+extension CatalogCoordinator: AllProductsScreenOutput {
+
+    func allProductsScreenDidTapOpenProuctDetails(with product: ProductModel) {
+        logger.logEvent()
+        router.push(.productDetails(product: product))
+    }
 }

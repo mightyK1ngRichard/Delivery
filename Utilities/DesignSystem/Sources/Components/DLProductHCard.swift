@@ -1,23 +1,23 @@
 //
-// DLProductHCard.swift
-// iOS-Delivery24
-//
-// Created by Dmitriy Permyakov on 09.07.2024
-// Copyright © 2024 Dostavka24. All rights reserved.
+//  Created by Dmitriy Permyakov on 09.07.2024
+//  Copyright © 2024 Dostavka24. All rights reserved.
 //
 
 import SwiftUI
 import DLCore
 
-struct DLProductHCard: View {
+public struct DLProductHCard: View {
 
-    let configuration: Configuration
-    var handlerConfiguration: HandlerConfiguration
+    @State
+    private var counter: Int
 
-    @State private var counter: Int
-    @State private var isLiked: Bool
+    @State
+    private var isLiked: Bool
 
-    init(
+    private let configuration: Configuration
+    private let handlerConfiguration: HandlerConfiguration
+
+    public init(
         configuration: Configuration,
         handlerConfiguration: HandlerConfiguration = .init()
     ) {
@@ -27,7 +27,7 @@ struct DLProductHCard: View {
         self._isLiked = State(initialValue: configuration.isLiked)
     }
 
-    var body: some View {
+    public var body: some View {
         HStack(spacing: 0) {
             DLImageView(
                 configuration: .init(
@@ -103,23 +103,47 @@ private extension DLProductHCard {
 
 extension DLProductHCard {
 
-    struct Configuration {
-        var title: String
-        var price: String
-        var unitPrice: String
-        var cornerPrice: String
-        var startCount: Int
-        var isLiked: Bool
-        var imageKind: ImageKind
+    public struct Configuration {
+        let title: String
+        let price: String
+        let unitPrice: String
+        let cornerPrice: String
+        let startCount: Int
+        let isLiked: Bool
+        let imageKind: ImageKind
         /// Увелечитель суммы при нажатии плюс или минус
-        var magnifier: Int
-        var buttonKind: ButtonKind = .delete
+        let magnifier: Int
+        let buttonKind: ButtonKind
+
+        public init(
+            title: String,
+            price: String,
+            unitPrice: String,
+            cornerPrice: String,
+            startCount: Int,
+            isLiked: Bool,
+            imageKind: ImageKind,
+            magnifier: Int,
+            buttonKind: ButtonKind = .delete
+        ) {
+            self.title = title
+            self.price = price
+            self.unitPrice = unitPrice
+            self.cornerPrice = cornerPrice
+            self.startCount = startCount
+            self.isLiked = isLiked
+            self.imageKind = imageKind
+            self.magnifier = magnifier
+            self.buttonKind = buttonKind
+        }
     }
 }
 
+// MARK: - ButtonKind
+
 extension DLProductHCard.Configuration {
 
-    enum ButtonKind {
+    public enum ButtonKind {
         case delete
         case info
     }
@@ -129,12 +153,26 @@ extension DLProductHCard.Configuration {
 
 extension DLProductHCard {
 
-    struct HandlerConfiguration {
-        var didTapPlus: DLIntBlock?
-        var didTapMinus: DLIntBlock?
-        var didTapLike: DLBoolBlock?
-        var didTapDelete: DLIntBlock?
-        var didTapInfo: DLVoidBlock?
+    public struct HandlerConfiguration {
+        let didTapPlus: DLIntBlock?
+        let didTapMinus: DLIntBlock?
+        let didTapLike: DLBoolBlock?
+        let didTapDelete: DLIntBlock?
+        let didTapInfo: DLVoidBlock?
+
+        public init(
+            didTapPlus: DLIntBlock? = nil,
+            didTapMinus: DLIntBlock? = nil,
+            didTapLike: DLBoolBlock? = nil,
+            didTapDelete: DLIntBlock? = nil,
+            didTapInfo: DLVoidBlock? = nil
+        ) {
+            self.didTapPlus = didTapPlus
+            self.didTapMinus = didTapMinus
+            self.didTapLike = didTapLike
+            self.didTapDelete = didTapDelete
+            self.didTapInfo = didTapInfo
+        }
     }
 }
 

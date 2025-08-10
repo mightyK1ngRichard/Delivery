@@ -160,19 +160,21 @@ extension ProductDetailsView {
 
     @ViewBuilder
     var brandTitle: some View {
-        HStack(spacing: .SPx1) {
-            Text("Бренд:")
-                .style(size: 17, weight: .regular, color: Constants.textPrimary)
+        if let brand = state.product.brand {
+            HStack(spacing: .SPx1) {
+                Text("Бренд:")
+                    .style(size: 17, weight: .regular, color: Constants.textPrimary)
 
-            Text(state.product.brand.title)
-                .style(size: 17, weight: .regular, color: Constants.textLink)
+                Text(brand.title)
+                    .style(size: 17, weight: .regular, color: Constants.textLink)
+            }
         }
     }
 
     @ViewBuilder
     var priceContainer: some View {
         HStack(spacing: .SPx1) {
-            Text(state.product.formattedPrice)
+            Text(state.product.itemPrice.formattedPrice)
                 .style(size: 22, weight: .bold, color: Constants.textPrimary)
             Text("/шт")
                 .style(size: 17, weight: .regular, color: DLColor<TextPalette>.gray800.color)

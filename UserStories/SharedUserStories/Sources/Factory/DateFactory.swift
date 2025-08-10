@@ -22,9 +22,9 @@ public struct DateFactory: AnyDateFactory {
     public init() {}
 
     public func calculateExpirationDate(from expirationDate: String?) -> String? {
-        guard let daysInt = Int(expirationDate ?? String()) else {
-            return nil
-        }
+        guard let expirationDate,
+              let daysInt = Int(expirationDate)
+        else { return nil }
 
         let currentDate = Date()
         var dateComponent = DateComponents()

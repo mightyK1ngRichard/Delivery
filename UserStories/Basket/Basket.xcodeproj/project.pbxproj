@@ -1,0 +1,769 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 70;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00501C7F4E8142357A2E7653 /* BasketView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C1B7F2E66382E169EBA764 /* BasketView+Subviews.swift */; };
+		057E3E933ED463515B331BF3 /* CartServiceInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 9C85C8C39A5F5723B9D5BB23 /* CartServiceInterface.framework */; };
+		0A5A01D45C89C734807AA9D8 /* CatalogService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD5C8CB72E53E8C6D44BE2AA /* CatalogService.framework */; };
+		0BA40BE9B1198DF56D584E3C /* PopcatsServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBC2FDECFE2D52D7DFEBA527 /* PopcatsServiceInterface.framework */; };
+		0CF6E49CCE7B00C7F9E59698 /* Coordinator.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 10314EA2D50BFC46C5FB904F /* Coordinator.framework */; };
+		1397B22399A2878F4FE9C6C4 /* BasketNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7EE30541EE9B7A5643573B /* BasketNetworkClient.swift */; };
+		2063F5BF598B50E01AF3EBF7 /* UserServiceInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 1BA20E2E814B0F00273FA3E1 /* UserServiceInterface.framework */; };
+		234852132687401DEED8AA42 /* Coordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10314EA2D50BFC46C5FB904F /* Coordinator.framework */; };
+		3A52E09247DDD5C2BE2FB620 /* Basket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6170B0D7BD6D5248B0E51D9C /* Basket.framework */; };
+		3ECD4AB22CA8C245CB372FD3 /* DesignSystem_DesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E0E56CB0211437D9B65D58A2 /* DesignSystem_DesignSystem.bundle */; };
+		3FFE249664C88FAF472B27AF /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60950D2A5A69D92F81D7036B /* DesignSystem.framework */; };
+		4E84DC3F477E599580C0E419 /* DesignSystem_DesignSystem.bundle in Dependencies */ = {isa = PBXBuildFile; fileRef = E0E56CB0211437D9B65D58A2 /* DesignSystem_DesignSystem.bundle */; };
+		503A89262D2BFCB9D25D09AA /* OrderServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCBF72E217BBDB9A46AB0A58 /* OrderServiceInterface.framework */; };
+		5B7C544357E6BB83001CA577 /* BasketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F77477E7C81F1BCF4B42B6 /* BasketViewModel.swift */; };
+		5B8E74AFF4305CEAA8D2F67A /* BannerService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D2955A949D9E644D12148F /* BannerService.framework */; };
+		6AFDF79674D5C3C42C04A0DD /* DLCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A3B255976B2560A41791E6 /* DLCore.framework */; };
+		6FFD6C9F093BF027D6CB526E /* Resolver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78DDD3A0E22DFF6EE8F14577 /* Resolver.framework */; };
+		79D6209E132A140E0F5B9072 /* ProductService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D4F0CCE838B66AE98B933E8 /* ProductService.framework */; };
+		7A135E32E43212A1B885C116 /* BasketViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0673D3DC3BE76A184D80410 /* BasketViewState.swift */; };
+		7B8AD70CB182003FC4BC835C /* BasketExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F560FF4490160BB9A7357D6E /* BasketExample.swift */; };
+		81F3CD63B63AFEC9F8FE1985 /* OrderService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9067B8A47A9A10CF46C59986 /* OrderService.framework */; };
+		8AEC3B7E49767FBBA8765407 /* AuthServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEF22A19712E8D45C19572FE /* AuthServiceInterface.framework */; };
+		8D97A736433229D6F03CBDC2 /* DLNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2627F8B7970ED1D76BE51A92 /* DLNetwork.framework */; };
+		8E288F5DAAF45B7B8BEF9A20 /* ProductServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 321CDCE7EA5D5788054DF6E6 /* ProductServiceInterface.framework */; };
+		9BCE90BDE4F6A306A38D612B /* CartServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C85C8C39A5F5723B9D5BB23 /* CartServiceInterface.framework */; };
+		9F0BEE8E3EE337C7A32EB8C3 /* DesignSystem.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 60950D2A5A69D92F81D7036B /* DesignSystem.framework */; };
+		9F8E6175282172AF048E9F20 /* Resolver.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 78DDD3A0E22DFF6EE8F14577 /* Resolver.framework */; };
+		A4ECDD758C3EE359697547C4 /* BasketScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E1CCEAAC11A5F77458F432 /* BasketScreenView.swift */; };
+		ADB8EFCACAB4561F6EB458A9 /* CartService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 858C39ACDFE726E1E774A8D7 /* CartService.framework */; };
+		AF4EB6A1F858FAC4DC21C3BD /* AuthService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988C41B81E865AE2199D6B9C /* AuthService.framework */; };
+		B255F6A6C28567F68A20F064 /* SharedContractsInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD63C147FD5662E7ED7E19E /* SharedContractsInterface.framework */; };
+		CE9DFE091018D29BFAD21DE9 /* BasketScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC4A3F78D3B9822944A51EF /* BasketScreenViewOutput.swift */; };
+		D18C878E8856DB2C57645986 /* SharedContractsInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 0DD63C147FD5662E7ED7E19E /* SharedContractsInterface.framework */; };
+		D5B7E927DCB884F5E2DA2F3F /* SharedUserStories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB820D87EF2EB783D30ED53 /* SharedUserStories.framework */; };
+		D999AAE2ADC009EC25BF64EA /* DLCore.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 77A3B255976B2560A41791E6 /* DLCore.framework */; };
+		DE108F2F4FA6DE14350E6DEF /* SharedUserStories.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 7CB820D87EF2EB783D30ED53 /* SharedUserStories.framework */; };
+		DF12C8913FAA18E4DB01D25F /* PopcatsService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA5F6B55FCF80F1DB35CF9E /* PopcatsService.framework */; };
+		DFDD75395E7B030123432F0E /* BannerServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DDA112DBE296D7173E3827 /* BannerServiceInterface.framework */; };
+		E19731D9AC1145B56E8EF855 /* CatalogServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E293E92F73FFC830A910A977 /* CatalogServiceInterface.framework */; };
+		E2E63B4CB4D2C04C043D4A34 /* DependencyRegistry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DFCC88A3B1377C2FBAE8C47 /* DependencyRegistry.framework */; };
+		E5C4AF1C2E48598400805C19 /* AnyBasketNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C4AF1B2E48598400805C19 /* AnyBasketNetworkClient.swift */; };
+		EA21B0E9CFFD7489F543D657 /* UserService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2470A8F21536D47CE3D10D4 /* UserService.framework */; };
+		EA91860A02FDA3712A8DC9F1 /* BasketAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72AB36FFDD52426D2675978 /* BasketAssembly.swift */; };
+		F957CFCF2D809F8DE470031D /* UserServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA20E2E814B0F00273FA3E1 /* UserServiceInterface.framework */; };
+		FD78842D5442CB2E6360BE99 /* BasketScreenOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4875C7538D673EC1FDB0050F /* BasketScreenOutput.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		86DA9DB78890894FF716220C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19FC69768883FBA0831DA9FA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 38EF53732C755F112B096C61;
+			remoteInfo = Basket;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8056921F751F05FE1438417A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		974BCDC9457C1ABE00983922 /* Dependencies */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstSubfolderSpec = 16;
+			files = (
+				4E84DC3F477E599580C0E419 /* DesignSystem_DesignSystem.bundle in Dependencies */,
+			);
+			name = Dependencies;
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		D64462137CB06D8C5157672E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F14F88075344D5C279DD8C5C /* Dependencies */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstSubfolderSpec = 16;
+			files = (
+				057E3E933ED463515B331BF3 /* CartServiceInterface.framework in Dependencies */,
+				0CF6E49CCE7B00C7F9E59698 /* Coordinator.framework in Dependencies */,
+				D999AAE2ADC009EC25BF64EA /* DLCore.framework in Dependencies */,
+				9F0BEE8E3EE337C7A32EB8C3 /* DesignSystem.framework in Dependencies */,
+				9F8E6175282172AF048E9F20 /* Resolver.framework in Dependencies */,
+				D18C878E8856DB2C57645986 /* SharedContractsInterface.framework in Dependencies */,
+				DE108F2F4FA6DE14350E6DEF /* SharedUserStories.framework in Dependencies */,
+				2063F5BF598B50E01AF3EBF7 /* UserServiceInterface.framework in Dependencies */,
+			);
+			name = Dependencies;
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0DD63C147FD5662E7ED7E19E /* SharedContractsInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedContractsInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DFCC88A3B1377C2FBAE8C47 /* DependencyRegistry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DependencyRegistry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10314EA2D50BFC46C5FB904F /* Coordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Coordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10C1B7F2E66382E169EBA764 /* BasketView+Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BasketView+Subviews.swift"; sourceTree = "<group>"; };
+		1BA20E2E814B0F00273FA3E1 /* UserServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D4F0CCE838B66AE98B933E8 /* ProductService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProductService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		20E1CCEAAC11A5F77458F432 /* BasketScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenView.swift; sourceTree = "<group>"; };
+		22DDA112DBE296D7173E3827 /* BannerServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BannerServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2627F8B7970ED1D76BE51A92 /* DLNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DLNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		321CDCE7EA5D5788054DF6E6 /* ProductServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProductServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4875C7538D673EC1FDB0050F /* BasketScreenOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenOutput.swift; sourceTree = "<group>"; };
+		5EA5F6B55FCF80F1DB35CF9E /* PopcatsService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopcatsService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60950D2A5A69D92F81D7036B /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6170B0D7BD6D5248B0E51D9C /* Basket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Basket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77A3B255976B2560A41791E6 /* DLCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DLCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78DDD3A0E22DFF6EE8F14577 /* Resolver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Resolver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CB820D87EF2EB783D30ED53 /* SharedUserStories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedUserStories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		858C39ACDFE726E1E774A8D7 /* CartService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CartService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9067B8A47A9A10CF46C59986 /* OrderService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OrderService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		988C41B81E865AE2199D6B9C /* AuthService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C85C8C39A5F5723B9D5BB23 /* CartServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CartServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1D2955A949D9E644D12148F /* BannerService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BannerService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2470A8F21536D47CE3D10D4 /* UserService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAC4A3F78D3B9822944A51EF /* BasketScreenViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenViewOutput.swift; sourceTree = "<group>"; };
+		AD5C8CB72E53E8C6D44BE2AA /* CatalogService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatalogService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3F77477E7C81F1BCF4B42B6 /* BasketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewModel.swift; sourceTree = "<group>"; };
+		D0673D3DC3BE76A184D80410 /* BasketViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewState.swift; sourceTree = "<group>"; };
+		DCBF72E217BBDB9A46AB0A58 /* OrderServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OrderServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDDD5A1AAFF2993060345632 /* BasketExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BasketExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE7EE30541EE9B7A5643573B /* BasketNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketNetworkClient.swift; sourceTree = "<group>"; };
+		DEF22A19712E8D45C19572FE /* AuthServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0E56CB0211437D9B65D58A2 /* DesignSystem_DesignSystem.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignSystem_DesignSystem.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		E293E92F73FFC830A910A977 /* CatalogServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatalogServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5C4AF1B2E48598400805C19 /* AnyBasketNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyBasketNetworkClient.swift; sourceTree = "<group>"; };
+		E72AB36FFDD52426D2675978 /* BasketAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketAssembly.swift; sourceTree = "<group>"; };
+		ED16E6F9CA4FB7E4DA4829A6 /* Basket-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Basket-Info.plist"; sourceTree = "<group>"; };
+		F3BD1F72442A07E7DEA345A1 /* BasketExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "BasketExample-Info.plist"; sourceTree = "<group>"; };
+		F560FF4490160BB9A7357D6E /* BasketExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketExample.swift; sourceTree = "<group>"; };
+		FBC2FDECFE2D52D7DFEBA527 /* PopcatsServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopcatsServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		E5C4AF162E484C6300805C19 /* Factory */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Factory; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8A4BA3C659D46FCF6D9FA0D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E096D7E16571574D66F41BDB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF4EB6A1F858FAC4DC21C3BD /* AuthService.framework in Frameworks */,
+				8AEC3B7E49767FBBA8765407 /* AuthServiceInterface.framework in Frameworks */,
+				5B8E74AFF4305CEAA8D2F67A /* BannerService.framework in Frameworks */,
+				DFDD75395E7B030123432F0E /* BannerServiceInterface.framework in Frameworks */,
+				3A52E09247DDD5C2BE2FB620 /* Basket.framework in Frameworks */,
+				ADB8EFCACAB4561F6EB458A9 /* CartService.framework in Frameworks */,
+				9BCE90BDE4F6A306A38D612B /* CartServiceInterface.framework in Frameworks */,
+				0A5A01D45C89C734807AA9D8 /* CatalogService.framework in Frameworks */,
+				E19731D9AC1145B56E8EF855 /* CatalogServiceInterface.framework in Frameworks */,
+				234852132687401DEED8AA42 /* Coordinator.framework in Frameworks */,
+				6AFDF79674D5C3C42C04A0DD /* DLCore.framework in Frameworks */,
+				8D97A736433229D6F03CBDC2 /* DLNetwork.framework in Frameworks */,
+				E2E63B4CB4D2C04C043D4A34 /* DependencyRegistry.framework in Frameworks */,
+				3FFE249664C88FAF472B27AF /* DesignSystem.framework in Frameworks */,
+				81F3CD63B63AFEC9F8FE1985 /* OrderService.framework in Frameworks */,
+				503A89262D2BFCB9D25D09AA /* OrderServiceInterface.framework in Frameworks */,
+				DF12C8913FAA18E4DB01D25F /* PopcatsService.framework in Frameworks */,
+				0BA40BE9B1198DF56D584E3C /* PopcatsServiceInterface.framework in Frameworks */,
+				79D6209E132A140E0F5B9072 /* ProductService.framework in Frameworks */,
+				8E288F5DAAF45B7B8BEF9A20 /* ProductServiceInterface.framework in Frameworks */,
+				6FFD6C9F093BF027D6CB526E /* Resolver.framework in Frameworks */,
+				B255F6A6C28567F68A20F064 /* SharedContractsInterface.framework in Frameworks */,
+				D5B7E927DCB884F5E2DA2F3F /* SharedUserStories.framework in Frameworks */,
+				EA21B0E9CFFD7489F543D657 /* UserService.framework in Frameworks */,
+				F957CFCF2D809F8DE470031D /* UserServiceInterface.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0460C15A616150B112C82584 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E5C4AF1B2E48598400805C19 /* AnyBasketNetworkClient.swift */,
+				DE7EE30541EE9B7A5643573B /* BasketNetworkClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		29CDA4B8EECEB1591E421670 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				F560FF4490160BB9A7357D6E /* BasketExample.swift */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
+		4CD4ED1C961427C5A9051B8A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				A4009B51716D7CD5D9D76902 /* Basket */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		68C62CF403E72F17A798737F /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				74F51BF7A25ADEC8D4775C8B /* Derived */,
+				29CDA4B8EECEB1591E421670 /* Example */,
+				4CD4ED1C961427C5A9051B8A /* Sources */,
+			);
+			name = Project;
+			sourceTree = "<group>";
+		};
+		74F51BF7A25ADEC8D4775C8B /* Derived */ = {
+			isa = PBXGroup;
+			children = (
+				C1AEB577D06293A8925FA4BF /* InfoPlists */,
+			);
+			path = Derived;
+			sourceTree = "<group>";
+		};
+		7BB5FE8FCB482DDC5732D84B /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				E72AB36FFDD52426D2675978 /* BasketAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		81D7FA35D251811250545340 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				20E1CCEAAC11A5F77458F432 /* BasketScreenView.swift */,
+				10C1B7F2E66382E169EBA764 /* BasketView+Subviews.swift */,
+				AAC4A3F78D3B9822944A51EF /* BasketScreenViewOutput.swift */,
+				D0673D3DC3BE76A184D80410 /* BasketViewState.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		825DDA55453A158D3DEEFE80 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				988C41B81E865AE2199D6B9C /* AuthService.framework */,
+				DEF22A19712E8D45C19572FE /* AuthServiceInterface.framework */,
+				A1D2955A949D9E644D12148F /* BannerService.framework */,
+				22DDA112DBE296D7173E3827 /* BannerServiceInterface.framework */,
+				6170B0D7BD6D5248B0E51D9C /* Basket.framework */,
+				DDDD5A1AAFF2993060345632 /* BasketExample.app */,
+				858C39ACDFE726E1E774A8D7 /* CartService.framework */,
+				9C85C8C39A5F5723B9D5BB23 /* CartServiceInterface.framework */,
+				AD5C8CB72E53E8C6D44BE2AA /* CatalogService.framework */,
+				E293E92F73FFC830A910A977 /* CatalogServiceInterface.framework */,
+				10314EA2D50BFC46C5FB904F /* Coordinator.framework */,
+				0DFCC88A3B1377C2FBAE8C47 /* DependencyRegistry.framework */,
+				E0E56CB0211437D9B65D58A2 /* DesignSystem_DesignSystem.bundle */,
+				60950D2A5A69D92F81D7036B /* DesignSystem.framework */,
+				77A3B255976B2560A41791E6 /* DLCore.framework */,
+				2627F8B7970ED1D76BE51A92 /* DLNetwork.framework */,
+				9067B8A47A9A10CF46C59986 /* OrderService.framework */,
+				DCBF72E217BBDB9A46AB0A58 /* OrderServiceInterface.framework */,
+				5EA5F6B55FCF80F1DB35CF9E /* PopcatsService.framework */,
+				FBC2FDECFE2D52D7DFEBA527 /* PopcatsServiceInterface.framework */,
+				1D4F0CCE838B66AE98B933E8 /* ProductService.framework */,
+				321CDCE7EA5D5788054DF6E6 /* ProductServiceInterface.framework */,
+				78DDD3A0E22DFF6EE8F14577 /* Resolver.framework */,
+				0DD63C147FD5662E7ED7E19E /* SharedContractsInterface.framework */,
+				7CB820D87EF2EB783D30ED53 /* SharedUserStories.framework */,
+				A2470A8F21536D47CE3D10D4 /* UserService.framework */,
+				1BA20E2E814B0F00273FA3E1 /* UserServiceInterface.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		889E4D0E9ABF7AE3C4F623BD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4875C7538D673EC1FDB0050F /* BasketScreenOutput.swift */,
+				B3F77477E7C81F1BCF4B42B6 /* BasketViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A14CE6FEFF866A4887C54FB7 = {
+			isa = PBXGroup;
+			children = (
+				68C62CF403E72F17A798737F /* Project */,
+				825DDA55453A158D3DEEFE80 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A4009B51716D7CD5D9D76902 /* Basket */ = {
+			isa = PBXGroup;
+			children = (
+				E5C4AF162E484C6300805C19 /* Factory */,
+				7BB5FE8FCB482DDC5732D84B /* Assembly */,
+				0460C15A616150B112C82584 /* Network */,
+				81D7FA35D251811250545340 /* View */,
+				889E4D0E9ABF7AE3C4F623BD /* ViewModel */,
+			);
+			path = Basket;
+			sourceTree = "<group>";
+		};
+		C1AEB577D06293A8925FA4BF /* InfoPlists */ = {
+			isa = PBXGroup;
+			children = (
+				ED16E6F9CA4FB7E4DA4829A6 /* Basket-Info.plist */,
+				F3BD1F72442A07E7DEA345A1 /* BasketExample-Info.plist */,
+			);
+			path = InfoPlists;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1DA7DC144B98B4A3973C972E /* BasketExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F430B43A90752EE81B4D4A64 /* Build configuration list for PBXNativeTarget "BasketExample" */;
+			buildPhases = (
+				CFA27EB3C7927413AF5B3F2D /* Sources */,
+				18DD204F28DA8F3D949B24B6 /* Resources */,
+				E096D7E16571574D66F41BDB /* Frameworks */,
+				D64462137CB06D8C5157672E /* Embed Frameworks */,
+				974BCDC9457C1ABE00983922 /* Dependencies */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A99DBC71B8F82F1BF638E418 /* PBXTargetDependency */,
+			);
+			name = BasketExample;
+			packageProductDependencies = (
+			);
+			productName = BasketExample;
+			productReference = DDDD5A1AAFF2993060345632 /* BasketExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		38EF53732C755F112B096C61 /* Basket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42D449B6F43E4C1C46191627 /* Build configuration list for PBXNativeTarget "Basket" */;
+			buildPhases = (
+				69DA0099484DAE27D0C9DA11 /* Sources */,
+				84A17A744FCE6598BD98E54E /* Resources */,
+				8A4BA3C659D46FCF6D9FA0D5 /* Frameworks */,
+				8056921F751F05FE1438417A /* Embed Frameworks */,
+				F14F88075344D5C279DD8C5C /* Dependencies */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				E5C4AF162E484C6300805C19 /* Factory */,
+			);
+			name = Basket;
+			packageProductDependencies = (
+			);
+			productName = Basket;
+			productReference = 6170B0D7BD6D5248B0E51D9C /* Basket.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		19FC69768883FBA0831DA9FA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				CLASSPREFIX = DL;
+				LastUpgradeCheck = 1630;
+				ORGANIZATIONNAME = Delivery24;
+			};
+			buildConfigurationList = 08394724006F414453F48862 /* Build configuration list for PBXProject "Basket" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = A14CE6FEFF866A4887C54FB7;
+			productRefGroup = 825DDA55453A158D3DEEFE80 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				38EF53732C755F112B096C61 /* Basket */,
+				1DA7DC144B98B4A3973C972E /* BasketExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18DD204F28DA8F3D949B24B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3ECD4AB22CA8C245CB372FD3 /* DesignSystem_DesignSystem.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A17A744FCE6598BD98E54E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		69DA0099484DAE27D0C9DA11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA91860A02FDA3712A8DC9F1 /* BasketAssembly.swift in Sources */,
+				E5C4AF1C2E48598400805C19 /* AnyBasketNetworkClient.swift in Sources */,
+				1397B22399A2878F4FE9C6C4 /* BasketNetworkClient.swift in Sources */,
+				00501C7F4E8142357A2E7653 /* BasketView+Subviews.swift in Sources */,
+				A4ECDD758C3EE359697547C4 /* BasketScreenView.swift in Sources */,
+				CE9DFE091018D29BFAD21DE9 /* BasketScreenViewOutput.swift in Sources */,
+				7A135E32E43212A1B885C116 /* BasketViewState.swift in Sources */,
+				FD78842D5442CB2E6360BE99 /* BasketScreenOutput.swift in Sources */,
+				5B7C544357E6BB83001CA577 /* BasketViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFA27EB3C7927413AF5B3F2D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B8AD70CB182003FC4BC835C /* BasketExample.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A99DBC71B8F82F1BF638E418 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Basket;
+			target = 38EF53732C755F112B096C61 /* Basket */;
+			targetProxy = 86DA9DB78890894FF716220C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1903E2AAD02C34BDE2C0725F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				INFOPLIST_FILE = "Derived/InfoPlists/Basket-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mightykingrichard.DeliveryApp.basket;
+				PRODUCT_NAME = Basket;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1AD0856C349AC866F8775429 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				INFOPLIST_FILE = "Derived/InfoPlists/Basket-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mightykingrichard.DeliveryApp.basket;
+				PRODUCT_NAME = Basket;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3EB09980351CEEC4958EF9B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 6.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		459264B3C5D839DFC43397C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = NO;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				INFOPLIST_FILE = "Derived/InfoPlists/BasketExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mightykingrichard.DeliveryApp.basket.example;
+				PRODUCT_NAME = BasketExample;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		688F686FEE7098D8FF0027F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = NO;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				INFOPLIST_FILE = "Derived/InfoPlists/BasketExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mightykingrichard.DeliveryApp.basket.example;
+				PRODUCT_NAME = BasketExample;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		FCC36DED640E5C785F6B6CB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		08394724006F414453F48862 /* Build configuration list for PBXProject "Basket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCC36DED640E5C785F6B6CB2 /* Debug */,
+				3EB09980351CEEC4958EF9B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42D449B6F43E4C1C46191627 /* Build configuration list for PBXNativeTarget "Basket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AD0856C349AC866F8775429 /* Debug */,
+				1903E2AAD02C34BDE2C0725F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F430B43A90752EE81B4D4A64 /* Build configuration list for PBXNativeTarget "BasketExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				459264B3C5D839DFC43397C5 /* Debug */,
+				688F686FEE7098D8FF0027F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 19FC69768883FBA0831DA9FA /* Project object */;
+}

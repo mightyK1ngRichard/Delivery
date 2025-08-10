@@ -63,13 +63,12 @@ extension UserServiceImpl: AnyUserService {
         ).model
     }
 
-    public func forceFetchBasketProducts(addressID: Int) async throws(NetworkClientError) -> [ProductEntity] {
+    public func forceFetchBasketProducts() async throws(NetworkClientError) -> [ProductEntity] {
         try await networkClient.request(
             "profile/cart",
             method: .post,
             options: .init(
-                body: ["address_id": addressID],
-                required: [.tokenID]
+                required: [.tokenID, .addressID]
             ),
             decodeTo: [ProductEntity].self
         ).model

@@ -19,6 +19,5 @@ let project = Project.module(
         .interface(.SharedContracts),
         .interface(.ProductService),
         .interface(.CatalogService),
-        .interface(.Main),
     ]
 )

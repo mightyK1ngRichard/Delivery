@@ -9,8 +9,6 @@ enum MainRoutes: Hashable, Identifiable {
     case main
     case product(ProductModel)
     case lookAll(navigationTitle: String, products: [ProductModel])
-//    case pickAddress(token: String)
-//    case addAddress(token: String)
 
     var id: Self { self }
 }

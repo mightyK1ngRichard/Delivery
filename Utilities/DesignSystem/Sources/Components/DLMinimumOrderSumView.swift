@@ -9,16 +9,34 @@
 import SwiftUI
 import DLCore
 
-struct DLMinimumOrderSumView: View {
-    var needPrice: String
-    var total: String
-    var isReady: Bool
-    var minimumSum: String
-    @Binding var isOpened: Bool
+public struct DLMinimumOrderSumView: View {
 
-    var didTapMakeOrderButton: DLVoidBlock
+    private let needPrice: String
+    private let total: String
+    private let isReady: Bool
+    private let minimumSum: String
+    private let didTapMakeOrderButton: DLVoidBlock
 
-    var body: some View {
+    @Binding
+    var isOpened: Bool
+
+    public init(
+        needPrice: String,
+        total: String,
+        isReady: Bool,
+        minimumSum: String,
+        isOpened: Binding<Bool>,
+        didTapMakeOrderButton: @escaping DLVoidBlock
+    ) {
+        self.needPrice = needPrice
+        self.total = total
+        self.isReady = isReady
+        self.minimumSum = minimumSum
+        self._isOpened = isOpened
+        self.didTapMakeOrderButton = didTapMakeOrderButton
+    }
+
+    public var body: some View {
         MainView
     }
 }
@@ -156,7 +174,7 @@ private extension DLMinimumOrderSumView {
         ) {}
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)
-    .background(.gray)
+    .background(.red)
 }
 
 // MARK: - Constants
@@ -164,6 +182,7 @@ private extension DLMinimumOrderSumView {
 private extension DLMinimumOrderSumView {
 
     enum Constants {
+
         static let textColor = DLColor<TextPalette>.white.color
         static let primaryTextColor = DLColor<TextPalette>.primary.color
         static let bgButtonColor = DLColor<BackgroundPalette>.blue.color
