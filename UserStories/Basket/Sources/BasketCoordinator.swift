@@ -12,10 +12,12 @@ import SharedUserStories
 final class BasketCoordinator: Navigatable, AnyBasketCoordinator {
 
     let router: Router<BasketRoute>
-    let logger = DLLogger("Basket Coordinator")
+    private weak var output: BasketOutput?
+    private let logger = DLLogger("Basket Coordinator")
 
-    init(router: Router<BasketRoute>) {
+    init(router: Router<BasketRoute>, output: BasketOutput) {
         self.router = router
+        self.output = output
     }
 
     func run() -> some View {
@@ -25,7 +27,8 @@ final class BasketCoordinator: Navigatable, AnyBasketCoordinator {
     func destination(_ route: BasketRoute) -> some View {
         switch route {
         case .main:
-            BasketScreenAssembly.assemble(output: self)
+            BasketScreenAssembly
+                .assemble(output: self)
         case let .productDetails(product):
             ProductDetailsAssembly
                 .assemble(product: product, output: self)
@@ -47,6 +50,7 @@ extension BasketCoordinator: BasketScreenOutput {
 
     func basketScreenDidOpenCatalog() {
         logger.logEvent()
+        output?.basketDidOpenCatalog()
     }
 
     func basketScreenDidOpenMakeOrderScreen(orderModel: OrderModel) {
@@ -56,6 +60,11 @@ extension BasketCoordinator: BasketScreenOutput {
 
     func basketScreenDidShowAlert(with alert: AlertModel) {
         logger.logEvent()
+    }
+
+    func basketScreenDidDecrementCartCount() {
+        logger.logEvent()
+        output?.basketDidDecrementCartCount()
     }
 }
 
@@ -67,4 +76,9 @@ extension BasketCoordinator: ProductDetailsScreenOutput {
 // MARK: - FormOrderScreenOutput
 
 extension BasketCoordinator: FormOrderScreenOutput {
+
+    func formOrderDidOpenMakeOrderScren(orderModel: OrderModel) {
+        logger.logEvent()
+        router.push(.makeOrder(orderModel: orderModel))
+    }
 }

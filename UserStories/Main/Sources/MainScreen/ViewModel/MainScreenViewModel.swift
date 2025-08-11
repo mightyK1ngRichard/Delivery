@@ -92,49 +92,57 @@ extension MainScreenViewModel: MainScreenViewOutput {
         logger.logEvent()
     }
 
-    func onTapAddInBasket(id productID: Int, counter: Int, coeff: Int, section: ProductSection) {
+    func onTapAddInBasket(product: ProductModel, counter: Int, coeff: Int, section: ProductSection) {
         logger.logEvent()
 
-        Task { @MainActor in
+        let alertModel = AlertModel(
+            title: "Ошибка добавления в корзину",
+            subtitle: "Не удалось добавить товар в корзину. Попробуйте еще раз позже."
+        )
+        guard let (sectionIndex, productIndex) = getProductIndecices(product, sectionID: section.id) else {
+            output?.mainScreenShowAlert(with: alertModel)
+            return
+        }
 
+        state.sections[sectionIndex].products[productIndex].count = 1
+
+        Task {
             do {
-                try await networkClient.addProductInBasket(productID: productID, count: counter)
+                try await networkClient.addProductInBasket(productID: product.id, count: 1)
                 output?.mainScreenIncrementCartCount()
             } catch {
                 logger.error(error)
-                output?.mainScreenShowAlert(
-                    with: .init(title: "Ошибка добавления в корзину", subtitle: error.localizedDescription)
-                )
+                output?.mainScreenShowAlert(with: alertModel)
             }
         }
     }
 
-    func onTapPlusInBasket(productID: Int, counter: Int, coeff: Int, section: ProductSection) {
+    func onTapPlusInBasket(product: ProductModel, counter: Int, coeff: Int, section: ProductSection) {
         logger.logEvent()
 
-        let networkClient = self.networkClient
-        let logger = self.logger
-        Task.detached(priority: .high) {
-            do {
-                try await networkClient.updateProductCountInBasket(productID: productID, count: counter)
-            } catch {
-                logger.error(error)
-            }
-        }
+        changeProductCount(
+            product: product,
+            sectionID: section.id,
+            increment: 1,
+            alert: AlertModel(
+                title: "Ошибка увеличения количества торара",
+                subtitle: "Не удалось увеличить количество товара в корзине. Попробуйте еще раз позже."
+            )
+        )
     }
 
-    func onTapMinusInBasket(productID: Int, counter: Int, coeff: Int, section: ProductSection) {
+    func onTapMinusInBasket(product: ProductModel, counter: Int, coeff: Int, section: ProductSection) {
         logger.logEvent()
 
-        let networkClient = self.networkClient
-        let logger = self.logger
-        Task.detached(priority: .high) {
-            do {
-                try await networkClient.updateProductCountInBasket(productID: productID, count: counter)
-            } catch {
-                logger.error(error)
-            }
-        }
+        changeProductCount(
+            product: product,
+            sectionID: section.id,
+            increment: -1,
+            alert: AlertModel(
+                title: "Ошибка уменьшения количества торара",
+                subtitle: "Не удалось уменьшить количество товара в корзине. Попробуйте еще раз позже."
+            )
+        )
     }
 }
 
@@ -189,6 +197,41 @@ extension MainScreenViewModel {
             } catch {
                 logger.error(error)
                 state.screenState = .error
+            }
+        }
+    }
+
+    private func getProductIndecices(_ product: ProductModel, sectionID: Int) -> (Int, Int)? {
+        guard let sectionIndex = state.sections.firstIndex(where: { $0.section.id == sectionID }),
+              let productIndex = state.sections[sectionIndex].products.firstIndex(of: product)
+        else { return nil }
+
+        return (sectionIndex, productIndex)
+    }
+
+    @MainActor
+    private func changeProductCount(
+        product: ProductModel,
+        sectionID: Int,
+        increment: Int,
+        alert: AlertModel
+    ) {
+        guard let (sectionIndex, productIndex) = getProductIndecices(product, sectionID: sectionID) else {
+            output?.mainScreenShowAlert(with: alert)
+            return
+        }
+
+        state.sections[sectionIndex].products[productIndex].count += increment
+
+        Task {
+            do {
+                try await networkClient.updateProductCountInBasket(
+                    productID: product.id,
+                    count: product.count + increment
+                )
+            } catch {
+                logger.error(error)
+                output?.mainScreenShowAlert(with: alert)
             }
         }
     }

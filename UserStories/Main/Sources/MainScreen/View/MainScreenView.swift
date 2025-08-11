@@ -17,9 +17,7 @@ struct MainScreenView: View {
 
     var body: some View {
         mainContainer
-            .onFirstAppear {
-                output.onFirstAppear()
-            }
+            .onFirstAppear(perform: output.onFirstAppear)
     }
 }
 

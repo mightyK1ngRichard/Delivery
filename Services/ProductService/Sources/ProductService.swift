@@ -54,59 +54,39 @@ extension ProductServiceImpl: AnyProductService {
     }
 
     public func forceFetchStocks() async throws -> [ProductEntity] {
-        let data = try await networkClient.request(
+        try await networkClient.request(
             "main/actions",
             method: .post,
-            options: .init(optional: [.tokenID])
-        ).data
-
-        do {
-            return try JSONDecoder().decode([ProductEntity].self, from: data)
-        } catch {
-            throw NetworkError.decodingFailed(error)
-        }
+            options: .init(optional: [.tokenID]),
+            decodeTo: [ProductEntity].self
+        ).model
     }
 
     public func forceFetchExclusives() async throws -> [ProductEntity] {
-        let data = try await networkClient.request(
+        try await networkClient.request(
             "main/exclusives",
             method: .post,
-            options: .init(optional: [.tokenID])
-        ).data
-
-        do {
-            return try JSONDecoder().decode([ProductEntity].self, from: data)
-        } catch {
-            throw NetworkError.decodingFailed(error)
-        }
+            options: .init(optional: [.tokenID]),
+            decodeTo: [ProductEntity].self
+        ).model
     }
 
     public func forceFetchHits() async throws -> [ProductEntity] {
-        let data = try await networkClient.request(
+        try await networkClient.request(
             "main/hits",
             method: .post,
-            options: .init(optional: [.tokenID])
-        ).data
-
-        do {
-            return try JSONDecoder().decode([ProductEntity].self, from: data)
-        } catch {
-            throw NetworkError.decodingFailed(error)
-        }
+            options: .init(optional: [.tokenID]),
+            decodeTo: [ProductEntity].self
+        ).model
     }
 
     public func forceFetchNews() async throws -> [ProductEntity] {
-        let data = try await networkClient.request(
+        try await networkClient.request(
             "main/news",
             method: .post,
-            options: .init(optional: [.tokenID])
-        ).data
-
-        do {
-            return try JSONDecoder().decode([ProductEntity].self, from: data)
-        } catch {
-            throw NetworkError.decodingFailed(error)
-        }
+            options: .init(optional: [.tokenID]),
+            decodeTo: [ProductEntity].self
+        ).model
     }
 }
 

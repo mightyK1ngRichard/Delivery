@@ -72,7 +72,6 @@ extension MainScreenNetworkClient: AnyMainScreenNetworkClient {
     }
 
     func updateProductCountInBasket(productID: Int, count: Int) async throws {
-        try await cartService
-            .updateProductCountInBasket(productID: productID, count: count)
+        try await cartService.updateProductCountInBasket(productID: productID, count: count)
     }
 }

@@ -91,18 +91,52 @@ extension CatalogProductsScreenViewModel: CatalogProductsViewOutput {
 
     func onTapProductPlus(productID: Int, counter: Int) {
         logger.logEvent()
+        updateCartCount(productID: productID, increment: 1)
     }
 
     func onTapProductMinus(productID: Int, counter: Int) {
         logger.logEvent()
+        updateCartCount(productID: productID, increment: -1)
     }
 
     func onTapProductBasket(productID: Int, counter: Int) {
         logger.logEvent()
+        guard let index = state.products.firstIndex(where: { $0.id == productID }) else {
+            return
+        }
+
+        state.products[index].count = 1
+        output?.catalogProductsDidIncrementCartCount()
+        Task {
+            try await networkClient.addProductInBasket(
+                productID: productID,
+                count: state.products[index].count
+            )
+        }
     }
 
     func onTapProductCard(product: ProductModel) {
         logger.logEvent()
         output?.catalogProductsOpenProductDetails(product: product)
+    }
+}
+
+// MARK: - Helpers
+
+extension CatalogProductsScreenViewModel {
+
+    @MainActor
+    func updateCartCount(productID: Int, increment: Int) {
+        guard let index = state.products.firstIndex(where: { $0.id == productID }) else {
+            return
+        }
+
+        state.products[index].count += increment
+        Task {
+            try await networkClient.updateProductCountInBasket(
+                productID: productID,
+                count: state.products[index].count
+            )
+        }
     }
 }

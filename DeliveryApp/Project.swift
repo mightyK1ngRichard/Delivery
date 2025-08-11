@@ -24,5 +24,6 @@ let project = Project.basic(
         .module(.DesignSystem),
         .module(.DependencyRegistry),
         .interface(.Main),
+        .interface(.ProductService),
     ]
 )

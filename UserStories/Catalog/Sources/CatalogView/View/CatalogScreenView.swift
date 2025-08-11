@@ -100,6 +100,12 @@ private extension CatalogScreenView {
                         didTapLike: { isLike in
                             output.onTapLikeProduct(id: product.id, isLike: isLike)
                         },
+                        didTapPlus: { _ in
+                            output.onTapPlusProduct(productID: product.id)
+                        },
+                        didTapMinus: { _ in
+                            output.onTapMinusProduct(productID: product.id)
+                        },
                         didTapBasket: { startCounter in
                             output.onTapBasketProduct(id: product.id, counter: startCounter)
                         }

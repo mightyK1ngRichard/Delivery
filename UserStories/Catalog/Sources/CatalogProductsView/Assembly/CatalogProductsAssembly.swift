@@ -4,9 +4,10 @@
 //
 
 import SwiftUI
+import Resolver
 import SharedUserStories
 import CatalogServiceInterface
-import Resolver
+import CartServiceInterface
 
 @MainActor
 enum CatalogProductsAssembly {
@@ -34,7 +35,8 @@ enum CatalogProductsAssembly {
         )
 
         let networkClient = CatalogProductsScreenNetworkClient(
-            catalogService: Resolver.resolve(AnyCategoryService.self)
+            catalogService: Resolver.resolve(AnyCategoryService.self),
+            cartService: Resolver.resolve(AnyCartService.self)
         )
         let viewModel = CatalogProductsScreenViewModel(
             state: state,

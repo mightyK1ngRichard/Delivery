@@ -127,10 +127,7 @@ extension MainScreenView {
     @ViewBuilder
     var productSections: some View {
         ForEach(state.sections, id: \.section) { (section, products) in
-            productSectionBlock(
-                section: section,
-                products: products
-            ) {
+            productSectionBlock(section: section, products: products) {
                 output.onTapSectionLookMore(section: section)
             }
             .id("scroll_section_id_\(section.id)")
@@ -223,7 +220,7 @@ extension MainScreenView {
                 },
                 didTapPlus: { counter in
                     output.onTapPlusInBasket(
-                        productID: product.id,
+                        product: product,
                         counter: counter,
                         coeff: product.magnifier,
                         section: section
@@ -231,7 +228,7 @@ extension MainScreenView {
                 },
                 didTapMinus: { counter in
                     output.onTapMinusInBasket(
-                        productID: product.id,
+                        product: product,
                         counter: counter,
                         coeff: product.magnifier,
                         section: section
@@ -239,7 +236,7 @@ extension MainScreenView {
                 },
                 didTapBasket: { startCounter in
                     output.onTapAddInBasket(
-                        id: product.id,
+                        product: product,
                         counter: startCounter,
                         coeff: product.magnifier,
                         section: section

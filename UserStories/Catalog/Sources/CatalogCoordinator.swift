@@ -14,9 +14,11 @@ final class CatalogCoordinator: Navigatable, AnyCatalogCoordinator {
 
     let router: Router<CatalogRoute>
     let logger = DLLogger("Catalog Coordinator")
+    private weak var output: CatalogOutput?
 
-    init(router: Router<CatalogRoute>) {
+    init(router: Router<CatalogRoute>, output: CatalogOutput?) {
         self.router = router
+        self.output = output
     }
 
     func run() -> some View {
@@ -50,6 +52,11 @@ final class CatalogCoordinator: Navigatable, AnyCatalogCoordinator {
 // MARK: - CatalogOutput
 
 extension CatalogCoordinator: CatalogScreenOutput {
+
+    func catalogScreenDidIncrement() {
+        logger.logEvent()
+        output?.catalogDidIncrementCartCount()
+    }
 
     func catalogScreenDidOpenCategoryList(category: CategoryModel) {
         logger.logEvent()
@@ -85,6 +92,11 @@ extension CatalogCoordinator: CategoryListScreenOutput {
 
 extension CatalogCoordinator: CatalogProductsOutput {
 
+    func catalogProductsDidIncrementCartCount() {
+        logger.logEvent()
+        output?.catalogDidIncrementCartCount()
+    }
+
     func catalogProductsOpenProductDetails(product: ProductModel) {
         logger.logEvent()
         router.push(.productDetails(product: product))
@@ -107,5 +119,10 @@ extension CatalogCoordinator: AllProductsScreenOutput {
     func allProductsScreenDidTapOpenProuctDetails(with product: ProductModel) {
         logger.logEvent()
         router.push(.productDetails(product: product))
+    }
+
+    func allProductsScreenDidIncrementCartCount() {
+        logger.logEvent()
+        output?.catalogDidIncrementCartCount()
     }
 }

@@ -73,7 +73,7 @@ extension BasketViewModel: BasketScreenViewOutput {
 
     func onTapMakeOrderButton() {
         logger.logEvent()
-        
+
         let orderModel = OrderModel(
             totalAmount: .init(price: totalPrice, formatedPrice: state.amountInfo.resultSumTitle),
             products: state.products,
@@ -87,52 +87,12 @@ extension BasketViewModel: BasketScreenViewOutput {
 
     func onTapPlus(product: ProductModel, counter: Int) {
         logger.logEvent()
-        guard let index = state.products.firstIndex(where: { $0.id == product.id }) else {
-            output?.basketScreenDidShowAlert(with: .init(
-                title: "Ошибка обновления",
-                subtitle: "Не получилось обновить счётчик"
-            ))
-            return
-        }
-
-        // Обновляем карточку продукта
-        var updatedProduct = product
-        let newFullPrice = calculateNewProductFullPrice(for: product.itemPrice.price, counter: counter)
-        updatedProduct.fullPrice = newFullPrice
-        updatedProduct.count += 1
-        state.products[index] = updatedProduct
-
-        // Обновляем общий счёт
-        totalPrice += newFullPrice.price - product.fullPrice.price
-        updateResultSum()
-
-        // Запрос на обновление счётчика
-        updateProductCount(productID: updatedProduct.id, newCount: updatedProduct.count)
+        changeProductCount(product: product, counter: counter, increment: 1)
     }
 
     func onTapMinus(product: ProductModel, counter: Int) {
         logger.logEvent()
-        guard let index = state.products.firstIndex(where: { $0.id == product.id }) else {
-            output?.basketScreenDidShowAlert(with: .init(
-                title: "Ошибка обновления",
-                subtitle: "Не получилось обновить счётчик"
-            ))
-            return
-        }
-
-        // Обновляем карточку продукта
-        var updatedProduct = product
-        let newFullPrice = calculateNewProductFullPrice(for: product.itemPrice.price, counter: counter)
-        updatedProduct.fullPrice = newFullPrice
-        updatedProduct.count -= 1
-        state.products[index] = updatedProduct
-
-        // Обновляем общий счёт
-        totalPrice += newFullPrice.price - product.fullPrice.price
-        updateResultSum()
-
-        // Запрос на обновление счётчика
-        updateProductCount(productID: updatedProduct.id, newCount: updatedProduct.count)
+        changeProductCount(product: product, counter: counter, increment: -1)
     }
 
     func onTapLike(productID: Int, isSelected: Bool) {
@@ -156,6 +116,7 @@ extension BasketViewModel: BasketScreenViewOutput {
         totalPrice -= product.fullPrice.price
         state.products.remove(at: index)
         updateResultSum()
+        output?.basketScreenDidDecrementCartCount()
 
         // Кидаем запрос на удаление
         Task(priority: .medium) {
@@ -211,12 +172,6 @@ extension BasketViewModel {
         // Логика проверки телефона, email и адреса
     }
 
-    private func calculateNewProductFullPrice(for itemPrice: Double, counter: Int) -> ProductModel.Price {
-        let newPrice = itemPrice * Double(counter)
-        let formattedNewPrice = factory.makePriceFormatting(for: newPrice)
-        return .init(formattedPrice: formattedNewPrice, price: newPrice)
-    }
-
     @MainActor
     private func updateProductCount(productID: Int, newCount: Int) {
         Task(priority: .medium) {
@@ -226,6 +181,42 @@ extension BasketViewModel {
                 logger.error(error)
             }
         }
+    }
+
+    @MainActor
+    private func changeProductCount(
+        product: ProductModel,
+        counter: Int,
+        increment: Int
+    ) {
+        guard let index = state.products.firstIndex(where: { $0.id == product.id }) else {
+            output?.basketScreenDidShowAlert(with: .init(
+                title: "Ошибка обновления",
+                subtitle: "Не получилось обновить счётчик"
+            ))
+            return
+        }
+
+        // Обновляем карточку продукта
+        var updatedProduct = product
+        let newFullPrice = calculateNewProductFullPrice(for: product.itemPrice.price, counter: counter)
+        let oldFullPrice = updatedProduct.fullPrice.price
+        updatedProduct.fullPrice = newFullPrice
+        updatedProduct.count += increment
+        state.products[index] = updatedProduct
+
+        // Обновляем общий счёт
+        totalPrice += newFullPrice.price - oldFullPrice
+        updateResultSum()
+
+        // Запрос на обновление счётчика
+        updateProductCount(productID: updatedProduct.id, newCount: updatedProduct.count)
+    }
+
+    private func calculateNewProductFullPrice(for itemPrice: Double, counter: Int) -> ProductModel.Price {
+        let newPrice = itemPrice * Double(counter)
+        let formattedNewPrice = factory.makePriceFormatting(for: newPrice)
+        return .init(formattedPrice: formattedNewPrice, price: newPrice)
     }
 }
 

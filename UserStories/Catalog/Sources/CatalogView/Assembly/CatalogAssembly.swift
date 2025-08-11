@@ -3,11 +3,12 @@
 //  Copyright © 2025 Dostavka24. All rights reserved.
 //
 
+import SwiftUI
 import Resolver
 import SharedUserStories
 import ProductServiceInterface
 import CatalogServiceInterface
-import SwiftUI
+import CartServiceInterface
 
 enum CatalogAssembly {
 
@@ -30,7 +31,8 @@ enum CatalogAssembly {
         let state = CatalogScreenViewState(factory: factory)
         let networkClient = CatalogScreenNetworkClient(
             catalogService: Resolver.resolve(AnyCategoryService.self),
-            productService: Resolver.resolve(AnyProductService.self)
+            productService: Resolver.resolve(AnyProductService.self),
+            cartService: Resolver.resolve(AnyCartService.self)
         )
 
         let viewModel = CatalogScreenViewModel(

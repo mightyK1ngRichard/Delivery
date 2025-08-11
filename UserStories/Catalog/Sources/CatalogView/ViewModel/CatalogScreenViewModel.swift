@@ -61,8 +61,28 @@ extension CatalogScreenViewModel: CatalogScreenViewOutput {
         logger.logEvent()
     }
 
-    func onTapBasketProduct(id: Int, counter: Int) {
+    func onTapPlusProduct(productID: Int) {
         logger.logEvent()
+        changeProductCount(productID: productID, increment: 1)
+    }
+
+    func onTapMinusProduct(productID: Int) {
+        logger.logEvent()
+        changeProductCount(productID: productID, increment: -1)
+    }
+
+    func onTapBasketProduct(id productID: Int, counter: Int) {
+        logger.logEvent()
+        guard let index = state.products.firstIndex(where: { $0.id == productID }) else {
+            logger.error("Товар с id=\(productID) не найден")
+            return
+        }
+
+        state.products[index].count = 1
+        output?.catalogScreenDidIncrement()
+        Task {
+            try await networkClient.addProductInBasket(productID: productID, count: 1)
+        }
     }
 
     func onTapProductCard(product: ProductModel) {
@@ -99,6 +119,22 @@ private extension CatalogScreenViewModel {
                 logger.error(error)
                 state.screenState = .error
             }
+        }
+    }
+
+    @MainActor
+    private func changeProductCount(productID: Int, increment: Int) {
+        guard let index = state.products.firstIndex(where: { $0.id == productID }) else {
+            logger.error("Товар с id=\(productID) не найден")
+            return
+        }
+
+        state.products[index].count += increment
+        Task {
+            try await networkClient.updateProductCountInBasket(
+                productID: productID,
+                count: state.products[index].count
+            )
         }
     }
 }

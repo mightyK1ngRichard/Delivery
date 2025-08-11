@@ -109,7 +109,7 @@ extension NetworkClient: AnyNetworkClient {
         // tokenID
         if options.required.contains(.tokenID) {
             try await insertRequired(.tokenID, value: networkStore.token)
-        } else if options.required.contains(.tokenID) {
+        } else if options.optional.contains(.tokenID) {
             insertOptional(.tokenID, value: await networkStore.token)
         }
 

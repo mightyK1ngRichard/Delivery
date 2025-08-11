@@ -7,5 +7,5 @@ import Foundation
 
 @MainActor
 public protocol AnyBasketAssembly {
-    func assemble() -> any AnyBasketCoordinator
+    func assemble(output: BasketOutput) -> any AnyBasketCoordinator
 }

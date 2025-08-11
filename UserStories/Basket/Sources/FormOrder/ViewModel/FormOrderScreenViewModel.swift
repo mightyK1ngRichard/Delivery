@@ -42,6 +42,7 @@ extension FormOrderScreenViewModel: FormOrderScreenViewOutput {
 
     func onTapMakeOrder() {
         logger.logEvent()
+//        output?.formOrderDidOpenMakeOrderScren(orderModel: <#T##OrderModel#>)
     }
 
     func onTapOpenProductsList() {

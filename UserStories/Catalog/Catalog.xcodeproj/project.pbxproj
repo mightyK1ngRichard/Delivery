@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -82,6 +82,8 @@
 		E3AABC3057A7E060B72255C6 /* CatalogRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9D3C6C00DFEB5241F6ACB2 /* CatalogRoute.swift */; };
 		E3EBF191A02BD52EADB237A9 /* DesignSystem.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 61B8AE4D836AE2C61590B2E3 /* DesignSystem.framework */; };
 		E41F6E96DE4C7F1080C66A2C /* CategoryListScreenViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36312DB48851D03566888240 /* CategoryListScreenViewState.swift */; };
+		E55AD76A2E49831100751C73 /* CatalogOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55AD7692E49831100751C73 /* CatalogOutput.swift */; };
+		E55AD76C2E498A9600751C73 /* AnyCatalogProductsScreenNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55AD76B2E498A9600751C73 /* AnyCatalogProductsScreenNetworkClient.swift */; };
 		E7E3CF6620565D747F2072B7 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B8AE4D836AE2C61590B2E3 /* DesignSystem.framework */; };
 		E905DCE54F286A2598171014 /* SharedUserStories.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = E737208D63E1A59E107529F2 /* SharedUserStories.framework */; };
 		E974B3CD087206D99FBC0BE3 /* PopcatsService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03DDCE0C45F6271A41FADC9 /* PopcatsService.framework */; };
@@ -244,6 +246,8 @@
 		D95314F52B76971DFE73C6F5 /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
 		E1A2320B362133EDA6357DC8 /* CategoryListScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListScreenViewModel.swift; sourceTree = "<group>"; };
 		E2F5B1B35BF5A6AC909BC3B4 /* CatalogProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogProductsView.swift; sourceTree = "<group>"; };
+		E55AD7692E49831100751C73 /* CatalogOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogOutput.swift; sourceTree = "<group>"; };
+		E55AD76B2E498A9600751C73 /* AnyCatalogProductsScreenNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCatalogProductsScreenNetworkClient.swift; sourceTree = "<group>"; };
 		E568BB375588C0713A7B1524 /* DLNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DLNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E737208D63E1A59E107529F2 /* SharedUserStories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedUserStories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E987D46165F866FD538E123D /* BannerService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BannerService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -358,6 +362,7 @@
 		1D089BEF316608953C6FB10E /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				E55AD76B2E498A9600751C73 /* AnyCatalogProductsScreenNetworkClient.swift */,
 				F583F5C6729D30AED7C8C376 /* CatalogProductsScreenNetworkClient.swift */,
 			);
 			path = Network;
@@ -458,6 +463,7 @@
 		5BEC81CF3458B39D9DCBA40B /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				E55AD7692E49831100751C73 /* CatalogOutput.swift */,
 				A4B628E1AEC87E9822218A3C /* AnyCatalogAssembly.swift */,
 				8C50326BCA2670A2A8390C08 /* AnyCatalogCoordinator.swift */,
 				8F9D3C6C00DFEB5241F6ACB2 /* CatalogRoute.swift */,
@@ -688,8 +694,6 @@
 				CLASSPREFIX = DL;
 				LastUpgradeCheck = 1630;
 				ORGANIZATIONNAME = Delivery24;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = B12621D1EB50F86CECABE69D /* Build configuration list for PBXProject "Catalog" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -763,6 +767,7 @@
 				5E28C0060BDF7F89C371AED6 /* CatalogScreenViewState.swift in Sources */,
 				A966639993F64225D6B73156 /* CatalogScreenOutput.swift in Sources */,
 				6014A8594E8F4CBFE5060A3E /* CatalogScreenViewModel.swift in Sources */,
+				E55AD76C2E498A9600751C73 /* AnyCatalogProductsScreenNetworkClient.swift in Sources */,
 				893A8B719945DE844EA20D21 /* CategoryListAssembly.swift in Sources */,
 				A9C2C0B63084AC3F73DAE7AB /* AnyCategoryListFactory.swift in Sources */,
 				54F24C5A98256C90D8EA1A4A /* CategoryListFactory.swift in Sources */,
@@ -791,6 +796,7 @@
 			files = (
 				890C14551F9BA5FC1B633019 /* AnyCatalogAssembly.swift in Sources */,
 				62B6C7DD30F46DBBA8A0725B /* AnyCatalogCoordinator.swift in Sources */,
+				E55AD76A2E49831100751C73 /* CatalogOutput.swift in Sources */,
 				E3AABC3057A7E060B72255C6 /* CatalogRoute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -960,10 +966,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-					"$(inherited)",
-					DEBUG,
-				);
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
@@ -1106,10 +1109,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-					"$(inherited)",
-					DEBUG,
-				);
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
@@ -1148,10 +1148,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-					"$(inherited)",
-					DEBUG,
-				);
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;

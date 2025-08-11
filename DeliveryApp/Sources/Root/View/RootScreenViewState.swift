@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import DLCore
 
 @MainActor
 final class RootScreenViewState: ObservableObject {
@@ -11,7 +12,9 @@ final class RootScreenViewState: ObservableObject {
     @Published
     var tabItem: TabBarItem = .house
     @Published
+    var screenState: ScreenState = .loading
+    @Published
     var showBasketFlow = false
     @Published
-    var basketBadge = String()
+    var basketBadge = 0
 }

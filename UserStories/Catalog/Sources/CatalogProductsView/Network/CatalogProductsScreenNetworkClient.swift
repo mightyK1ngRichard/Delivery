@@ -5,16 +5,22 @@
 
 import Foundation
 import CatalogServiceInterface
-
-protocol AnyCatalogProductsScreenNetworkClient {
-    func fetchCategoryProducts(categoryID: Int) async throws -> [CategoryProductEntity]
-}
+import CartServiceInterface
 
 struct CatalogProductsScreenNetworkClient: AnyCatalogProductsScreenNetworkClient {
 
     let catalogService: AnyCategoryService
+    let cartService: AnyCartService
 
     func fetchCategoryProducts(categoryID: Int) async throws -> [CategoryProductEntity] {
         try await catalogService.categoryProducts(categoryID: categoryID)
+    }
+
+    func addProductInBasket(productID: Int, count: Int) async throws {
+        try await cartService.addProductInBasket(body: .init(productID: productID, count: count))
+    }
+
+    func updateProductCountInBasket(productID: Int, count: Int) async throws {
+        try await cartService.updateProductCountInBasket(productID: productID, count: count)
     }
 }

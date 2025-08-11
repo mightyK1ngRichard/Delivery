@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -72,6 +72,7 @@
 		E19731D9AC1145B56E8EF855 /* CatalogServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E293E92F73FFC830A910A977 /* CatalogServiceInterface.framework */; };
 		E2E63B4CB4D2C04C043D4A34 /* DependencyRegistry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DFCC88A3B1377C2FBAE8C47 /* DependencyRegistry.framework */; };
 		E42E42BFE91E13C7C952149F /* Profile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC105958EDFDBE0D94D1B33F /* Profile.framework */; };
+		E55AD7662E497F6000751C73 /* BasketOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55AD7652E497F6000751C73 /* BasketOutput.swift */; };
 		EA21B0E9CFFD7489F543D657 /* UserService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2470A8F21536D47CE3D10D4 /* UserService.framework */; };
 		EB8F8DDE84ABCC7A5FBFDBEC /* BasketInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 7748EC8218E3E3D82128C606 /* BasketInterface.framework */; };
 		EC82555C21E3F396C704BA2D /* BasketRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A3A02C95EE34885EBB392 /* BasketRoute.swift */; };
@@ -226,6 +227,7 @@
 		DEF22A19712E8D45C19572FE /* AuthServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E56CB0211437D9B65D58A2 /* DesignSystem_DesignSystem.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignSystem_DesignSystem.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		E293E92F73FFC830A910A977 /* CatalogServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatalogServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E55AD7652E497F6000751C73 /* BasketOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketOutput.swift; sourceTree = "<group>"; };
 		E87D6CFCBCC112712EAD72D9 /* AnyBasketCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyBasketCoordinator.swift; sourceTree = "<group>"; };
 		ED16E6F9CA4FB7E4DA4829A6 /* Basket-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Basket-Info.plist"; sourceTree = "<group>"; };
 		F3BD1F72442A07E7DEA345A1 /* BasketExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "BasketExample-Info.plist"; sourceTree = "<group>"; };
@@ -476,6 +478,7 @@
 		BDEEDC9D2FC3863443622747 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				E55AD7652E497F6000751C73 /* BasketOutput.swift */,
 				B153D18C16D17B9ECE1CFCAB /* AnyBasketAssembly.swift */,
 				E87D6CFCBCC112712EAD72D9 /* AnyBasketCoordinator.swift */,
 				4E7A3A02C95EE34885EBB392 /* BasketRoute.swift */,
@@ -591,8 +594,6 @@
 				CLASSPREFIX = DL;
 				LastUpgradeCheck = 1630;
 				ORGANIZATIONNAME = Delivery24;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 08394724006F414453F48862 /* Build configuration list for PBXProject "Basket" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -676,6 +677,7 @@
 				886431137D408EB0EEA3C9F2 /* AnyBasketCoordinator.swift in Sources */,
 				EC82555C21E3F396C704BA2D /* BasketRoute.swift in Sources */,
 				95A789559C796BDF5B3AEA62 /* OrderModel.swift in Sources */,
+				E55AD7662E497F6000751C73 /* BasketOutput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -772,10 +774,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-					"$(inherited)",
-					DEBUG,
-				);
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
@@ -867,10 +866,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-					"$(inherited)",
-					DEBUG,
-				);
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
@@ -975,10 +971,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-					"$(inherited)",
-					DEBUG,
-				);
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;

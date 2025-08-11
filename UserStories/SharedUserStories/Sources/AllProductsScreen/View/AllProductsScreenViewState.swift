@@ -7,7 +7,7 @@ import Foundation
 
 final class AllProductsScreenViewState: ObservableObject {
 
-    let products: [ProductModel]
+    var products: [ProductModel]
     let navigationTitle: String
     let factory: AnyAllProductsScreenFactory
 

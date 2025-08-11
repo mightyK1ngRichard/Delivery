@@ -9,8 +9,8 @@ import DLCore
 public protocol AnyNetworkStore: Sendable, Actor {
     var token: String? { get }
     var addressID: Int? { get }
-    func setToken(_ newToken: String)
-    func setAddressID(_ newAdderessID: Int)
+    func setToken(_ newToken: String?)
+    func setAddressID(_ newAdderessID: Int?)
 }
 
 public actor NetworkStore: AnyNetworkStore {
@@ -29,7 +29,7 @@ public actor NetworkStore: AnyNetworkStore {
         _token ?? _stotedToken
     }
 
-    public func setToken(_ newToken: String) {
+    public func setToken(_ newToken: String?) {
         _stotedToken = newToken
         _token = newToken
     }
@@ -38,7 +38,7 @@ public actor NetworkStore: AnyNetworkStore {
         _addressID ?? _stotedAddressID
     }
 
-    public func setAddressID(_ newAdderessID: Int) {
+    public func setAddressID(_ newAdderessID: Int?) {
         _addressID = newAdderessID
         _stotedAddressID = newAdderessID
     }

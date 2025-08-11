@@ -9,4 +9,5 @@ import SharedUserStories
 protocol CatalogProductsOutput: AnyObject {
     func catalogProductsOpenProductDetails(product: ProductModel)
     func catalogProductsShowAlertError(message: String)
+    func catalogProductsDidIncrementCartCount()
 }

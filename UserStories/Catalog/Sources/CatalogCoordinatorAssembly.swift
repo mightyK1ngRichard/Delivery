@@ -9,7 +9,7 @@ public struct CatalogCoordinatorAssembly: AnyCatalogAssembly {
 
     public init() {}
 
-    public func assemble() -> any AnyCatalogCoordinator {
-        CatalogCoordinator(router: .init())
+    public func assemble(output: CatalogOutput) -> any AnyCatalogCoordinator {
+        CatalogCoordinator(router: .init(), output: output)
     }
 }

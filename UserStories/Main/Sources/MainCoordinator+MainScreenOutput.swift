@@ -38,10 +38,12 @@ extension MainCoordinator: MainScreenOutput {
 
     func mainScreenIncrementCartCount() {
         logger.logEvent()
+        output?.incrementCartCount()
     }
 
     func mainScreenDecrementCartCount() {
         logger.logEvent()
+        output?.decrementCartCount()
     }
 
     func mainScreenAddProductToBasket(product: ProductModel, count: Int) {

@@ -4,6 +4,8 @@
 //
 
 import SwiftUI
+import Resolver
+import CartServiceInterface
 
 public enum AllProductsScreenAssembly {
 
@@ -27,8 +29,11 @@ public enum AllProductsScreenAssembly {
             navigationTitle: navigationTitle,
             factory: factory
         )
+
+        let networkClient = AllProductsNetworkClient(cartService: Resolver.resolve(AnyCartService.self))
         let viewModel = AllProductsScreenViewModel(
             state: state,
+            networkClient: networkClient,
             output: output
         )
 

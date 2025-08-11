@@ -13,7 +13,7 @@ final class MainCoordinator: Navigatable, AnyMainCoordinator {
 
     let router: Router<MainRoute>
     let logger = DLLogger("Main Coordinator")
-    private weak var output: MainCoordinatorOutput?
+    weak var output: MainCoordinatorOutput?
     private let addressCoordinator: AddressCoordinator
 
     @MainActor
@@ -27,7 +27,6 @@ final class MainCoordinator: Navigatable, AnyMainCoordinator {
         destination(.main)
     }
 
-    @ViewBuilder
     func destination(_ route: MainRoute) -> some View {
         switch route {
         case .main:
@@ -53,7 +52,12 @@ extension MainCoordinator: ProductDetailsScreenOutput {}
 
 extension MainCoordinator: AllProductsScreenOutput {
 
-    func didTapOpenProuctDetails(with product: ProductModel) {
+    func allProductsScreenDidIncrementCartCount() {
+        logger.logEvent()
+        output?.incrementCartCount()
+    }
+
+    func allProductsScreenDidTapOpenProuctDetails(with product: ProductModel) {
         logger.logEvent()
         router.push(.product(product))
     }

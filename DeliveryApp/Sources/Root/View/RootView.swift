@@ -21,7 +21,30 @@ struct RootScreenView: View {
     let profileCoordinator: any AnyProfileCoordinator
     let basketCoordinator: any AnyBasketCoordinator
 
+    let output: RootScreenViewOutput
+
     var body: some View {
+        Group {
+            switch state.screenState {
+            case .loading:
+                loadingView
+            case .content:
+                content
+            case .error:
+                ErrorView(title: "Ошибка загрузки приложения")
+            }
+        }
+        .onFirstAppear(perform: output.onFirstAppear)
+    }
+}
+
+extension RootScreenView {
+
+    var loadingView: some View {
+        StartLoadingView()
+    }
+
+    var content: some View {
         TabView(selection: $state.tabItem) {
             NavigatableView(mainCoordinator)
                 .contrasteTintTabItem(type: .house)
@@ -32,7 +55,7 @@ struct RootScreenView: View {
             if state.showBasketFlow {
                 NavigatableView(basketCoordinator)
                     .contrasteTintTabItem(type: .cart)
-                    .badge(state.basketBadge.isEmpty ? nil : state.basketBadge)
+                    .badge(state.basketBadge == 0 ? nil : String(state.basketBadge))
             }
 
             NavigatableView(profileCoordinator)

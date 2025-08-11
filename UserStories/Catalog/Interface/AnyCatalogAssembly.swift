@@ -8,5 +8,5 @@ import Foundation
 @MainActor
 public protocol AnyCatalogAssembly {
 
-    func assemble() -> any AnyCatalogCoordinator
+    func assemble(output: CatalogOutput) -> any AnyCatalogCoordinator
 }

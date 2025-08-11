@@ -7,33 +7,23 @@ import SwiftUI
 
 public struct StartLoadingView: View {
 
+    @State
+    private var scale: CGFloat = 1.0
+
     public init() {}
 
     public var body: some View {
-        LoadingView
-    }
-
-    var LoadingView: some View {
-        GeometryReader { geo in
-            let width = geo.size.width
-            let height = geo.size.height
-
-            DLIcon.logo.image
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 207, height: 24)
-                .offset(x: (width - 207) / 2, y: (height - 24) / 2)
-
-            ProgressView()
-                .tint(DLColor<IconPalette>.blue.color)
-                .offset(x: width / 2, y: height - height / 4)
-        }
-        .background {
-            DLIcon.gradientBG.image
-                .resizable()
-        }
-        .preferredColorScheme(.light)
-        .ignoresSafeArea()
+        DLIcon.logo.image
+            .foregroundColor(.blue)
+            .scaleEffect(scale)
+            .onAppear {
+                withAnimation(
+                    .easeInOut(duration: 1.0)
+                    .repeatForever(autoreverses: true)
+                ) {
+                    scale = 1.2
+                }
+            }
     }
 }
 

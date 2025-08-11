@@ -12,6 +12,8 @@ protocol CatalogScreenViewOutput {
     func onTapCategory(categoryID: Int)
     func onTapLookAllProducts()
     func onTapLikeProduct(id: Int, isLike: Bool)
+    func onTapPlusProduct(productID: Int)
+    func onTapMinusProduct(productID: Int)
     func onTapBasketProduct(id: Int, counter: Int)
     func onTapProductCard(product: ProductModel)
 }

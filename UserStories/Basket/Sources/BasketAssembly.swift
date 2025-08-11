@@ -9,7 +9,7 @@ public struct BasketAssembly: AnyBasketAssembly {
 
     public init() {}
 
-    public func assemble() -> any AnyBasketCoordinator {
-        BasketCoordinator(router: .init())
+    public func assemble(output: BasketOutput) -> any AnyBasketCoordinator {
+        BasketCoordinator(router: .init(), output: output)
     }
 }
