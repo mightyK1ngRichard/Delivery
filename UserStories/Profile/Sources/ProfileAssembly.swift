@@ -9,7 +9,7 @@ public struct ProfileAssembly: AnyProfileAssembly {
 
     public init() {}
 
-    public func assemble() -> any AnyProfileCoordinator {
-        ProfileCoordinator(router: .init())
+    public func assemble(output: ProfileOutput) -> any AnyProfileCoordinator {
+        ProfileCoordinator(router: .init(), output: output)
     }
 }

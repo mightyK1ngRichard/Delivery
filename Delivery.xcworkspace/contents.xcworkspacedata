@@ -39,6 +39,9 @@
       location = "group:UserStories"
       name = "UserStories">
       <FileRef
+         location = "group:Auth/Auth.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:Basket/Basket.xcodeproj">
       </FileRef>
       <FileRef

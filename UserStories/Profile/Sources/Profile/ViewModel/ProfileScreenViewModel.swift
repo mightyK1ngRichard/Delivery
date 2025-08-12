@@ -27,6 +27,18 @@ final class ProfileViewModel {
         self.state = state
         self.networkClient = networkClient
         self.output = output
+
+        output.profileInput = self
+    }
+}
+
+// MARK: - ProfileScreenInput
+
+extension ProfileViewModel: ProfileScreenInput {
+
+    func didLoginSuccessfully() {
+        logger.logEvent()
+        fetchData()
     }
 }
 
@@ -50,7 +62,6 @@ extension ProfileViewModel: ProfileScreenViewOuput {
         switch cell {
         case .userData:
             output?.openUserDataScreen()
-            break
         case .favorites:
             break
         case .address:

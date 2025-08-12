@@ -29,6 +29,7 @@
 		649A6D701225D0D790E4C8FF /* AuthSessionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA4F376B6D42C18F51C138B /* AuthSessionInteractor.swift */; };
 		66002E023ED31CA79302FF5B /* CatalogService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B220E65AE5B90D49C2E8D98 /* CatalogService.framework */; };
 		73A2E6B718DF69766DA3FD6F /* RootAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDD4FDDA1C00FC6AC036712 /* RootAssembly.swift */; };
+		7509F3BD9E792BFFAC0609A6 /* AuthInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72103EA3376CE7B638318F29 /* AuthInterface.framework */; };
 		7B53EDA2D1E79993D9530F74 /* AuthServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AA3BF1707C1B1133E8EFFE5 /* AuthServiceInterface.framework */; };
 		7C2C00618A7AD263610589D0 /* Profile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E9726A727C069CF77546C1 /* Profile.framework */; };
 		7C9E6B8E483103441203DBD4 /* DLNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCFE7BC76DA49739751F5A1F /* DLNetwork.framework */; };
@@ -49,6 +50,7 @@
 		D4B0759577A39ECB6C40236E /* BootIteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C64392C471B01C6E307E073 /* BootIteractor.swift */; };
 		E0A4D325B0AE5CC4F60B807C /* AnyAuthSessionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6BB34D6595D2E6D454D50A /* AnyAuthSessionInteractor.swift */; };
 		E751465FAFEE19717D8773D8 /* Resolver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D79BE429838D042E9C53454 /* Resolver.framework */; };
+		EFFA061AEA0B287A6539018B /* Auth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBBD78404C8B854684449BC /* Auth.framework */; };
 		FB209037C235CE02B5D3E18B /* ProductService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27CFD8130A0FCDD7E4738BE9 /* ProductService.framework */; };
 		FCF027053FB26625F01F48F7 /* ProfileInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0388D5175350B247804CC5AE /* ProfileInterface.framework */; };
 		FCFB65594A2CABFCF2986F87 /* SharedContractsInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25678C722CAAF710E8DF967 /* SharedContractsInterface.framework */; };
@@ -104,6 +106,7 @@
 		689D15EA4602DBC5ABC2F6D7 /* DesignSystem_DesignSystem.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignSystem_DesignSystem.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B06BE231DE2B4DC371E1708 /* PopcatsService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopcatsService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B220E65AE5B90D49C2E8D98 /* CatalogService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatalogService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72103EA3376CE7B638318F29 /* AuthInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		812A89BC62F616FE2D87821C /* Basket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Basket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8211C0BAE806D52F6C64CBAC /* Main.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Main.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8841ADCC868558628B987891 /* DeliveryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeliveryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +116,7 @@
 		AAD8C8756799BB2DC63697DF /* DeliveryApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DeliveryApp-Info.plist"; sourceTree = "<group>"; };
 		AC85AFCB606A6B21416B8546 /* BasketInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BasketInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B80F5E5D5D0BFC1DDDE2000B /* CatalogServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatalogServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBBBD78404C8B854684449BC /* Auth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Auth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCAB6D94128C54B3113EB5D9 /* SharedUserStories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedUserStories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1F544548A48947D0EB2A20 /* ProductServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProductServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD6BB34D6595D2E6D454D50A /* AnyAuthSessionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyAuthSessionInteractor.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFFA061AEA0B287A6539018B /* Auth.framework in Frameworks */,
+				7509F3BD9E792BFFAC0609A6 /* AuthInterface.framework in Frameworks */,
 				2ADF0022DDBBD019F747A3B0 /* AuthService.framework in Frameworks */,
 				7B53EDA2D1E79993D9530F74 /* AuthServiceInterface.framework in Frameworks */,
 				A80AE6C52E5FA05D84F5355B /* BannerService.framework in Frameworks */,
@@ -228,6 +234,8 @@
 		6409B3C72DFC24CD40DF4DBA /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				BBBBD78404C8B854684449BC /* Auth.framework */,
+				72103EA3376CE7B638318F29 /* AuthInterface.framework */,
 				E9AB3DE3AC185E8B700CA8BC /* AuthService.framework */,
 				8AA3BF1707C1B1133E8EFFE5 /* AuthServiceInterface.framework */,
 				2B5705841ACDBD39BD2066FC /* BannerService.framework */,

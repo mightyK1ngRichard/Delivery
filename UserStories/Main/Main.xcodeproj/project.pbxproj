@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,6 +28,7 @@
 		4563FEB193ABE50EAFE25D9F /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7540C6BB138A94C93AB177 /* MainScreenView.swift */; };
 		488567EBA915988E016DC28E /* MainScreenNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF0AF95D7E09B5AB2636B8C /* MainScreenNetworkClient.swift */; };
 		4A18632D1C2F2BDE098AFD9A /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19067097D5BA2AD281D6637E /* MainCoordinator.swift */; };
+		502D6C5EBBAE0FBDAD74BF50 /* Auth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D26A06D70BEBDB70D91D794 /* Auth.framework */; };
 		5197244D5A29B7128B6BDCEC /* CatalogInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C0F6025DE20A5216EE82BA /* CatalogInterface.framework */; };
 		51A9BA7AD1444252C252966A /* DLNetwork.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 048F7A670BA732EEA2973D33 /* DLNetwork.framework */; };
 		5CC5876CF2CA2B9BECBED686 /* Resolver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CBAEF13B16E8F81A10A2D08 /* Resolver.framework */; };
@@ -47,6 +48,7 @@
 		851677DB3F90ABE12D499BC2 /* MainInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DAFDE9CE53AE4BD0C59F8CF /* MainInterface.framework */; };
 		8734D3044EF7FEAE13415598 /* MainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E4E4EB1B5F707CA6B8413E /* MainAssembly.swift */; };
 		8CD4D1FE5C51A24A99A2DB08 /* BannerService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9327A2F5A13129820633F8 /* BannerService.framework */; };
+		8D6E9B50E39D024A74544094 /* AuthInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 156E252D9A058D5CA50B134D /* AuthInterface.framework */; };
 		983AF1EB891AD3D183A08642 /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2882E4364D6A843D1F17A68 /* ExampleView.swift */; };
 		9DE66E72E852A7077633A8DB /* DLCore.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = E336A5EFBAD39E2816D3088D /* DLCore.framework */; };
 		A9E408A95CA7720F892415BD /* OrderService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9CE329113D300E2833059E7 /* OrderService.framework */; };
@@ -180,6 +182,7 @@
 		0AC7872152E27C03A90BFD07 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF0AF95D7E09B5AB2636B8C /* MainScreenNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenNetworkClient.swift; sourceTree = "<group>"; };
 		0DF1D1F2226E8B07CD90112C /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
+		156E252D9A058D5CA50B134D /* AuthInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		19067097D5BA2AD281D6637E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		203914AC59B3F4DF500C300A /* AnyMainScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyMainScreenFactory.swift; sourceTree = "<group>"; };
 		20F8202842DDE0CB8962B6C2 /* BannerServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BannerServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +205,7 @@
 		5E472A7900A24F2B38875C83 /* MainScreenViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewOutput.swift; sourceTree = "<group>"; };
 		68BF45ACC06B865A6DCB3F20 /* DesignSystem_DesignSystem.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignSystem_DesignSystem.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B289E12E79149A028E9F06E /* MainExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MainExample-Info.plist"; sourceTree = "<group>"; };
+		6D26A06D70BEBDB70D91D794 /* Auth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Auth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FC96CFF575EDBEF9DE604B0 /* AuthService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C34FC52AF0F0993DE471739 /* MainScreenOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenOutput.swift; sourceTree = "<group>"; };
 		7CBAEF13B16E8F81A10A2D08 /* Resolver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Resolver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,6 +241,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				502D6C5EBBAE0FBDAD74BF50 /* Auth.framework in Frameworks */,
+				8D6E9B50E39D024A74544094 /* AuthInterface.framework in Frameworks */,
 				6F7CE70BD80A11212F8ED8FC /* AuthService.framework in Frameworks */,
 				124944CD30BB92AEA3DF6D9C /* AuthServiceInterface.framework in Frameworks */,
 				8CD4D1FE5C51A24A99A2DB08 /* BannerService.framework in Frameworks */,
@@ -383,6 +389,8 @@
 		8D8D958FD1354739D6F497E8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				6D26A06D70BEBDB70D91D794 /* Auth.framework */,
+				156E252D9A058D5CA50B134D /* AuthInterface.framework */,
 				6FC96CFF575EDBEF9DE604B0 /* AuthService.framework */,
 				8922BBB3010F5CE37FF8C23E /* AuthServiceInterface.framework */,
 				AB9327A2F5A13129820633F8 /* BannerService.framework */,
@@ -533,6 +541,8 @@
 				CLASSPREFIX = DL;
 				LastUpgradeCheck = 1630;
 				ORGANIZATIONNAME = Delivery24;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = 15A0F45942E7F85D3BB3A1BB /* Build configuration list for PBXProject "Main" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -666,7 +676,10 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
@@ -741,7 +754,10 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
@@ -883,7 +899,10 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;

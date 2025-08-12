@@ -7,5 +7,5 @@ import Foundation
 
 @MainActor
 public protocol AnyProfileAssembly: Sendable {
-    func assemble() -> any AnyProfileCoordinator
+    func assemble(output: ProfileOutput) -> any AnyProfileCoordinator
 }

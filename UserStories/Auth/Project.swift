@@ -2,26 +2,22 @@ import ProjectDescription
 import ProjectDescriptionHelpers
 
 let project = Project.module(
-    .Profile,
+    .Auth,
     additionalTargets: [
         .interface(dependencies: [
             .module(.SharedUserStories),
-            .interface(.Auth),
         ]),
         .example(dependencies: [
-            .module(.Profile),
+            .module(.Auth),
+            .module(.Coordinator),
             .module(.DependencyRegistry)
         ])
     ],
     dependencies: [
         .module(.Resolver),
-        .module(.DLNetwork),
-        .module(.DesignSystem),
         .module(.Coordinator),
+        .module(.DesignSystem),
+        .interface(.AuthService),
         .module(.SharedUserStories),
-
-        .interface(.UserService),
-        .interface(.OrderService),
-        .interface(.Auth),
     ]
 )

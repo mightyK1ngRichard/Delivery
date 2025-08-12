@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		1DB5A738DEC0E928DBCEA47B /* Coordinator.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 1AAEDC4269643F0644D4479A /* Coordinator.framework */; };
 		277081980CBCDD397AA71A2C /* CatalogCoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A3005425602C04EB5DBC5C /* CatalogCoordinatorAssembly.swift */; };
 		2FBD4E570E91F9FCB8EFC399 /* ProductService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56DB2EC9D37AFAE60044FCAF /* ProductService.framework */; };
+		34192B286E46EAECF5CAEC09 /* AnyCatalogProductsScreenNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB76B1324E37A5676776D32 /* AnyCatalogProductsScreenNetworkClient.swift */; };
 		34F6EABB470E7EBE23D88287 /* MainInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 488CBDA38F9DCBD661D6BCB8 /* MainInterface.framework */; };
 		3A6A8F359BB09AA377B5BB9E /* CatalogScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DADFCF48EA296C2774E56E6 /* CatalogScreenViewOutput.swift */; };
 		3C49108E29125C3ACFD8A0E2 /* CatalogServiceInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 9B556B1B3E7D0C30354F18A9 /* CatalogServiceInterface.framework */; };
@@ -57,10 +58,12 @@
 		869789106D7AF9BC9B625907 /* SharedUserStories.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = E737208D63E1A59E107529F2 /* SharedUserStories.framework */; };
 		890C14551F9BA5FC1B633019 /* AnyCatalogAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B628E1AEC87E9822218A3C /* AnyCatalogAssembly.swift */; };
 		893A8B719945DE844EA20D21 /* CategoryListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4CBB740BEBC0DD2892D043 /* CategoryListAssembly.swift */; };
+		8E7A805AAD7A3CDFE9EF5333 /* Auth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6F75D9E6758544E24159648 /* Auth.framework */; };
 		8FCA537F4F0275EB9A0CB4AB /* CatalogProductsScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138735EEF011376AB63FA8B4 /* CatalogProductsScreenFactory.swift */; };
 		911F22B5973ECEBDB2C56C7D /* CategoryListScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FA3BC37ECF1F65984C218F /* CategoryListScreenView.swift */; };
 		A2E11A3B43AAC1922A9A137D /* CartServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC4B9E931CCD5004EBC765F1 /* CartServiceInterface.framework */; };
 		A4ED9CF0A60C00A4C769AAB9 /* Profile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C81D97820D552ED87F83D0DC /* Profile.framework */; };
+		A715DC4A47A91D93EC48F36D /* AuthInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9111C8594E7CB8E15D1C712 /* AuthInterface.framework */; };
 		A966639993F64225D6B73156 /* CatalogScreenOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E184496C64FD9FEA1C8D36F /* CatalogScreenOutput.swift */; };
 		A9856CE639D126797645AB65 /* CatalogProductsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D629DCE18C808417B35C709A /* CatalogProductsViewOutput.swift */; };
 		A9C2C0B63084AC3F73DAE7AB /* AnyCategoryListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F43F38125D5DD5A16FDFE5C /* AnyCategoryListFactory.swift */; };
@@ -72,6 +75,7 @@
 		C2DDDAD0B16F6A90A0595B18 /* CatalogScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B01A2CAC06993757B76DA59 /* CatalogScreenView.swift */; };
 		C893CC665ADAC39C03D20023 /* Catalog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA257DD17764902AFDB8363 /* Catalog.framework */; };
 		C8E0ACAFF2BA3E55AB30781D /* AnyCatalogScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2250E9780E2C99CD687DCE2 /* AnyCatalogScreenFactory.swift */; };
+		C953C7377AC91A556ED7BB21 /* CatalogOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF545A3FC56BE61308080D /* CatalogOutput.swift */; };
 		CB0985A8AC566416611B9C89 /* Coordinator.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 1AAEDC4269643F0644D4479A /* Coordinator.framework */; };
 		CDB0E2565A3CBA0AA78D2A5E /* CatalogProductsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC66BFC51A38DF46B2714B6 /* CatalogProductsState.swift */; };
 		D5E47FB60ACA71302F41F68A /* CategoryListNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98A1069FE60D9B4ADF48C38 /* CategoryListNetworkClient.swift */; };
@@ -82,8 +86,6 @@
 		E3AABC3057A7E060B72255C6 /* CatalogRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9D3C6C00DFEB5241F6ACB2 /* CatalogRoute.swift */; };
 		E3EBF191A02BD52EADB237A9 /* DesignSystem.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 61B8AE4D836AE2C61590B2E3 /* DesignSystem.framework */; };
 		E41F6E96DE4C7F1080C66A2C /* CategoryListScreenViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36312DB48851D03566888240 /* CategoryListScreenViewState.swift */; };
-		E55AD76A2E49831100751C73 /* CatalogOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55AD7692E49831100751C73 /* CatalogOutput.swift */; };
-		E55AD76C2E498A9600751C73 /* AnyCatalogProductsScreenNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55AD76B2E498A9600751C73 /* AnyCatalogProductsScreenNetworkClient.swift */; };
 		E7E3CF6620565D747F2072B7 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B8AE4D836AE2C61590B2E3 /* DesignSystem.framework */; };
 		E905DCE54F286A2598171014 /* SharedUserStories.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = E737208D63E1A59E107529F2 /* SharedUserStories.framework */; };
 		E974B3CD087206D99FBC0BE3 /* PopcatsService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03DDCE0C45F6271A41FADC9 /* PopcatsService.framework */; };
@@ -193,6 +195,7 @@
 		138735EEF011376AB63FA8B4 /* CatalogProductsScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogProductsScreenFactory.swift; sourceTree = "<group>"; };
 		1AAE6958E0D63A6E7A9ED088 /* BasketInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BasketInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AAEDC4269643F0644D4479A /* Coordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Coordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AB76B1324E37A5676776D32 /* AnyCatalogProductsScreenNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCatalogProductsScreenNetworkClient.swift; sourceTree = "<group>"; };
 		29DC373EEEBD5F542D9059EC /* CatalogExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "CatalogExample-Info.plist"; sourceTree = "<group>"; };
 		343BC069C71D136BC44EE165 /* ProfileInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProfileInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36312DB48851D03566888240 /* CategoryListScreenViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListScreenViewState.swift; sourceTree = "<group>"; };
@@ -217,6 +220,7 @@
 		7FC66BFC51A38DF46B2714B6 /* CatalogProductsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogProductsState.swift; sourceTree = "<group>"; };
 		7FE1C2CFC5474EB92616709B /* UserServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8622110583C22504CA07B8AC /* Resolver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Resolver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		87CF545A3FC56BE61308080D /* CatalogOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogOutput.swift; sourceTree = "<group>"; };
 		88A3AB2D942AF20C889BC261 /* CategoryListScreenOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListScreenOutput.swift; sourceTree = "<group>"; };
 		88CE19A81597DF7B40791E26 /* PopcatsServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopcatsServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89558579F561017EABD3FB8F /* DLCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DLCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -246,8 +250,6 @@
 		D95314F52B76971DFE73C6F5 /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
 		E1A2320B362133EDA6357DC8 /* CategoryListScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListScreenViewModel.swift; sourceTree = "<group>"; };
 		E2F5B1B35BF5A6AC909BC3B4 /* CatalogProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogProductsView.swift; sourceTree = "<group>"; };
-		E55AD7692E49831100751C73 /* CatalogOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogOutput.swift; sourceTree = "<group>"; };
-		E55AD76B2E498A9600751C73 /* AnyCatalogProductsScreenNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCatalogProductsScreenNetworkClient.swift; sourceTree = "<group>"; };
 		E568BB375588C0713A7B1524 /* DLNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DLNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E737208D63E1A59E107529F2 /* SharedUserStories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedUserStories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E987D46165F866FD538E123D /* BannerService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BannerService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -255,7 +257,9 @@
 		F2650708409B98CB50618B24 /* CatalogScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogScreenFactory.swift; sourceTree = "<group>"; };
 		F3CE3539942B3B2E45685D76 /* CatalogInterface-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "CatalogInterface-Info.plist"; sourceTree = "<group>"; };
 		F583F5C6729D30AED7C8C376 /* CatalogProductsScreenNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogProductsScreenNetworkClient.swift; sourceTree = "<group>"; };
+		F6F75D9E6758544E24159648 /* Auth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Auth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7A75BC2070A6F41AB6C64D4 /* Catalog-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Catalog-Info.plist"; sourceTree = "<group>"; };
+		F9111C8594E7CB8E15D1C712 /* AuthInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC0C532A082BC5B6B75642FF /* CatalogExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatalogExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC4CBB740BEBC0DD2892D043 /* CategoryListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListAssembly.swift; sourceTree = "<group>"; };
 		FFC8B71FB4F690C9845464A1 /* AuthService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -266,6 +270,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E7A805AAD7A3CDFE9EF5333 /* Auth.framework in Frameworks */,
+				A715DC4A47A91D93EC48F36D /* AuthInterface.framework in Frameworks */,
 				F5F3952DFEE632FD772EE913 /* AuthService.framework in Frameworks */,
 				B6582E38DB724B46D1BA1278 /* AuthServiceInterface.framework in Frameworks */,
 				DCC4A0C5C764077C8E9A2EDF /* BannerService.framework in Frameworks */,
@@ -362,7 +368,7 @@
 		1D089BEF316608953C6FB10E /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				E55AD76B2E498A9600751C73 /* AnyCatalogProductsScreenNetworkClient.swift */,
+				1AB76B1324E37A5676776D32 /* AnyCatalogProductsScreenNetworkClient.swift */,
 				F583F5C6729D30AED7C8C376 /* CatalogProductsScreenNetworkClient.swift */,
 			);
 			path = Network;
@@ -402,6 +408,8 @@
 		40264464D1833DBAD385A9C8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				F6F75D9E6758544E24159648 /* Auth.framework */,
+				F9111C8594E7CB8E15D1C712 /* AuthInterface.framework */,
 				FFC8B71FB4F690C9845464A1 /* AuthService.framework */,
 				954A89829D24FF733CD447F7 /* AuthServiceInterface.framework */,
 				E987D46165F866FD538E123D /* BannerService.framework */,
@@ -463,9 +471,9 @@
 		5BEC81CF3458B39D9DCBA40B /* Interface */ = {
 			isa = PBXGroup;
 			children = (
-				E55AD7692E49831100751C73 /* CatalogOutput.swift */,
 				A4B628E1AEC87E9822218A3C /* AnyCatalogAssembly.swift */,
 				8C50326BCA2670A2A8390C08 /* AnyCatalogCoordinator.swift */,
+				87CF545A3FC56BE61308080D /* CatalogOutput.swift */,
 				8F9D3C6C00DFEB5241F6ACB2 /* CatalogRoute.swift */,
 			);
 			path = Interface;
@@ -694,6 +702,8 @@
 				CLASSPREFIX = DL;
 				LastUpgradeCheck = 1630;
 				ORGANIZATIONNAME = Delivery24;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = B12621D1EB50F86CECABE69D /* Build configuration list for PBXProject "Catalog" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -750,6 +760,7 @@
 				77784F10B98253C69C72F23E /* CatalogProductsAssembly.swift in Sources */,
 				E2D1AE2C85E9DB32381844A0 /* AnyCatalogProductsScreenFactory.swift in Sources */,
 				8FCA537F4F0275EB9A0CB4AB /* CatalogProductsScreenFactory.swift in Sources */,
+				34192B286E46EAECF5CAEC09 /* AnyCatalogProductsScreenNetworkClient.swift in Sources */,
 				BCD6F168356BC3126A031128 /* CatalogProductsScreenNetworkClient.swift in Sources */,
 				430A72F5D5575262FDFDE8B7 /* CatalogProducts+Subviews.swift in Sources */,
 				CDB0E2565A3CBA0AA78D2A5E /* CatalogProductsState.swift in Sources */,
@@ -767,7 +778,6 @@
 				5E28C0060BDF7F89C371AED6 /* CatalogScreenViewState.swift in Sources */,
 				A966639993F64225D6B73156 /* CatalogScreenOutput.swift in Sources */,
 				6014A8594E8F4CBFE5060A3E /* CatalogScreenViewModel.swift in Sources */,
-				E55AD76C2E498A9600751C73 /* AnyCatalogProductsScreenNetworkClient.swift in Sources */,
 				893A8B719945DE844EA20D21 /* CategoryListAssembly.swift in Sources */,
 				A9C2C0B63084AC3F73DAE7AB /* AnyCategoryListFactory.swift in Sources */,
 				54F24C5A98256C90D8EA1A4A /* CategoryListFactory.swift in Sources */,
@@ -796,7 +806,7 @@
 			files = (
 				890C14551F9BA5FC1B633019 /* AnyCatalogAssembly.swift in Sources */,
 				62B6C7DD30F46DBBA8A0725B /* AnyCatalogCoordinator.swift in Sources */,
-				E55AD76A2E49831100751C73 /* CatalogOutput.swift in Sources */,
+				C953C7377AC91A556ED7BB21 /* CatalogOutput.swift in Sources */,
 				E3AABC3057A7E060B72255C6 /* CatalogRoute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -966,7 +976,10 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
@@ -1109,7 +1122,10 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
@@ -1148,7 +1164,10 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;

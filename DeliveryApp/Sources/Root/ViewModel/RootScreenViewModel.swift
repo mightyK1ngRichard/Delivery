@@ -8,6 +8,7 @@ import MainInterface
 import DLCore
 import BasketInterface
 import CatalogInterface
+import ProfileInterface
 
 final class RootScreenViewModel {
 
@@ -35,10 +36,7 @@ extension RootScreenViewModel: RootScreenViewOutput {
         logger.logEvent()
 
         Task {
-            let isAuth = await bootIteractor.initialize()
-            let products = await bootIteractor.fetchInitialData()
-            state.showBasketFlow = isAuth
-            state.basketBadge = products.count
+            await startSession()
             state.screenState = .content
         }
     }
@@ -85,5 +83,39 @@ extension RootScreenViewModel: CatalogOutput {
     func catalogDidIncrementCartCount() {
         logger.logEvent()
         state.basketBadge += 1
+    }
+}
+
+// MARK: - ProfileOutput
+
+extension RootScreenViewModel: ProfileOutput {
+
+    func didLoginSuccess() async {
+        logger.logEvent()
+
+        await startSession()
+    }
+
+    func profileDidLogout() {
+        logger.logEvent()
+        state.showBasketFlow = false
+        state.basketBadge = 0
+
+        Task {
+            await authSessionInteractor.stopSession()
+        }
+    }
+}
+
+// MARK: - Helpers
+
+extension RootScreenViewModel {
+
+    @MainActor
+    func startSession() async {
+        let isAuth = await bootIteractor.initialize()
+        let products = await bootIteractor.fetchInitialData()
+        state.showBasketFlow = isAuth
+        state.basketBadge = products.count
     }
 }

@@ -4,21 +4,28 @@
 //
 
 import Foundation
+import Resolver
 import SwiftUI
 import DLCore
 import Coordinator
 import SharedUserStories
 import ProfileInterface
+import AuthInterface
 
 final class ProfileCoordinator: Navigatable, AnyProfileCoordinator {
 
     let router: Router<ProfileRoute>
     let logger = DLLogger("Profile Coordinator")
 
-    private var addressCoordinator: AddressCoordinator
+    weak var profileInput: ProfileScreenInput?
+    private weak var output: ProfileOutput?
 
-    init(router: Router<ProfileRoute>) {
+    private let addressCoordinator: AddressCoordinator
+    private var authCoordinator: (any AnyAuthCoordinator)?
+
+    init(router: Router<ProfileRoute>, output: ProfileOutput) {
         self.router = router
+        self.output = output
 
         let proxyRouter = ProxyRouter<ProfileRoute, AddressRoute>(parentRouter: router)
         addressCoordinator = AddressAssembly.assemble(router: proxyRouter)
@@ -39,6 +46,10 @@ final class ProfileCoordinator: Navigatable, AnyProfileCoordinator {
             UserDataAssembly.assemble(output: self)
         case let .addressFlow(route):
             addressCoordinator.destination(route)
+        case .authFlow:
+            if let authCoordinator {
+                NavigatableView(authCoordinator)
+            }
         }
     }
 }
@@ -68,6 +79,12 @@ extension ProfileCoordinator: ProfileScreenOutput {
 
     func openSignInFlow() {
         logger.logEvent()
+
+        authCoordinator = Resolver
+            .resolve(AnyAuthAssembly.self)
+            .assemble(route: .signIn, output: self)
+
+        router.fullScreenCover(.authFlow)
     }
 
     func openSignUpFlow() {
@@ -80,6 +97,7 @@ extension ProfileCoordinator: ProfileScreenOutput {
 
     func logout() {
         logger.logEvent()
+        output?.profileDidLogout()
     }
 }
 
@@ -95,4 +113,25 @@ extension ProfileCoordinator: OrdersScreenOutput {
 // MARK: - UserDataScreenOutput
 
 extension ProfileCoordinator: UserDataScreenOutput {
+}
+
+// MARK: - AuthOutput
+
+extension ProfileCoordinator: AuthOutput {
+
+    func authCloseFlow() {
+        logger.logEvent()
+        router.dismiss()
+    }
+
+    func didLoginSuccess() {
+        logger.logEvent()
+        authCoordinator = nil
+
+        Task {
+            await output?.didLoginSuccess()
+            profileInput?.didLoginSuccessfully()
+            router.dismiss()
+        }
+    }
 }

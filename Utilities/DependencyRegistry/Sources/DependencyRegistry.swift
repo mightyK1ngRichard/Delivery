@@ -30,6 +30,8 @@ import ProfileInterface
 import Profile
 import BasketInterface
 import Basket
+import AuthInterface
+import Auth
 
 extension Resolver {
 
@@ -46,6 +48,7 @@ extension Resolver {
         Resolver.register(AnyCatalogAssembly.self) { CatalogCoordinatorAssembly() }
         Resolver.register(AnyProfileAssembly.self) { ProfileAssembly() }
         Resolver.register(AnyBasketAssembly.self) { BasketAssembly() }
+        Resolver.register(AnyAuthAssembly.self) { AuthAssembly() }
     }
 
     private static func registerServices() {

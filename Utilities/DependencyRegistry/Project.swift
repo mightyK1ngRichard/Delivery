@@ -18,5 +18,6 @@ let project = Project.module(
         .module(.Catalog),
         .module(.Profile),
         .module(.Basket),
+        .module(.Auth),
     ]
 )

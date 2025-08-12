@@ -14,17 +14,19 @@
 		0666809F8A32907D8525DF88 /* UserDataView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02314CBAE95EF8A0757F67D /* UserDataView+Subviews.swift */; };
 		0667CC9B4EB596D2E0C64AE5 /* OrdersScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79681967E28B2834ADEFF6F3 /* OrdersScreenViewModel.swift */; };
 		0B41A4755553D5BD536136F3 /* UserDataScreenNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97564CB349B2EF2FF33C976A /* UserDataScreenNetworkClient.swift */; };
+		0C5A5FE9AD1B7E828EB57995 /* ProfileScreenViewOuput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D907D8EE5F14EB46F4A610 /* ProfileScreenViewOuput.swift */; };
 		16E0E5C7E2E9F2C4609D318B /* Profile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCFEAF10AB4C6CB5C0ED0FD9 /* Profile.framework */; };
 		18FF13A6C2E80B65359704EA /* Catalog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4738C3757938F3C130E834 /* Catalog.framework */; };
 		1CCB226BE4592B022231DAE8 /* AuthService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1489013373836D73CB4EEE /* AuthService.framework */; };
 		1DADBCE7AFB60B4F3B322BE0 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F861F3FE2318B3ED74B3785 /* ProfileCoordinator.swift */; };
-		20EEF6B38EC4745644E718D8 /* ProfileScreenNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F217B61D4B271438EFF4A /* ProfileScreenNetworkClient.swift */; };
+		223D6EFD11826A62360652C1 /* ProfileScreenNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F85FC1969D018657AABC25 /* ProfileScreenNetworkClient.swift */; };
 		274347BA2D9F164B884C566D /* CartServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7405EFE5971D72F945DAB684 /* CartServiceInterface.framework */; };
+		2A0878AD440CA14C90E74588 /* AuthInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 1F6341479A41413888ED3307 /* AuthInterface.framework */; };
 		2A32E18483F4B6F23DC9AA4C /* OrdersScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79FFA6F6ECD930BA8B1B7330 /* OrdersScreenView.swift */; };
-		2ACEC32DB1E7288A8D47E137 /* ProfileScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D873A1B7800794D1CE029DB /* ProfileScreenView.swift */; };
 		31C26142762A0373AD208240 /* SharedContractsInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFCA9CE4A8413AA1C6D8A3C /* SharedContractsInterface.framework */; };
 		3894152C033ED81FD048E5FF /* OrderValidationNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47120C3EE3A3702E8024F04B /* OrderValidationNotifications.swift */; };
-		38B2DE969DCD4A4EE5980228 /* ProfileScreenOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD4A67E2028A9580AFF54F9 /* ProfileScreenOutput.swift */; };
+		3AFF0B32AAB608B1277FD474 /* Auth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33731AFDF0A7F2D34429E10B /* Auth.framework */; };
+		3B6189E3DC7A8835D2153142 /* ProfileScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3686403F338C47BB149DAE5 /* ProfileScreenView.swift */; };
 		3B6EFA4BA819D3D0E899BD12 /* UserDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05ED3711A941E9E23D1EFE8D /* UserDataView.swift */; };
 		3BE1552B66AD36BB197A9D9B /* UserDataScreenOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3336C5D6CC1C1F704B3838E3 /* UserDataScreenOutput.swift */; };
 		3C407E87388BFE0CA4A72CC1 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F570366ADE4E613E466931 /* Order.swift */; };
@@ -38,6 +40,7 @@
 		4849929D4CD9D651947F55D2 /* DLNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A476B40173E1358E79B01B3 /* DLNetwork.framework */; };
 		4D1E2B2E2CBF60102D13722A /* AnyOrdersScreenNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25144DE05731B407C7717B84 /* AnyOrdersScreenNetworkClient.swift */; };
 		4F1C31B93D0892ABBBC7E880 /* AnyProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F0D9C7D44E5BFC7FB62FAA /* AnyProfileCoordinator.swift */; };
+		51D6D0A285162CE27B5A7752 /* ProfileOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2802715D39F4035466573457 /* ProfileOutput.swift */; };
 		529CB6D45FB1E8908BCAA0BF /* ProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD65451FE8229BE1ED5D166 /* ProfileAssembly.swift */; };
 		54483AACBDF2FADAACAF5291 /* UserDataScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76461A170896C938CCCB3FC7 /* UserDataScreenViewModel.swift */; };
 		565398D2A0D75529F97D9903 /* SharedUserStories.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 0EF5F34280FEC436772573C7 /* SharedUserStories.framework */; };
@@ -46,13 +49,14 @@
 		5B19F6266997E7F758367060 /* SharedUserStories.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 0EF5F34280FEC436772573C7 /* SharedUserStories.framework */; };
 		60E043085F7AC32E4B022CCF /* ProfileRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07A77687DB90847855E7BC1 /* ProfileRoute.swift */; };
 		614089350906F373CCEBCC5D /* AuthServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D73256A3CCC07F5524D7F9D6 /* AuthServiceInterface.framework */; };
+		64F3E3B723CF2DEBCE2EE2AF /* AuthInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 1F6341479A41413888ED3307 /* AuthInterface.framework */; };
 		659A0730B4F088723EE8CE59 /* DesignSystem_DesignSystem.bundle in Dependencies */ = {isa = PBXBuildFile; fileRef = A23352E435151C1C277594E7 /* DesignSystem_DesignSystem.bundle */; };
-		65C636FBBC32E5095993F66E /* ProfileScreenViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F35CBAFC33F8AD2F839287 /* ProfileScreenViewState.swift */; };
 		662C7A5A752BC620E0F7244A /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5E41785DEA53029D44E06C /* DesignSystem.framework */; };
-		6D6AF51A7B08C4F0ECE98FE2 /* ProfileScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D71EF4E83AA8A2F5507A11 /* ProfileScreenAssembly.swift */; };
 		6D9E101DE12E1653E20E480E /* ProfileCoordinatorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D1E03AC4E195B002483741 /* ProfileCoordinatorOutput.swift */; };
+		7065CAFFE2F87B4420F85C10 /* ProfileScreenViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245A120E9D3ACC16E62E6976 /* ProfileScreenViewState.swift */; };
 		7D0657293D4F7457CC920FB7 /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6CBA04D2D4F76719A80526 /* ExampleView.swift */; };
 		804067ED7085822919E7860D /* OrdersScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE2F5AF85DC1CCE5B4E86E4 /* OrdersScreenAssembly.swift */; };
+		84CA5A38D3EE48CA59A9864C /* AnyProfileScreenNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16F9AEB037F9D2B92469F72 /* AnyProfileScreenNetworkClient.swift */; };
 		87A3D317F0A6248740B9E9FB /* UserServiceInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 2A2132AC9CBDE9392AECD86D /* UserServiceInterface.framework */; };
 		89007FC5F75BF14F4095CCE6 /* CartService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14250C5851AEE7068795FEB /* CartService.framework */; };
 		89F5AFFF7CCA914F49542885 /* UserDataAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54535E515CC76564827CE6F2 /* UserDataAssembly.swift */; };
@@ -65,28 +69,29 @@
 		99EE198D719224D5E3F741DA /* BasketInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DFC7102390F7382A8DF3526 /* BasketInterface.framework */; };
 		9EC51972C0E23FFB79DB30C5 /* Coordinator.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = CAD3F20C157D18F20EE916E2 /* Coordinator.framework */; };
 		A12928A59AC545A18E378B7D /* CatalogServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAEA133AA7B7DF56AA6FEEC /* CatalogServiceInterface.framework */; };
+		A225E8691551EB6BF2B4238B /* ProfileScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85CAEF6845DFF848C963BC88 /* ProfileScreenAssembly.swift */; };
 		A9C68F0D1396C9D038981322 /* UserDataViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B768CCF03C7323081B43034F /* UserDataViewOutput.swift */; };
 		AAA3986B89F53FB721610CCF /* DLCore.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = DD5F8A43EC79C39FF069148F /* DLCore.framework */; };
+		AF271A39F6668F32B428AF6E /* ProfileScreenOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937A1F57B7D98AF7935E4A30 /* ProfileScreenOutput.swift */; };
 		B34B38735CE513841E9BFDCB /* CatalogInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF79B0FB34AD93532D1E26C4 /* CatalogInterface.framework */; };
+		C315CCB8E0A9202AF6966D23 /* AuthInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F6341479A41413888ED3307 /* AuthInterface.framework */; };
 		C5462FA15D749EFA7C645F96 /* DLNetwork.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 9A476B40173E1358E79B01B3 /* DLNetwork.framework */; };
 		C7C7EA2CBB587506005F6205 /* ProductServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25497091EF98DBF3F4AF181C /* ProductServiceInterface.framework */; };
 		C8017515D656FFB4624DADE7 /* OrderService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490ED87BCD2FA86FE033DCDA /* OrderService.framework */; };
 		CAE27C6BAEF77C44E6E55FF9 /* Resolver.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 98B5050BF704BE54EBC2F885 /* Resolver.framework */; };
+		CB350A1E2FED868E62F63780 /* ProfileScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F67F00FFF2F2EA422AE3D5 /* ProfileScreenViewModel.swift */; };
 		D007205E01CACA266F3A5ED6 /* ProfileInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = FD4126559E9FAB3E96E4D4B7 /* ProfileInterface.framework */; };
 		D6C28FB336AA9470EA2C7A55 /* OrderServiceInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = FB9E308BAB502E82C026990D /* OrderServiceInterface.framework */; };
 		D8DBB2C3B00059D25456C1D0 /* AnyOrdersScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A878C662E02B953A6553466 /* AnyOrdersScreenFactory.swift */; };
 		D977EE02A08C83294B21611E /* Basket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8276AA52D814B9298D8A6BFD /* Basket.framework */; };
 		E1A8F38097A58AA7CEA41998 /* DesignSystem_DesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A23352E435151C1C277594E7 /* DesignSystem_DesignSystem.bundle */; };
 		E221CECCCD6D7AB74D869A1D /* OrdersScreenNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC803CF7D0392AED1D0236 /* OrdersScreenNetworkClient.swift */; };
-		E2C1F69301D52ED84DB4963F /* AnyProfileScreenNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD93BBC406A8CA700EF3065D /* AnyProfileScreenNetworkClient.swift */; };
 		E3B331377E5B3DE87C2A1A21 /* SharedUserStories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF5F34280FEC436772573C7 /* SharedUserStories.framework */; };
 		E59BD3DF03A2ACADFA4F9F47 /* AnyUserDataScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3C1262FA5193350F9CCA80 /* AnyUserDataScreenFactory.swift */; };
 		E7A0B27858C8410CAF21F60A /* AnyProfileAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A4C99309079E757605F935 /* AnyProfileAssembly.swift */; };
 		E8C876AD7190C5132931CEFE /* OrderServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9E308BAB502E82C026990D /* OrderServiceInterface.framework */; };
 		EAD60E4938B768025141ED1C /* OrdersScreenOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F620B855C1515509E54302 /* OrdersScreenOutput.swift */; };
 		EAE2BB16720DD670FF252E95 /* CatalogService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA62B07FF5D59CB5854A1485 /* CatalogService.framework */; };
-		ED11EABE0922EB0B5EE2CDC3 /* ProfileScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B79F2930E9C96F3D090FE97 /* ProfileScreenViewModel.swift */; };
-		EDD11CEDF8E028E84ED70960 /* ProfileScreenViewOuput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC21E86CCA51F59FE989D232 /* ProfileScreenViewOuput.swift */; };
 		EF205B3372243BDE33BF4F17 /* DesignSystem.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 5C5E41785DEA53029D44E06C /* DesignSystem.framework */; };
 		FA1AE1DF70E5F6D8AA095207 /* OrdersScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D65BB379ABF11BEA8DC3BB4 /* OrdersScreenFactory.swift */; };
 /* End PBXBuildFile section */
@@ -114,6 +119,7 @@
 			buildActionMask = 8;
 			dstSubfolderSpec = 16;
 			files = (
+				64F3E3B723CF2DEBCE2EE2AF /* AuthInterface.framework in Dependencies */,
 				5B19F6266997E7F758367060 /* SharedUserStories.framework in Dependencies */,
 			);
 			name = Dependencies;
@@ -164,6 +170,7 @@
 			buildActionMask = 8;
 			dstSubfolderSpec = 16;
 			files = (
+				2A0878AD440CA14C90E74588 /* AuthInterface.framework in Dependencies */,
 				9EC51972C0E23FFB79DB30C5 /* Coordinator.framework in Dependencies */,
 				AAA3986B89F53FB721610CCF /* DLCore.framework in Dependencies */,
 				C5462FA15D749EFA7C645F96 /* DLNetwork.framework in Dependencies */,
@@ -181,25 +188,27 @@
 
 /* Begin PBXFileReference section */
 		05ED3711A941E9E23D1EFE8D /* UserDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataView.swift; sourceTree = "<group>"; };
-		0D873A1B7800794D1CE029DB /* ProfileScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenView.swift; sourceTree = "<group>"; };
 		0EF5F34280FEC436772573C7 /* SharedUserStories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedUserStories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		19F67F00FFF2F2EA422AE3D5 /* ProfileScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewModel.swift; sourceTree = "<group>"; };
 		1A878C662E02B953A6553466 /* AnyOrdersScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyOrdersScreenFactory.swift; sourceTree = "<group>"; };
-		1AD4A67E2028A9580AFF54F9 /* ProfileScreenOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenOutput.swift; sourceTree = "<group>"; };
 		1DD65451FE8229BE1ED5D166 /* ProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembly.swift; sourceTree = "<group>"; };
+		1F6341479A41413888ED3307 /* AuthInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		245A120E9D3ACC16E62E6976 /* ProfileScreenViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewState.swift; sourceTree = "<group>"; };
 		25144DE05731B407C7717B84 /* AnyOrdersScreenNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyOrdersScreenNetworkClient.swift; sourceTree = "<group>"; };
 		25497091EF98DBF3F4AF181C /* ProductServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProductServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2802715D39F4035466573457 /* ProfileOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOutput.swift; sourceTree = "<group>"; };
 		296CEBAF9296322EA3F26CBC /* DependencyRegistry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DependencyRegistry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A2132AC9CBDE9392AECD86D /* UserServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30A4C99309079E757605F935 /* AnyProfileAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyProfileAssembly.swift; sourceTree = "<group>"; };
 		3336C5D6CC1C1F704B3838E3 /* UserDataScreenOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataScreenOutput.swift; sourceTree = "<group>"; };
+		33731AFDF0A7F2D34429E10B /* Auth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Auth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D3C1262FA5193350F9CCA80 /* AnyUserDataScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyUserDataScreenFactory.swift; sourceTree = "<group>"; };
 		3D65BB379ABF11BEA8DC3BB4 /* OrdersScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersScreenFactory.swift; sourceTree = "<group>"; };
+		43F85FC1969D018657AABC25 /* ProfileScreenNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenNetworkClient.swift; sourceTree = "<group>"; };
 		44ACE631CDB1164BB2E35C46 /* ProductService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProductService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46F620B855C1515509E54302 /* OrdersScreenOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersScreenOutput.swift; sourceTree = "<group>"; };
 		47120C3EE3A3702E8024F04B /* OrderValidationNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderValidationNotifications.swift; sourceTree = "<group>"; };
 		490ED87BCD2FA86FE033DCDA /* OrderService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OrderService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		490F217B61D4B271438EFF4A /* ProfileScreenNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenNetworkClient.swift; sourceTree = "<group>"; };
-		49D71EF4E83AA8A2F5507A11 /* ProfileScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenAssembly.swift; sourceTree = "<group>"; };
 		4CE2F5AF85DC1CCE5B4E86E4 /* OrdersScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersScreenAssembly.swift; sourceTree = "<group>"; };
 		54535E515CC76564827CE6F2 /* UserDataAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataAssembly.swift; sourceTree = "<group>"; };
 		5B3D3B88BBEEB2314C2CB6F3 /* AnyUserDataScreenNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyUserDataScreenNetworkClient.swift; sourceTree = "<group>"; };
@@ -207,27 +216,29 @@
 		5DFC7102390F7382A8DF3526 /* BasketInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BasketInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F2AB774C97E8EEEB8CB532E /* OrdersViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewState.swift; sourceTree = "<group>"; };
 		64E99401381E38825C0E6B5E /* PopcatsServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopcatsServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67D907D8EE5F14EB46F4A610 /* ProfileScreenViewOuput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewOuput.swift; sourceTree = "<group>"; };
 		7405EFE5971D72F945DAB684 /* CartServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CartServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76461A170896C938CCCB3FC7 /* UserDataScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataScreenViewModel.swift; sourceTree = "<group>"; };
 		79681967E28B2834ADEFF6F3 /* OrdersScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersScreenViewModel.swift; sourceTree = "<group>"; };
 		79FFA6F6ECD930BA8B1B7330 /* OrdersScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersScreenView.swift; sourceTree = "<group>"; };
-		7B79F2930E9C96F3D090FE97 /* ProfileScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewModel.swift; sourceTree = "<group>"; };
 		7DAEA133AA7B7DF56AA6FEEC /* CatalogServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatalogServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		813AFAE93B2CA057FC957FDE /* MainInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MainInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8276AA52D814B9298D8A6BFD /* Basket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Basket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		85CAEF6845DFF848C963BC88 /* ProfileScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenAssembly.swift; sourceTree = "<group>"; };
 		872C9ED47F3976B02E7D9F73 /* UserDataViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataViewState.swift; sourceTree = "<group>"; };
 		91C6931FD57696A2DABCBFD4 /* PopcatsService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopcatsService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		937A1F57B7D98AF7935E4A30 /* ProfileScreenOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenOutput.swift; sourceTree = "<group>"; };
 		94F0D9C7D44E5BFC7FB62FAA /* AnyProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyProfileCoordinator.swift; sourceTree = "<group>"; };
 		97564CB349B2EF2FF33C976A /* UserDataScreenNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataScreenNetworkClient.swift; sourceTree = "<group>"; };
-		97F35CBAFC33F8AD2F839287 /* ProfileScreenViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewState.swift; sourceTree = "<group>"; };
 		98B5050BF704BE54EBC2F885 /* Resolver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Resolver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A476B40173E1358E79B01B3 /* DLNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DLNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F861F3FE2318B3ED74B3785 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		A14250C5851AEE7068795FEB /* CartService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CartService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A16F9AEB037F9D2B92469F72 /* AnyProfileScreenNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyProfileScreenNetworkClient.swift; sourceTree = "<group>"; };
 		A23352E435151C1C277594E7 /* DesignSystem_DesignSystem.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignSystem_DesignSystem.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3686403F338C47BB149DAE5 /* ProfileScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenView.swift; sourceTree = "<group>"; };
 		A5DC803CF7D0392AED1D0236 /* OrdersScreenNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersScreenNetworkClient.swift; sourceTree = "<group>"; };
 		AAEA571DE50B823958F02C72 /* BannerServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BannerServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC21E86CCA51F59FE989D232 /* ProfileScreenViewOuput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewOuput.swift; sourceTree = "<group>"; };
 		AE4738C3757938F3C130E834 /* Catalog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Catalog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B07A77687DB90847855E7BC1 /* ProfileRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRoute.swift; sourceTree = "<group>"; };
 		B1D1E03AC4E195B002483741 /* ProfileCoordinatorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinatorOutput.swift; sourceTree = "<group>"; };
@@ -239,7 +250,6 @@
 		CAD3F20C157D18F20EE916E2 /* Coordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Coordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB1489013373836D73CB4EEE /* AuthService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCD5FCB6EBD5CB69F82EB3A0 /* Main.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Main.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD93BBC406A8CA700EF3065D /* AnyProfileScreenNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyProfileScreenNetworkClient.swift; sourceTree = "<group>"; };
 		CFDC2DF621DE9C9C8D153A87 /* ProfileExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProfileExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D73256A3CCC07F5524D7F9D6 /* AuthServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98D5870F137ED2361D7B4D1 /* ProfileExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ProfileExample-Info.plist"; sourceTree = "<group>"; };
@@ -269,6 +279,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AFF0B32AAB608B1277FD474 /* Auth.framework in Frameworks */,
+				C315CCB8E0A9202AF6966D23 /* AuthInterface.framework in Frameworks */,
 				1CCB226BE4592B022231DAE8 /* AuthService.framework in Frameworks */,
 				614089350906F373CCEBCC5D /* AuthServiceInterface.framework in Frameworks */,
 				56CE361A02A902A1DD7CBF22 /* BannerService.framework in Frameworks */,
@@ -332,18 +344,21 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		0BA736FB2935A83104029CA9 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D3891D27958B6C905156849E /* Assembly */,
+				5040CAC128282BFBEC44D66A /* Network */,
+				5521767E00333E2DA76BA61A /* View */,
+				B827C84EB6F0734505CE1426 /* ViewModel */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		0E6FA0BBC936BB1F680ADDB9 /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
 				4CE2F5AF85DC1CCE5B4E86E4 /* OrdersScreenAssembly.swift */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
-		0F5F785D897E9840888CE77D /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				49D71EF4E83AA8A2F5507A11 /* ProfileScreenAssembly.swift */,
 			);
 			path = Assembly;
 			sourceTree = "<group>";
@@ -388,6 +403,8 @@
 		3FEC19802DA26B12A5AF8561 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				33731AFDF0A7F2D34429E10B /* Auth.framework */,
+				1F6341479A41413888ED3307 /* AuthInterface.framework */,
 				CB1489013373836D73CB4EEE /* AuthService.framework */,
 				D73256A3CCC07F5524D7F9D6 /* AuthServiceInterface.framework */,
 				F8F73DEF98273214F47581C0 /* BannerService.framework */,
@@ -431,6 +448,7 @@
 			children = (
 				30A4C99309079E757605F935 /* AnyProfileAssembly.swift */,
 				94F0D9C7D44E5BFC7FB62FAA /* AnyProfileCoordinator.swift */,
+				2802715D39F4035466573457 /* ProfileOutput.swift */,
 				B07A77687DB90847855E7BC1 /* ProfileRoute.swift */,
 			);
 			path = Interface;
@@ -443,6 +461,25 @@
 				F02314CBAE95EF8A0757F67D /* UserDataView+Subviews.swift */,
 				B768CCF03C7323081B43034F /* UserDataViewOutput.swift */,
 				872C9ED47F3976B02E7D9F73 /* UserDataViewState.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5040CAC128282BFBEC44D66A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A16F9AEB037F9D2B92469F72 /* AnyProfileScreenNetworkClient.swift */,
+				43F85FC1969D018657AABC25 /* ProfileScreenNetworkClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5521767E00333E2DA76BA61A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A3686403F338C47BB149DAE5 /* ProfileScreenView.swift */,
+				67D907D8EE5F14EB46F4A610 /* ProfileScreenViewOuput.swift */,
+				245A120E9D3ACC16E62E6976 /* ProfileScreenViewState.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -466,16 +503,6 @@
 				08B32368C6603FBAF6981B71 /* ViewModel */,
 			);
 			path = UserData;
-			sourceTree = "<group>";
-		};
-		67804ED1B1C2459C8DD1CD7F /* View */ = {
-			isa = PBXGroup;
-			children = (
-				0D873A1B7800794D1CE029DB /* ProfileScreenView.swift */,
-				AC21E86CCA51F59FE989D232 /* ProfileScreenViewOuput.swift */,
-				97F35CBAFC33F8AD2F839287 /* ProfileScreenViewState.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		6EB98FCB4CE9A9EB1EE6C75D /* InfoPlists */ = {
@@ -517,7 +544,7 @@
 			children = (
 				220A63793D3810D6A111016A /* Helpers */,
 				9FF24470E45955E7A4479A9D /* OrdersView */,
-				CF3636F7FC2F336BF084C24D /* ProfileScreen */,
+				0BA736FB2935A83104029CA9 /* Profile */,
 				5C02D5A741B49A720F46F094 /* UserData */,
 				1DD65451FE8229BE1ED5D166 /* ProfileAssembly.swift */,
 				9F861F3FE2318B3ED74B3785 /* ProfileCoordinator.swift */,
@@ -547,15 +574,6 @@
 			path = OrdersView;
 			sourceTree = "<group>";
 		};
-		A1E53CAAA9C26F6EA868FC67 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				1AD4A67E2028A9580AFF54F9 /* ProfileScreenOutput.swift */,
-				7B79F2930E9C96F3D090FE97 /* ProfileScreenViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		A64853DA2B9D1E7E8F567A60 /* Project */ = {
 			isa = PBXGroup;
 			children = (
@@ -567,24 +585,21 @@
 			name = Project;
 			sourceTree = "<group>";
 		};
-		C1D67D8D9471F1DE21A73A0E /* Network */ = {
+		B827C84EB6F0734505CE1426 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				CD93BBC406A8CA700EF3065D /* AnyProfileScreenNetworkClient.swift */,
-				490F217B61D4B271438EFF4A /* ProfileScreenNetworkClient.swift */,
+				937A1F57B7D98AF7935E4A30 /* ProfileScreenOutput.swift */,
+				19F67F00FFF2F2EA422AE3D5 /* ProfileScreenViewModel.swift */,
 			);
-			path = Network;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		CF3636F7FC2F336BF084C24D /* ProfileScreen */ = {
+		D3891D27958B6C905156849E /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
-				0F5F785D897E9840888CE77D /* Assembly */,
-				C1D67D8D9471F1DE21A73A0E /* Network */,
-				67804ED1B1C2459C8DD1CD7F /* View */,
-				A1E53CAAA9C26F6EA868FC67 /* ViewModel */,
+				85CAEF6845DFF848C963BC88 /* ProfileScreenAssembly.swift */,
 			);
-			path = ProfileScreen;
+			path = Assembly;
 			sourceTree = "<group>";
 		};
 		FC6EF51C821E61EFC620BF0F /* Derived */ = {
@@ -738,17 +753,17 @@
 				9901680118AFD89EB351B843 /* OrdersViewState.swift in Sources */,
 				EAD60E4938B768025141ED1C /* OrdersScreenOutput.swift in Sources */,
 				0667CC9B4EB596D2E0C64AE5 /* OrdersScreenViewModel.swift in Sources */,
+				A225E8691551EB6BF2B4238B /* ProfileScreenAssembly.swift in Sources */,
+				84CA5A38D3EE48CA59A9864C /* AnyProfileScreenNetworkClient.swift in Sources */,
+				223D6EFD11826A62360652C1 /* ProfileScreenNetworkClient.swift in Sources */,
+				3B6189E3DC7A8835D2153142 /* ProfileScreenView.swift in Sources */,
+				0C5A5FE9AD1B7E828EB57995 /* ProfileScreenViewOuput.swift in Sources */,
+				7065CAFFE2F87B4420F85C10 /* ProfileScreenViewState.swift in Sources */,
+				AF271A39F6668F32B428AF6E /* ProfileScreenOutput.swift in Sources */,
+				CB350A1E2FED868E62F63780 /* ProfileScreenViewModel.swift in Sources */,
 				529CB6D45FB1E8908BCAA0BF /* ProfileAssembly.swift in Sources */,
 				1DADBCE7AFB60B4F3B322BE0 /* ProfileCoordinator.swift in Sources */,
 				6D9E101DE12E1653E20E480E /* ProfileCoordinatorOutput.swift in Sources */,
-				6D6AF51A7B08C4F0ECE98FE2 /* ProfileScreenAssembly.swift in Sources */,
-				E2C1F69301D52ED84DB4963F /* AnyProfileScreenNetworkClient.swift in Sources */,
-				20EEF6B38EC4745644E718D8 /* ProfileScreenNetworkClient.swift in Sources */,
-				2ACEC32DB1E7288A8D47E137 /* ProfileScreenView.swift in Sources */,
-				EDD11CEDF8E028E84ED70960 /* ProfileScreenViewOuput.swift in Sources */,
-				65C636FBBC32E5095993F66E /* ProfileScreenViewState.swift in Sources */,
-				38B2DE969DCD4A4EE5980228 /* ProfileScreenOutput.swift in Sources */,
-				ED11EABE0922EB0B5EE2CDC3 /* ProfileScreenViewModel.swift in Sources */,
 				89F5AFFF7CCA914F49542885 /* UserDataAssembly.swift in Sources */,
 				E59BD3DF03A2ACADFA4F9F47 /* AnyUserDataScreenFactory.swift in Sources */,
 				04AC43B6586BEE992686EF73 /* UserDataScreenFactory.swift in Sources */,
@@ -769,6 +784,7 @@
 			files = (
 				E7A0B27858C8410CAF21F60A /* AnyProfileAssembly.swift in Sources */,
 				4F1C31B93D0892ABBBC7E880 /* AnyProfileCoordinator.swift in Sources */,
+				51D6D0A285162CE27B5A7752 /* ProfileOutput.swift in Sources */,
 				60E043085F7AC32E4B022CCF /* ProfileRoute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

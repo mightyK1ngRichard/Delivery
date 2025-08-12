@@ -11,6 +11,7 @@ import BasketInterface
 import Resolver
 import DLNetwork
 import UserServiceInterface
+import OrderServiceInterface
 
 enum RootAssembly {
 
@@ -21,7 +22,8 @@ enum RootAssembly {
 
         let bootIteractor = BootIteractor(
             networkStore: networkStore,
-            userService: Resolver.resolve(AnyUserService.self)
+            userService: Resolver.resolve(AnyUserService.self),
+            orderService: Resolver.resolve(AnyOrderService.self)
         )
         let authSessionInteractor = AuthSessionInteractor(networkStore: networkStore)
         let viewModel = RootScreenViewModel(
@@ -32,7 +34,7 @@ enum RootAssembly {
 
         let mainCoordinator = Resolver.resolve(AnyMainAssembly.self).assemble(output: viewModel)
         let catalogCoordinator = Resolver.resolve(AnyCatalogAssembly.self).assemble(output: viewModel)
-        let profileCoordinator = Resolver.resolve(AnyProfileAssembly.self).assemble()
+        let profileCoordinator = Resolver.resolve(AnyProfileAssembly.self).assemble(output: viewModel)
         let basketCoordinator = Resolver.resolve(AnyBasketAssembly.self).assemble(output: viewModel)
 
         return RootScreenView(

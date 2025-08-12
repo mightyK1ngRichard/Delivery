@@ -9,8 +9,7 @@ import SharedUserStories
 public enum ProfileRoute: Hashable, Identifiable, Sendable, RouteConvertible {
 
     case main
-//    case signIn
-//    case signUp
+    case authFlow
     case userData
     case addressFlow(AddressRoute)
 //    case productDetails(Product)

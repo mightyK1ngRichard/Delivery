@@ -11,6 +11,7 @@
 		3784B881B48DD1F45F80E268 /* CatalogService.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = FCC299D8DE12D613C56404BF /* CatalogService.framework */; };
 		483E87275C80474F4885913C /* AuthService.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 3A11A700722629E518D70AF4 /* AuthService.framework */; };
 		50114457BF6AE8DB91A2353C /* Catalog.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 38057199E01A83D5F5CBFC53 /* Catalog.framework */; };
+		653CA5AE18D6A39190F6D420 /* Auth.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = B527BC2EF09BF951DFF82D71 /* Auth.framework */; };
 		6AAA5C6132F8CC8279E3CB9F /* OrderService.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 1130310BB65AB87B054AE310 /* OrderService.framework */; };
 		734895AD1F293CBF662E7ACE /* DependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C6A43717AF233C23A81C59 /* DependencyRegistry.swift */; };
 		77FEB70529AE82A191C77578 /* ProductService.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 5EB0571C2511F3604926DB60 /* ProductService.framework */; };
@@ -39,6 +40,7 @@
 			buildActionMask = 8;
 			dstSubfolderSpec = 16;
 			files = (
+				653CA5AE18D6A39190F6D420 /* Auth.framework in Dependencies */,
 				483E87275C80474F4885913C /* AuthService.framework in Dependencies */,
 				B041E78365263C67EC8E632D /* BannerService.framework in Dependencies */,
 				CA61536D0DC398AC8856D7ED /* Basket.framework in Dependencies */,
@@ -68,6 +70,7 @@
 		77453A0656E1B996E43E0FBA /* BannerService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BannerService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9685C7C7898DA4C11FE25E4B /* Main.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Main.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B07F9E252E273CAEDF7856B0 /* PopcatsService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopcatsService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B527BC2EF09BF951DFF82D71 /* Auth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Auth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEEF983A460A79D9773D289A /* DependencyRegistry-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DependencyRegistry-Info.plist"; sourceTree = "<group>"; };
 		DE3661216423195165C19613 /* UserService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E34008CED65BAB8A9305EF0E /* CartService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CartService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +119,7 @@
 		CBE3BB4BBA6FE54F2BAE50ED /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				B527BC2EF09BF951DFF82D71 /* Auth.framework */,
 				3A11A700722629E518D70AF4 /* AuthService.framework */,
 				77453A0656E1B996E43E0FBA /* BannerService.framework */,
 				E90F383FCCB242D79C9EDDBA /* Basket.framework */,
