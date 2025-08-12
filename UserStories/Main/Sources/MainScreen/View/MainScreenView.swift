@@ -4,7 +4,7 @@
 //
 
 import SwiftUI
-import DLCore
+import DesignSystem
 
 struct MainScreenView: View {
 
@@ -18,15 +18,5 @@ struct MainScreenView: View {
     var body: some View {
         mainContainer
             .onFirstAppear(perform: output.onFirstAppear)
-    }
-}
-
-// MARK: - Constants
-
-private extension MainScreenView {
-
-    enum Constants {
-
-        static let searchText = String(localized: "search").capitalized
     }
 }

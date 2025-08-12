@@ -74,7 +74,7 @@ extension View {
             VStack {
                 type.image
                     .renderingMode(.template)
-                Text(type.rawValue)
+                Text(type.locolized)
                     .font(.system(size: 10, weight: .medium))
             }
         }

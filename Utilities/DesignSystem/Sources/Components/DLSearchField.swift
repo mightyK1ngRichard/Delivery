@@ -49,7 +49,7 @@ public struct DLSearchField: View {
 private extension DLSearchField {
 
     enum Constants {
-        static let searchText = String(localized: "search").capitalized
+        static let searchText = "Поиск"
         // FIXME: iOS-3: Заменить на цвета DS
         static let iconColor = Color.secondary
         static let textFieldBgColor = Color.secondary.opacity(0.12)

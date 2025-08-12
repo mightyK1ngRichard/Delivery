@@ -6,7 +6,7 @@
 import DesignSystem
 import SwiftUI
 
-enum TabBarItem: String, CaseIterable {
+enum TabBarItem: CaseIterable {
 
     case house
     case catalog

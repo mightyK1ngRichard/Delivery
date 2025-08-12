@@ -42,13 +42,13 @@ extension ProductSection {
     public var title: String {
         switch self {
         case .actions:
-            return String(localized: "stocks")
+            return "Акции"
         case .exclusives:
-            return String(localized: "exclusives")
+            return "Эксклюзивы"
         case .news:
-            return String(localized: "news")
+            return "Новинки"
         case .hits:
-            return String(localized: "hits")
+            return "Хиты продаж"
         }
     }
 

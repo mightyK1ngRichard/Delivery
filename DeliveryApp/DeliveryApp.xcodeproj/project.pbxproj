@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -204,8 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				D1E21FEFD65B3FEB1A8AAC7B /* App */,
-				471CDBCD54DFB5EAD9574DE1 /* AuthSessionInteractor */,
-				839BA643535B1182CC9FAE6F /* BootIteractor */,
 				06439D41DDD6229AE6690E65 /* Helpers */,
 				C5B1BB6A711053E290E7DF60 /* Root */,
 			);
@@ -297,6 +295,8 @@
 				0C597C47B0A6A42E3950F04F /* Assembly */,
 				4512E0885CC0327B78C1B942 /* View */,
 				D36E1D3B05137685A19BDF6B /* ViewModel */,
+				471CDBCD54DFB5EAD9574DE1 /* AuthSessionInteractor */,
+				839BA643535B1182CC9FAE6F /* BootIteractor */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -367,8 +367,6 @@
 				CLASSPREFIX = DL;
 				LastUpgradeCheck = 1630;
 				ORGANIZATIONNAME = Delivery24;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 914F574E117DF9B00F203F9B /* Build configuration list for PBXProject "DeliveryApp" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -568,10 +566,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-					"$(inherited)",
-					DEBUG,
-				);
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;

@@ -32,8 +32,6 @@ final class MainScreenViewState: ObservableObject {
     @Published
     var searchText = String()
     @Published
-    var size: CGSize = .zero
-    @Published
     var screenState = ScreenState.loading
     @Published
     var basketBadge = 0

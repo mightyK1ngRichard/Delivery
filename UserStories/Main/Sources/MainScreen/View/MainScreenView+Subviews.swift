@@ -13,7 +13,6 @@ extension MainScreenView {
     var mainContainer: some View {
         stateView
             .preferredColorScheme(.light)
-            .bindSize($state.size)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: output.onTapSelectAddress) {
@@ -165,15 +164,11 @@ extension MainScreenView {
 
     @ViewBuilder
     func sectionProducts(section: ProductSection, products: [ProductModel]) -> some View {
-        let size = state.size
-        let cardWidth = size.width < size.height ? size.width / 2.23 : size.height / 2.23
-        let cardHeight = size.width < size.height ? cardWidth * 2.01 : size.height / 1.5
-
-        ScrollView(.horizontal, showsIndicators: false) {
+        ScrollView(.horizontal) {
             LazyHStack(spacing: 8) {
                 ForEach(products) { product in
                     productCard(for: product, section: section)
-                        .frame(width: cardWidth, height: cardHeight)
+                        .frame(width: 168, height: 338)
                         .onTapGesture {
                             output.onTapProductCard(product: product)
                         }
@@ -181,6 +176,7 @@ extension MainScreenView {
             }
             .padding(.horizontal)
         }
+        .scrollIndicators(.hidden)
     }
 
     var popularCategoriesSection: some View {
@@ -253,9 +249,10 @@ extension MainScreenView {
 private extension MainScreenView {
 
     enum Constants {
-        static let addressTitle = String(localized: "specify_the_delivery_address").capitalizingFirstLetter
-        static let popularCategoriesSectionTitle = String(localized: "popular_categories").capitalized
-        static let lookMoreTitle = String(localized: "look_more").capitalizingFirstLetter
+
+        static let addressTitle = "Укажите адрес доставки"
+        static let popularCategoriesSectionTitle = "Популярные Категории"
+        static let lookMoreTitle = "См. все"
         static let textPrimary = DLColor<TextPalette>.primary.color
         static let lookMoreColor = DLColor<TextPalette>.darkBlue.color
         static let scrollTopID = "SCROLL_TOP_ID"

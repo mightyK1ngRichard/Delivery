@@ -44,7 +44,8 @@ private extension CatalogScreenView {
         }
         .searchable(
             text: $state.searchText,
-            placement: .navigationBarDrawer(displayMode: .always)
+            placement: .navigationBarDrawer(displayMode: .always),
+            prompt: "Поиск"
         )
     }
 

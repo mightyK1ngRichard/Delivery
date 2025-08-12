@@ -187,7 +187,7 @@ private extension BasketScreenView {
 
     enum Constants {
 
-        static let navigationTitle = String(localized: "basket")
+        static let navigationTitle = "Корзина"
         static let openCatalogButtonText = (
             title: String(localized: "В каталог"),
             subtitle: String(localized: "К поиску более 1 млн товаров")

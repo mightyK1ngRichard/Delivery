@@ -46,7 +46,8 @@ private extension OrdersScreenView {
         .navigationTitle(Constants.navigationTitle)
         .searchable(
             text: $state.searchText,
-            placement: .navigationBarDrawer(displayMode: .always)
+            placement: .navigationBarDrawer(displayMode: .always),
+            prompt: "Поиск"
         )
     }
 
