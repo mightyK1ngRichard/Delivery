@@ -65,13 +65,17 @@ private extension FormOrderScreenView {
                 .style(size: 17, weight: .semibold, color: Constants.textPrimary)
 
             HStack {
-                Text("Выставить счёт")
+                Text(state.selectedPaymentKind.localized)
                 Spacer()
                 DLIcon.chivronBottom.image
                     .frame(width: 20, height: 20)
             }
             .padding([.vertical, .horizontal], 12)
             .background(Constants.bgWhite, in: .rect(cornerRadius: 12))
+            .contentShape(.rect)
+            .onTapGesture {
+                output.onTapChoosePaymentType()
+            }
         }
         .padding()
         .background(Constants.bgGray, in: .rect(cornerRadius: 16))

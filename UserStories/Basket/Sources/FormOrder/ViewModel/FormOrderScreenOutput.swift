@@ -7,5 +7,13 @@ import BasketInterface
 
 @MainActor
 protocol FormOrderScreenOutput: AnyObject {
+    var formOrderInput: FormOrderScreenInput? { get set }
+
     func formOrderDidOpenMakeOrderScren(orderModel: OrderModel)
+    func formOrderDidChoosePaymentType(_ kind: PaymentKind)
+}
+
+@MainActor
+protocol FormOrderScreenInput: AnyObject {
+    func updatePaymentKind(_: PaymentKind)
 }

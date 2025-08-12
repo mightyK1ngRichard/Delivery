@@ -12,7 +12,9 @@ import SharedUserStories
 final class BasketCoordinator: Navigatable, AnyBasketCoordinator {
 
     let router: Router<BasketRoute>
+    weak var formOrderInput: FormOrderScreenInput?
     private weak var output: BasketOutput?
+
     private let logger = DLLogger("Basket Coordinator")
 
     init(router: Router<BasketRoute>, output: BasketOutput) {
@@ -35,6 +37,9 @@ final class BasketCoordinator: Navigatable, AnyBasketCoordinator {
         case let .makeOrder(orderModel):
             FormOrderAssembly
                 .assemble(orderModel: orderModel, output: self)
+        case let .paymentKindSheet(selectedKind):
+            ChoosePaymentKindView(selectedItem: selectedKind, output: self)
+                .presentationDetents([.height(250)])
         }
     }
 }
@@ -80,5 +85,21 @@ extension BasketCoordinator: FormOrderScreenOutput {
     func formOrderDidOpenMakeOrderScren(orderModel: OrderModel) {
         logger.logEvent()
         router.push(.makeOrder(orderModel: orderModel))
+    }
+
+    func formOrderDidChoosePaymentType(_ kind: PaymentKind) {
+        logger.logEvent()
+        router.present(.paymentKindSheet(kind))
+    }
+}
+
+// MARK: - ChoosePaymentKindViewOutput
+
+extension BasketCoordinator: ChoosePaymentKindViewOutput {
+
+    func didSelectPaymentKind(_ paymentKind: PaymentKind) {
+        logger.logEvent()
+        formOrderInput?.updatePaymentKind(paymentKind)
+        router.dismiss()
     }
 }

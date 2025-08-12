@@ -35,7 +35,10 @@ final class BasketViewModel {
         self.output = output
 
         let minPrice = 7000.0
-        minOrderPrice = .init(price: minPrice, formattedPrice: factory.makePriceFormatting(for: minPrice))
+        minOrderPrice = .init(
+            price: minPrice,
+            formattedPrice: factory.makePriceFormatting(for: minPrice)
+        )
     }
 }
 

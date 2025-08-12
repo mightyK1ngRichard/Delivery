@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		00501C7F4E8142357A2E7653 /* BasketView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C1B7F2E66382E169EBA764 /* BasketView+Subviews.swift */; };
 		057E3E933ED463515B331BF3 /* CartServiceInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 9C85C8C39A5F5723B9D5BB23 /* CartServiceInterface.framework */; };
 		058E210382219E99AC6228C2 /* CatalogInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9E77CAD3BC17A6F8A5233B /* CatalogInterface.framework */; };
-		09D1F200432935C8E0503967 /* .empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8754FD3D9A7859DE7E6A52 /* .empty.swift */; };
 		0A5A01D45C89C734807AA9D8 /* CatalogService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD5C8CB72E53E8C6D44BE2AA /* CatalogService.framework */; };
 		0BA40BE9B1198DF56D584E3C /* PopcatsServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBC2FDECFE2D52D7DFEBA527 /* PopcatsServiceInterface.framework */; };
 		0C0F62BB44CAB1D380A75B80 /* BasketScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AFF6519B8D66225B2C65DE /* BasketScreenFactory.swift */; };
@@ -75,6 +74,7 @@
 		E19731D9AC1145B56E8EF855 /* CatalogServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E293E92F73FFC830A910A977 /* CatalogServiceInterface.framework */; };
 		E2E63B4CB4D2C04C043D4A34 /* DependencyRegistry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DFCC88A3B1377C2FBAE8C47 /* DependencyRegistry.framework */; };
 		E42E42BFE91E13C7C952149F /* Profile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC105958EDFDBE0D94D1B33F /* Profile.framework */; };
+		E5BF1B8D2E4ADDD900EB991D /* ChoosePaymentKindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BF1B8C2E4ADDD900EB991D /* ChoosePaymentKindView.swift */; };
 		EA21B0E9CFFD7489F543D657 /* UserService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2470A8F21536D47CE3D10D4 /* UserService.framework */; };
 		EB8F8DDE84ABCC7A5FBFDBEC /* BasketInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 7748EC8218E3E3D82128C606 /* BasketInterface.framework */; };
 		EC82555C21E3F396C704BA2D /* BasketRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A3A02C95EE34885EBB392 /* BasketRoute.swift */; };
@@ -193,7 +193,6 @@
 		369DB76A0A1501D863373DE2 /* FormOrderScreenViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormOrderScreenViewState.swift; sourceTree = "<group>"; };
 		4977B84F5EB867668984E246 /* BasketScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreenView.swift; sourceTree = "<group>"; };
 		4E7A3A02C95EE34885EBB392 /* BasketRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketRoute.swift; sourceTree = "<group>"; };
-		4F8754FD3D9A7859DE7E6A52 /* .empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = .empty.swift; sourceTree = "<group>"; };
 		5A0355B368CCB21E6DC1B11F /* AnyBasketNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyBasketNetworkClient.swift; sourceTree = "<group>"; };
 		5EA5F6B55FCF80F1DB35CF9E /* PopcatsService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopcatsService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60950D2A5A69D92F81D7036B /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -230,6 +229,7 @@
 		DEF22A19712E8D45C19572FE /* AuthServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E56CB0211437D9B65D58A2 /* DesignSystem_DesignSystem.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignSystem_DesignSystem.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		E293E92F73FFC830A910A977 /* CatalogServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatalogServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5BF1B8C2E4ADDD900EB991D /* ChoosePaymentKindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePaymentKindView.swift; sourceTree = "<group>"; };
 		E87D6CFCBCC112712EAD72D9 /* AnyBasketCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyBasketCoordinator.swift; sourceTree = "<group>"; };
 		EAA33EE1CDF8C869ACAAD9C7 /* BasketOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketOutput.swift; sourceTree = "<group>"; };
 		ED16E6F9CA4FB7E4DA4829A6 /* Basket-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Basket-Info.plist"; sourceTree = "<group>"; };
@@ -323,7 +323,7 @@
 		183DB6EC9B108EBD330B3CA5 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				4F8754FD3D9A7859DE7E6A52 /* .empty.swift */,
+				E5BF1B8C2E4ADDD900EB991D /* ChoosePaymentKindView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -602,8 +602,6 @@
 				CLASSPREFIX = DL;
 				LastUpgradeCheck = 1630;
 				ORGANIZATIONNAME = Delivery24;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 08394724006F414453F48862 /* Build configuration list for PBXProject "Basket" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -665,6 +663,7 @@
 				00501C7F4E8142357A2E7653 /* BasketView+Subviews.swift in Sources */,
 				30B71B02001C7EC0DAD3A073 /* BasketViewState.swift in Sources */,
 				D974B22A8FC298978D32C0EE /* BasketScreenOutput.swift in Sources */,
+				E5BF1B8D2E4ADDD900EB991D /* ChoosePaymentKindView.swift in Sources */,
 				5B7C544357E6BB83001CA577 /* BasketViewModel.swift in Sources */,
 				4BFD6FFBDEAA5684EFD9A74F /* BasketAssembly.swift in Sources */,
 				388C71A193704E5BAA6D93AB /* BasketCoordinator.swift in Sources */,
@@ -675,7 +674,6 @@
 				D529EC2ED5532FF298FF9BA8 /* FormOrderScreenViewState.swift in Sources */,
 				10D02E51318A0DCD5B8EB3D1 /* FormOrderScreenOutput.swift in Sources */,
 				5F31FDDFE680B2E33BC6BEFB /* FormOrderScreenViewModel.swift in Sources */,
-				09D1F200432935C8E0503967 /* .empty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,10 +782,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-					"$(inherited)",
-					DEBUG,
-				);
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
@@ -879,10 +874,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-					"$(inherited)",
-					DEBUG,
-				);
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
@@ -987,10 +979,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-					"$(inherited)",
-					DEBUG,
-				);
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;

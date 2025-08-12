@@ -6,6 +6,7 @@
 import Foundation
 import SharedUserStories
 import DesignSystem
+import BasketInterface
 
 @MainActor
 final class FormOrderScreenViewState: ObservableObject {
@@ -24,6 +25,8 @@ final class FormOrderScreenViewState: ObservableObject {
     var buttonState: ButtonState = .default
     @Published
     var resultSum: String
+    @Published
+    var selectedPaymentKind: PaymentKind = .account
 
     let cashback: String?
     let deliveryPrice: String

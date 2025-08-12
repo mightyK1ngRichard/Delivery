@@ -10,16 +10,20 @@ import SharedUserStories
 
 extension BasketScreenView {
 
-    @ViewBuilder
     var mainContainer: some View {
-        switch state.screenState {
-        case .loading:
-            loaderView
-        case .content:
-            emptyOrContentView
-        case .error:
-            ErrorView(title: "Ошибка получения данных", handler: output.onTapReloadButton)
+        Group {
+            switch state.screenState {
+            case .loading:
+                loaderView
+            case .content:
+                emptyOrContentView
+            case .error:
+                ErrorView(title: "Ошибка получения данных") {
+                    output.onTapReloadButton()
+                }
+            }
         }
+        .navigationTitle(Constants.navigationTitle.capitalized)
     }
 }
 
@@ -70,7 +74,6 @@ private extension BasketScreenView {
             .padding(.bottom, 150)
         }
         .frame(maxWidth: .infinity)
-        .navigationTitle(Constants.navigationTitle.capitalized)
         .overlay(alignment: .bottom) {
             overlayView
         }

@@ -54,10 +54,24 @@ extension OrderModel {
             self.formatedPrice = formatedPrice
         }
     }
+}
 
-    public enum PaymentKind: Hashable {
+// MARK: - PaymentKind
 
-        case cash
-        case account
+public enum PaymentKind: Hashable, CaseIterable {
+
+    case account
+    case cash
+}
+
+extension PaymentKind {
+
+    public var localized: String {
+        switch self {
+        case .cash:
+            "Наличные"
+        case .account:
+            "Выставить счёт"
+        }
     }
 }

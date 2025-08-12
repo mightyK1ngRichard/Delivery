@@ -10,6 +10,7 @@ public enum BasketRoute: Identifiable, Hashable {
     case main
     case makeOrder(orderModel: OrderModel)
     case productDetails(product: ProductModel)
+    case paymentKindSheet(PaymentKind)
 
     public var id: Self { self }
 }

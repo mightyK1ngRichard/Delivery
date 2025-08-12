@@ -5,6 +5,7 @@
 
 import DLCore
 import SharedUserStories
+import BasketInterface
 
 /**
  всем привет. по пунктам
@@ -19,12 +20,24 @@ final class FormOrderScreenViewModel {
 
     private let logger = DLLogger("Form Order Screen")
 
+    @MainActor
     init(
         state: FormOrderScreenViewState,
         output: FormOrderScreenOutput
     ) {
         self.state = state
         self.output = output
+
+        output.formOrderInput = self
+    }
+}
+
+// MARK: - FormOrderScreenInput
+
+extension FormOrderScreenViewModel: FormOrderScreenInput {
+
+    func updatePaymentKind(_ newKind: PaymentKind) {
+        state.selectedPaymentKind = newKind
     }
 }
 
@@ -38,6 +51,11 @@ extension FormOrderScreenViewModel: FormOrderScreenViewOutput {
 
     func onTapApplyBonuses() {
         logger.logEvent()
+    }
+
+    func onTapChoosePaymentType() {
+        logger.logEvent()
+        output?.formOrderDidChoosePaymentType(state.selectedPaymentKind)
     }
 
     func onTapMakeOrder() {
