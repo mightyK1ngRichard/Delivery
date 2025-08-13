@@ -36,12 +36,17 @@ extension UserServiceImpl: AnyUserService {
     }
 
     public func forceFetchProfile() async throws(NetworkClientError) -> UserEntity {
-        try await networkClient.request(
+        let user = try await networkClient.request(
             "profile",
             method: .post,
             options: .init(required: [.tokenID]),
             decodeTo: UserEntity.self
         ).model
+        
+        if let balanceString = user.balance, let balance = Double(balanceString) {
+            await networkStore.setBalance(balance)
+        }
+        return user
     }
 
     public func forceFetchOrders() async throws(NetworkClientError) -> [OrderEntity] {
@@ -81,7 +86,7 @@ extension UserServiceImpl: AnyUserService {
 
         var notifications: [NotificationWarning] = []
         // Проверка существования адреса
-        if await networkStore.addressID == nil {
+        if await networkStore.address?.id == nil {
             notifications.append(.needAddress)
         }
 

@@ -13,19 +13,16 @@ import ProfileInterface
 final class RootScreenViewModel {
 
     private let state: RootScreenViewState
-    private let sessionStore: AnySessionStore
     private let bootIteractor: AnyBootIteractor
     private let authSessionInteractor: AnyAuthSessionInteractor
     private let logger = DLLogger("Root Screen View Model")
 
     init(
         state: RootScreenViewState,
-        sessionStore: AnySessionStore,
         bootIteractor: AnyBootIteractor,
         authSessionInteractor: AnyAuthSessionInteractor
     ) {
         self.state = state
-        self.sessionStore = sessionStore
         self.bootIteractor = bootIteractor
         self.authSessionInteractor = authSessionInteractor
     }
@@ -122,22 +119,18 @@ extension RootScreenViewModel {
         let products = await bootIteractor.fetchInitialData()
 
         // Устанавливаем счётчик профиля, если нет адреса или нет верификации
-        var profileBadgeCount = 0
-        if await sessionStore.hasAddressDelivery {
-            profileBadgeCount += 1
-        }
-        let hasEmail = await sessionStore.userEmailIsCheched
-        let hasPhone = await sessionStore.userPhoneIsCheched
-        if hasEmail || hasPhone {
-            profileBadgeCount += 1
-        }
-
-        // Получаем баланс пользователя
-        let userBalance = await sessionStore.userBalance
+//        var profileBadgeCount = 0
+//        if await sessionStore.hasAddressDelivery {
+//            profileBadgeCount += 1
+//        }
+//        let hasEmail = await sessionStore.userEmailIsCheched
+//        let hasPhone = await sessionStore.userPhoneIsCheched
+//        if hasEmail || hasPhone {
+//            profileBadgeCount += 1
+//        }
 
         state.showBasketFlow = true
         state.basketBadge = products.count
-        state.profileBadge = profileBadgeCount
-        state.balance = userBalance
+//        state.profileBadge = profileBadgeCount
     }
 }

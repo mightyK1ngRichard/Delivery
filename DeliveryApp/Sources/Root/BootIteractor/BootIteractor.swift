@@ -12,7 +12,6 @@ import OrderServiceInterface
 struct BootIteractor: AnyBootIteractor {
 
     let networkStore: AnyNetworkStore
-    let sessionStore: AnySessionStore
 
     let userService: AnyUserService
     let orderService: AnyOrderService
@@ -27,17 +26,18 @@ struct BootIteractor: AnyBootIteractor {
     }
 
     func fetchInitialData() async -> [ProductEntity] {
-        async let addressFetching: () = fetchUserAddresses()
+        await fetchUserAddresses()
+        
         async let userFetching: () = fetchUserData()
         async let basketFetching = fetchBasket()
 
-        let (_, _, products) = await (addressFetching, userFetching, basketFetching)
+        let (_, products) = await (userFetching, basketFetching)
         return products
     }
 
     private func fetchUserAddresses() async {
         // Если нет адреса, то получаем список адресов
-        if await networkStore.addressID == nil {
+        if await networkStore.address == nil {
             logger.info("Данные адреса не найдены, получаем список адресов")
             do {
                 let _ = try await orderService.forceFetchUserAddresses()
@@ -46,10 +46,6 @@ struct BootIteractor: AnyBootIteractor {
                 logger.error("Ошибка получения списка адресов: \(error.localizedDescription)")
             }
         }
-
-        logger.info("Запоминаем наличие адреса для доставки")
-        let hasAddress = await networkStore.addressID != nil
-        await sessionStore.setHasAddressDelivery(hasAddress)
     }
 
     private func fetchBasket() async -> [ProductEntity] {
@@ -67,17 +63,8 @@ struct BootIteractor: AnyBootIteractor {
     private func fetchUserData() async {
         do {
             logger.info("Запрашиваем данные пользователя")
-            let user = try await userService.userData()
+            let _ = try await userService.userData()
             logger.info("Данные пользователя получены успешно")
-            if user.verifyFlagEmail == 0 {
-                await sessionStore.setUserEmailCheched()
-            }
-            if user.verifyFlagPhone == 0 {
-                await sessionStore.setUserEmailCheched()
-            }
-            if let balance = Double(user.balance ?? "") {
-                await sessionStore.updateUserBalance(balance)
-            }
         } catch {
             logger.error("Ошибка полученния данных пользователя: \(error.localizedDescription)")
         }

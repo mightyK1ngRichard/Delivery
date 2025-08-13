@@ -4,6 +4,8 @@
 //
 
 import SwiftUI
+import Resolver
+import DLNetwork
 
 struct OnFirstAppearModifier: ViewModifier {
 
@@ -27,18 +29,7 @@ public extension View {
     func onFirstAppear(perform: @escaping () -> Void) -> some View {
         modifier(OnFirstAppearModifier(perform: perform))
     }
-
-    func balanceBadge(balance: String?) -> some View {
-        toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                if let balance {
-                    WalletView(moneyCount: balance)
-                }
-            }
-        }
-    }
 }
-
 
 private struct RoundedCorner: Shape {
 

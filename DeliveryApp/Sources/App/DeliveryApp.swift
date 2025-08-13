@@ -12,9 +12,6 @@ struct DeliveryApp: App {
 
     init() {
         Resolver.registerAll()
-        Resolver.register(AnySessionStore.self) {
-            SessionStore()
-        }
 //        UserDefaults.standard.set("1uHxAyiRrMkxuUdV", forKey: "userToken")
 //        UserDefaults.standard.set(1995, forKey: "addressID")
     }

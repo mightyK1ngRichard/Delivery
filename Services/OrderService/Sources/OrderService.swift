@@ -1,6 +1,6 @@
 //
-// Created by Dmitriy Permyakov on 06.08.2025
-// Copyright © 2025 Dostavka24. All rights reserved.
+//  Created by Dmitriy Permyakov on 06.08.2025
+//  Copyright © 2025 Dostavka24. All rights reserved.
 //
 
 import DLCore
@@ -10,9 +10,9 @@ import OrderServiceInterface
 
 public struct OrderServiceImpl {
 
-    private let logger = DLLogger("Order Service")
     private let networkStore: AnyNetworkStore
     private let networkClient: AnyNetworkClient
+    private let logger = DLLogger("Order Service")
 
     public init(
         networkClient: AnyNetworkClient,
@@ -35,8 +35,8 @@ extension OrderServiceImpl: AnyOrderService {
             decodeTo: [AddressEntity].self
         ).model
 
-        if let mainAddressID = model.first(where: { $0.isMain == 1 })?.id {
-            await networkStore.setAddressID(mainAddressID)
+        if let mainAddress = model.first(where: { $0.isMain == 1 }), let id = mainAddress.id {
+            await networkStore.setAddress(.init(id: id, title: mainAddress.title))
         }
 
         return model

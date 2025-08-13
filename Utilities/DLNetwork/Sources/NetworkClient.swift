@@ -115,9 +115,9 @@ extension NetworkClient: AnyNetworkClient {
 
         // addressID
         if options.required.contains(.addressID) {
-            try await insertRequired(.addressID, value: networkStore.addressID)
+            try await insertRequired(.addressID, value: networkStore.address?.id)
         } else if options.optional.contains(.addressID) {
-            insertOptional(.addressID, value: await networkStore.addressID)
+            insertOptional(.addressID, value: await networkStore.address?.id)
         }
 
         do {

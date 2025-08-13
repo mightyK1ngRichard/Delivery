@@ -6,11 +6,25 @@
 import Foundation
 import DLCore
 
+public struct Address: Codable, Sendable {
+
+    public let id: Int
+    public let title: String?
+
+    public init(id: Int, title: String?) {
+        self.id = id
+        self.title = title
+    }
+}
+
 public protocol AnyNetworkStore: Sendable, Actor {
     var token: String? { get }
-    var addressID: Int? { get }
+    var balance: Double? { get }
+    var address: Address? { get }
+
     func setToken(_ newToken: String?)
-    func setAddressID(_ newAdderessID: Int?)
+    func setAddress(_ newAddress: Address?)
+    func setBalance(_ newBalance: Double?)
 }
 
 public actor NetworkStore: AnyNetworkStore {
@@ -19,27 +33,41 @@ public actor NetworkStore: AnyNetworkStore {
     @UDStorage(.userToken)
     private var _stotedToken: String?
 
-    private var _addressID: Int?
-    @UDStorage(.addressID)
-    private var _stotedAddressID: Int?
+    private var _address: Address?
+    private var _balance: Double?
 
-    public init() {}
+    private let logger = DLLogger("Network Store")
+
+    public init(file: String = #file, function: String = #function, line: UInt = #line) {
+        logger.info("init :\(file):\(function):\(line)")
+    }
 
     public var token: String? {
         _token ?? _stotedToken
     }
 
     public func setToken(_ newToken: String?) {
-        _stotedToken = newToken
         _token = newToken
+        _stotedToken = newToken
+        logger.info("Токен установлен")
     }
 
-    public var addressID: Int? {
-        _addressID ?? _stotedAddressID
+    public var address: Address? {
+        print("[DEBUG]: Получение адреса: \(_address)")
+        return _address
     }
 
-    public func setAddressID(_ newAdderessID: Int?) {
-        _addressID = newAdderessID
-        _stotedAddressID = newAdderessID
+    public func setAddress(_ newAddress: Address?) {
+        _address = newAddress
+        logger.info("Адрес установлен")
+    }
+
+    public var balance: Double? {
+        _balance
+    }
+
+    public func setBalance(_ newBalance: Double?) {
+        _balance = newBalance
+        logger.info("Баланс установлен")
     }
 }

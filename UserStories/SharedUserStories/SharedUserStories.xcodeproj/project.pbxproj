@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -146,6 +146,10 @@
 		F385B5B802A103E457AA8634 /* PickAddressAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickAddressAssembly.swift; sourceTree = "<group>"; };
 		FF41CEAECED991FC2A05953D /* DLCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DLCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		E5C205BD2E4D320500F3E206 /* UI */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = UI; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		88C495D3FB52119C4357399D /* Frameworks */ = {
@@ -350,6 +354,7 @@
 		AB40069EA5509EA1EE878E9A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				E5C205BD2E4D320500F3E206 /* UI */,
 				C120D42029C0B80338388EAB /* Address.swift */,
 				8E8D28932EB8A0E80A90CB23 /* AddressRoute.swift */,
 				890E3C795682A66B878A1A86 /* AlertModel.swift */,
@@ -477,6 +482,9 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				E5C205BD2E4D320500F3E206 /* UI */,
+			);
 			name = SharedUserStories;
 			packageProductDependencies = (
 			);
@@ -494,8 +502,6 @@
 				CLASSPREFIX = DL;
 				LastUpgradeCheck = 1630;
 				ORGANIZATIONNAME = Delivery24;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = E9EA79932441C1443C809A59 /* Build configuration list for PBXProject "SharedUserStories" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -719,10 +725,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-					"$(inherited)",
-					DEBUG,
-				);
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;

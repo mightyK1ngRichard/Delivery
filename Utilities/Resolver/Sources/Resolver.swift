@@ -7,19 +7,45 @@ import Foundation
 
 public final class Resolver: Sendable {
 
-    nonisolated(unsafe) private static var services: [String: Any] = [:]
+    private enum Registration {
+        case factory(() -> Any)
+        case singleton(() -> Any)
+    }
 
-    public static func register<T>(_ type: T.Type, _ service: @escaping () -> T) {
+    nonisolated(unsafe) private static var services: [String: Registration] = [:]
+    nonisolated(unsafe) private static var cachedSingletons: [String: Any] = [:]
+
+    public static func register<T>(_ type: T.Type, _ factory: @escaping () -> T) {
         let key = "\(type)"
-        services[key] = service
+        services[key] = .factory({ factory() })
+    }
+
+    public static func registerSingleton<T>(_ type: T.Type, _ factory: @escaping () -> T) {
+        let key = "\(type)"
+        services[key] = .singleton({ factory() })
     }
 
     public static func resolve<T>(_ type: T.Type) -> T {
         let key = "\(type)"
-        guard let service = services[key] as? () -> T else {
+        guard let registration = services[key] else {
             fatalError("Service for type \(type) not registered!")
         }
 
-        return service()
+        switch registration {
+        case .factory(let factory):
+            guard let instance = factory() as? T else {
+                fatalError("Registered factory for type \(type) returned wrong type")
+            }
+            return instance
+        case .singleton(let factory):
+            if let cached = cachedSingletons[key] as? T {
+                return cached
+            }
+            guard let instance = factory() as? T else {
+                fatalError("Registered singleton factory for type \(type) returned wrong type")
+            }
+            cachedSingletons[key] = instance
+            return instance
+        }
     }
 }

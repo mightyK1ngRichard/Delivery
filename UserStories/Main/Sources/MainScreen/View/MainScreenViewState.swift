@@ -1,9 +1,6 @@
 //
-// MainViewState.swift
-// iOS-Delivery24
-//
-// Created by Dmitriy Permyakov on 27.06.2025
-// Copyright © 2025 Dostavka24. All rights reserved.
+//  Created by Dmitriy Permyakov on 27.06.2025
+//  Copyright © 2025 Dostavka24. All rights reserved.
 //
 
 import SwiftUI
@@ -23,8 +20,6 @@ final class MainScreenViewState: ObservableObject {
     var banners: [BannerPage] = []
     @Published
     var popcats: [PopcatModel] = []
-    @Published
-    var user: UserModel?
     @Published
     var lastSelectedSection: String?
 

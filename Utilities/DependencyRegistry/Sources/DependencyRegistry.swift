@@ -89,7 +89,7 @@ extension Resolver {
     }
 
     private static func registerUtilities() {
-        Resolver.register(AnyNetworkStore.self) { NetworkStore() }
+        Resolver.registerSingleton(AnyNetworkStore.self) { NetworkStore() }
         Resolver.register(AnyServerHostProvider.self) { ServerHostProvider() }
         Resolver.register(AnyNetworkClient.self) {
             let serverHostProvider = Resolver.resolve(AnyServerHostProvider.self)

@@ -12,18 +12,9 @@ extension MainScreenView {
 
     var mainContainer: some View {
         stateView
+            .basicToolBarItems(addressHandler: output.onTapSelectAddress)
             .preferredColorScheme(.light)
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: output.onTapSelectAddress) {
-                        addressView
-                    }
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    if let moneyCount = state.balance {
-                        WalletView(moneyCount: moneyCount)
-                    }
-                }
                 ToolbarItem(placement: .keyboard) {
                     Button("Отмена") {
                         isFocused = false
@@ -86,23 +77,6 @@ private extension MainScreenView {
                     }
                 }
             }
-        }
-    }
-}
-
-// MARK: - Navigation Bar
-
-extension MainScreenView {
-
-    var addressView: some View {
-        HStack(spacing: 4) {
-            Text(state.addressTitle ?? Constants.addressTitle)
-                .style(size: 11, weight: .semibold, color: Constants.textPrimary)
-
-            DLIcon.bottomChevron.image
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 12, height: 12)
         }
     }
 }
@@ -249,8 +223,7 @@ extension MainScreenView {
 private extension MainScreenView {
 
     enum Constants {
-
-        static let addressTitle = "Укажите адрес доставки"
+        
         static let popularCategoriesSectionTitle = "Популярные Категории"
         static let lookMoreTitle = "См. все"
         static let textPrimary = DLColor<TextPalette>.primary.color

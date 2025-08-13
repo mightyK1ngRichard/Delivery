@@ -48,7 +48,6 @@
 		CC2EAA0DF3B924EE574B58B8 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0692C44F7DFE664C2ABDBB0B /* DesignSystem.framework */; };
 		D1A328B15A4A595A35CE4FB0 /* DesignSystem_DesignSystem.bundle in Dependencies */ = {isa = PBXBuildFile; fileRef = 689D15EA4602DBC5ABC2F6D7 /* DesignSystem_DesignSystem.bundle */; };
 		D6E6AA5282B3D39EDD3CEEBE /* AnyBootIteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336DAB4887517D514BC3EFD2 /* AnyBootIteractor.swift */; };
-		E5A713A12E4BF08F0088A39B /* SessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A713A02E4BF08F0088A39B /* SessionStore.swift */; };
 		E751465FAFEE19717D8773D8 /* Resolver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D79BE429838D042E9C53454 /* Resolver.framework */; };
 		ED631FBCD8A1BE6F827082D6 /* BootIteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB46072A7F87EF2F3D78C18C /* BootIteractor.swift */; };
 		EFFA061AEA0B287A6539018B /* Auth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBBBD78404C8B854684449BC /* Auth.framework */; };
@@ -124,7 +123,6 @@
 		DB46072A7F87EF2F3D78C18C /* BootIteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootIteractor.swift; sourceTree = "<group>"; };
 		E00C9BB1DFFB04D6694B58AA /* BannerServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BannerServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E25678C722CAAF710E8DF967 /* SharedContractsInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedContractsInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5A713A02E4BF08F0088A39B /* SessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStore.swift; sourceTree = "<group>"; };
 		E7E2625D74B5F30F7528D10E /* RootScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootScreenViewModel.swift; sourceTree = "<group>"; };
 		E9AB3DE3AC185E8B700CA8BC /* AuthService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA125E68DEA15285346F55BB /* DependencyRegistry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DependencyRegistry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,7 +205,6 @@
 			children = (
 				17B8C9139D2AB0A22FF195DA /* AnyAuthSessionInteractor.swift */,
 				B3A679FDDF0902389E5C9CB9 /* AuthSessionInteractor.swift */,
-				E5A713A02E4BF08F0088A39B /* SessionStore.swift */,
 			);
 			path = AuthSessionInteractor;
 			sourceTree = "<group>";
@@ -407,7 +404,6 @@
 			files = (
 				94ADFA4662AECBD2D946390E /* DeliveryApp.swift in Sources */,
 				365192259D81CA1D6AD299B7 /* TabBarItem.swift in Sources */,
-				E5A713A12E4BF08F0088A39B /* SessionStore.swift in Sources */,
 				73A2E6B718DF69766DA3FD6F /* RootAssembly.swift in Sources */,
 				3E6C9733EDBF22BBA900E66D /* AnyAuthSessionInteractor.swift in Sources */,
 				827A9D3CF92DE141EE4554E9 /* AuthSessionInteractor.swift in Sources */,

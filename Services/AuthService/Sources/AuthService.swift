@@ -39,5 +39,6 @@ extension AuthServiceImpl: AnyAuthService {
         ).model
 
         await networkStore.setToken(response.token)
+        logger.info("Токен сохранён")
     }
 }
