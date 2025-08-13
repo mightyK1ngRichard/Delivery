@@ -19,8 +19,8 @@ public struct UserEntity: Decodable, Sendable {
     let addressFact: String?
     let guid: String?
     public let balance: String?
-    let verifyFlagEmail: Int?
-    let verifyFlagPhone: Int?
+    public let verifyFlagEmail: Int?
+    public let verifyFlagPhone: Int?
     let verifyCodeEmail: String?
     let verifyCodePhone: String?
     let cart: String?
@@ -41,6 +41,7 @@ public struct UserEntity: Decodable, Sendable {
 extension UserEntity {
 
     enum CodingKeys: String, CodingKey {
+
         case id
         case email
         case emailVerifiedAt = "email_verified_at"

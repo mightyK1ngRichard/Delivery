@@ -11,7 +11,7 @@ struct ProfileScreenNetworkClient: AnyProfileScreenNetworkClient {
 
     let userService: AnyUserService
 
-    func fetchUserData() async throws -> UserEntity {
-        try await userService.userData()
+    func getNotificationWarnings() async throws -> [NotificationWarning] {
+        try await userService.getNotificationWarnings()
     }
 }

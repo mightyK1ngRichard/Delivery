@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,7 @@
 		A851E3EBC22DDB340B3F6414 /* SharedContractsInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 4F5ACF684600FE7EDBAB4E59 /* SharedContractsInterface.framework */; };
 		AF6B253BF70C920BCAD19340 /* DLNetwork.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 2C78C8E6D7F0BDC79701B9F7 /* DLNetwork.framework */; };
 		DA41F8393BE963B1083242C3 /* OrderEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F4E66EA9930B94BF8FEABF4 /* OrderEntity.swift */; };
+		E5A713A32E4C0EF60088A39B /* NotificationWarning.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A713A22E4C0EF60088A39B /* NotificationWarning.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		6F4E66EA9930B94BF8FEABF4 /* OrderEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderEntity.swift; sourceTree = "<group>"; };
 		7C7E09C56817A1E4DEAB14E6 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		90F8EFE13F9CEA7A4C811A34 /* UserService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "UserService-Info.plist"; sourceTree = "<group>"; };
+		E5A713A22E4C0EF60088A39B /* NotificationWarning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationWarning.swift; sourceTree = "<group>"; };
 		FA6591B5EC092221DA57B51D /* OrderDetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +129,7 @@
 				FA6591B5EC092221DA57B51D /* OrderDetailEntity.swift */,
 				6F4E66EA9930B94BF8FEABF4 /* OrderEntity.swift */,
 				7C7E09C56817A1E4DEAB14E6 /* UserEntity.swift */,
+				E5A713A22E4C0EF60088A39B /* NotificationWarning.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -234,8 +237,6 @@
 				CLASSPREFIX = DL;
 				LastUpgradeCheck = 1630;
 				ORGANIZATIONNAME = Delivery24;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = FCD20E1B600CA93388C42F8F /* Build configuration list for PBXProject "UserService" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -286,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5A713A32E4C0EF60088A39B /* NotificationWarning.swift in Sources */,
 				2364C7241D5F62D6A0A7742F /* AnyUserService.swift in Sources */,
 				24DB6A89BE63C8559CB8DBDE /* OrderDetailEntity.swift in Sources */,
 				DA41F8393BE963B1083242C3 /* OrderEntity.swift in Sources */,
@@ -334,10 +336,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-					"$(inherited)",
-					DEBUG,
-				);
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
@@ -538,10 +537,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-					"$(inherited)",
-					DEBUG,
-				);
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;

@@ -80,7 +80,7 @@ extension Resolver {
         }
 
         Resolver.register(AnyUserService.self) {
-            UserServiceImpl(networkClient: networkClient)
+            UserServiceImpl(networkClient: networkClient, networkStore: networkStore)
         }
 
         Resolver.register(AnyCategoryService.self) {

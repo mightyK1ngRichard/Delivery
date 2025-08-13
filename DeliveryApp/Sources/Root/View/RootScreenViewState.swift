@@ -17,4 +17,18 @@ final class RootScreenViewState: ObservableObject {
     var showBasketFlow = false
     @Published
     var basketBadge = 0
+    @Published
+    var profileBadge = 0
+    @Published
+    var balance: Double?
+}
+
+extension RootScreenViewState {
+
+    func resetAll() {
+        showBasketFlow = false
+        basketBadge = 0
+        profileBadge = 0
+        balance = nil
+    }
 }

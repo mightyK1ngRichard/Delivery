@@ -9,6 +9,7 @@ import DLCore
 struct AuthSessionInteractor: AnyAuthSessionInteractor {
 
     let networkStore: AnyNetworkStore
+    let sessionStore: AnySessionStore
 
     private let logger = DLLogger("Auth Session Interactor")
 
@@ -16,6 +17,8 @@ struct AuthSessionInteractor: AnyAuthSessionInteractor {
         logger.info("Начало сброса сессионных данных")
         await networkStore.setToken(nil)
         await networkStore.setAddressID(nil)
+        await sessionStore.clearAll()
+        // TODO: [Cachable].clearStorage()
         logger.info("Данные сброшены")
     }
 }

@@ -13,16 +13,19 @@ import ProfileInterface
 final class RootScreenViewModel {
 
     private let state: RootScreenViewState
+    private let sessionStore: AnySessionStore
     private let bootIteractor: AnyBootIteractor
     private let authSessionInteractor: AnyAuthSessionInteractor
     private let logger = DLLogger("Root Screen View Model")
 
     init(
         state: RootScreenViewState,
+        sessionStore: AnySessionStore,
         bootIteractor: AnyBootIteractor,
         authSessionInteractor: AnyAuthSessionInteractor
     ) {
         self.state = state
+        self.sessionStore = sessionStore
         self.bootIteractor = bootIteractor
         self.authSessionInteractor = authSessionInteractor
     }
@@ -98,8 +101,7 @@ extension RootScreenViewModel: ProfileOutput {
 
     func profileDidLogout() {
         logger.logEvent()
-        state.showBasketFlow = false
-        state.basketBadge = 0
+        state.resetAll()
 
         Task {
             await authSessionInteractor.stopSession()
@@ -114,8 +116,28 @@ extension RootScreenViewModel {
     @MainActor
     func startSession() async {
         let isAuth = await bootIteractor.initialize()
+        guard isAuth else { return }
+
+        // Получение стартовых данных
         let products = await bootIteractor.fetchInitialData()
-        state.showBasketFlow = isAuth
+
+        // Устанавливаем счётчик профиля, если нет адреса или нет верификации
+        var profileBadgeCount = 0
+        if await sessionStore.hasAddressDelivery {
+            profileBadgeCount += 1
+        }
+        let hasEmail = await sessionStore.userEmailIsCheched
+        let hasPhone = await sessionStore.userPhoneIsCheched
+        if hasEmail || hasPhone {
+            profileBadgeCount += 1
+        }
+
+        // Получаем баланс пользователя
+        let userBalance = await sessionStore.userBalance
+
+        state.showBasketFlow = true
         state.basketBadge = products.count
+        state.profileBadge = profileBadgeCount
+        state.balance = userBalance
     }
 }

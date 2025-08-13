@@ -23,14 +23,16 @@ struct ProfileScreenView: View {
 
 extension ProfileScreenView {
 
-    @ViewBuilder
     private var mainContainer: some View {
-        switch state.screenKind {
-        case .needAuth:
-            needAuthContainerView
-        case let .screenState(screenState):
-            stateView(screenState: screenState)
+        Group {
+            switch state.screenKind {
+            case .needAuth:
+                needAuthContainerView
+            case let .screenState(screenState):
+                stateView(screenState: screenState)
+            }
         }
+        .navigationTitle(Constants.navigationTitle)
     }
 }
 
@@ -105,7 +107,6 @@ private extension ProfileScreenView {
                 sectionsBlock
             }
         }
-        .navigationTitle(Constants.navigationTitle)
     }
 
     var notificationBlock: some View {

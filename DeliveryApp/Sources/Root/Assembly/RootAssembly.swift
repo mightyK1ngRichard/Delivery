@@ -18,16 +18,18 @@ enum RootAssembly {
     @MainActor
     static func assemble() -> some View {
         let state = RootScreenViewState()
+        let sessionStore = Resolver.resolve(AnySessionStore.self)
         let networkStore = Resolver.resolve(AnyNetworkStore.self)
 
         let bootIteractor = BootIteractor(
-            networkStore: networkStore,
+            networkStore: networkStore, sessionStore: sessionStore,
             userService: Resolver.resolve(AnyUserService.self),
             orderService: Resolver.resolve(AnyOrderService.self)
         )
-        let authSessionInteractor = AuthSessionInteractor(networkStore: networkStore)
+        let authSessionInteractor = AuthSessionInteractor(networkStore: networkStore, sessionStore: sessionStore)
         let viewModel = RootScreenViewModel(
             state: state,
+            sessionStore: sessionStore,
             bootIteractor: bootIteractor,
             authSessionInteractor: authSessionInteractor
         )

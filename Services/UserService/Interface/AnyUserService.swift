@@ -13,4 +13,5 @@ public protocol AnyUserService: Cachable {
     func forceFetchOrders() async throws(NetworkClientError) -> [OrderEntity]
     func forceFetchOrderDetails(orderID: Int) async throws(NetworkClientError) -> OrderDetailEntity
     func forceFetchBasketProducts() async throws(NetworkClientError) -> [ProductEntity]
+    func getNotificationWarnings() async throws -> [NotificationWarning]
 }

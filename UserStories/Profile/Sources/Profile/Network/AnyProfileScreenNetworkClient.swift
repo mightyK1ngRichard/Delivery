@@ -6,5 +6,5 @@
 import UserServiceInterface
 
 protocol AnyProfileScreenNetworkClient {
-    func fetchUserData() async throws -> UserEntity
+    func getNotificationWarnings() async throws -> [NotificationWarning]
 }

@@ -55,11 +55,12 @@ extension RootScreenView {
             if state.showBasketFlow {
                 NavigatableView(basketCoordinator)
                     .contrasteTintTabItem(type: .cart)
-                    .badge(state.basketBadge == 0 ? nil : String(state.basketBadge))
+                    .badge(state.basketBadge)
             }
 
             NavigatableView(profileCoordinator)
                 .contrasteTintTabItem(type: .profile)
+                .badge(state.profileBadge)
         }
         .tint(DLColor<IconPalette>.primary.color)
     }

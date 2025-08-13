@@ -14,12 +14,14 @@ import SharedContractsInterface
 public struct UserServiceImpl {
 
     private let networkClient: AnyNetworkClient
+    private let networkStore: AnyNetworkStore
     private let cacheStore = CacheStore<UserEntity>(cacheLifeTimeSeconds: 2.5 * 60)
 
     private let logger = DLLogger("User Service")
 
-    public init(networkClient: AnyNetworkClient) {
+    public init(networkClient: AnyNetworkClient, networkStore: AnyNetworkStore) {
         self.networkClient = networkClient
+        self.networkStore = networkStore
     }
 }
 
@@ -72,5 +74,27 @@ extension UserServiceImpl: AnyUserService {
             ),
             decodeTo: [ProductEntity].self
         ).model
+    }
+
+    public func getNotificationWarnings() async throws -> [NotificationWarning] {
+        let user = try await userData()
+
+        var notifications: [NotificationWarning] = []
+        // Проверка существования адреса
+        if await networkStore.addressID == nil {
+            notifications.append(.needAddress)
+        }
+
+        // Проверка email
+        if user.verifyFlagEmail == 1 {
+            notifications.append(.needEmailVerification)
+        }
+
+        // Проверка телефона
+        if user.verifyFlagPhone == 1 {
+            notifications.append(.needPhoneVerification)
+        }
+
+        return notifications
     }
 }

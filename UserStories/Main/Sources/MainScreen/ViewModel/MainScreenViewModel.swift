@@ -31,20 +31,6 @@ final class MainScreenViewModel {
         self.networkClient = networkClient
         self.factory = factory
         self.output = output
-
-        searchTextSubscribe()
-    }
-}
-
-// MARK: - Subscription
-
-private extension MainScreenViewModel {
-
-    func searchTextSubscribe() {
-        state.$searchText
-            .debounce(for: 1, scheduler: DispatchQueue.global(qos: .userInteractive))
-            .sink { _ in
-            }.store(in: &store)
     }
 }
 

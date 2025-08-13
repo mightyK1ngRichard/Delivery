@@ -3,19 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0DBF605D6BB2B3FAB83464A0 /* Main.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A0613314DD24A41DEADC9B /* Main.framework */; };
 		0E05115CB1A631E4070C5BC3 /* PopcatsService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86517544E8A265695C6762CC /* PopcatsService.framework */; };
+		0F64AB18E88E35A23427C3B5 /* LoginScreenViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6070BD49D767D1829F55F8 /* LoginScreenViewState.swift */; };
 		13770A6B43D540A2785BD50A /* CatalogService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05272DCC5145ADBE5DAE20A4 /* CatalogService.framework */; };
 		1494278E803E012FEF29519B /* Profile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE027153934F4435BAF35AF2 /* Profile.framework */; };
 		14D385B846325735830F6552 /* ProductServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 580A2727CB5B2CB2AF550946 /* ProductServiceInterface.framework */; };
 		15DBDA213D8C702446BA7237 /* Coordinator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBFE59D1B294A222C1BA2DBB /* Coordinator.framework */; };
+		163BD5924F2C3428D663FCA0 /* LoginScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C65952332C1DF85549B5CC /* LoginScreenViewModel.swift */; };
 		1FC04E49885B188C317EAE6F /* AuthInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8C09C4CE36E3D06B61DAB5 /* AuthInterface.framework */; };
 		22B91761D4BD3B2C66D39BB5 /* AuthServiceInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = BF162B567C521F1DFE3096E8 /* AuthServiceInterface.framework */; };
-		285F1FAD48B480303855DBE9 /* LoginScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EA90EBAF9B706975099F96 /* LoginScreenView.swift */; };
 		2A21A21060EC5CD11B33B6A0 /* Auth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8895FC8BB8C3644A2923E77A /* Auth.framework */; };
 		342B5340D218624A3B5643CD /* AuthRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A6E8BD8E217261771F217 /* AuthRoute.swift */; };
 		3439C05F4186A8EAEAB3AAC7 /* AuthInterface.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = BE8C09C4CE36E3D06B61DAB5 /* AuthInterface.framework */; };
@@ -24,20 +25,19 @@
 		422AAEC19390ED5667659A13 /* SharedUserStories.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = C413D6606E3F4D841B5DBA47 /* SharedUserStories.framework */; };
 		48556D534D8A2B0B1EFDFA04 /* Basket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7AA478B272DB69B56791B1D /* Basket.framework */; };
 		5175212A2DB90B301EEA7B92 /* CartService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3418F933A7A652A481B7C7B /* CartService.framework */; };
+		52A02DD3D85CFF8D051DBCC2 /* LoginScreenView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF2141F2DA3AD31ACD9CAAD /* LoginScreenView+Subviews.swift */; };
 		52DF2C680A9B6BCAD6FF3C76 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930760C8C2960F7E71E54EB3 /* AuthCoordinator.swift */; };
-		561E9C62E95FE71A3E486BEA /* LoginScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C3E64013CD9D850E5F9263 /* LoginScreenViewOutput.swift */; };
 		5E0F1025126EF153B4CDFEB0 /* AuthExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03A7DF0526AA0BE67CFBE12 /* AuthExampleView.swift */; };
 		5FA3A522CA058D9CA732446F /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A8BB59B621EFC832DCFE0F /* DesignSystem.framework */; };
 		68BAF53E6713F613A024D88B /* AnyAuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5215853898481DB4E7DD085B /* AnyAuthCoordinator.swift */; };
 		6F9DA74C171CAD34CE2011A8 /* PopcatsServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956B11E089C736142D0EDCCB /* PopcatsServiceInterface.framework */; };
+		770DA6D974293591169C481C /* LoginScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933ABEA97C8B43A120AE74B5 /* LoginScreenAssembly.swift */; };
 		773ADC9C33FD961D7208665F /* CatalogInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB973759D4E07435E61621D7 /* CatalogInterface.framework */; };
-		7AC397051580F0FBB7A8A338 /* LoginScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA76DC8EE50E9A949521C57 /* LoginScreenViewModel.swift */; };
-		7AFCA359FD442A9834F21029 /* LoginScreenOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D2E82ACD4589A130605573 /* LoginScreenOutput.swift */; };
 		7E92CB3304CAEF2F0600641C /* ProfileInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3498C35F61E2DD30C10274 /* ProfileInterface.framework */; };
 		832D4D75BB8C53BCE77E5657 /* DLNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB017E18C9B7ADCCA2EABD1F /* DLNetwork.framework */; };
 		8503A6B9D7B40038225EE7E5 /* SharedUserStories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C413D6606E3F4D841B5DBA47 /* SharedUserStories.framework */; };
 		86B8DF3765FCBCB1D575C0D3 /* Coordinator.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = DBFE59D1B294A222C1BA2DBB /* Coordinator.framework */; };
-		95BE979208A248F37D4EF863 /* LoginScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A803A4314D37F4F3FC8E782 /* LoginScreenAssembly.swift */; };
+		8876E4186D506F89C768CC14 /* LoginScreenNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB871A65C51BEE952FCFEB98 /* LoginScreenNetworkClient.swift */; };
 		9F379A25D9293CF01F4E18F6 /* DependencyRegistry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D99A47C6444DC44A8C7502E /* DependencyRegistry.framework */; };
 		A7DDE05026F7A8C9F612EEC7 /* AuthAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F82B9D539CCE5CCF83EA8F /* AuthAssembly.swift */; };
 		A82A000757C21627AB72DBDF /* DLCore.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 211E9A2779D01BACA364E37B /* DLCore.framework */; };
@@ -45,11 +45,13 @@
 		ABD0BC4A9C6A22EAF46C7A5A /* AuthServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF162B567C521F1DFE3096E8 /* AuthServiceInterface.framework */; };
 		ADD5AC589E22E51E680E9367 /* DesignSystem.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = 45A8BB59B621EFC832DCFE0F /* DesignSystem.framework */; };
 		AE07532AE0ACC98647E25E79 /* SharedContractsInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C975AE847C077DCFD29CE7C0 /* SharedContractsInterface.framework */; };
-		B3EDE8FAC795089829690EB5 /* LoginScreenViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61EEB0320BCED02DFCB3926 /* LoginScreenViewState.swift */; };
 		B772F9054454FCEF1CFCB95B /* BannerServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5803772D191FE5C7434B013 /* BannerServiceInterface.framework */; };
 		B8963125D0863E73878ECFCD /* Resolver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FE35279D7328F1C6009A1A /* Resolver.framework */; };
 		B93F8E55728520980B402C57 /* BasketInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7F8ADCD39EF2117334BE4A9 /* BasketInterface.framework */; };
+		BA1C08B92F32243925B81051 /* LoginScreenViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010773B300B09421AE8D356C /* LoginScreenViewOutput.swift */; };
+		BE48AEC969A5E66B1750B59A /* AnyLoginScreenNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0FD795439A0BB2721E47AE /* AnyLoginScreenNetworkClient.swift */; };
 		BF2A8D6A21105DB4BF24EE6C /* OrderService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1DE2E61737C10B29B285A69 /* OrderService.framework */; };
+		C08C2BFE04C1D81FA90A1B5C /* LoginScreenOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C974F50AE99B6714E4B44F /* LoginScreenOutput.swift */; };
 		C097E84FA1AFBCAD1D1D40FE /* SharedUserStories.framework in Dependencies */ = {isa = PBXBuildFile; fileRef = C413D6606E3F4D841B5DBA47 /* SharedUserStories.framework */; };
 		C4F78CA16058001C5E4199AE /* BannerService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 951C170B0D59CAA608DA1473 /* BannerService.framework */; };
 		C8CE2322A2952C12F68AC06A /* ProductService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59322E35F5C2227B1887F28B /* ProductService.framework */; };
@@ -58,12 +60,10 @@
 		D1C3A671B910DC7AA5E105AA /* UserServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EDF034917D95BA953437C40 /* UserServiceInterface.framework */; };
 		D519C25FE66B9292EC22BA89 /* UserService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FEEA39D28E84BB7FB723148 /* UserService.framework */; };
 		D94ACC1362C10DBC5950F72C /* DesignSystem_DesignSystem.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 053F11E926A414E7E0C9D2C3 /* DesignSystem_DesignSystem.bundle */; };
-		D9E7BEA6C4264F9788F2ADA0 /* LoginScreenView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1259953618E299315F559986 /* LoginScreenView+Subviews.swift */; };
 		E0374C619E3AE21CFB25C13F /* MainInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D360B3AF36D3E612C8EBC5D /* MainInterface.framework */; };
-		E13439FC393243ECCFD9994E /* LoginScreenNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ACC41C6314D4FAF320C6C2 /* LoginScreenNetworkClient.swift */; };
-		E5BF1B8B2E4ACA1900EB991D /* AnyLoginScreenNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BF1B8A2E4ACA1900EB991D /* AnyLoginScreenNetworkClient.swift */; };
 		E95466D3AF9FFB886AD42A59 /* AuthOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F1955704EB03DE4E65F866 /* AuthOutput.swift */; };
 		EA2C3C52DDE8C399C059EA00 /* DesignSystem_DesignSystem.bundle in Dependencies */ = {isa = PBXBuildFile; fileRef = 053F11E926A414E7E0C9D2C3 /* DesignSystem_DesignSystem.bundle */; };
+		ED4ADE070447EA790328A916 /* LoginScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749A2808B5FB51316251B6D6 /* LoginScreenView.swift */; };
 		EFC442A86B37DBCFC0C0DC48 /* OrderServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BBE1DA3FBD273BED1561B3A /* OrderServiceInterface.framework */; };
 		F1D45735770A0BF7CD133254 /* AnyAuthAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BA62D4A922BFFC78F44D09 /* AnyAuthAssembly.swift */; };
 		F23BAFAE06A9746D1BEE25E0 /* CatalogServiceInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9F0F3FD388E27050A7ECB5 /* CatalogServiceInterface.framework */; };
@@ -156,44 +156,46 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		010773B300B09421AE8D356C /* LoginScreenViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewOutput.swift; sourceTree = "<group>"; };
 		05272DCC5145ADBE5DAE20A4 /* CatalogService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatalogService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		053F11E926A414E7E0C9D2C3 /* DesignSystem_DesignSystem.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignSystem_DesignSystem.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		0890CFA3426473C850E45149 /* AuthService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C1A6E8BD8E217261771F217 /* AuthRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRoute.swift; sourceTree = "<group>"; };
 		0EDF034917D95BA953437C40 /* UserServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1259953618E299315F559986 /* LoginScreenView+Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginScreenView+Subviews.swift"; sourceTree = "<group>"; };
 		1FEEA39D28E84BB7FB723148 /* UserService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		20D2E82ACD4589A130605573 /* LoginScreenOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenOutput.swift; sourceTree = "<group>"; };
 		211E9A2779D01BACA364E37B /* DLCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DLCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		233455BFFF9849E7E416C799 /* AuthExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "AuthExample-Info.plist"; sourceTree = "<group>"; };
-		25C3E64013CD9D850E5F9263 /* LoginScreenViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewOutput.swift; sourceTree = "<group>"; };
 		27FE35279D7328F1C6009A1A /* Resolver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Resolver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BBE1DA3FBD273BED1561B3A /* OrderServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OrderServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33F1955704EB03DE4E65F866 /* AuthOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOutput.swift; sourceTree = "<group>"; };
 		34F82B9D539CCE5CCF83EA8F /* AuthAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAssembly.swift; sourceTree = "<group>"; };
 		45A8BB59B621EFC832DCFE0F /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4DA76DC8EE50E9A949521C57 /* LoginScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewModel.swift; sourceTree = "<group>"; };
+		4DF2141F2DA3AD31ACD9CAAD /* LoginScreenView+Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginScreenView+Subviews.swift"; sourceTree = "<group>"; };
 		4F6F33418EB25913880BECBA /* AuthInterface-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "AuthInterface-Info.plist"; sourceTree = "<group>"; };
 		5215853898481DB4E7DD085B /* AnyAuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyAuthCoordinator.swift; sourceTree = "<group>"; };
 		580A2727CB5B2CB2AF550946 /* ProductServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProductServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		59322E35F5C2227B1887F28B /* ProductService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProductService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5A803A4314D37F4F3FC8E782 /* LoginScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenAssembly.swift; sourceTree = "<group>"; };
+		749A2808B5FB51316251B6D6 /* LoginScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenView.swift; sourceTree = "<group>"; };
 		85FD9A41B8F21A9935250CA6 /* CartServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CartServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86517544E8A265695C6762CC /* PopcatsService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopcatsService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8895FC8BB8C3644A2923E77A /* Auth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Auth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D99A47C6444DC44A8C7502E /* DependencyRegistry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DependencyRegistry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		930760C8C2960F7E71E54EB3 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		933ABEA97C8B43A120AE74B5 /* LoginScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenAssembly.swift; sourceTree = "<group>"; };
 		951C170B0D59CAA608DA1473 /* BannerService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BannerService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		956B11E089C736142D0EDCCB /* PopcatsServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopcatsServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D0FD795439A0BB2721E47AE /* AnyLoginScreenNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyLoginScreenNetworkClient.swift; sourceTree = "<group>"; };
 		9D360B3AF36D3E612C8EBC5D /* MainInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MainInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E8C0F6ABCEE929A4D133755 /* AuthExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuthExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A03A7DF0526AA0BE67CFBE12 /* AuthExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthExampleView.swift; sourceTree = "<group>"; };
+		AB6070BD49D767D1829F55F8 /* LoginScreenViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewState.swift; sourceTree = "<group>"; };
 		AE027153934F4435BAF35AF2 /* Profile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Profile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE3498C35F61E2DD30C10274 /* ProfileInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ProfileInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3418F933A7A652A481B7C7B /* CartService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CartService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8C09C4CE36E3D06B61DAB5 /* AuthInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF162B567C521F1DFE3096E8 /* AuthServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AuthServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1A0613314DD24A41DEADC9B /* Main.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Main.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3C974F50AE99B6714E4B44F /* LoginScreenOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenOutput.swift; sourceTree = "<group>"; };
 		C413D6606E3F4D841B5DBA47 /* SharedUserStories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedUserStories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7F8ADCD39EF2117334BE4A9 /* BasketInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BasketInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C857B2C600CA35873D2A9D32 /* Auth-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Auth-Info.plist"; sourceTree = "<group>"; };
@@ -203,14 +205,12 @@
 		D5803772D191FE5C7434B013 /* BannerServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BannerServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBFE59D1B294A222C1BA2DBB /* Coordinator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Coordinator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1DE2E61737C10B29B285A69 /* OrderService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OrderService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5ACC41C6314D4FAF320C6C2 /* LoginScreenNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenNetworkClient.swift; sourceTree = "<group>"; };
-		E5BF1B8A2E4ACA1900EB991D /* AnyLoginScreenNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyLoginScreenNetworkClient.swift; sourceTree = "<group>"; };
-		E61EEB0320BCED02DFCB3926 /* LoginScreenViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewState.swift; sourceTree = "<group>"; };
 		E9BA62D4A922BFFC78F44D09 /* AnyAuthAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyAuthAssembly.swift; sourceTree = "<group>"; };
 		EB017E18C9B7ADCCA2EABD1F /* DLNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DLNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED9F0F3FD388E27050A7ECB5 /* CatalogServiceInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CatalogServiceInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F5EA90EBAF9B706975099F96 /* LoginScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenView.swift; sourceTree = "<group>"; };
+		F1C65952332C1DF85549B5CC /* LoginScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewModel.swift; sourceTree = "<group>"; };
 		F7AA478B272DB69B56791B1D /* Basket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Basket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB871A65C51BEE952FCFEB98 /* LoginScreenNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenNetworkClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,29 +272,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		029749A6E4C46E270999CE42 /* NetworkClient */ = {
-			isa = PBXGroup;
-			children = (
-				E5BF1B8A2E4ACA1900EB991D /* AnyLoginScreenNetworkClient.swift */,
-				E5ACC41C6314D4FAF320C6C2 /* LoginScreenNetworkClient.swift */,
-			);
-			path = NetworkClient;
-			sourceTree = "<group>";
-		};
-		26E8B2C55ACB88AD37EA60C3 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				4DA76DC8EE50E9A949521C57 /* LoginScreenViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		2A27A72174666C885CDF6370 = {
 			isa = PBXGroup;
 			children = (
 				979F65349794D0984634C212 /* Project */,
 				47BB2EF37CEDEF87800073AF /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		30A437C24B9784D5907BC0B0 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				933ABEA97C8B43A120AE74B5 /* LoginScreenAssembly.swift */,
+			);
+			path = Assembly;
 			sourceTree = "<group>";
 		};
 		47BB2EF37CEDEF87800073AF /* Products */ = {
@@ -343,11 +334,22 @@
 		4AA6D29A73FB8BC6438EC478 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				9D22B815415EB93124764DE3 /* Login */,
+				6031C640A99C6D23A08FD396 /* Login */,
 				34F82B9D539CCE5CCF83EA8F /* AuthAssembly.swift */,
 				930760C8C2960F7E71E54EB3 /* AuthCoordinator.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		6031C640A99C6D23A08FD396 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				30A437C24B9784D5907BC0B0 /* Assembly */,
+				B57DA6DF0F8BBB2511FE2556 /* NetworkClient */,
+				ADB937677342DE02F6525141 /* View */,
+				D5CE023CD0DFD22D69E269EB /* ViewModel */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		60B7D00C4A0956661196D3E7 /* Interface */ = {
@@ -357,7 +359,7 @@
 				5215853898481DB4E7DD085B /* AnyAuthCoordinator.swift */,
 				33F1955704EB03DE4E65F866 /* AuthOutput.swift */,
 				0C1A6E8BD8E217261771F217 /* AuthRoute.swift */,
-				20D2E82ACD4589A130605573 /* LoginScreenOutput.swift */,
+				C3C974F50AE99B6714E4B44F /* LoginScreenOutput.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -373,25 +375,6 @@
 			name = Project;
 			sourceTree = "<group>";
 		};
-		9D22B815415EB93124764DE3 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				9D902325CE2B895559C12169 /* Assembly */,
-				029749A6E4C46E270999CE42 /* NetworkClient */,
-				BEA0312856ED1BE844BEE571 /* View */,
-				26E8B2C55ACB88AD37EA60C3 /* ViewModel */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		9D902325CE2B895559C12169 /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				5A803A4314D37F4F3FC8E782 /* LoginScreenAssembly.swift */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
 		9D93978C62C6C0978B03739A /* Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,15 +383,32 @@
 			path = Example;
 			sourceTree = "<group>";
 		};
-		BEA0312856ED1BE844BEE571 /* View */ = {
+		ADB937677342DE02F6525141 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F5EA90EBAF9B706975099F96 /* LoginScreenView.swift */,
-				1259953618E299315F559986 /* LoginScreenView+Subviews.swift */,
-				25C3E64013CD9D850E5F9263 /* LoginScreenViewOutput.swift */,
-				E61EEB0320BCED02DFCB3926 /* LoginScreenViewState.swift */,
+				749A2808B5FB51316251B6D6 /* LoginScreenView.swift */,
+				4DF2141F2DA3AD31ACD9CAAD /* LoginScreenView+Subviews.swift */,
+				010773B300B09421AE8D356C /* LoginScreenViewOutput.swift */,
+				AB6070BD49D767D1829F55F8 /* LoginScreenViewState.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B57DA6DF0F8BBB2511FE2556 /* NetworkClient */ = {
+			isa = PBXGroup;
+			children = (
+				9D0FD795439A0BB2721E47AE /* AnyLoginScreenNetworkClient.swift */,
+				FB871A65C51BEE952FCFEB98 /* LoginScreenNetworkClient.swift */,
+			);
+			path = NetworkClient;
+			sourceTree = "<group>";
+		};
+		D5CE023CD0DFD22D69E269EB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F1C65952332C1DF85549B5CC /* LoginScreenViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		D889D2D65A9E44A4C8933E7A /* Derived */ = {
@@ -507,6 +507,8 @@
 				CLASSPREFIX = DL;
 				LastUpgradeCheck = 1630;
 				ORGANIZATIONNAME = Delivery24;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = 67D94DB2E574096B3B03953A /* Build configuration list for PBXProject "Auth" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -558,16 +560,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95BE979208A248F37D4EF863 /* LoginScreenAssembly.swift in Sources */,
-				E13439FC393243ECCFD9994E /* LoginScreenNetworkClient.swift in Sources */,
-				D9E7BEA6C4264F9788F2ADA0 /* LoginScreenView+Subviews.swift in Sources */,
-				285F1FAD48B480303855DBE9 /* LoginScreenView.swift in Sources */,
-				E5BF1B8B2E4ACA1900EB991D /* AnyLoginScreenNetworkClient.swift in Sources */,
-				561E9C62E95FE71A3E486BEA /* LoginScreenViewOutput.swift in Sources */,
-				B3EDE8FAC795089829690EB5 /* LoginScreenViewState.swift in Sources */,
-				7AC397051580F0FBB7A8A338 /* LoginScreenViewModel.swift in Sources */,
 				A7DDE05026F7A8C9F612EEC7 /* AuthAssembly.swift in Sources */,
 				52DF2C680A9B6BCAD6FF3C76 /* AuthCoordinator.swift in Sources */,
+				770DA6D974293591169C481C /* LoginScreenAssembly.swift in Sources */,
+				BE48AEC969A5E66B1750B59A /* AnyLoginScreenNetworkClient.swift in Sources */,
+				8876E4186D506F89C768CC14 /* LoginScreenNetworkClient.swift in Sources */,
+				52A02DD3D85CFF8D051DBCC2 /* LoginScreenView+Subviews.swift in Sources */,
+				ED4ADE070447EA790328A916 /* LoginScreenView.swift in Sources */,
+				BA1C08B92F32243925B81051 /* LoginScreenViewOutput.swift in Sources */,
+				0F64AB18E88E35A23427C3B5 /* LoginScreenViewState.swift in Sources */,
+				163BD5924F2C3428D663FCA0 /* LoginScreenViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,7 +581,7 @@
 				68BAF53E6713F613A024D88B /* AnyAuthCoordinator.swift in Sources */,
 				E95466D3AF9FFB886AD42A59 /* AuthOutput.swift in Sources */,
 				342B5340D218624A3B5643CD /* AuthRoute.swift in Sources */,
-				7AFCA359FD442A9834F21029 /* LoginScreenOutput.swift in Sources */,
+				C08C2BFE04C1D81FA90A1B5C /* LoginScreenOutput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,7 +705,10 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
@@ -736,7 +741,10 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
@@ -773,7 +781,10 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;

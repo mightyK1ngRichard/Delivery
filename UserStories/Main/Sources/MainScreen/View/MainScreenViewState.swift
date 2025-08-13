@@ -34,8 +34,6 @@ final class MainScreenViewState: ObservableObject {
     @Published
     var screenState = ScreenState.loading
     @Published
-    var basketBadge = 0
-    @Published
     var showAddressView = false
     @Published
     var balance: String?

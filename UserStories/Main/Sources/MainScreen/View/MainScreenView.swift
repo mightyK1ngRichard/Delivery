@@ -17,6 +17,7 @@ struct MainScreenView: View {
 
     var body: some View {
         mainContainer
+            .balanceBadge(balance: state.balance)
             .onFirstAppear(perform: output.onFirstAppear)
     }
 }

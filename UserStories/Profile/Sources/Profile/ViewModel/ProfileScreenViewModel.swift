@@ -107,13 +107,16 @@ private extension ProfileViewModel {
 
         Task {
             do {
-                // TODO: Тут должно быть получение избранного и уведомлений
-                let _ = try await networkClient.fetchUserData()
+                let warnings = try await networkClient.getNotificationWarnings()
+                var notifications: [OrderValidationNotifications] = []
+                if warnings.contains(.needAddress) {
+                    notifications.append(.needAddress)
+                }
+                if warnings.contains(.needEmailVerification) || warnings.contains(.needPhoneVerification) {
+                    notifications.append(.needPhoneAndEmailConfirmation)
+                }
 
-                state.notifications = [
-                    .needAddress,
-                    .needPhoneAndEmailConfirmation,
-                ]
+                state.notifications = notifications
                 state.screenKind = .screenState(.content)
             } catch {
                 if let networkError = error as? NetworkClientError,
