@@ -32,10 +32,6 @@ extension MainCoordinator: MainScreenOutput {
         logger.logEvent()
     }
 
-    func mainScreenShowAlert(with model: AlertModel) {
-        logger.logEvent()
-    }
-
     func mainScreenIncrementCartCount() {
         logger.logEvent()
         output?.incrementCartCount()

@@ -86,7 +86,7 @@ extension MainScreenViewModel: MainScreenViewOutput {
             subtitle: "Не удалось добавить товар в корзину. Попробуйте еще раз позже."
         )
         guard let (sectionIndex, productIndex) = getProductIndecices(product, sectionID: section.id) else {
-            output?.mainScreenShowAlert(with: alertModel)
+            state.showAlert(alertModel)
             return
         }
 
@@ -98,7 +98,7 @@ extension MainScreenViewModel: MainScreenViewOutput {
                 output?.mainScreenIncrementCartCount()
             } catch {
                 logger.error(error)
-                output?.mainScreenShowAlert(with: alertModel)
+                state.showAlert(alertModel)
             }
         }
     }
@@ -187,6 +187,7 @@ extension MainScreenViewModel {
         }
     }
 
+    @MainActor
     private func getProductIndecices(_ product: ProductModel, sectionID: Int) -> (Int, Int)? {
         guard let sectionIndex = state.sections.firstIndex(where: { $0.section.id == sectionID }),
               let productIndex = state.sections[sectionIndex].products.firstIndex(of: product)
@@ -203,7 +204,7 @@ extension MainScreenViewModel {
         alert: AlertModel
     ) {
         guard let (sectionIndex, productIndex) = getProductIndecices(product, sectionID: sectionID) else {
-            output?.mainScreenShowAlert(with: alert)
+            state.showAlert(alert)
             return
         }
 
@@ -217,7 +218,7 @@ extension MainScreenViewModel {
                 )
             } catch {
                 logger.error(error)
-                output?.mainScreenShowAlert(with: alert)
+                state.showAlert(alert)
             }
         }
     }

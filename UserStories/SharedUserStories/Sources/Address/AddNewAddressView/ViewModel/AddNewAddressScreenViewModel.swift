@@ -34,5 +34,24 @@ extension AddNewAddressScreenViewModel: AddNewAddressViewOutput {
 
     func onTapSendButton() {
         logger.logEvent()
+        state.buttonState = .loading
+        Task {
+            defer { state.buttonState = .default }
+            do {
+                try await networkClient.saveAddress(
+                    payload: .init(
+                        addressID: "0",
+                        title: state.nameInput,
+                        city: state.cityInput,
+                        street: state.streetInput,
+                        house: state.homeNumberInput,
+                        flat: state.apartamentNumberInput
+                    )
+                )
+                output?.addNewAddressDidFinishWithSuccess()
+            } catch {
+                logger.error(error.localizedDescription)
+            }
+        }
     }
 }

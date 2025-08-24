@@ -13,6 +13,7 @@ extension MainScreenView {
     var mainContainer: some View {
         stateView
             .basicToolBarItems(addressHandler: output.onTapSelectAddress)
+            .alert(state.alertModel, showAlert: $state.showAlert)
             .preferredColorScheme(.light)
             .toolbar {
                 ToolbarItem(placement: .keyboard) {

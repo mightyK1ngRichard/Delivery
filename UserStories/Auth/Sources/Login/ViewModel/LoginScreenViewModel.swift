@@ -65,7 +65,7 @@ extension LoginScreenViewModel: LoginScreenViewOutput {
                 state.buttonState = .default
             } catch {
                 logger.error(error)
-                output?.authScreenShowAlert(.init(
+                state.showAlert(.init(
                     title: "Ошибка авторизации",
                     subtitle: "Повторите попытку позже"
                 ))

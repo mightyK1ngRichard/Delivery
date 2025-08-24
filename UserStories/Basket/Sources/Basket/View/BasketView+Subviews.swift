@@ -24,6 +24,7 @@ extension BasketScreenView {
             }
         }
         .navigationTitle(Constants.navigationTitle.capitalized)
+        .alert(state.alertModel, showAlert: $state.showAlert)
     }
 }
 

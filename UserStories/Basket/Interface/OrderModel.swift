@@ -58,10 +58,10 @@ extension OrderModel {
 
 // MARK: - PaymentKind
 
-public enum PaymentKind: Hashable, CaseIterable {
+public enum PaymentKind: Int, Hashable, CaseIterable {
 
-    case account
-    case cash
+    case account = 2
+    case cash = 1
 }
 
 extension PaymentKind {

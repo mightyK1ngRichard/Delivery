@@ -6,6 +6,7 @@
 import Foundation
 import DesignSystem
 
+@MainActor
 final class LoginScreenViewState: ObservableObject {
 
     @Published
@@ -18,10 +19,18 @@ final class LoginScreenViewState: ObservableObject {
     var hasHiddenInput = false
     @Published
     var hasRememberMe = false
+    @Published
+    var showAlert = false
+    var alertModel = AlertModel()
 
     var hasDisabledSignInButton: Bool {
         passwordInput.isEmpty
             || emailInput.isEmpty
             || !hasRememberMe
+    }
+
+    func showAlert(_ alert: AlertModel) {
+        alertModel = alert
+        showAlert = true
     }
 }

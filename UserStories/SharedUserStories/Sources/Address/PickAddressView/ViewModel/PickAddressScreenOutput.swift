@@ -4,6 +4,6 @@
 //
 
 @MainActor
-protocol PickAddressScreenOutput: AnyObject {
+protocol PickAddressScreenOutput: AnyObject, Sendable {
     func openAddAddressScreen()
 }

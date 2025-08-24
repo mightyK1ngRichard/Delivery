@@ -6,6 +6,7 @@
 import Foundation
 import DLCore
 import SharedUserStories
+import DesignSystem
 
 final class BasketViewState: ObservableObject {
 
@@ -21,9 +22,17 @@ final class BasketViewState: ObservableObject {
     var amountInfo = AmountInfo()
     @Published
     var isOpenedSheet = false
+    @Published
+    var showAlert = false
+    var alertModel = AlertModel()
 
     init(factory: AnyBasketScreenFactory) {
         self.factory = factory
+    }
+
+    func showAlert(_ alert: AlertModel) {
+        alertModel = alert
+        showAlert = true
     }
 }
 

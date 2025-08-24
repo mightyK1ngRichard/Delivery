@@ -6,7 +6,8 @@
 import Foundation
 import DLCore
 
-final class PickAddressScreenViewState: ObservableObject {
+@MainActor
+final class PickAddressScreenViewState: ObservableObject, Sendable {
 
     @Published
     var state: ScreenState = .loading

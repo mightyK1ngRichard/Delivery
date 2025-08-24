@@ -44,4 +44,9 @@ extension AddressCoordinator: PickAddressScreenOutput {
 // MARK: - AddNewAddressScreenOutput
 
 extension AddressCoordinator: AddNewAddressScreenOutput {
+
+    func addNewAddressDidFinishWithSuccess() {
+        logger.logEvent()
+        router.dismiss()
+    }
 }

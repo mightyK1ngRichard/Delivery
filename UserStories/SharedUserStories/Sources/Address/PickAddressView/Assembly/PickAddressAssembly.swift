@@ -6,13 +6,18 @@
 import SwiftUI
 import Resolver
 import OrderServiceInterface
+import DLNetwork
 
 @MainActor
 enum PickAddressAssembly {
 
     static func assemble(output: PickAddressScreenOutput) -> some View {
         let state = PickAddressScreenViewState()
-        let networkClient = PickAddressScreenNetworkClient(orderService: Resolver.resolve(AnyOrderService.self))
+        let networkClient = PickAddressScreenNetworkClient(
+            orderService: Resolver.resolve(AnyOrderService.self),
+            networkClient: Resolver.resolve(AnyNetworkClient.self),
+            networkStore:Resolver.resolve(AnyNetworkStore.self)
+        )
         let factory = PickAddressScreenFactory()
         let viewModel = PickAddressScreenViewModel(
             state: state,

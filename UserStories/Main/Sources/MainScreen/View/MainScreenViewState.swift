@@ -8,6 +8,7 @@ import DesignSystem
 import DLCore
 import SharedUserStories
 
+@MainActor
 final class MainScreenViewState: ObservableObject {
 
     let factory: MainScreenFactory
@@ -34,9 +35,17 @@ final class MainScreenViewState: ObservableObject {
     var balance: String?
     @Published
     var addressTitle: String?
+    @Published
+    var showAlert = false
+    var alertModel = AlertModel()
 
     init(factory: MainScreenFactory) {
         self.factory = factory
         tags = ProductSection.allCases.map(factory.covertToTagSection)
+    }
+
+    func showAlert(_ alert: AlertModel) {
+        alertModel = alert
+        showAlert = true
     }
 }

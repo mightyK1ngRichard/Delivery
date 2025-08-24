@@ -4,13 +4,14 @@
 //
 
 import BasketInterface
+import SharedUserStories
 
 @MainActor
 protocol FormOrderScreenOutput: AnyObject {
     var formOrderInput: FormOrderScreenInput? { get set }
 
-    func formOrderDidOpenMakeOrderScren(orderModel: OrderModel)
     func formOrderDidChoosePaymentType(_ kind: PaymentKind)
+    func formOrderDidTapOpenCatalog()
 }
 
 @MainActor

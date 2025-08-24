@@ -6,11 +6,13 @@
 import Foundation
 import DLCore
 
-final class PickAddressScreenViewModel {
+final class PickAddressScreenViewModel: Sendable {
 
     private let state: PickAddressScreenViewState
     private let networkClient: AnyPickAddressScreenNetworkClient
     private let factory: AnyPickAddressScreenFactory
+
+    @MainActor
     private weak var output: PickAddressScreenOutput?
 
     private let logger = DLLogger("Pick Address View Model")
@@ -45,6 +47,7 @@ extension PickAddressScreenViewModel: PickAddressViewOutput {
     func onPickAddress(addressID: Int) {
         logger.logEvent()
         state.selectedAddressID = addressID
+        updateSelectedAddress(addressID: addressID)
     }
 
     func onTapAddNewAddress() {
@@ -73,6 +76,16 @@ private extension PickAddressScreenViewModel {
             } catch {
                 logger.error(error)
                 state.state = .error
+            }
+        }
+    }
+
+    func updateSelectedAddress(addressID: Int) {
+        Task {
+            do {
+                try await networkClient.updateUserAddress(addressID: addressID)
+            } catch {
+                logger.error(error)
             }
         }
     }

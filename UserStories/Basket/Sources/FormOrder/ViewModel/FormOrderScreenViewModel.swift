@@ -6,6 +6,7 @@
 import DLCore
 import SharedUserStories
 import BasketInterface
+import OrderServiceInterface
 
 /**
  всем привет. по пунктам
@@ -16,6 +17,7 @@ import BasketInterface
 final class FormOrderScreenViewModel {
     
     private let state: FormOrderScreenViewState
+    private let orderService: AnyOrderService
     private weak var output: FormOrderScreenOutput?
 
     private let logger = DLLogger("Form Order Screen")
@@ -23,9 +25,11 @@ final class FormOrderScreenViewModel {
     @MainActor
     init(
         state: FormOrderScreenViewState,
+        orderService: AnyOrderService,
         output: FormOrderScreenOutput
     ) {
         self.state = state
+        self.orderService = orderService
         self.output = output
 
         output.formOrderInput = self
@@ -37,6 +41,7 @@ final class FormOrderScreenViewModel {
 extension FormOrderScreenViewModel: FormOrderScreenInput {
 
     func updatePaymentKind(_ newKind: PaymentKind) {
+        logger.logEvent()
         state.selectedPaymentKind = newKind
     }
 }
@@ -51,6 +56,15 @@ extension FormOrderScreenViewModel: FormOrderScreenViewOutput {
 
     func onTapApplyBonuses() {
         logger.logEvent()
+        if let count = Int(state.inputBonusesCount), count % 100 == 0 {
+            state.bonusesIncluded = true
+            state.bonusesCount = count
+        } else {
+            state.showAlert(.init(
+                title: "Ошибка добавления бонусов",
+                subtitle: "Бонусы должны быть кратными 100"
+            ))
+        }
     }
 
     func onTapChoosePaymentType() {
@@ -60,11 +74,41 @@ extension FormOrderScreenViewModel: FormOrderScreenViewOutput {
 
     func onTapMakeOrder() {
         logger.logEvent()
-//        output?.formOrderDidOpenMakeOrderScren(orderModel: <#T##OrderModel#>)
+        if state.bonusesCount == nil, state.bonusesIncluded {
+            state.showAlert(.init(
+                title: "Некорректный ввод",
+                subtitle: "Вы выбрали бонусы, но не применили их корректно"
+            ))
+            return
+        }
+
+        state.buttonState = .loading
+        Task {
+            do {
+                try await orderService.makeOrder(body: .init(
+                    bonus: state.bonusesCount ?? 0,
+                    paymentType: String(state.selectedPaymentKind.rawValue),
+                    products: state.products.map {
+                        .init(id: $0.id, count: $0.count)
+                    }
+                ))
+                state.showSuccessView = true
+            } catch {
+                logger.error(error.localizedDescription)
+                state.showAlert(.init(title: "Ошибка", subtitle: "Ошибка формирования заказа. Попробуйте позже"))
+            }
+            state.buttonState = .default
+        }
     }
 
     func onTapOpenProductsList() {
         logger.logEvent()
+    }
+
+    func onTapOpenCatalogScreen() {
+        logger.logEvent()
+        state.showSuccessView = false
+        output?.formOrderDidTapOpenCatalog()
     }
 
     func onTapProduct(productID: Int) {

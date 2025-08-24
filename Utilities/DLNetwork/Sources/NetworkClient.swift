@@ -6,7 +6,7 @@
 import Foundation
 import DLCore
 
-public final class NetworkClient {
+public final class NetworkClient: Sendable {
 
     private let hostProvider: AnyServerHostProvider
     private let networkStore: AnyNetworkStore

@@ -14,6 +14,9 @@ struct FormOrderScreenView: View {
 
     var body: some View {
         mainContainer
+            .fullScreenCover(isPresented: $state.showSuccessView) {
+                FormOrderSuccessView(action: output.onTapOpenCatalogScreen)
+            }
     }
 }
 
@@ -29,6 +32,7 @@ private extension FormOrderScreenView {
             }
         }
         .navigationTitle(Constants.navigationTitle)
+        .alert(state.alertModel, showAlert: $state.showAlert)
         .overlay(alignment: .bottom) {
             overlayButton
         }

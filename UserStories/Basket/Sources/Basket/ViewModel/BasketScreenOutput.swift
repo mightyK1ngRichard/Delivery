@@ -12,5 +12,4 @@ protocol BasketScreenOutput: AnyObject {
     func basketScreenDidOpenCatalog()
     func basketScreenDidDecrementCartCount()
     func basketScreenDidOpenMakeOrderScreen(orderModel: OrderModel)
-    func basketScreenDidShowAlert(with alert: AlertModel)
 }

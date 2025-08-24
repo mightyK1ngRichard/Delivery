@@ -5,6 +5,6 @@
 
 import OrderServiceInterface
 
-protocol AnyPickAddressScreenFactory {
+protocol AnyPickAddressScreenFactory: Sendable {
     func convertToAddress(from entity: AddressEntity) -> Address?
 }

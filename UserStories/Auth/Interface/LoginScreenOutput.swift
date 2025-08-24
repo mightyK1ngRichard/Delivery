@@ -9,5 +9,4 @@ import SharedUserStories
 public protocol LoginScreenOutput: AnyObject {
     func authScreenDidSignInSuccess()
     func authScreenDidClose()
-    func authScreenShowAlert(_: AlertModel)
 }

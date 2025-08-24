@@ -19,6 +19,7 @@ extension LoginScreenView {
         .padding(.top, 67)
         .navigationTitle("Вход в аккаунт")
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .alert(state.alertModel, showAlert: $state.showAlert)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing, content: closeButton)
         }

@@ -4,13 +4,15 @@
 //
 
 import SwiftUI
+import Resolver
+import DLNetwork
 
 @MainActor
 enum AddNewAddressAssembly {
 
     static func assemble(output: AddNewAddressScreenOutput) -> some View {
         let state = AddNewAddressState()
-        let networkClient = AddNewAddressScreenNetworkClient()
+        let networkClient = AddNewAddressScreenNetworkClient(networkClient: Resolver.resolve(AnyNetworkClient.self))
         let viewModel = AddNewAddressScreenViewModel(
             state: state,
             networkClient: networkClient,

@@ -18,6 +18,9 @@ final class FormOrderScreenViewState: ObservableObject {
     @Published
     var bonusesIncluded = false
     @Published
+    var showAlert = false
+    var alertModel = AlertModel()
+    @Published
     var inputBonusesCount = String()
     @Published
     var deliveryDate = String()
@@ -51,5 +54,10 @@ final class FormOrderScreenViewState: ObservableObject {
 
     func convertToProductCarouselConfiguration() -> DLProductsCarousel.Configuration {
         factory.convertToProductCarouselConfiguration(products: products)
+    }
+
+    func showAlert(_ alert: AlertModel) {
+        alertModel = alert
+        showAlert = true
     }
 }

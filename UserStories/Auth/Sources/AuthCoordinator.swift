@@ -31,7 +31,6 @@ final class AuthCoordinator: Navigatable, AnyAuthCoordinator {
         destination(startRoute)
     }
 
-    @ViewBuilder
     func destination(_ route: AuthRoute) -> some View {
         switch route {
         case .signIn:
@@ -47,10 +46,6 @@ extension AuthCoordinator: LoginScreenOutput {
     func authScreenDidSignInSuccess() {
         logger.logEvent()
         output?.didLoginSuccess()
-    }
-
-    func authScreenShowAlert(_: AlertModel) {
-        logger.logEvent()
     }
 
     func authScreenDidClose() {

@@ -63,10 +63,6 @@ extension BasketCoordinator: BasketScreenOutput {
         router.push(.makeOrder(orderModel: orderModel))
     }
 
-    func basketScreenDidShowAlert(with alert: AlertModel) {
-        logger.logEvent()
-    }
-
     func basketScreenDidDecrementCartCount() {
         logger.logEvent()
         output?.basketDidDecrementCartCount()
@@ -90,6 +86,15 @@ extension BasketCoordinator: FormOrderScreenOutput {
     func formOrderDidChoosePaymentType(_ kind: PaymentKind) {
         logger.logEvent()
         router.present(.paymentKindSheet(kind))
+    }
+
+    func formOrderDidTapOpenCatalog() {
+        logger.logEvent()
+        router.removeAll()
+        Task {
+            try await Task.sleep(for: .seconds(0.02))
+            output?.basketDidOpenCatalog()
+        }
     }
 }
 

@@ -13,4 +13,5 @@ protocol FormOrderScreenViewOutput {
     func onTapOpenProductsList()
     func onTapProduct(productID: Int)
     func onTapChoosePaymentType()
+    func onTapOpenCatalogScreen()
 }

@@ -3,9 +3,11 @@
 //  Copyright © 2025 Dostavka24 LLC. All rights reserved.
 //
 
+import Resolver
 import SwiftUI
 import SharedUserStories
 import BasketInterface
+import OrderServiceInterface
 
 @MainActor
 enum FormOrderAssembly {
@@ -25,6 +27,7 @@ enum FormOrderAssembly {
         )
         let viewModel = FormOrderScreenViewModel(
             state: state,
+            orderService: Resolver.resolve(AnyOrderService.self),
             output: output
         )
 

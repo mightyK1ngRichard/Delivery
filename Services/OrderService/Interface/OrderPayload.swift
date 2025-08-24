@@ -6,10 +6,12 @@
 public struct OrderPayload: Sendable {
 
     public let bonus: Int
+    public let paymentType: String
     public let products: [OrderProduct]
 
-    public init(bonus: Int, products: [OrderProduct]) {
+    public init(bonus: Int, paymentType: String, products: [OrderProduct]) {
         self.bonus = bonus
+        self.paymentType = paymentType
         self.products = products
     }
 }
@@ -20,10 +22,10 @@ extension OrderPayload {
 
     public struct OrderProduct: Sendable {
 
-        public let id: String
+        public let id: Int
         public let count: Int
 
-        public init(id: String, count: Int) {
+        public init(id: Int, count: Int) {
             self.id = id
             self.count = count
         }

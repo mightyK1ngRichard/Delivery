@@ -12,7 +12,6 @@ protocol MainScreenOutput: AnyObject {
     func mainScreenOpenPopcats(id: Int, title: String)
     func mainScreenOpenPickAddressScreen()
     func mainScreenOpenAuthScreen()
-    func mainScreenShowAlert(with model: AlertModel)
 
     func mainScreenIncrementCartCount()
     func mainScreenDecrementCartCount()

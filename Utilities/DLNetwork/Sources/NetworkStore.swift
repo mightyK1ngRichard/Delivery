@@ -38,9 +38,7 @@ public actor NetworkStore: AnyNetworkStore {
 
     private let logger = DLLogger("Network Store")
 
-    public init(file: String = #file, function: String = #function, line: UInt = #line) {
-        logger.info("init :\(file):\(function):\(line)")
-    }
+    public init() {}
 
     public var token: String? {
         _token ?? _stotedToken
@@ -53,7 +51,6 @@ public actor NetworkStore: AnyNetworkStore {
     }
 
     public var address: Address? {
-        print("[DEBUG]: Получение адреса: \(_address)")
         return _address
     }
 

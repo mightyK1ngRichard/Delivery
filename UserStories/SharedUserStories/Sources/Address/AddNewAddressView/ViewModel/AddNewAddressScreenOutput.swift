@@ -5,4 +5,5 @@
 
 @MainActor
 protocol AddNewAddressScreenOutput: AnyObject {
+    func addNewAddressDidFinishWithSuccess()
 }

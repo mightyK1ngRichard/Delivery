@@ -107,7 +107,7 @@ extension BasketViewModel: BasketScreenViewOutput {
 
         // Удаляем локально
         guard let index = state.products.firstIndex(where: { $0.id == productID }) else {
-            output?.basketScreenDidShowAlert(with: .init(
+            state.showAlert(.init(
                 title: "Ошибка удаления",
                 subtitle: "Удаление продукта из корзины невозможно"
             ))
@@ -193,7 +193,7 @@ extension BasketViewModel {
         increment: Int
     ) {
         guard let index = state.products.firstIndex(where: { $0.id == product.id }) else {
-            output?.basketScreenDidShowAlert(with: .init(
+            state.showAlert(.init(
                 title: "Ошибка обновления",
                 subtitle: "Не получилось обновить счётчик"
             ))

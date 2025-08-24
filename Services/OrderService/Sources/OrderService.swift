@@ -43,15 +43,18 @@ extension OrderServiceImpl: AnyOrderService {
     }
 
     public func makeOrder(body: OrderPayload) async throws {
+        let productsDict = Dictionary(uniqueKeysWithValues: body.products.map {
+            (String($0.id), $0.count)
+        })
+
         let _ = try await networkClient.request(
             "order/add",
             method: .post,
             options: .init(
                 body: [
                     "bonus": body.bonus,
-                    "products": Dictionary(uniqueKeysWithValues: body.products.map {
-                        ($0.id, $0.count)
-                    })
+                    "payment_type": body.paymentType,
+                    "products": productsDict
                 ],
                 required: [.tokenID, .addressID]
             )
