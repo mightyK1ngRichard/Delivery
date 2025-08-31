@@ -74,7 +74,7 @@ private extension CatalogProductsView {
     var productsContainer: some View {
         switch state.screenState {
         case .content:
-            if state.products.isEmpty {
+            if state.items.isEmpty {
                 emptyProductView
             } else {
                 productCards
@@ -115,8 +115,8 @@ private extension CatalogProductsView {
             columns: Array(repeating: GridItem(), count: 2),
             spacing: .SPx2
         ) {
-            ForEach(state.products) { product in
-                productView(for: product)
+            ForEach(state.items) { item in
+                productView(for: item.product)
             }
         }
         .padding(.horizontal)

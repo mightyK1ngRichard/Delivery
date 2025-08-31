@@ -59,7 +59,6 @@ extension AllProductsScreenViewModel: AllProductsScreenViewOutput {
         }
 
         state.products[index].count = 1
-        output?.allProductsScreenDidIncrementCartCount()
         Task {
             try await networkClient.addProductInBasket(productID: productID, count: 1)
         }

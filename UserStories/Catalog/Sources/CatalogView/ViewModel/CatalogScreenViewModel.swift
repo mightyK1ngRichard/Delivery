@@ -79,7 +79,6 @@ extension CatalogScreenViewModel: CatalogScreenViewOutput {
         }
 
         state.products[index].count = 1
-        output?.catalogScreenDidIncrement()
         Task {
             try await networkClient.addProductInBasket(productID: productID, count: 1)
         }

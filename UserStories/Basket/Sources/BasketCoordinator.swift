@@ -62,11 +62,6 @@ extension BasketCoordinator: BasketScreenOutput {
         logger.logEvent()
         router.push(.makeOrder(orderModel: orderModel))
     }
-
-    func basketScreenDidDecrementCartCount() {
-        logger.logEvent()
-        output?.basketDidDecrementCartCount()
-    }
 }
 
 // MARK: - ProductDetailsScreenOutput

@@ -6,6 +6,7 @@
 import DLCore
 import SharedContractsInterface
 import DLNetwork
+import Combine
 
 public protocol AnyUserService: Cachable {
     func userData() async throws -> UserEntity
@@ -14,4 +15,6 @@ public protocol AnyUserService: Cachable {
     func forceFetchOrderDetails(orderID: Int) async throws(NetworkClientError) -> OrderDetailEntity
     func forceFetchBasketProducts() async throws(NetworkClientError) -> [ProductEntity]
     func getNotificationWarnings() async throws -> [NotificationWarning]
+
+    var userPublisher: AnyPublisher<UserEntity?, Never> { get }
 }

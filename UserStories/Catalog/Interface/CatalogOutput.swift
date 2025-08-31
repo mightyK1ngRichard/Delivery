@@ -5,5 +5,4 @@
 
 @MainActor
 public protocol CatalogOutput: AnyObject {
-    func catalogDidIncrementCartCount()
 }

@@ -14,7 +14,7 @@ final class CatalogProductsScreenViewModel {
     private let factory: AnyCatalogProductsScreenFactory
     private weak var output: CatalogProductsOutput?
 
-    private let logger = DLLogger("Catalog Products Screen View Model")
+    private let logger = DLLogger("Catalog Products Screen")
 
     init(
         state: CatalogProductsState,
@@ -37,11 +37,12 @@ extension CatalogProductsScreenViewModel: CatalogProductsViewOutput {
         logger.logEvent()
 
         state.screenState = .loading
-        Task { @MainActor in
+        Task {
             do {
-                let products = try await networkClient.fetchCategoryProducts(categoryID: state.category.id)
+                let categoryID = state.category.id
+                let products = try await networkClient.fetchCategoryProducts(categoryID: categoryID)
                 let mappedProducts = products.compactMap(factory.convertToProduct)
-                state.products = mappedProducts
+                state.items = mappedProducts.map { .init(sectionID: categoryID, product: $0) }
             } catch {
                 logger.error(error)
                 output?.catalogProductsShowAlertError(message: error.localizedDescription)
@@ -56,17 +57,21 @@ extension CatalogProductsScreenViewModel: CatalogProductsViewOutput {
         
         if let index = state.selectedTags.firstIndex(where: { $0 == tag }) {
             state.selectedTags.remove(at: index)
+            let filteredItems = state.items.filter { $0.sectionID != tag.id }
+            state.items = filteredItems
         } else {
             state.selectedTags.insert(tag)
             state.lastSelectedTag = tag
 
             state.screenState = .loading
-            Task { @MainActor in
+            Task {
                 do {
-                    let products = try await networkClient.fetchCategoryProducts(categoryID: tag.id)
+                    let categoryID = tag.id
+                    let products = try await networkClient.fetchCategoryProducts(categoryID: categoryID)
                     let mappedProducts = products.compactMap(factory.convertToProduct)
-                    // FIXME: Подумать про добавление только уникальных элементов
-                    state.products.append(contentsOf: mappedProducts)
+                    state.items.append(contentsOf: mappedProducts.map {
+                        .init(sectionID: categoryID, product: $0)
+                    })
                 } catch {
                     logger.error(error)
                     output?.catalogProductsShowAlertError(message: error.localizedDescription)
@@ -101,16 +106,15 @@ extension CatalogProductsScreenViewModel: CatalogProductsViewOutput {
 
     func onTapProductBasket(productID: Int, counter: Int) {
         logger.logEvent()
-        guard let index = state.products.firstIndex(where: { $0.id == productID }) else {
+        guard let index = state.items.firstIndex(where: { $0.product.id == productID }) else {
             return
         }
 
-        state.products[index].count = 1
-        output?.catalogProductsDidIncrementCartCount()
+        state.items[index].product.count = 1
         Task {
             try await networkClient.addProductInBasket(
                 productID: productID,
-                count: state.products[index].count
+                count: state.items[index].product.count
             )
         }
     }
@@ -127,15 +131,15 @@ extension CatalogProductsScreenViewModel {
 
     @MainActor
     func updateCartCount(productID: Int, increment: Int) {
-        guard let index = state.products.firstIndex(where: { $0.id == productID }) else {
+        guard let index = state.items.firstIndex(where: { $0.product.id == productID }) else {
             return
         }
 
-        state.products[index].count += increment
+        state.items[index].product.count += increment
         Task {
             try await networkClient.updateProductCountInBasket(
                 productID: productID,
-                count: state.products[index].count
+                count: state.items[index].product.count
             )
         }
     }

@@ -10,6 +10,5 @@ import BasketInterface
 protocol BasketScreenOutput: AnyObject {
     func basketScreenDidOpenProductDetails(product: ProductModel)
     func basketScreenDidOpenCatalog()
-    func basketScreenDidDecrementCartCount()
     func basketScreenDidOpenMakeOrderScreen(orderModel: OrderModel)
 }

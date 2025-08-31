@@ -6,5 +6,4 @@
 @MainActor
 public protocol AllProductsScreenOutput: AnyObject {
     func allProductsScreenDidTapOpenProuctDetails(with product: ProductModel)
-    func allProductsScreenDidIncrementCartCount()
 }

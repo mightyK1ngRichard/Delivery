@@ -30,6 +30,7 @@ enum BasketScreenAssembly {
         )
         let viewModel = BasketViewModel(
             state: state,
+            cartService: Resolver.resolve(AnyCartService.self),
             networkClient: networkFactory,
             factory: factory,
             output: output

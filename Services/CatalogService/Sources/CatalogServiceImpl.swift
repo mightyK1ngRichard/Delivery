@@ -12,6 +12,7 @@ public struct CatalogServiceImpl {
 
     private let networkClient: AnyNetworkClient
     private let categoriesCacheStore = CacheStore<[CategoryEntity]>(cacheLifeTimeSeconds: 2.5 * 60)
+    // FIXME: Кэшировать надо каждую секцию, а не просто все
     private let categoryProductsCacheStore = CacheStore<[Int: [CategoryProductEntity]]>(cacheLifeTimeSeconds: 2.5 * 60)
 
     private let logger = DLLogger("Catalog Service")
@@ -43,7 +44,7 @@ extension CatalogServiceImpl: AnyCategoryService {
     }
 
     public func forceFetchCategoryProducts(categoryID: Int) async throws -> [CategoryProductEntity] {
-        try await networkClient.request(
+        let products = try await networkClient.request(
             "catalog/products",
             method: .post,
             options: .init(
@@ -52,6 +53,16 @@ extension CatalogServiceImpl: AnyCategoryService {
             ),
             decodeTo: CategoryProductsResponse.self
         ).model.products
+
+        let (data, _) = await categoryProductsCacheStore.value
+        if var data {
+            data[categoryID] = products
+            await categoryProductsCacheStore.set(data)
+        } else {
+            await categoryProductsCacheStore.set([categoryID: products])
+        }
+
+        return products
     }
 
     public func forceFetchCategories() async throws -> [CategoryEntity] {

@@ -25,27 +25,31 @@ struct BootIteractor: AnyBootIteractor {
         return isExist
     }
 
-    func fetchInitialData() async -> [ProductEntity] {
-        await fetchUserAddresses()
-        
-        async let userFetching: () = fetchUserData()
+    func fetchInitialData() async -> (Bool, [ProductEntity]) {
+        let hasAddress = await fetchUserAddresses()
+
+        async let userFetching: Void = fetchUserData()
         async let basketFetching = fetchBasket()
 
         let (_, products) = await (userFetching, basketFetching)
-        return products
+        return (hasAddress, products)
     }
 
-    private func fetchUserAddresses() async {
+    private func fetchUserAddresses() async -> Bool {
         // Если нет адреса, то получаем список адресов
         if await networkStore.address == nil {
             logger.info("Данные адреса не найдены, получаем список адресов")
             do {
-                let _ = try await orderService.forceFetchUserAddresses()
+                let addresses = try await orderService.forceFetchUserAddresses()
                 logger.info("Данные адресов получены успешно")
+                return !addresses.isEmpty
             } catch {
                 logger.error("Ошибка получения списка адресов: \(error.localizedDescription)")
+                return false
             }
         }
+
+        return true
     }
 
     private func fetchBasket() async -> [ProductEntity] {

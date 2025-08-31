@@ -63,7 +63,7 @@ extension Resolver {
             BannersServiceImpl(networkClient: networkClient)
         }
 
-        Resolver.register(AnyCartService.self) {
+        Resolver.registerSingleton(AnyCartService.self) {
             CartServiceImpl(networkClient: networkClient)
         }
 
@@ -79,11 +79,11 @@ extension Resolver {
             ProductServiceImpl(networkClient: networkClient)
         }
 
-        Resolver.register(AnyUserService.self) {
+        Resolver.registerSingleton(AnyUserService.self) {
             UserServiceImpl(networkClient: networkClient, networkStore: networkStore)
         }
 
-        Resolver.register(AnyCategoryService.self) {
+        Resolver.registerSingleton(AnyCategoryService.self) {
             CatalogServiceImpl(networkClient: networkClient)
         }
     }

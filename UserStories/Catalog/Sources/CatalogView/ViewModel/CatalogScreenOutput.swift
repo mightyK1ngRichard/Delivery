@@ -10,5 +10,4 @@ protocol CatalogScreenOutput: AnyObject {
     func catalogScreenDidOpenCategoryList(category: CategoryModel)
     func catalogScreenDidOpenLookAllProducts(navigationTitle: String, products: [ProductModel])
     func catalogScreenDidOpenProductDetails(product: ProductModel)
-    func catalogScreenDidIncrement()
 }

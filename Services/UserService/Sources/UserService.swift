@@ -3,6 +3,7 @@
 // Copyright © 2024 Dostavka24. All rights reserved.
 //
 
+@preconcurrency import Combine
 import Foundation
 import DLCore
 import DLNetwork
@@ -16,6 +17,7 @@ public struct UserServiceImpl {
     private let networkClient: AnyNetworkClient
     private let networkStore: AnyNetworkStore
     private let cacheStore = CacheStore<UserEntity>(cacheLifeTimeSeconds: 2.5 * 60)
+    private let userSubject = PassthroughSubject<UserEntity?, Never>()
 
     private let logger = DLLogger("User Service")
 
@@ -29,10 +31,17 @@ public struct UserServiceImpl {
 
 extension UserServiceImpl: AnyUserService {
 
+    public var userPublisher: AnyPublisher<UserEntity?, Never> {
+        userSubject.eraseToAnyPublisher()
+    }
+
     public func userData() async throws -> UserEntity {
-        try await fetchFromStoreOrNetwork(storage: cacheStore) {
+        let user = try await fetchFromStoreOrNetwork(storage: cacheStore) {
             try await forceFetchProfile()
         }
+
+        userSubject.send(user)
+        return user
     }
 
     public func forceFetchProfile() async throws(NetworkClientError) -> UserEntity {
@@ -42,7 +51,8 @@ extension UserServiceImpl: AnyUserService {
             options: .init(required: [.tokenID]),
             decodeTo: UserEntity.self
         ).model
-        
+
+        userSubject.send(user)
         if let balanceString = user.balance, let balance = Double(balanceString) {
             await networkStore.setBalance(balance)
         }

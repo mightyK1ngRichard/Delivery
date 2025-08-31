@@ -12,6 +12,7 @@ import Resolver
 import DLNetwork
 import UserServiceInterface
 import OrderServiceInterface
+import CartServiceInterface
 
 enum RootAssembly {
 
@@ -20,15 +21,18 @@ enum RootAssembly {
         let state = RootScreenViewState()
         let networkStore = Resolver.resolve(AnyNetworkStore.self)
 
+        let userService = Resolver.resolve(AnyUserService.self)
         let bootIteractor = BootIteractor(
             networkStore: networkStore,
-            userService: Resolver.resolve(AnyUserService.self),
+            userService: userService,
             orderService: Resolver.resolve(AnyOrderService.self)
         )
         let authSessionInteractor = AuthSessionInteractor(networkStore: networkStore)
         let viewModel = RootScreenViewModel(
             state: state,
             bootIteractor: bootIteractor,
+            cartService: Resolver.resolve(AnyCartService.self),
+            userService: userService,
             authSessionInteractor: authSessionInteractor
         )
 

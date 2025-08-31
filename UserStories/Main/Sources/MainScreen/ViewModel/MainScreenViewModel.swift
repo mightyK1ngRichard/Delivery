@@ -95,7 +95,6 @@ extension MainScreenViewModel: MainScreenViewOutput {
         Task {
             do {
                 try await networkClient.addProductInBasket(productID: product.id, count: 1)
-                output?.mainScreenIncrementCartCount()
             } catch {
                 logger.error(error)
                 state.showAlert(alertModel)

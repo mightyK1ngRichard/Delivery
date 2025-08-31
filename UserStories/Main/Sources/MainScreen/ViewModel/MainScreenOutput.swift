@@ -13,9 +13,6 @@ protocol MainScreenOutput: AnyObject {
     func mainScreenOpenPickAddressScreen()
     func mainScreenOpenAuthScreen()
 
-    func mainScreenIncrementCartCount()
-    func mainScreenDecrementCartCount()
-
     func mainScreenAddProductToBasket(product: ProductModel, count: Int)
     func mainScreenIncrementProductCountInBasket(productID: Int, count: Int)
     func mainScreenDecrementProductCountInBasket(productID: Int, count: Int)

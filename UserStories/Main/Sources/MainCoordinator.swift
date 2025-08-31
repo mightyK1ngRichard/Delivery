@@ -52,11 +52,6 @@ extension MainCoordinator: ProductDetailsScreenOutput {}
 
 extension MainCoordinator: AllProductsScreenOutput {
 
-    func allProductsScreenDidIncrementCartCount() {
-        logger.logEvent()
-        output?.incrementCartCount()
-    }
-
     func allProductsScreenDidTapOpenProuctDetails(with product: ProductModel) {
         logger.logEvent()
         router.push(.product(product))

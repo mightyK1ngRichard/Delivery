@@ -1,15 +1,22 @@
 //
-// CatalogProductsState.swift
-// iOS-Delivery24
-//
-// Created by Dmitriy Permyakov on 27.06.2025
-// Copyright © 2025 Dostavka24. All rights reserved.
+//  Created by Dmitriy Permyakov on 27.06.2025
+//  Copyright © 2025 Dostavka24. All rights reserved.
 //
 
 import SwiftUI
 import SharedUserStories
 import DLCore
 import DesignSystem
+
+extension CatalogProductsState {
+
+    struct Item: Identifiable, Hashable {
+
+        var id: Self { self }
+        let sectionID: Int
+        var product: ProductModel
+    }
+}
 
 final class CatalogProductsState: ObservableObject {
 
@@ -20,7 +27,7 @@ final class CatalogProductsState: ObservableObject {
     @Published
     var navigationTitle: String
     @Published
-    var products: [ProductModel] = []
+    var items: [Item] = []
     let category: CategoryModel
 
     // MARK: UI

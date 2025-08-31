@@ -53,11 +53,6 @@ final class CatalogCoordinator: Navigatable, AnyCatalogCoordinator {
 
 extension CatalogCoordinator: CatalogScreenOutput {
 
-    func catalogScreenDidIncrement() {
-        logger.logEvent()
-        output?.catalogDidIncrementCartCount()
-    }
-
     func catalogScreenDidOpenCategoryList(category: CategoryModel) {
         logger.logEvent()
         router.push(.categorySublist(category: category))
@@ -92,11 +87,6 @@ extension CatalogCoordinator: CategoryListScreenOutput {
 
 extension CatalogCoordinator: CatalogProductsOutput {
 
-    func catalogProductsDidIncrementCartCount() {
-        logger.logEvent()
-        output?.catalogDidIncrementCartCount()
-    }
-
     func catalogProductsOpenProductDetails(product: ProductModel) {
         logger.logEvent()
         router.push(.productDetails(product: product))
@@ -119,10 +109,5 @@ extension CatalogCoordinator: AllProductsScreenOutput {
     func allProductsScreenDidTapOpenProuctDetails(with product: ProductModel) {
         logger.logEvent()
         router.push(.productDetails(product: product))
-    }
-
-    func allProductsScreenDidIncrementCartCount() {
-        logger.logEvent()
-        output?.catalogDidIncrementCartCount()
     }
 }

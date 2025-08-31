@@ -4,8 +4,9 @@
 //
 
 import SharedContractsInterface
+import UserServiceInterface
 
 protocol AnyBootIteractor: Sendable {
     func initialize() async -> Bool
-    func fetchInitialData() async -> [ProductEntity]
+    func fetchInitialData() async -> (Bool, [ProductEntity])
 }

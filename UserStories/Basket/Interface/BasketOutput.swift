@@ -6,5 +6,4 @@
 @MainActor
 public protocol BasketOutput: AnyObject {
     func basketDidOpenCatalog()
-    func basketDidDecrementCartCount()
 }
