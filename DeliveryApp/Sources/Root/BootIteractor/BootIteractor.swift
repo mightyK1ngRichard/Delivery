@@ -36,17 +36,26 @@ struct BootIteractor: AnyBootIteractor {
     }
 
     private func fetchUserAddresses() async -> Bool {
+        let address = await networkStore.address
         // Если нет адреса, то получаем список адресов
-        if await networkStore.address == nil {
+        guard let address else {
             logger.info("Данные адреса не найдены, получаем список адресов")
             do {
                 let addresses = try await orderService.forceFetchUserAddresses()
+                if let addressTitle = await networkStore.address?.title {
+                    userService.setAddressTitle(addressTitle)
+                }
+                
                 logger.info("Данные адресов получены успешно")
                 return !addresses.isEmpty
             } catch {
                 logger.error("Ошибка получения списка адресов: \(error.localizedDescription)")
                 return false
             }
+        }
+
+        if let addressTitle = address.title {
+            userService.setAddressTitle(addressTitle)
         }
 
         return true

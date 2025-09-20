@@ -17,14 +17,67 @@ extension ProductDetailsView {
             .padding(.horizontal)
             .padding(.bottom, 70)
         }
+        .alert(state.alertModel, showAlert: $state.showAlert)
         .safeAreaInset(edge: .bottom) {
-            addIntoBasketButton
+            bottomButtonKindView
                 .padding()
         }
+        .animation(.default, value: state.basketButtonIsPressed)
     }
 }
 
 private extension ProductDetailsView {
+
+    @ViewBuilder
+    var bottomButtonKindView: some View {
+        if state.basketButtonIsPressed {
+            HStack(spacing: 10) {
+                inBasketButton
+                stepperView
+            }
+        } else {
+            addIntoBasketButton
+        }
+    }
+
+    var stepperView: some View {
+        HStack(spacing: .zero) {
+            Button {
+                output.onTapMinus()
+            } label: {
+                DLIcon.minus.image
+                    .frame(width: 44, height: 65)
+            }
+
+            Text(String(state.productCount))
+                .style(size: 16, weight: .semibold, color: .primary)
+
+            Button {
+                output.onTapPlus()
+            } label: {
+                DLIcon.plus.image
+                    .frame(width: 44, height: 65)
+            }
+        }
+        .background(DLColor<BackgroundPalette>.lightGray.color, in: .rect(cornerRadius: 12))
+    }
+
+    var inBasketButton: some View {
+        VStack(spacing: .SPx0_5) {
+            HStack(spacing: .SPx2) {
+                DLIcon.checkMark.image
+                Text("В корзине")
+                    .style(size: 16, weight: .semibold, color: .white)
+            }
+            .frame(maxWidth: .infinity)
+
+            Text("\(state.productCount) шт")
+                .style(size: 13, weight: .semibold, color: .white)
+        }
+        .padding(.vertical, .SPx3)
+        .padding(.horizontal, .SPx4)
+        .background(Constants.greenColor.color, in: .rect(cornerRadius: 12))
+    }
 
     @ViewBuilder
     var addIntoBasketButton: some View {
@@ -235,5 +288,6 @@ private extension ProductDetailsView {
         static let textSecondary = DLColor<TextPalette>.gray800.color
         static let textWhite = DLColor<TextPalette>.white.color
         static let bgWhite = DLColor<BackgroundPalette>.white.color
+        nonisolated(unsafe) static let greenColor = DLColor<BackgroundPalette>(hexLight: 0x00BC62, hexDark: 0x00BC62)
     }
 }

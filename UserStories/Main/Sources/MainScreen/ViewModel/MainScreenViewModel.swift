@@ -9,28 +9,48 @@ import DLCore
 import SharedContractsInterface
 import DesignSystem
 import SharedUserStories
+import UserServiceInterface
 
-final class MainScreenViewModel {
+final class MainScreenViewModel: Sendable {
 
     private let state: MainScreenViewState
+    private let userService: AnyUserService
     private let networkClient: AnyMainScreenNetworkClient
     private let factory: AnyMainScreenFactory
+    @MainActor
     private weak var output: MainScreenOutput?
 
     private let logger = DLLogger("Main Screen ViewModel")
+    @MainActor
     private var store: Set<AnyCancellable> = []
 
     @MainActor
     init(
         state: MainScreenViewState,
+        userService: AnyUserService,
         networkClient: AnyMainScreenNetworkClient,
         factory: AnyMainScreenFactory,
         output: MainScreenOutput
     ) {
         self.state = state
+        self.userService = userService
         self.networkClient = networkClient
         self.factory = factory
         self.output = output
+
+        userService.userPublisher
+            .receive(on: RunLoop.main)
+            .sink { user in
+                state.balance = user?.balance
+            }
+            .store(in: &store)
+
+        userService.addressPublisher
+            .receive(on: RunLoop.main)
+            .sink { title in
+                state.addressTitle = title
+            }
+            .store(in: &store)
     }
 }
 
@@ -40,12 +60,26 @@ extension MainScreenViewModel: MainScreenViewOutput {
 
     func onFirstAppear() {
         logger.logEvent()
-        fetchData()
+        state.screenState = .loading
+        Task {
+            await fetchData()
+        }
+    }
+
+    func refresh() async {
+        logger.logEvent()
+        state.screenState = .loading
+        Task {
+            await fetchData()
+        }
     }
 
     func onTapReload() {
         logger.logEvent()
-        fetchData()
+        state.screenState = .loading
+        Task {
+            await fetchData()
+        }
     }
 
     func onTapSelectAddress() {
@@ -136,53 +170,57 @@ extension MainScreenViewModel: MainScreenViewOutput {
 extension MainScreenViewModel {
 
     @MainActor
-    private func fetchData() {
-        state.screenState = .loading
+    private func fetchData() async {
+        do {
+            try await withThrowingTaskGroup(of: FetchResult.self) { group in
+                try Task.checkCancellation()
 
-        Task {
-            do {
-                try await withThrowingTaskGroup(of: FetchResult.self) { group in
-                    let networkClient = self.networkClient
-                    let factory = self.factory
+                group.addTask {
+                    try Task.checkCancellation()
 
-                    group.addTask {
-                        let sections = try await networkClient.fetchProducts()
-                        return .sections(sections.map { section, products in
-                            (section, products.compactMap(factory.convertToProduct))
-                        })
-                    }
-
-                    group.addTask {
-                        let banners = try await networkClient.fetchBanners()
-                        return .banners(banners.compactMap(factory.convertToBannerPage))
-                    }
-
-                    group.addTask {
-                        let cards = try await networkClient.fetchPopCards()
-                        return .popcats(cards.compactMap(factory.convertToPopcat))
-                    }
-
-                    var sections: [(ProductSection, [ProductModel])] = []
-                    var banners: [BannerPage] = []
-                    var popcats: [PopcatModel] = []
-
-                    for try await result in group {
-                        switch result {
-                        case .sections(let value): sections = value
-                        case .banners(let value): banners = value
-                        case .popcats(let value): popcats = value
-                        }
-                    }
-
-                    state.sections = sections.sorted { $0.0 > $1.0 }
-                    state.banners = banners
-                    state.popcats = popcats
-                    state.screenState = .content
+                    let sections = try await self.networkClient.fetchProducts()
+                    return .sections(sections.map { section, products in
+                        (section, products.compactMap(self.factory.convertToProduct))
+                    })
                 }
-            } catch {
-                logger.error(error)
-                state.screenState = .error
+
+                group.addTask {
+                    try Task.checkCancellation()
+
+                    let banners = try await self.networkClient.fetchBanners()
+                    return .banners(banners.compactMap(self.factory.convertToBannerPage))
+                }
+
+                group.addTask {
+                    try Task.checkCancellation()
+
+                    let cards = try await self.networkClient.fetchPopCards()
+                    return .popcats(cards.compactMap(self.factory.convertToPopcat))
+                }
+
+                var sections: [(ProductSection, [ProductModel])] = []
+                var banners: [BannerPage] = []
+                var popcats: [PopcatModel] = []
+
+                for try await result in group {
+                    switch result {
+                    case .sections(let value): sections = value
+                    case .banners(let value): banners = value
+                    case .popcats(let value): popcats = value
+                    }
+                }
+
+                state.sections = sections.sorted { $0.0 > $1.0 }
+                state.banners = banners
+                state.popcats = popcats
+                state.screenState = .content
             }
+        } catch is CancellationError {
+            logger.error("Задача отменена")
+            state.screenState = .error
+        } catch {
+            logger.error(error.localizedDescription)
+            state.screenState = .error
         }
     }
 

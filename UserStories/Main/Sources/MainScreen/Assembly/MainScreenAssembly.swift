@@ -26,15 +26,17 @@ enum MainScreenAssembly {
         )
         let factory = MainScreenFactory(mediaFactory: mediaFactory, productFactory: productFactory)
         let state = MainScreenViewState(factory: factory)
+        let userService = Resolver.resolve(AnyUserService.self)
         let networkClient = MainScreenNetworkClient(
             productService: Resolver.resolve(AnyProductService.self),
             bannerService: Resolver.resolve(AnyBannersService.self),
             popcatsService: Resolver.resolve(AnyPopcatsService.self),
-            userService: Resolver.resolve(AnyUserService.self),
+            userService: userService,
             cartService: Resolver.resolve(AnyCartService.self)
         )
         let viewModel = MainScreenViewModel(
             state: state,
+            userService: userService,
             networkClient: networkClient,
             factory: factory,
             output: output

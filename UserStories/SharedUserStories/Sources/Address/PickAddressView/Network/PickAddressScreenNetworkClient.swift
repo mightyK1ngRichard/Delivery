@@ -16,19 +16,19 @@ struct PickAddressScreenNetworkClient: AnyPickAddressScreenNetworkClient {
         try await orderService.forceFetchUserAddresses()
     }
 
-    func updateUserAddress(addressID: Int) async throws {
+    func updateUserAddress(address: Address) async throws {
         do {
             let _ = try await networkClient.request(
                 "user/update-address",
                 method: .post,
                 options: RequestOptions(
                     body: [
-                        "address_id": addressID
+                        "address_id": address.id
                     ],
                     required: [.tokenID]
                 )
             )
-//            networkStore.setAddress(.init(id: addressID, title: <#T##String?#>))
+            await networkStore.setAddress(.init(id: address.id, title: address.title))
         } catch {
             throw error
         }

@@ -8,6 +8,7 @@ import SwiftUI
 public enum DLIcon: String, CaseIterable {
 
     case backButton
+    case checkMark
     case bottomChevron
     case box
     case checkboxOff

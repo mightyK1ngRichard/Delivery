@@ -18,6 +18,7 @@ public struct Address: Codable, Sendable {
 }
 
 public protocol AnyNetworkStore: Sendable, Actor {
+
     var token: String? { get }
     var balance: Double? { get }
     var address: Address? { get }
@@ -51,7 +52,7 @@ public actor NetworkStore: AnyNetworkStore {
     }
 
     public var address: Address? {
-        return _address
+        _address
     }
 
     public func setAddress(_ newAddress: Address?) {

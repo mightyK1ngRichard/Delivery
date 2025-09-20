@@ -17,7 +17,9 @@ public struct UserServiceImpl {
     private let networkClient: AnyNetworkClient
     private let networkStore: AnyNetworkStore
     private let cacheStore = CacheStore<UserEntity>(cacheLifeTimeSeconds: 2.5 * 60)
-    private let userSubject = PassthroughSubject<UserEntity?, Never>()
+
+    private let userSubject = CurrentValueSubject<UserEntity?, Never>(nil)
+    private let addressSubject = CurrentValueSubject<String?, Never>(nil)
 
     private let logger = DLLogger("User Service")
 
@@ -33,6 +35,14 @@ extension UserServiceImpl: AnyUserService {
 
     public var userPublisher: AnyPublisher<UserEntity?, Never> {
         userSubject.eraseToAnyPublisher()
+    }
+
+    public var addressPublisher: AnyPublisher<String?, Never> {
+        addressSubject.eraseToAnyPublisher()
+    }
+
+    public func setAddressTitle(_ title: String) {
+        addressSubject.send(title)
     }
 
     public func userData() async throws -> UserEntity {

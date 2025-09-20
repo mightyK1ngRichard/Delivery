@@ -5,10 +5,12 @@
 
 import Foundation
 import DLCore
+import UserServiceInterface
 
 final class PickAddressScreenViewModel: Sendable {
 
     private let state: PickAddressScreenViewState
+    private let userService: AnyUserService
     private let networkClient: AnyPickAddressScreenNetworkClient
     private let factory: AnyPickAddressScreenFactory
 
@@ -19,11 +21,13 @@ final class PickAddressScreenViewModel: Sendable {
 
     init(
         state: PickAddressScreenViewState,
+        userService: AnyUserService,
         networkClient: AnyPickAddressScreenNetworkClient,
         factory: AnyPickAddressScreenFactory,
         output: PickAddressScreenOutput
     ) {
         self.state = state
+        self.userService = userService
         self.networkClient = networkClient
         self.factory = factory
         self.output = output
@@ -44,10 +48,10 @@ extension PickAddressScreenViewModel: PickAddressViewOutput {
         fetchData()
     }
 
-    func onPickAddress(addressID: Int) {
+    func onPickAddress(address: Address) {
         logger.logEvent()
-        state.selectedAddressID = addressID
-        updateSelectedAddress(addressID: addressID)
+        state.selectedAddressID = address.id
+        updateSelectedAddress(address: address)
     }
 
     func onTapAddNewAddress() {
@@ -68,9 +72,12 @@ private extension PickAddressScreenViewModel {
             do {
                 let entities = try await networkClient.fetchUserAddress()
                 let address = entities.compactMap(factory.convertToAddress)
-                let selectedAddressID = address.first(where: \.isMain)?.id
+                let selectedAddress = address.first(where: \.isMain)
+                if let selectedAddress {
+                    userService.setAddressTitle(selectedAddress.title)
+                }
 
-                state.selectedAddressID = selectedAddressID
+                state.selectedAddressID = selectedAddress?.id
                 state.addresses = address
                 state.state = .content
             } catch {
@@ -80,10 +87,11 @@ private extension PickAddressScreenViewModel {
         }
     }
 
-    func updateSelectedAddress(addressID: Int) {
+    func updateSelectedAddress(address: Address) {
         Task {
             do {
-                try await networkClient.updateUserAddress(addressID: addressID)
+                try await networkClient.updateUserAddress(address: address)
+                userService.setAddressTitle(address.title)
             } catch {
                 logger.error(error)
             }

@@ -5,8 +5,11 @@
 
 @MainActor
 protocol ProductDetailsViewOutput {
+
     func onFirstAppear()
     func onTapAddIntoBasketButton()
     func onTapShare()
     func onTapLike()
+    func onTapPlus()
+    func onTapMinus()
 }

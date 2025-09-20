@@ -4,14 +4,21 @@
 //
 
 import SwiftUI
+import DesignSystem
 
 final class ProductDetailsScreenViewState: ObservableObject {
 
-    @Published
-    var product: ProductModel
+    let product: ProductModel
 
     @Published
     var makeBasketButtonTitle: String?
+    @Published
+    var basketButtonIsPressed: Bool = false
+    @Published
+    var productCount: Int = 0
+    @Published
+    var showAlert = false
+    var alertModel = AlertModel()
 
     init(product: ProductModel) {
         self.product = product

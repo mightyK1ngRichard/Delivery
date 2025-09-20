@@ -10,6 +10,7 @@ import PopcatsServiceInterface
 import SharedUserStories
 
 protocol AnyMainScreenFactory: Sendable {
+
     func convertToProduct(from entity: ProductEntity) -> ProductModel?
     func convertToDProductCard(from model: ProductModel) -> DProductCardModel
     func convertToDCategoryModel(from model: PopcatModel) -> DCategoryModel

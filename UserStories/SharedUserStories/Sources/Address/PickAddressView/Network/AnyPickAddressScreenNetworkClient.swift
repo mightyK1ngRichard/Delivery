@@ -6,6 +6,7 @@
 import OrderServiceInterface
 
 protocol AnyPickAddressScreenNetworkClient: Sendable {
+
     func fetchUserAddress() async throws -> [AddressEntity]
-    func updateUserAddress(addressID: Int) async throws
+    func updateUserAddress(address: Address) async throws
 }

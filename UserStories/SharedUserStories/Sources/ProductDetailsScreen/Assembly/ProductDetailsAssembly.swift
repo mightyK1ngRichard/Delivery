@@ -4,6 +4,8 @@
 //
 
 import SwiftUI
+import Resolver
+import CartServiceInterface
 
 public enum ProductDetailsAssembly {
 
@@ -13,6 +15,7 @@ public enum ProductDetailsAssembly {
         let factory = ProductDetailsScreenFactory()
         let viewModel = ProductDetailsScreenViewModel(
             state: state,
+            cartService: Resolver.resolve(AnyCartService.self),
             factory: factory,
             output: output
         )

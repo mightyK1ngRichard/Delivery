@@ -44,7 +44,7 @@ private extension PickAddressScreenView {
     func addressCellView(address: Address) -> some View {
         Button {
             guard state.selectedAddressID != address.id else { return }
-            output.onPickAddress(addressID: address.id)
+            output.onPickAddress(address: address)
         } label: {
             HStack(spacing: 16) {
                 DLCheckbox(

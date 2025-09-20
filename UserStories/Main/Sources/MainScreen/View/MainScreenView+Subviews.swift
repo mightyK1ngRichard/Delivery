@@ -12,9 +12,16 @@ extension MainScreenView {
 
     var mainContainer: some View {
         stateView
-            .basicToolBarItems(addressHandler: output.onTapSelectAddress)
+            .basicToolBarItems(
+                addressTitle: state.addressTitle,
+                balance: state.balance,
+                addressHandler: output.onTapSelectAddress
+            )
             .alert(state.alertModel, showAlert: $state.showAlert)
             .preferredColorScheme(.light)
+            .refreshable {
+                await output.refresh()
+            }
             .toolbar {
                 ToolbarItem(placement: .keyboard) {
                     Button("Отмена") {

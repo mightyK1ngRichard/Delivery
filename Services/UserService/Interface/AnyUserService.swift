@@ -8,7 +8,8 @@ import SharedContractsInterface
 import DLNetwork
 import Combine
 
-public protocol AnyUserService: Cachable {
+public protocol AnyUserService: Sendable, Cachable {
+
     func userData() async throws -> UserEntity
     func forceFetchProfile() async throws(NetworkClientError) -> UserEntity
     func forceFetchOrders() async throws(NetworkClientError) -> [OrderEntity]
@@ -17,4 +18,6 @@ public protocol AnyUserService: Cachable {
     func getNotificationWarnings() async throws -> [NotificationWarning]
 
     var userPublisher: AnyPublisher<UserEntity?, Never> { get }
+    var addressPublisher: AnyPublisher<String?, Never> { get }
+    func setAddressTitle(_ title: String)
 }

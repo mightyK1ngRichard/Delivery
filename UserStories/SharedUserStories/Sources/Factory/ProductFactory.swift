@@ -8,7 +8,10 @@ import SharedContractsInterface
 import DesignSystem
 import CatalogServiceInterface
 
+// MARK: - AnyProductFactory
+
 public protocol AnyProductFactory: Sendable {
+
     // MARK: DTO -> Model
     func convertToProduct(from entity: ProductEntity) -> ProductModel?
     func convertToProduct(from entity: CategoryProductEntity) -> ProductModel?
@@ -16,6 +19,8 @@ public protocol AnyProductFactory: Sendable {
     func convertToDProductCard(from model: ProductModel) -> DProductCardModel
     func covertToTagSection(from model: ProductSection) -> DTagsSection.Section
 }
+
+// MARK: - ProductFactory
 
 public struct ProductFactory: AnyProductFactory {
 

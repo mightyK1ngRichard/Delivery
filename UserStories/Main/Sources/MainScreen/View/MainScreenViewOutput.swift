@@ -7,8 +7,10 @@ import SharedUserStories
 
 @MainActor
 protocol MainScreenViewOutput: AnyObject {
+
     func onFirstAppear()
     func onTapReload()
+    func refresh() async
     func onTapSelectAddress()
     func onTapProductCard(product: ProductModel)
     func onTapSectionLookMore(section: ProductSection)
