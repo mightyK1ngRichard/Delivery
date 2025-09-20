@@ -22,16 +22,18 @@ enum RootAssembly {
         let networkStore = Resolver.resolve(AnyNetworkStore.self)
 
         let userService = Resolver.resolve(AnyUserService.self)
+        let cartService = Resolver.resolve(AnyCartService.self)
         let bootIteractor = BootIteractor(
             networkStore: networkStore,
             userService: userService,
-            orderService: Resolver.resolve(AnyOrderService.self)
+            orderService: Resolver.resolve(AnyOrderService.self),
+            cartService: cartService
         )
         let authSessionInteractor = AuthSessionInteractor(networkStore: networkStore)
         let viewModel = RootScreenViewModel(
             state: state,
             bootIteractor: bootIteractor,
-            cartService: Resolver.resolve(AnyCartService.self),
+            cartService: cartService,
             userService: userService,
             authSessionInteractor: authSessionInteractor
         )

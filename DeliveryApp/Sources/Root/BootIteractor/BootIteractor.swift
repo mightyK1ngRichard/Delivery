@@ -8,13 +8,14 @@ import DLCore
 import UserServiceInterface
 import SharedContractsInterface
 import OrderServiceInterface
+import CartServiceInterface
 
 struct BootIteractor: AnyBootIteractor {
 
     let networkStore: AnyNetworkStore
-
     let userService: AnyUserService
     let orderService: AnyOrderService
+    let cartService: AnyCartService
 
     private let logger = DLLogger("Boot Iteractor")
 
@@ -65,6 +66,10 @@ struct BootIteractor: AnyBootIteractor {
         do {
             logger.info("Начало получения данных корзины")
             let products = try await userService.forceFetchBasketProducts()
+            cartService.saveProductsBasket(products.compactMap {
+                guard let id = $0.id, let count = $0.realCount else { return nil }
+                return .init(id: id, count: count)
+            })
             logger.info("Данные корзины получены успешно")
             return products
         } catch {

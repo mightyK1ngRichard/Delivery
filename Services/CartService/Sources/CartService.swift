@@ -90,6 +90,5 @@ extension CartServiceImpl: AnyCartService {
 
     public func saveProductsBasket(_ products: [BasketProduct]) {
         currentProducts.send(products)
-        print("[DEBUG]: \(currentProducts.value)")
     }
 }

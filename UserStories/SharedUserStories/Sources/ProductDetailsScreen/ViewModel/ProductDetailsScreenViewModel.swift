@@ -4,19 +4,25 @@
 //
 
 import Foundation
+import Combine
 import DLCore
 import CartServiceInterface
 import DesignSystem
 
-final class ProductDetailsScreenViewModel {
+final class ProductDetailsScreenViewModel: Sendable {
 
     private let state: ProductDetailsScreenViewState
     private let cartService: AnyCartService
     private let factory: AnyProductDetailsScreenFactory
+
+    @MainActor
     private weak var output: ProductDetailsScreenOutput?
+    @MainActor
+    private var cancellables: Set<AnyCancellable> = []
 
     private let logger = DLLogger("Product Details Screen View Model")
 
+    @MainActor
     init(
         state: ProductDetailsScreenViewState,
         cartService: AnyCartService,
@@ -27,6 +33,17 @@ final class ProductDetailsScreenViewModel {
         self.cartService = cartService
         self.factory = factory
         self.output = output
+
+        cartService.basketProductsPublisher
+            .receive(on: RunLoop.main)
+            .sink { products in
+                guard let product = products.first(where: { $0.id == state.product.id }) else {
+                    return
+                }
+                state.productCount = product.count * state.product.magnifier
+                state.basketButtonIsPressed = !products.isEmpty
+            }
+            .store(in: &cancellables)
     }
 }
 
@@ -83,6 +100,9 @@ extension ProductDetailsScreenViewModel: ProductDetailsViewOutput {
                 )
 
                 state.basketButtonIsPressed = state.productCount != 0
+                if state.productCount == 0 {
+                    await deleteProduct()
+                }
             } catch {
                 logger.error(error)
                 state.alertModel = AlertModel(
@@ -90,6 +110,14 @@ extension ProductDetailsScreenViewModel: ProductDetailsViewOutput {
                     subtitle: "Не удалось изменить количество товара в корзине. Попробуйте еще раз позже."
                 )
             }
+        }
+    }
+
+    private func deleteProduct() async {
+        do {
+            try await cartService.deleteProductFromBasket(productID: state.product.id)
+        } catch {
+            logger.error(error)
         }
     }
 }

@@ -6,7 +6,8 @@
 import SwiftUI
 import DesignSystem
 
-final class ProductDetailsScreenViewState: ObservableObject {
+@MainActor
+final class ProductDetailsScreenViewState: ObservableObject, Sendable {
 
     let product: ProductModel
 

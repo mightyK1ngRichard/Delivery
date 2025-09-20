@@ -3,6 +3,7 @@
 //  Copyright © 2025 Delivery24. All rights reserved.
 //
 
-protocol AnyProductDetailsScreenFactory {
+protocol AnyProductDetailsScreenFactory: Sendable {
+
     func makeBasketButtonTitle(from model: ProductModel) -> String
 }

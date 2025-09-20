@@ -15,7 +15,6 @@ extension ProductDetailsView {
                 bottomContainer
             }
             .padding(.horizontal)
-            .padding(.bottom, 70)
         }
         .alert(state.alertModel, showAlert: $state.showAlert)
         .safeAreaInset(edge: .bottom) {
