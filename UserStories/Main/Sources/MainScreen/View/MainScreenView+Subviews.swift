@@ -125,7 +125,7 @@ extension MainScreenView {
         products: [ProductModel],
         action: @escaping DLVoidBlock
     ) -> some View {
-        VStack(spacing: 8) {
+        VStack(spacing: .SPx2) {
             sectionTitleView(title: section.title.capitalized, action: action)
             sectionProducts(section: section, products: products)
         }
@@ -147,7 +147,7 @@ extension MainScreenView {
     @ViewBuilder
     func sectionProducts(section: ProductSection, products: [ProductModel]) -> some View {
         ScrollView(.horizontal) {
-            LazyHStack(spacing: 8) {
+            LazyHStack(spacing: .SPx2) {
                 ForEach(products) { product in
                     productCard(for: product, section: section)
                         .frame(width: 168, height: 338)
@@ -162,13 +162,13 @@ extension MainScreenView {
     }
 
     var popularCategoriesSection: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: .SPx2) {
             Text(Constants.popularCategoriesSectionTitle)
                 .style(size: 22, weight: .bold, color: Constants.textPrimary)
 
             LazyVGrid(
                 columns: Array(repeating: GridItem(spacing: 8), count: 2),
-                spacing: 8
+                spacing: .SPx2
             ) {
                 ForEach(state.popcats) { popcat in
                     DCategory(category: state.factory.convertToDCategoryModel(from: popcat))
@@ -196,31 +196,17 @@ extension MainScreenView {
                 didTapLike: { isLike in
                     output.onTapLike(id: product.id, isLike: isLike)
                 },
-                didTapPlus: { counter in
-                    output.onTapPlusInBasket(
-                        product: product,
-                        counter: counter,
-                        coeff: product.magnifier,
-                        section: section
-                    )
+                didTapPlus: {
+                    output.onTapPlus(product: product, section: section)
                 },
-                didTapMinus: { counter in
-                    output.onTapMinusInBasket(
-                        product: product,
-                        counter: counter,
-                        coeff: product.magnifier,
-                        section: section
-                    )
+                didTapMinus: {
+                    output.onTapMinus(product: product, section: section)
                 },
-                didTapBasket: { startCounter in
-                    output.onTapAddInBasket(
-                        product: product,
-                        counter: startCounter,
-                        coeff: product.magnifier,
-                        section: section
-                    )
+                didTapBasket: {
+                    output.onTapAddInBasket(product: product, section: section)
                 }
-            )
+            ),
+            showStepper: state.selectedProducts.contains(product.id)
         )
         .contentShape(.rect)
     }

@@ -71,7 +71,7 @@ extension CatalogScreenViewModel: CatalogScreenViewOutput {
         changeProductCount(productID: productID, increment: -1)
     }
 
-    func onTapBasketProduct(id productID: Int, counter: Int) {
+    func onTapBasketProduct(id productID: Int) {
         logger.logEvent()
         guard let index = state.products.firstIndex(where: { $0.id == productID }) else {
             logger.error("Товар с id=\(productID) не найден")

@@ -7,7 +7,11 @@ import Foundation
 
 final class AllProductsScreenViewState: ObservableObject {
 
+    @Published
     var products: [ProductModel]
+    @Published
+    var selectedProducts: Set<Int> = []
+
     let navigationTitle: String
     let factory: AnyAllProductsScreenFactory
 

@@ -11,27 +11,27 @@ import DLCore
 
 struct DLStepper: View {
 
-    struct Configuration {
-        var startCounter = 0
-        var magnifier = 1
+    struct Configuration: Hashable {
+
+        let counter: Int
+        let magnifier: Int
     }
 
     struct HandlerConfiguration {
-        var didTapPlus: DLIntBlock?
-        var didTapMinus: DLIntBlock?
+
+        let didTapPlus: DLVoidBlock?
+        let didTapMinus: DLVoidBlock?
     }
 
     let configuration: Configuration
-    var handlerConfiguration = HandlerConfiguration()
-    @State private var counter = 0
+    var handlerConfiguration: HandlerConfiguration
 
     init(
         configuration: Configuration,
-        handlerConfiguration: HandlerConfiguration = HandlerConfiguration()
+        handlerConfiguration: HandlerConfiguration
     ) {
         self.configuration = configuration
         self.handlerConfiguration = handlerConfiguration
-        self._counter = State(initialValue: configuration.startCounter)
     }
 
     var body: some View {
@@ -39,14 +39,14 @@ struct DLStepper: View {
     }
 
     private var isDisable: Bool {
-        configuration.magnifier > counter - configuration.magnifier
+        configuration.magnifier > configuration.counter - configuration.magnifier
     }
 
     private var StepperView: some View {
         HStack(spacing: .SPx3) {
             Button {
-                counter = counter - configuration.magnifier
-                handlerConfiguration.didTapMinus?(counter)
+//                counter = counter - configuration.magnifier
+                handlerConfiguration.didTapMinus?()
             } label: {
                 DLIcon.minus.image
                     .renderingMode(.template)
@@ -62,13 +62,13 @@ struct DLStepper: View {
             }
             .disabled(isDisable)
 
-            Text("\(counter)")
+            Text("\(configuration.counter)")
                 .style(size: 16, weight: .bold, color: DLColor<TextPalette>.primary.color)
                 .frame(minWidth: 49)
 
             Button {
-                counter += configuration.magnifier
-                handlerConfiguration.didTapPlus?(counter)
+//                counter += configuration.magnifier
+                handlerConfiguration.didTapPlus?()
             } label: {
                 DLIcon.plus.image
                     .renderingMode(.template)
@@ -83,15 +83,4 @@ struct DLStepper: View {
         .frame(height: 43)
         .background(DLColor<BackgroundPalette>.lightGray.color, in: .rect(cornerRadius: .CRx3))
     }
-}
-
-// MARK: - Preview
-
-#Preview {
-    DLStepper(
-        configuration: .init(
-            startCounter: 3,
-            magnifier: 2
-        )
-    )
 }

@@ -10,19 +10,20 @@ import Kingfisher
 import SwiftUI
 import DLCore
 
-public struct DProductCard: View {
+extension DProductCard {
 
     public struct HandlerConfiguration {
+
         var didTapLike: DLBoolBlock?
-        var didTapPlus: DLIntBlock?
-        var didTapMinus: DLIntBlock?
-        var didTapBasket: DLIntBlock?
+        var didTapPlus: DLVoidBlock?
+        var didTapMinus: DLVoidBlock?
+        var didTapBasket: DLVoidBlock?
 
         public init(
             didTapLike: DLBoolBlock? = nil,
-            didTapPlus: DLIntBlock? = nil,
-            didTapMinus: DLIntBlock? = nil,
-            didTapBasket: DLIntBlock? = nil
+            didTapPlus: DLVoidBlock? = nil,
+            didTapMinus: DLVoidBlock? = nil,
+            didTapBasket: DLVoidBlock? = nil
         ) {
             self.didTapLike = didTapLike
             self.didTapPlus = didTapPlus
@@ -30,21 +31,22 @@ public struct DProductCard: View {
             self.didTapBasket = didTapBasket
         }
     }
+}
+
+public struct DProductCard: View {
 
     let product: DProductCardModel
     let handler: HandlerConfiguration
-
-    @State
-    private var showStepper: Bool
+    let showStepper: Bool
 
     public init(
         product: DProductCardModel,
         handler: HandlerConfiguration = .init(),
-        showStepper: Bool = false
+        showStepper: Bool
     ) {
         self.product = product
         self.handler = handler
-        self._showStepper = State(initialValue: showStepper)
+        self.showStepper = showStepper
     }
 
     public var body: some View {
@@ -170,7 +172,7 @@ private extension DProductCard {
     var StepperView: some View {
         DLStepper(
             configuration: .init(
-                startCounter: product.startCounter,
+                counter: product.totalCount,
                 magnifier: product.magnifier
             ),
             handlerConfiguration: .init(
@@ -182,8 +184,8 @@ private extension DProductCard {
 
     var BuyButton: some View {
         Button {
-            showStepper = true
-            handler.didTapBasket?(product.startCounter)
+//            showStepper = true
+            handler.didTapBasket?()
         } label: {
             HStack {
                 Image(systemName: "plus")
@@ -206,12 +208,12 @@ private extension DProductCard {
         id: 1,
         imageURL: URL(string: "https://avatars.mds.yandex.net/i?id=f2f6c7de9b79887ad4f3188da5d2ca0e_l-5254684-images-thumbs&n=13"),
         title: "Тут длинное название на две строки",
-        price: "99",
+        price: "$99",
         description: "Описание",
-        startCounter: 0,
+        totalCount: 0,
         magnifier: 1,
         tags: [.promotion, .hit, .exclusive]
-    ))
+    ), showStepper: false)
     .frame(width: 167, height: 338)
 }
 

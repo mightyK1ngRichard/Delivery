@@ -4,23 +4,44 @@
 //
 
 import DLCore
+import Combine
+import CartServiceInterface
+import Foundation
 
 final class AllProductsScreenViewModel {
 
     private let state: AllProductsScreenViewState
+    private let cartService: AnyCartService
     private let networkClient: AnyAllProductsNetworkClient
     private weak var output: AllProductsScreenOutput?
 
     private let logger = DLLogger("All Products Screen View Model")
 
+    private var store: Set<AnyCancellable> = []
+
     init(
         state: AllProductsScreenViewState,
+        cartService: AnyCartService,
         networkClient: AnyAllProductsNetworkClient,
         output: AllProductsScreenOutput
     ) {
         self.state = state
+        self.cartService = cartService
         self.networkClient = networkClient
         self.output = output
+
+        cartService.basketProductsPublisher
+            .receive(on: RunLoop.main)
+            .sink { products in
+                state.selectedProducts = Set(products.map(\.id))
+                products.forEach { product in
+                    if let productIndex = state.products.firstIndex(where: { $0.id == product.id }) {
+                        state.products[productIndex].count = product.count
+                        return
+                    }
+                }
+            }
+            .store(in: &store)
     }
 }
 
@@ -41,17 +62,17 @@ extension AllProductsScreenViewModel: AllProductsScreenViewOutput {
         logger.logEvent()
     }
 
-    func onTapProductPlus(productID: Int, counter: Int) {
+    func onTapProductPlus(productID: Int) {
         logger.logEvent()
         changeProductCount(productID: productID, increment: 1)
     }
 
-    func onTapProductMinus(productID: Int, counter: Int) {
+    func onTapProductMinus(productID: Int) {
         logger.logEvent()
         changeProductCount(productID: productID, increment: -1)
     }
 
-    func onTapProductBasket(productID: Int, counter: Int) {
+    func onTapProductBasket(productID: Int) {
         logger.logEvent()
 
         guard let index = state.products.firstIndex(where: { $0.id == productID }) else {

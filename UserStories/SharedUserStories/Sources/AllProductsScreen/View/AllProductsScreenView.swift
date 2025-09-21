@@ -55,16 +55,17 @@ private extension AllProductsScreenView {
                 didTapLike: { isLike in
                     output.onTapProductLike(productID: model.id, isLike: isLike)
                 },
-                didTapPlus: { counter in
-                    output.onTapProductPlus(productID: model.id, counter: counter)
+                didTapPlus: {
+                    output.onTapProductPlus(productID: model.id)
                 },
-                didTapMinus: { counter in
-                    output.onTapProductMinus(productID: model.id, counter: counter)
+                didTapMinus: {
+                    output.onTapProductMinus(productID: model.id)
                 },
-                didTapBasket: { counter in
-                    output.onTapProductBasket(productID: model.id, counter: counter)
+                didTapBasket: {
+                    output.onTapProductBasket(productID: model.id)
                 }
-            )
+            ),
+            showStepper: state.selectedProducts.contains(model.id)
         )
     }
 }

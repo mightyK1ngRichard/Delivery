@@ -64,9 +64,8 @@ final class MainScreenViewModel: Sendable {
                 products.forEach { product in
                     for (sectionIndex, section) in state.sections.enumerated() {
                         if let productIndex = section.products.firstIndex(where: { $0.id == product.id }) {
-                            let item = state.sections[sectionIndex].products[productIndex]
-                            state.sections[sectionIndex].products[productIndex].count = product.count * item.magnifier
-                            continue
+                            state.sections[sectionIndex].products[productIndex].count = product.count
+                            return
                         }
                     }
                 }
@@ -133,7 +132,7 @@ extension MainScreenViewModel: MainScreenViewOutput {
         logger.logEvent()
     }
 
-    func onTapAddInBasket(product: ProductModel, counter: Int, coeff: Int, section: ProductSection) {
+    func onTapAddInBasket(product: ProductModel, section: ProductSection) {
         logger.logEvent()
 
         let alertModel = AlertModel(
@@ -157,7 +156,7 @@ extension MainScreenViewModel: MainScreenViewOutput {
         }
     }
 
-    func onTapPlusInBasket(product: ProductModel, counter: Int, coeff: Int, section: ProductSection) {
+    func onTapPlus(product: ProductModel, section: ProductSection) {
         logger.logEvent()
 
         changeProductCount(
@@ -171,7 +170,7 @@ extension MainScreenViewModel: MainScreenViewOutput {
         )
     }
 
-    func onTapMinusInBasket(product: ProductModel, counter: Int, coeff: Int, section: ProductSection) {
+    func onTapMinus(product: ProductModel, section: ProductSection) {
         logger.logEvent()
 
         changeProductCount(
@@ -211,6 +210,7 @@ extension MainScreenViewModel {
                                   var mappedProduct = self.factory.convertToProduct(from: product)
                             else { return nil }
 
+                            // Если продукт в корзине
                             if let count = basketProducts[id] {
                                 mappedProduct.count = count
                             }

@@ -101,16 +101,17 @@ private extension CatalogScreenView {
                         didTapLike: { isLike in
                             output.onTapLikeProduct(id: product.id, isLike: isLike)
                         },
-                        didTapPlus: { _ in
+                        didTapPlus: {
                             output.onTapPlusProduct(productID: product.id)
                         },
-                        didTapMinus: { _ in
+                        didTapMinus: {
                             output.onTapMinusProduct(productID: product.id)
                         },
-                        didTapBasket: { startCounter in
-                            output.onTapBasketProduct(id: product.id, counter: startCounter)
+                        didTapBasket: {
+                            output.onTapBasketProduct(id: product.id)
                         }
-                    )
+                    ),
+                    showStepper: false
                 )
                 .onTapGesture {
                     output.onTapProductCard(product: product)

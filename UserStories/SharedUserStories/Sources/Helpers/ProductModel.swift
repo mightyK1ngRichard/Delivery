@@ -28,9 +28,10 @@ public struct ProductModel: Identifiable, Hashable, Sendable {
     public let packageCount: PackageCount
     /// Строка формата: 730 дней (до 14.08.28)
     public let formattedExpirationDate: String
-
+    
+    /// Настоящее количество продуктов (1шт, 2шт), без учёта `magnifier`
     public var count: Int
-    /// Коэфициент увеличивания продукта
+    /// Коэфициент увеличивания продукта (шаг)
     public let magnifier: Int
     /// Полная цену продукта: `Цена/шт × количество`
     public var fullPrice: Price

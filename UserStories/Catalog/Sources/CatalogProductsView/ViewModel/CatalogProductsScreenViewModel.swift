@@ -94,17 +94,17 @@ extension CatalogProductsScreenViewModel: CatalogProductsViewOutput {
         logger.logEvent()
     }
 
-    func onTapProductPlus(productID: Int, counter: Int) {
+    func onTapProductPlus(productID: Int) {
         logger.logEvent()
         updateCartCount(productID: productID, increment: 1)
     }
 
-    func onTapProductMinus(productID: Int, counter: Int) {
+    func onTapProductMinus(productID: Int) {
         logger.logEvent()
         updateCartCount(productID: productID, increment: -1)
     }
 
-    func onTapProductBasket(productID: Int, counter: Int) {
+    func onTapProductBasket(productID: Int) {
         logger.logEvent()
         guard let index = state.items.firstIndex(where: { $0.product.id == productID }) else {
             return

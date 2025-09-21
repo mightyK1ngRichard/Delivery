@@ -147,16 +147,17 @@ private extension CatalogProductsView {
                 didTapLike: { isLike in
                     output.onTapProductLike(productID: product.id, isLike: isLike)
                 },
-                didTapPlus: { counter in
-                    output.onTapProductPlus(productID: product.id, counter: counter)
+                didTapPlus: {
+                    output.onTapProductPlus(productID: product.id)
                 },
-                didTapMinus: { counter in
-                    output.onTapProductMinus(productID: product.id, counter: counter)
+                didTapMinus: {
+                    output.onTapProductMinus(productID: product.id)
                 },
-                didTapBasket: { counter in
-                    output.onTapProductBasket(productID: product.id, counter: counter)
+                didTapBasket: {
+                    output.onTapProductBasket(productID: product.id)
                 }
-            )
+            ),
+            showStepper: false
         )
         .onTapGesture {
             output.onTapProductCard(product: product)

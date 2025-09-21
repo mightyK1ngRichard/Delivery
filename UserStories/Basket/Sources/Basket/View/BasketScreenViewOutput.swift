@@ -13,8 +13,8 @@ protocol BasketScreenViewOutput {
     func onTapProduct(product: ProductModel)
     func onTapOpenCatalog()
     func onTapMakeOrderButton()
-    func onTapPlus(product: ProductModel, counter: Int)
-    func onTapMinus(product: ProductModel, counter: Int)
+    func onTapPlus(product: ProductModel)
+    func onTapMinus(product: ProductModel)
     func onTapLike(productID: Int, isSelected: Bool)
     func onTapDelete(productID: Int)
 }

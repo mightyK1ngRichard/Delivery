@@ -12,8 +12,8 @@ protocol CatalogProductsViewOutput {
     func onTapSortButton()
     func onTapSliderButton()
     func onTapProductLike(productID: Int, isLike: Bool)
-    func onTapProductPlus(productID: Int, counter: Int)
-    func onTapProductMinus(productID: Int, counter: Int)
-    func onTapProductBasket(productID: Int, counter: Int)
+    func onTapProductPlus(productID: Int)
+    func onTapProductMinus(productID: Int)
+    func onTapProductBasket(productID: Int)
     func onTapProductCard(product: ProductModel)
 }

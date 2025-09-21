@@ -169,16 +169,16 @@ private extension BasketScreenView {
 
     func productHandler(product: ProductModel) -> DLProductHCard.HandlerConfiguration {
         .init(
-            didTapPlus: { counter in
-                output.onTapPlus(product: product, counter: counter)
+            didTapPlus: {
+                output.onTapPlus(product: product)
             },
-            didTapMinus: { counter in
-                output.onTapMinus(product: product, counter: counter)
+            didTapMinus: {
+                output.onTapMinus(product: product)
             },
             didTapLike: { isSelected in
                 output.onTapLike(productID: product.id, isSelected: isSelected)
             },
-            didTapDelete: { counter in
+            didTapDelete: {
                 output.onTapDelete(productID: product.id)
             }
         )

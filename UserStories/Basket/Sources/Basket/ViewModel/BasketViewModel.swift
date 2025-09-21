@@ -92,14 +92,14 @@ extension BasketViewModel: BasketScreenViewOutput {
         output?.basketScreenDidOpenMakeOrderScreen(orderModel: orderModel)
     }
 
-    func onTapPlus(product: ProductModel, counter: Int) {
+    func onTapPlus(product: ProductModel) {
         logger.logEvent()
-        changeProductCount(product: product, counter: counter, increment: 1)
+        changeProductCount(product: product, increment: 1)
     }
 
-    func onTapMinus(product: ProductModel, counter: Int) {
+    func onTapMinus(product: ProductModel) {
         logger.logEvent()
-        changeProductCount(product: product, counter: counter, increment: -1)
+        changeProductCount(product: product, increment: -1)
     }
 
     func onTapLike(productID: Int, isSelected: Bool) {
@@ -195,11 +195,7 @@ extension BasketViewModel {
     }
 
     @MainActor
-    private func changeProductCount(
-        product: ProductModel,
-        counter: Int,
-        increment: Int
-    ) {
+    private func changeProductCount(product: ProductModel, increment: Int) {
         guard let index = state.products.firstIndex(where: { $0.id == product.id }) else {
             state.showAlert(.init(
                 title: "Ошибка обновления",
@@ -210,7 +206,10 @@ extension BasketViewModel {
 
         // Обновляем карточку продукта
         var updatedProduct = product
-        let newFullPrice = calculateNewProductFullPrice(for: product.itemPrice.price, counter: counter)
+        let newFullPrice = calculateNewProductFullPrice(
+            for: product.itemPrice.price,
+            counter: (product.count + increment) * product.magnifier
+        )
         let oldFullPrice = updatedProduct.fullPrice.price
         updatedProduct.fullPrice = newFullPrice
         updatedProduct.count += increment

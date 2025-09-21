@@ -86,16 +86,16 @@ private extension DLProductHCard {
     func didTapMinus() {
         guard counter > 0 else { return }
         counter = max(0, counter - configuration.magnifier)
-        handlerConfiguration.didTapMinus?(counter)
+        handlerConfiguration.didTapMinus?()
     }
 
     func didTapPlus() {
         counter += configuration.magnifier
-        handlerConfiguration.didTapPlus?(counter)
+        handlerConfiguration.didTapPlus?()
     }
 
     func didTapDelete() {
-        handlerConfiguration.didTapDelete?(counter)
+        handlerConfiguration.didTapDelete?()
     }
 }
 
@@ -154,17 +154,17 @@ extension DLProductHCard.Configuration {
 extension DLProductHCard {
 
     public struct HandlerConfiguration {
-        let didTapPlus: DLIntBlock?
-        let didTapMinus: DLIntBlock?
+        let didTapPlus: DLVoidBlock?
+        let didTapMinus: DLVoidBlock?
         let didTapLike: DLBoolBlock?
-        let didTapDelete: DLIntBlock?
+        let didTapDelete: DLVoidBlock?
         let didTapInfo: DLVoidBlock?
 
         public init(
-            didTapPlus: DLIntBlock? = nil,
-            didTapMinus: DLIntBlock? = nil,
+            didTapPlus: DLVoidBlock? = nil,
+            didTapMinus: DLVoidBlock? = nil,
             didTapLike: DLBoolBlock? = nil,
-            didTapDelete: DLIntBlock? = nil,
+            didTapDelete: DLVoidBlock? = nil,
             didTapInfo: DLVoidBlock? = nil
         ) {
             self.didTapPlus = didTapPlus
@@ -231,7 +231,7 @@ private extension DLProductHCard {
     var StepperView: some View {
         DLStepper(
             configuration: .init(
-                startCounter: configuration.startCount,
+                counter: configuration.startCount,
                 magnifier: configuration.magnifier
             ),
             handlerConfiguration: .init(

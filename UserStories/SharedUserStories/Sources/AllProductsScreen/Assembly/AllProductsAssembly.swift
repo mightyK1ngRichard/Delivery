@@ -30,9 +30,11 @@ public enum AllProductsScreenAssembly {
             factory: factory
         )
 
-        let networkClient = AllProductsNetworkClient(cartService: Resolver.resolve(AnyCartService.self))
+        let cartService = Resolver.resolve(AnyCartService.self)
+        let networkClient = AllProductsNetworkClient(cartService: cartService)
         let viewModel = AllProductsScreenViewModel(
             state: state,
+            cartService: cartService,
             networkClient: networkClient,
             output: output
         )

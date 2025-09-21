@@ -131,7 +131,7 @@ extension RootScreenViewModel {
         guard isAuth else { return }
 
         // Получение стартовых данных
-        let (hasAddress, products) = await bootIteractor.fetchInitialData()
+        let (_, products) = await bootIteractor.fetchInitialData()
         cartService.saveProductsBasket(products.compactMap {
             guard let id = $0.id, let count = $0.realCount else {
                 return nil

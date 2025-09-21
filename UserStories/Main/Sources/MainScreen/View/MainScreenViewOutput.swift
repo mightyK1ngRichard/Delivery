@@ -16,7 +16,7 @@ protocol MainScreenViewOutput: AnyObject {
     func onTapSectionLookMore(section: ProductSection)
     func onTapPopcatsCell(id: Int, title: String)
     func onTapLike(id: Int, isLike: Bool)
-    func onTapAddInBasket(product: ProductModel, counter: Int, coeff: Int, section: ProductSection)
-    func onTapPlusInBasket(product: ProductModel, counter: Int, coeff: Int, section: ProductSection)
-    func onTapMinusInBasket(product: ProductModel, counter: Int, coeff: Int, section: ProductSection)
+    func onTapAddInBasket(product: ProductModel, section: ProductSection)
+    func onTapPlus(product: ProductModel, section: ProductSection)
+    func onTapMinus(product: ProductModel, section: ProductSection)
 }

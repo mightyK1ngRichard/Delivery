@@ -11,12 +11,12 @@ import Foundation
 public struct DProductCardModel: Identifiable, Hashable {
 
     public let id: Int
-    var imageURL: URL?
+    let imageURL: URL?
     var isLike: Bool
     let title: String
     let price: String
     let description: String
-    let startCounter: Int
+    let totalCount: Int
     let magnifier: Int
     let tags: [Tags]
 
@@ -27,7 +27,7 @@ public struct DProductCardModel: Identifiable, Hashable {
         title: String,
         price: String,
         description: String,
-        startCounter: Int,
+        totalCount: Int,
         magnifier: Int,
         tags: [Tags]
     ) {
@@ -37,7 +37,7 @@ public struct DProductCardModel: Identifiable, Hashable {
         self.title = title
         self.price = price
         self.description = description
-        self.startCounter = startCounter
+        self.totalCount = totalCount
         self.magnifier = magnifier
         self.tags = tags
     }

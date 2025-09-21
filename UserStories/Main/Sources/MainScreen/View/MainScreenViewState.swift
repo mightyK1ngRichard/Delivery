@@ -47,7 +47,7 @@ final class MainScreenViewState: ObservableObject {
     @Published
     var showAlert = false
     var alertModel = AlertModel()
-
+    @Published
     var selectedProducts: Set<Int> = []
 
     init(factory: MainScreenFactory) {
