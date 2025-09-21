@@ -8,17 +8,20 @@ import Combine
 import CartServiceInterface
 import Foundation
 
-final class AllProductsScreenViewModel {
+final class AllProductsScreenViewModel: Sendable {
 
     private let state: AllProductsScreenViewState
     private let cartService: AnyCartService
     private let networkClient: AnyAllProductsNetworkClient
+
+    @MainActor
+    private var store: Set<AnyCancellable> = []
+    @MainActor
     private weak var output: AllProductsScreenOutput?
 
     private let logger = DLLogger("All Products Screen View Model")
 
-    private var store: Set<AnyCancellable> = []
-
+    @MainActor
     init(
         state: AllProductsScreenViewState,
         cartService: AnyCartService,

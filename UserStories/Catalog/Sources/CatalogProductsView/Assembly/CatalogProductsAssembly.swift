@@ -34,12 +34,14 @@ enum CatalogProductsAssembly {
             navigationTitle: category.title
         )
 
+        let cartService = Resolver.resolve(AnyCartService.self)
         let networkClient = CatalogProductsScreenNetworkClient(
             catalogService: Resolver.resolve(AnyCategoryService.self),
-            cartService: Resolver.resolve(AnyCartService.self)
+            cartService: cartService
         )
         let viewModel = CatalogProductsScreenViewModel(
             state: state,
+            cartService: cartService,
             networkClient: networkClient,
             factory: factory,
             output: output

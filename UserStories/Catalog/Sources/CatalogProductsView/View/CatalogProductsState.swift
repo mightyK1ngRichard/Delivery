@@ -18,7 +18,8 @@ extension CatalogProductsState {
     }
 }
 
-final class CatalogProductsState: ObservableObject {
+@MainActor
+final class CatalogProductsState: Sendable, ObservableObject {
 
     let factory: AnyCatalogProductsScreenFactory
 
@@ -35,6 +36,8 @@ final class CatalogProductsState: ObservableObject {
     var selectedTags: Set<CategoryModel> = []
     @Published
     var lastSelectedTag: CategoryModel?
+    @Published
+    var selectedProducts: Set<Int> = []
     @Published
     var searchText = String()
     @Published

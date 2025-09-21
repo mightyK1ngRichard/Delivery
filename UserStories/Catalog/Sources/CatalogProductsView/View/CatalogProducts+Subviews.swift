@@ -157,7 +157,7 @@ private extension CatalogProductsView {
                     output.onTapProductBasket(productID: product.id)
                 }
             ),
-            showStepper: false
+            showStepper: state.selectedProducts.contains(product.id)
         )
         .onTapGesture {
             output.onTapProductCard(product: product)

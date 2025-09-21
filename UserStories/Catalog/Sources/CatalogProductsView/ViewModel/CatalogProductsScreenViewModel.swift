@@ -4,28 +4,51 @@
 //
 
 import Foundation
+import Combine
+import CartServiceInterface
 import DLCore
 import SharedUserStories
 
-final class CatalogProductsScreenViewModel {
+final class CatalogProductsScreenViewModel: Sendable {
 
-    private var state: CatalogProductsState
+    private let state: CatalogProductsState
+    private let cartService: AnyCartService
     private let networkClient: AnyCatalogProductsScreenNetworkClient
     private let factory: AnyCatalogProductsScreenFactory
+
+    @MainActor
+    private var store: Set<AnyCancellable> = []
+    @MainActor
     private weak var output: CatalogProductsOutput?
 
     private let logger = DLLogger("Catalog Products Screen")
 
+    @MainActor
     init(
         state: CatalogProductsState,
+        cartService: AnyCartService,
         networkClient: AnyCatalogProductsScreenNetworkClient,
         factory: AnyCatalogProductsScreenFactory,
         output: CatalogProductsOutput
     ) {
         self.state = state
+        self.cartService = cartService
         self.networkClient = networkClient
         self.factory = factory
         self.output = output
+
+        cartService.basketProductsPublisher
+            .receive(on: RunLoop.main)
+            .sink { products in
+                state.selectedProducts = Set(products.map(\.id))
+                products.forEach { product in
+                    if let productIndex = state.items.firstIndex(where: { $0.product.id == product.id }) {
+                        state.items[productIndex].product.count = product.count
+                        return
+                    }
+                }
+            }
+            .store(in: &store)
     }
 }
 

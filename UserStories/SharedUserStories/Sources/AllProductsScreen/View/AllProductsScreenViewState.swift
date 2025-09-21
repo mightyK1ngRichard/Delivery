@@ -5,7 +5,8 @@
 
 import Foundation
 
-final class AllProductsScreenViewState: ObservableObject {
+@MainActor
+final class AllProductsScreenViewState: Sendable, ObservableObject {
 
     @Published
     var products: [ProductModel]
