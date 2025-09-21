@@ -6,9 +6,11 @@
 import Combine
 
 public protocol AnyCartService: Sendable {
+    
     func addProductInBasket(body: AddBasketProductPayload) async throws
     func updateProductCountInBasket(productID: Int, count: Int) async throws
     func deleteProductFromBasket(productID: Int) async throws
     var basketProductsPublisher: AnyPublisher<[BasketProduct], Never> { get }
     func saveProductsBasket(_ products: [BasketProduct])
+    var currentBasketProducts: [BasketProduct] { get }
 }

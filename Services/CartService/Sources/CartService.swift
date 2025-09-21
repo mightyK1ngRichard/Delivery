@@ -28,6 +28,10 @@ extension CartServiceImpl: AnyCartService {
         currentProducts.eraseToAnyPublisher()
     }
 
+    public var currentBasketProducts: [BasketProduct] {
+        currentProducts.value
+    }
+
     public func addProductInBasket(body: AddBasketProductPayload) async throws {
         let _ = try await networkClient.request(
             "cart/add",

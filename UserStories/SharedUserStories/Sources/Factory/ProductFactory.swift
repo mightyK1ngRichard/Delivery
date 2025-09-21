@@ -115,7 +115,7 @@ public struct ProductFactory: AnyProductFactory {
             title: model.title,
             price: model.itemPrice.formattedPrice,
             description: model.description,
-            startCounter: model.magnifier,
+            startCounter: model.count * model.magnifier,
             magnifier: model.magnifier,
             tags: model.tags.map(convertToTags)
         )

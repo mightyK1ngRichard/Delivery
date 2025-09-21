@@ -10,11 +10,13 @@ import SharedContractsInterface
 import DesignSystem
 import SharedUserStories
 import UserServiceInterface
+import CartServiceInterface
 
 final class MainScreenViewModel: Sendable {
 
     private let state: MainScreenViewState
     private let userService: AnyUserService
+    private let cartService: AnyCartService
     private let networkClient: AnyMainScreenNetworkClient
     private let factory: AnyMainScreenFactory
     @MainActor
@@ -28,12 +30,14 @@ final class MainScreenViewModel: Sendable {
     init(
         state: MainScreenViewState,
         userService: AnyUserService,
+        cartService: AnyCartService,
         networkClient: AnyMainScreenNetworkClient,
         factory: AnyMainScreenFactory,
         output: MainScreenOutput
     ) {
         self.state = state
         self.userService = userService
+        self.cartService = cartService
         self.networkClient = networkClient
         self.factory = factory
         self.output = output
@@ -49,6 +53,23 @@ final class MainScreenViewModel: Sendable {
             .receive(on: RunLoop.main)
             .sink { title in
                 state.addressTitle = title
+            }
+            .store(in: &store)
+
+        cartService.basketProductsPublisher
+            .dropFirst()
+            .receive(on: RunLoop.main)
+            .sink { products in
+                state.selectedProducts = Set(products.map(\.id))
+                products.forEach { product in
+                    for (sectionIndex, section) in state.sections.enumerated() {
+                        if let productIndex = section.products.firstIndex(where: { $0.id == product.id }) {
+                            let item = state.sections[sectionIndex].products[productIndex]
+                            state.sections[sectionIndex].products[productIndex].count = product.count * item.magnifier
+                            continue
+                        }
+                    }
+                }
             }
             .store(in: &store)
     }
@@ -171,6 +192,11 @@ extension MainScreenViewModel {
 
     @MainActor
     private func fetchData() async {
+        let basketProducts = cartService.currentBasketProducts.reduce(into: [:]) { accum, product in
+            accum[product.id] = product.count
+        }
+        state.selectedProducts = Set(cartService.currentBasketProducts.map(\.id))
+
         do {
             try await withThrowingTaskGroup(of: FetchResult.self) { group in
                 try Task.checkCancellation()
@@ -180,7 +206,18 @@ extension MainScreenViewModel {
 
                     let sections = try await self.networkClient.fetchProducts()
                     return .sections(sections.map { section, products in
-                        (section, products.compactMap(self.factory.convertToProduct))
+                        let result: [ProductModel] = products.compactMap { product in
+                            guard let id = product.id,
+                                  var mappedProduct = self.factory.convertToProduct(from: product)
+                            else { return nil }
+
+                            if let count = basketProducts[id] {
+                                mappedProduct.count = count
+                            }
+
+                            return mappedProduct
+                        }
+                        return .init(section: section, products: result)
                     })
                 }
 
@@ -198,7 +235,7 @@ extension MainScreenViewModel {
                     return .popcats(cards.compactMap(self.factory.convertToPopcat))
                 }
 
-                var sections: [(ProductSection, [ProductModel])] = []
+                var sections: [MainScreenViewState.Section] = []
                 var banners: [BannerPage] = []
                 var popcats: [PopcatModel] = []
 
@@ -210,7 +247,7 @@ extension MainScreenViewModel {
                     }
                 }
 
-                state.sections = sections.sorted { $0.0 > $1.0 }
+                state.sections = sections.sorted { $0.section > $1.section }
                 state.banners = banners
                 state.popcats = popcats
                 state.screenState = .content
@@ -265,7 +302,7 @@ extension MainScreenViewModel {
 
 private enum FetchResult: Sendable {
 
-    case sections([(ProductSection, [ProductModel])])
+    case sections([MainScreenViewState.Section])
     case banners([BannerPage])
     case popcats([PopcatModel])
 }

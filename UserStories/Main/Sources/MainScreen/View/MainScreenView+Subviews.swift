@@ -107,11 +107,11 @@ extension MainScreenView {
 
     @ViewBuilder
     var productSections: some View {
-        ForEach(state.sections, id: \.section) { (section, products) in
-            productSectionBlock(section: section, products: products) {
-                output.onTapSectionLookMore(section: section)
+        ForEach(state.sections, id: \.section) { item in
+            productSectionBlock(section: item.section, products: item.products) {
+                output.onTapSectionLookMore(section: item.section)
             }
-            .id("scroll_section_id_\(section.id)")
+            .id("scroll_section_id_\(item.section.id)")
         }
     }
 }

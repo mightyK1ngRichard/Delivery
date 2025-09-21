@@ -8,6 +8,15 @@ import DesignSystem
 import DLCore
 import SharedUserStories
 
+extension MainScreenViewState {
+
+    struct Section: Hashable {
+
+        let section: ProductSection
+        var products: [ProductModel]
+    }
+}
+
 @MainActor
 final class MainScreenViewState: ObservableObject {
 
@@ -16,7 +25,7 @@ final class MainScreenViewState: ObservableObject {
     // MARK: Data
     let tags: [DTagsSection.Section]
     @Published
-    var sections: [(section: ProductSection, products: [ProductModel])] = []
+    var sections: [Section] = []
     @Published
     var banners: [BannerPage] = []
     @Published
@@ -38,6 +47,8 @@ final class MainScreenViewState: ObservableObject {
     @Published
     var showAlert = false
     var alertModel = AlertModel()
+
+    var selectedProducts: Set<Int> = []
 
     init(factory: MainScreenFactory) {
         self.factory = factory

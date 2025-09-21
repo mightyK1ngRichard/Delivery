@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct DProductCardModel: Identifiable {
+public struct DProductCardModel: Identifiable, Hashable {
 
     public let id: Int
     var imageURL: URL?

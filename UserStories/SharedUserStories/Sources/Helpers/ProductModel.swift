@@ -13,7 +13,7 @@ public struct ProductModel: Identifiable, Hashable, Sendable {
     /// Фото
     public let imageURL: URL?
     /// Название продукта
-    public let title: String
+    public var title: String
     /// Цена продукта за штуку
     public let itemPrice: Price
     /// Описание продукта
