@@ -14,7 +14,7 @@ final class ProductDetailsScreenViewState: ObservableObject, Sendable {
     @Published
     var makeBasketButtonTitle: String?
     @Published
-    var basketButtonIsPressed: Bool = false
+    var inBasket: Bool = false
     @Published
     var productCount: Int = 0
     @Published

@@ -29,14 +29,16 @@ enum CatalogAssembly {
         )
 
         let state = CatalogScreenViewState(factory: factory)
+        let cartService = Resolver.resolve(AnyCartService.self)
         let networkClient = CatalogScreenNetworkClient(
             catalogService: Resolver.resolve(AnyCategoryService.self),
             productService: Resolver.resolve(AnyProductService.self),
-            cartService: Resolver.resolve(AnyCartService.self)
+            cartService: cartService
         )
 
         let viewModel = CatalogScreenViewModel(
             state: state,
+            cartService: cartService,
             factory: factory,
             networkClient: networkClient,
             output: output

@@ -21,7 +21,7 @@ extension ProductDetailsView {
             bottomButtonKindView
                 .padding()
         }
-        .animation(.default, value: state.basketButtonIsPressed)
+        .animation(.default, value: state.inBasket)
     }
 }
 
@@ -29,7 +29,7 @@ private extension ProductDetailsView {
 
     @ViewBuilder
     var bottomButtonKindView: some View {
-        if state.basketButtonIsPressed {
+        if state.inBasket {
             HStack(spacing: 10) {
                 inBasketButton
                 stepperView

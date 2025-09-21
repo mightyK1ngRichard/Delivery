@@ -8,7 +8,8 @@ import CatalogServiceInterface
 import SharedUserStories
 import DesignSystem
 
-protocol AnyCatalogScreenFactory {
+protocol AnyCatalogScreenFactory: Sendable {
+    
     func convertToDProductCard(from model: ProductModel) -> DProductCardModel
     func convertToProduct(from entity: ProductEntity) -> ProductModel?
     func convertToDLCategoryBlockData(from model: CategoryModel) -> DLCategoryBlock.Configuration.CellData

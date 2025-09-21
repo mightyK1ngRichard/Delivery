@@ -6,7 +6,8 @@
 import SharedContractsInterface
 import CatalogServiceInterface
 
-protocol AnyCatalogScreenNetworkClient {
+protocol AnyCatalogScreenNetworkClient: Sendable {
+    
     func fetchHitsProducts() async throws -> [ProductEntity]
     func fetchCategories() async throws -> [CategoryEntity]
     func addProductInBasket(productID: Int, count: Int) async throws

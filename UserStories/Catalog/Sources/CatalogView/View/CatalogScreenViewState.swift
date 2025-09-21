@@ -7,7 +7,8 @@ import Foundation
 import SharedUserStories
 import DLCore
 
-final class CatalogScreenViewState: ObservableObject {
+@MainActor
+final class CatalogScreenViewState: Sendable, ObservableObject {
 
     let factory: AnyCatalogScreenFactory
 
@@ -19,6 +20,8 @@ final class CatalogScreenViewState: ObservableObject {
     /// Популярные продукты (Хиты)
     @Published
     var products: [ProductModel] = []
+    @Published
+    var selectedProducts: Set<Int> = []
 
     var filterProducts: [ProductModel] {
         guard !searchText.isEmpty else {

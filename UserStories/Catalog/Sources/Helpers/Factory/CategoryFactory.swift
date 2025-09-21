@@ -6,7 +6,7 @@
 import CatalogServiceInterface
 import SharedUserStories
 
-protocol AnyCategoryFactory {
+protocol AnyCategoryFactory: Sendable {
     func convertToCategory(from entity: CategoryEntity) -> CategoryModel?
 }
 

@@ -38,10 +38,11 @@ final class ProductDetailsScreenViewModel: Sendable {
             .receive(on: RunLoop.main)
             .sink { products in
                 guard let product = products.first(where: { $0.id == state.product.id }) else {
+                    state.inBasket = false
                     return
                 }
                 state.productCount = product.count * state.product.magnifier
-                state.basketButtonIsPressed = !products.isEmpty
+                state.inBasket = !products.isEmpty
             }
             .store(in: &cancellables)
     }
@@ -59,7 +60,7 @@ extension ProductDetailsScreenViewModel: ProductDetailsViewOutput {
     func onTapAddIntoBasketButton() {
         logger.logEvent()
         state.productCount = state.product.magnifier
-        state.basketButtonIsPressed = true
+        state.inBasket = true
 
         Task {
             do {
@@ -99,7 +100,7 @@ extension ProductDetailsScreenViewModel: ProductDetailsViewOutput {
                     count: state.productCount / state.product.magnifier
                 )
 
-                state.basketButtonIsPressed = state.productCount != 0
+                state.inBasket = state.productCount != 0
                 if state.productCount == 0 {
                     await deleteProduct()
                 }

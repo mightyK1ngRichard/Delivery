@@ -5,26 +5,51 @@
 
 import Foundation
 import DLCore
+import Combine
+import CartServiceInterface
 import SharedUserStories
 
-final class CatalogScreenViewModel {
+final class CatalogScreenViewModel: Sendable {
 
     private let state: CatalogScreenViewState
+    private let cartService: AnyCartService
     private let factory: AnyCatalogScreenFactory
     private let networkClient: AnyCatalogScreenNetworkClient
+
+    @MainActor
     private weak var output: CatalogScreenOutput?
+    @MainActor
+    private var cancellables: Set<AnyCancellable> = []
+
     private let logger = DLLogger("Catalog Screen View Model")
 
+    @MainActor
     init(
         state: CatalogScreenViewState,
+        cartService: AnyCartService,
         factory: AnyCatalogScreenFactory,
         networkClient: AnyCatalogScreenNetworkClient,
         output: CatalogScreenOutput
     ) {
         self.state = state
+        self.cartService = cartService
         self.factory = factory
         self.networkClient = networkClient
         self.output = output
+
+        cartService.basketProductsPublisher
+            .dropFirst()
+            .receive(on: RunLoop.main)
+            .sink { products in
+                state.selectedProducts = Set(products.map(\.id))
+                products.forEach { product in
+                    if let productIndex = state.products.firstIndex(where: { $0.id == product.id }) {
+                        state.products[productIndex].count = product.count
+                        return
+                    }
+                }
+            }
+            .store(in: &cancellables)
     }
 }
 
@@ -78,6 +103,7 @@ extension CatalogScreenViewModel: CatalogScreenViewOutput {
             return
         }
 
+        state.selectedProducts.insert(productID)
         state.products[index].count = 1
         Task {
             try await networkClient.addProductInBasket(productID: productID, count: 1)
@@ -109,11 +135,24 @@ private extension CatalogScreenViewModel {
                     .filter { $0.parentID == 0 }
                     .compactMap(factory.convertToCategory)
 
-                let hitProducts = hitsProducts.compactMap(factory.convertToProduct)
+                let current = cartService.currentBasketProducts.reduce(into: [:]) { accum, product in
+                    accum[product.id] = product.count
+                }
+
+                let hitProducts: [ProductModel] = hitsProducts.compactMap {
+                    guard var product = factory.convertToProduct(from: $0) else {
+                        return nil
+                    }
+                    if let count = current[product.id] {
+                        product.count = count
+                    }
+                    return product
+                }
 
                 state.categories = mappedCategories
                 state.products = hitProducts
                 state.screenState = .content
+                state.selectedProducts = Set(current.keys)
             } catch {
                 logger.error(error)
                 state.screenState = .error
